@@ -356,26 +356,27 @@ ggplotly(p_desc) %>%
 #| include: false
 
 # Auxiliares para inline R nas descritivas
-d_idade_min <- descritivas %>% slice_min(idade_media, n = 1)
-d_idade_max <- descritivas %>% slice_max(idade_media, n = 1)
-d_pea_min   <- descritivas %>% slice_min(prop_pea, n = 1)
-d_pea_max   <- descritivas %>% slice_max(prop_pea, n = 1)
-d_h2_min    <- descritivas %>% slice_min(prop_h2, n = 1)
-d_h2_max    <- descritivas %>% slice_max(prop_h2, n = 1)
-d_n_min     <- descritivas %>% slice_min(n, n = 1)
-d_n_max     <- descritivas %>% slice_max(n, n = 1)
-d_2019      <- descritivas %>% filter(ano == 2019)
+d_primeiro <- descritivas %>% slice_min(ano, n = 1)
+d_ultimo   <- descritivas %>% slice_max(ano, n = 1)
+d_2019     <- descritivas %>% filter(ano == 2019)
+
+# Direcao das tendencias (primeiro ano vs ultimo ano)
+idade_dir   <- if (d_ultimo$idade_media > d_primeiro$idade_media) "subiu" else "caiu"
+pea_dir     <- if (d_ultimo$prop_pea < d_primeiro$prop_pea) "caiu" else "subiu"
+h2_min      <- descritivas %>% slice_min(prop_h2, n = 1)
+h2_max      <- descritivas %>% slice_max(prop_h2, n = 1)
+n_dir       <- if (d_ultimo$n > d_primeiro$n) "cresceu" else "diminuiu"
 ```
 
 Três tendências estruturais se destacam na composição da amostra ao longo da década, todas com implicações diretas para a interpretação dos modelos:
 
-**Envelhecimento progressivo da base de usuários de internet.** A idade média subiu de `r round(d_idade_min$idade_media, 1)` anos (`r d_idade_min$ano`) para `r round(d_idade_max$idade_media, 1)` anos (`r d_idade_max$ano`). Em 2019 — ano-base do artigo original — a média era `r round(d_2019$idade_media, 1)` anos. Esse envelhecimento reflete a universalização do acesso à internet entre faixas etárias mais velhas. Como a idade tem efeito negativo sobre o uso de e-gov, a estabilidade do coeficiente de idade ao longo dos anos (ver @sec-longitudinal) torna-se ainda mais relevante: o barreira etária persiste mesmo com a popularização.
+**Idade média da amostra.** A idade média `r idade_dir` de `r round(d_primeiro$idade_media, 1)` anos (`r d_primeiro$ano`) para `r round(d_ultimo$idade_media, 1)` anos (`r d_ultimo$ano`). Em 2019 — ano-base do artigo original — a média era `r round(d_2019$idade_media, 1)` anos. `r if(idade_dir == "subiu") "Esse envelhecimento reflete a universalização do acesso à internet entre faixas etárias mais velhas. Como a idade tem efeito negativo sobre o uso de e-gov, a estabilidade do coeficiente de idade ao longo dos anos (ver @sec-longitudinal) torna-se ainda mais relevante: a barreira etária persiste mesmo com a popularização." else "Essa redução pode indicar maior inclusão digital de jovens na amostra."`
 
-**Queda da proporção de PEA na amostra.** A parcela de economicamente ativos caiu de `r fmt_pct(d_pea_max$prop_pea)` (`r d_pea_max$ano`) para `r fmt_pct(d_pea_min$prop_pea)` (`r d_pea_min$ano`). Isso indica que a internet se expandiu para aposentados, estudantes e pessoas fora do mercado de trabalho. Vargas et al. (2021) encontraram a PEA como preditor significativo em 2019 (quando `r fmt_pct(d_2019$prop_pea)` eram PEA) — a queda dessa proporção ajuda a explicar por que o coeficiente da PEA se enfraqueceu nos anos recentes.
+**Proporção de PEA na amostra.** A parcela de economicamente ativos `r pea_dir` de `r fmt_pct(d_primeiro$prop_pea)` (`r d_primeiro$ano`) para `r fmt_pct(d_ultimo$prop_pea)` (`r d_ultimo$ano`). `r if(pea_dir == "caiu") "Isso indica que a internet se expandiu para aposentados, estudantes e pessoas fora do mercado de trabalho." else "Isso pode indicar maior inclusão digital entre trabalhadores."` Vargas et al. (2021) encontraram a PEA como preditor significativo em 2019 (quando `r fmt_pct(d_2019$prop_pea)` eram PEA)`r if(pea_dir == "caiu") " — a queda dessa proporção ajuda a explicar por que o coeficiente da PEA pode ter se enfraquecido nos anos recentes." else "."`
 
-**E-commerce relativamente estável.** A proporção de compradores online oscilou entre `r fmt_pct(d_h2_min$prop_h2)` e `r fmt_pct(d_h2_max$prop_h2)` sem tendência clara. Isso sugere que o e-commerce, diferentemente do acesso à internet, não se universalizou na mesma velocidade — e explica por que ele permanece como o preditor mais discriminante: quem compra online continua sendo um subgrupo com maior letramento digital.
+**E-commerce.** A proporção de compradores online oscilou entre `r fmt_pct(h2_min$prop_h2)` (`r h2_min$ano`) e `r fmt_pct(h2_max$prop_h2)` (`r h2_max$ano`). `r if(abs(d_ultimo$prop_h2 - d_primeiro$prop_h2) < 0.05) "A relativa estabilidade sugere que o e-commerce, diferentemente do acesso à internet, não se universalizou na mesma velocidade — e explica por que ele permanece como o preditor mais discriminante: quem compra online continua sendo um subgrupo com maior letramento digital." else paste0("A variação de ", fmt_pct(d_primeiro$prop_h2), " para ", fmt_pct(d_ultimo$prop_h2), " ao longo da série indica mudança no perfil de consumo digital da amostra.")`
 
-**Crescimento amostral.** O N após filtros cresceu de `r fmt_n(d_n_min$n)` (`r d_n_min$ano`) para `r fmt_n(d_n_max$n)` (`r d_n_max$ano`), refletindo a ampliação da base de respondentes que usam internet (filtro C1). O N reduzido de 2015 deve-se à ausência de `C5_Dispositivos`, que exclui muitas observações por *missing* naquele ano.
+**Tamanho amostral.** O N após filtros `r n_dir` de `r fmt_n(d_primeiro$n)` (`r d_primeiro$ano`) para `r fmt_n(d_ultimo$n)` (`r d_ultimo$ano`)`r if(n_dir == "cresceu") ", refletindo a ampliação da base de respondentes que usam internet (filtro C1)." else "."` O N reduzido de 2015 deve-se à ausência de `C5_Dispositivos`, que exclui muitas observações por *missing* naquele ano.
 
 # Replicação do Modelo Original (2019) {#sec-replicacao}
 
@@ -502,11 +503,6 @@ c19_c5_3  <- res_2019$coefs %>% filter(term == "c5_dispositivos_3")
 ```
 
 A replicação reproduz **exatamente** o pipeline da Figura 1 do artigo original. Cada passo intermediário bate: 20.536 obs brutas → 14.701 após filtro C1 = 1 → 12.884 após exclusão de indefinidas → `r fmt_n(res_2019$metricas$n)` após filtro de idade ≥ 16. O N final e todas as métricas coincidem com os valores publicados.
-
-::: {.callout-tip}
-## Correção identificada durante a replicação
-A versão inicial deste documento usava o filtro `C1 != 0`, que preserva respostas 97 ("Não sabe") e 98 ("Não respondeu") além de 1 ("Sim"). O artigo original usa `C1 == 1` — mantendo apenas quem **afirmou** ter usado internet. Essa diferença de 14 observações no passo 3 propagava-se como 3 observações extras no N final. A correção para `C1 == 1` elimina a discrepância.
-:::
 
 ```{r}
 #| label: tbl-coefs-2019
@@ -654,7 +650,7 @@ ggplotly(p_coefs) %>%
 
 **Idade** — Efeito negativo pequeno e notavelmente constante: **`r fmt_c(ida_range[1])` a `r fmt_c(ida_range[2])`** em todos os anos. Cada ano adicional de idade reduz marginalmente a chance de uso de e-gov. A hipótese de que o efeito da idade diminuiria com a popularização **não se confirma**: o coeficiente permanece estável.
 
-**PEA (condição de atividade)** — Efeito positivo moderado (**`r fmt_c(pea_range[1])` a `r fmt_c(pea_range[2])`**), com leve tendência de **queda** ao longo dos anos. Em 2015, ser economicamente ativo aumentava mais a chance de usar e-gov. Em 2024–2025, esse efeito é menor, possivelmente porque serviços sociais (Auxílio Brasil, Bolsa Família) passaram a ser acessados digitalmente por pessoas fora da PEA.
+`r { pea_primeiro <- coef_pea %>% slice_min(ano, n=1); pea_ultimo <- coef_pea %>% slice_max(ano, n=1); pea_coef_dir <- if(pea_ultimo$estimate < pea_primeiro$estimate) "queda" else "aumento"; "" }`**PEA (condição de atividade)** — Efeito positivo moderado (**`r fmt_c(pea_range[1])` a `r fmt_c(pea_range[2])`**), com leve tendência de **`r pea_coef_dir`** ao longo dos anos. Em `r pea_primeiro$ano`, o coeficiente era `r fmt_c(pea_primeiro$estimate)`; em `r pea_ultimo$ano`, `r fmt_c(pea_ultimo$estimate)`. `r if(pea_coef_dir == "queda") "A redução sugere que ser economicamente ativo se tornou menos determinante para o uso de e-gov, possivelmente porque serviços sociais (Auxílio Brasil, Bolsa Família) passaram a ser acessados digitalmente por pessoas fora da PEA." else "O aumento sugere que a condição de atividade econômica se tornou mais relevante para o uso de e-gov ao longo da década."`
 
 ## Heatmap de significância
 
@@ -1025,7 +1021,7 @@ O AUC-ROC manteve-se notavelmente estável entre **`r fmt_c4(auc_range[1])` e `r
 
 A análise longitudinal revela que enquanto alguns preditores são altamente estáveis (e-commerce, idade), outros apresentam variação temporal significativa:
 
-- A **PEA** perdeu força preditiva ao longo dos anos (de `r fmt_c(max(coef_pea$estimate))` em `r coef_pea$ano[which.max(coef_pea$estimate)]` para `r fmt_c(min(coef_pea$estimate))` em `r coef_pea$ano[which.min(coef_pea$estimate)]`), possivelmente refletindo a expansão de serviços de e-gov voltados a populações economicamente inativas (programas sociais digitalizados)
+- A **PEA** `r if(pea_coef_dir == "queda") "perdeu" else "ganhou"` força preditiva ao longo dos anos (de `r fmt_c(pea_primeiro$estimate)` em `r pea_primeiro$ano` para `r fmt_c(pea_ultimo$estimate)` em `r pea_ultimo$ano`)`r if(pea_coef_dir == "queda") ", possivelmente refletindo a expansão de serviços de e-gov voltados a populações economicamente inativas (programas sociais digitalizados)" else ", sugerindo que a condição de atividade econômica se tornou mais relevante para discriminar usuários de e-gov"`
 - O **efeito do grau de instrução** manteve-se forte, reforçando que a educação é uma barreira persistente ao uso de e-gov
 - O **teste de razão de verossimilhança** do modelo pooled confirma que há variação temporal significativa além das variáveis sociodemográficas (LR = `r round(lr_stat, 1)`, p < 0,001)
 
