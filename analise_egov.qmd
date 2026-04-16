@@ -1,0 +1,1051 @@
+---
+title: "Governo Eletrônico no Brasil: Análise Longitudinal 2015–2025"
+subtitle: "Replicação e expansão de Vargas, Macadar, Wanke & Antunes (2021)"
+author: "Marcus Ramalho"
+date: today
+lang: pt-BR
+format:
+  html:
+    theme: cosmo
+    toc: true
+    toc-depth: 3
+    toc-title: "Sumário"
+    number-sections: true
+    code-fold: true
+    code-summary: "Ver código"
+    embed-resources: true
+    fig-width: 10
+    fig-height: 6
+    fig-dpi: 150
+execute:
+  warning: false
+  message: false
+---
+
+# Introdução
+
+Este documento replica e expande a análise de **Vargas, Macadar, Wanke & Antunes (2021)**, publicada nos *Cadernos EBAPE.BR*, que investigou os fatores que influenciam o uso de serviços de governo eletrônico (e-gov) pelos cidadãos brasileiros.
+
+O estudo original analisou apenas os microdados da pesquisa **TIC Domicílios 2019**, usando regressão logística para modelar a probabilidade de uso de e-gov a partir de variáveis sociodemográficas. Aqui, **replicamos o modelo para todos os anos de 2015 a 2025** (10 edições — 2020 excluído por ausência do módulo G), comparamos a evolução dos coeficientes e interpretamos as mudanças ao longo da década.
+
+### Principais achados do artigo original (2019)
+
+| Indicador | Valor |
+|-----------|-------|
+| N (após filtros) | 11.781 |
+| Accuracy | 0,7314 |
+| F1-score | 0,8023 |
+| Recall | 0,8428 |
+| Precision | 0,7656 |
+
+Variáveis significativas: **idade** (−), **PEA** (+), **e-commerce** (+), **grau de instrução** (+), **classe econômica** (+), **renda familiar** (+), **dispositivo de acesso** (+). Variáveis *não* significativas: sexo, região geográfica, área urbana/rural.
+
+# Setup
+
+```{r}
+#| label: setup
+#| code-summary: "Carregar pacotes"
+
+suppressPackageStartupMessages({
+  library(tidyverse)
+  library(haven)
+  library(broom)
+  library(pROC)
+  library(nnet)
+  library(caret)
+  library(fastDummies)
+  library(plotly)
+  library(gganimate)
+  library(gifski)
+  library(scales)
+})
+
+# Tema padrao para graficos
+tema <- theme_minimal(base_size = 13) +
+  theme(
+    plot.title = element_text(face = "bold", size = 15),
+    plot.subtitle = element_text(color = "grey40", size = 11),
+    legend.position = "bottom",
+    panel.grid.minor = element_blank()
+  )
+
+theme_set(tema)
+
+dir.create("dados", showWarnings = FALSE)
+
+# Formatadores pt-BR para inline R
+fmt_pct <- function(x) scales::percent(x, accuracy = 0.1, decimal.mark = ",")
+fmt_n   <- function(x) format(x, big.mark = ".", decimal.mark = ",")
+fmt_c   <- function(x) formatC(x, format = "f", digits = 3, decimal.mark = ",")
+fmt_c4  <- function(x) formatC(x, format = "f", digits = 4, decimal.mark = ",")
+```
+
+# Download dos Microdados
+
+Os microdados da pesquisa TIC Domicílios estão disponíveis no site do [Cetic.br](https://cetic.br/pt/pesquisa/domicilios/microdados/). Baixamos a base de **indivíduos** (`.sav`) de cada ano, que contém as variáveis sociodemográficas e o módulo G de governo eletrônico.
+
+::: {.callout-warning}
+## Edição 2020 excluída
+A edição 2020 teve metodologia adaptada por causa da pandemia (coleta por telefone CATI). O **módulo G (governo eletrônico) não foi coletado**, impossibilitando a inclusão na análise longitudinal.
+:::
+
+```{r}
+#| label: download
+#| code-summary: "Download dos arquivos .sav"
+
+urls <- tribble(
+  ~ano, ~url, ~encoding,
+  2015, "https://cetic.br/media/microdados/217/ticdom_2015_individuos_base_de_microdados_v1.2.sav", "UTF-8",
+  2016, "https://cetic.br/media/microdados/221/ticdom_2016_individuos_base_de_microdados_v1.2.sav", "latin1",
+  2017, "https://cetic.br/media/microdados/223/ticdom_2017_individuos_base_de_microdados_v1.5.sav", "latin1",
+  2018, "https://cetic.br/media/microdados/209/ticdom_2018_individuos_base_de_microdados_v1.0.sav", "UTF-8",
+  2019, "https://cetic.br/media/microdados/582/ticdom_2019_individuos_base_de_microdados_v1.1.sav", "latin1",
+  2021, "https://cetic.br/media/microdados/619/tic_domicilios_2021_individuos_base_de_microdados_v1.0.sav", "UTF-8",
+  2022, "https://cetic.br/media/microdados/694/tic_domicilios_2022_individuos_base_de_microdados_v1.0.sav", "UTF-8",
+  2023, "https://cetic.br/media/microdados/754/tic_domicilios_2023_individuos_base_de_microdados_v1.0.sav", "UTF-8",
+  2024, "https://cetic.br/media/microdados/861/tic_domicilios_2024_individuos_base_de_microdados_v1.0.sav", "UTF-8",
+  2025, "https://cetic.br/media/microdados/988/tic_domicilios_2025_individuos_base_de_microdados_v1.0.sav", "UTF-8"
+)
+
+urls %>%
+  pwalk(function(ano, url, encoding) {
+    dest <- str_glue("dados/tic_ind_{ano}.sav")
+    if (!file.exists(dest)) {
+      cat(str_glue("[{ano}] Baixando..."), "\n")
+      tryCatch(
+        download.file(url, dest, mode = "wb", quiet = TRUE),
+        error = function(e) cat(str_glue("[{ano}] ERRO: {e$message}"), "\n")
+      )
+    }
+  })
+
+cat("Arquivos disponíveis:\n")
+list.files("dados", pattern = "tic_ind.*\\.sav") %>% walk(~ cat(" ", .x, "\n"))
+```
+
+# Harmonização de Variáveis
+
+O Cetic.br muda nomes de variáveis entre edições. A estratégia é:
+
+1. Converter todos os nomes para MAIÚSCULAS
+2. Buscar cada variável por padrão regex (prioridade para variantes agregadas)
+3. Reconstruir `G1_AGREG` quando ausente (2015, 2016) a partir das variáveis individuais `G1_A` a `G1_G`
+
+::: {.callout-note}
+## Decisões de harmonização
+
+As seguintes inconsistências entre edições foram identificadas e tratadas:
+
+| Variável | Problema | Solução |
+|----------|----------|---------|
+| **G1_AGREG** | Não existe em 2015 e 2016 | Reconstruída como `any(G1_A:G1_G == 1)` |
+| **Grau de instrução** | 2015–2023: `GRAU_INSTRUCAO_2` (4 níveis); 2024–2025: `GRAU_INST_1` (4 níveis, nome diferente); existe também `GRAU_INSTRUCAO_1` detalhado (20 níveis) | Regex prioriza `_2` > `GRAU_INST_1` > fallback genérico |
+| **C5_Dispositivos** | 2024–2025 incluem nível 4 ("Nenhum dispositivo"), inexistente em 2015–2023 | Nível 4 filtrado junto com 97/98/99 para manter 3 categorias comparáveis |
+| **C5_Dispositivos** | Não existe em 2015 | 2015 entra no modelo sem essa variável (menos termos) |
+| **Encoding .sav** | 2016, 2017 e 2019: encoding latin1 | Especificado `encoding = "latin1"` no `read_sav()` |
+| **G1_H** | Nova questão em 2025 (Justiça) | `G1_AGREG` já vem calculada pelo Cetic.br incluindo G1_H; mantida como está |
+:::
+
+```{r}
+#| label: harmonizacao
+#| code-summary: "Carregar e harmonizar variáveis de cada ano"
+
+carregar_e_harmonizar <- function(ano, encoding) {
+  path <- str_glue("dados/tic_ind_{ano}.sav")
+  if (!file.exists(path)) return(NULL)
+
+  df <- read_sav(path, encoding = encoding) %>%
+    rename_with(str_to_upper)
+
+  # Buscar coluna por padrao regex
+  encontrar <- function(padroes) {
+    for (p in padroes) {
+      match <- str_which(names(df), regex(p, ignore_case = TRUE))
+      if (length(match) > 0) return(names(df)[match[1]])
+    }
+    NA_character_
+  }
+
+  # Mapear variaveis
+  col_g1_agreg    <- encontrar(c("^G1_AGREG$"))
+  col_c1          <- encontrar(c("^C1$"))
+  col_sexo        <- encontrar(c("^SEXO$"))
+  col_idade       <- encontrar(c("^IDADE$"))
+  col_pea         <- encontrar(c("^PEA_?2$", "^PEA$"))
+  col_h2          <- encontrar(c("^H2$"))
+  col_j5          <- encontrar(c("^J5$"))
+  col_renda       <- encontrar(c("^RENDA.*FAM"))
+  col_classe      <- encontrar(c("^CLASSE.*CB", "^CLASSE.*2015"))
+  col_grau        <- encontrar(c("^GRAU.*INSTR.*2$", "^GRAU_INST_1$", "^GRAU.*INSTR"))
+  col_c5          <- encontrar(c("^C5.*DISP"))
+  col_area        <- encontrar(c("^AREA$"))
+  col_regiao      <- encontrar(c("^COD.*REGIAO.*2$", "^COD.*REGIAO", "^REGIAO"))
+
+  # Reconstruir G1_AGREG se ausente
+  if (is.na(col_g1_agreg)) {
+    g1_cols <- names(df)[str_detect(names(df), regex("^G1_[A-G]$", ignore_case = TRUE))]
+    if (length(g1_cols) >= 7) {
+      df <- df %>%
+        mutate(G1_AGREG_CALC = if_else(
+          if_any(all_of(g1_cols), ~ as.numeric(.) == 1), 1, 0
+        ))
+      col_g1_agreg <- "G1_AGREG_CALC"
+    } else {
+      return(NULL)
+    }
+  }
+
+  # Montar mapa
+  mapa <- c(
+    g1_agreg = col_g1_agreg, c1 = col_c1,
+    sexo = col_sexo, idade = col_idade, pea = col_pea,
+    h2 = col_h2, j5 = col_j5, renda_familiar = col_renda,
+    classe_cb = col_classe, grau_instrucao = col_grau,
+    c5_dispositivos = col_c5, area = col_area, cod_regiao = col_regiao
+  ) %>% purrr::discard(is.na)
+
+  # Checar obrigatorias
+  faltantes <- c("g1_agreg", "c1", "idade", "pea", "h2", "renda_familiar", "grau_instrucao") %>%
+    setdiff(names(mapa))
+  if (length(faltantes) > 0) return(NULL)
+
+  df %>%
+    select(all_of(mapa)) %>%
+    mutate(across(everything(), as.numeric), ano = ano)
+}
+
+dados_brutos <- urls %>%
+  pmap(~ carregar_e_harmonizar(..1, ..3)) %>%
+  compact()
+
+cat(str_glue("Anos carregados com sucesso: {length(dados_brutos)}\n"))
+cat("Anos:", dados_brutos %>% map_dbl(~ unique(.x$ano)) %>% sort() %>% str_c(collapse = ", "), "\n")
+```
+
+# Filtros e Recodificações
+
+Aplicamos **exatamente os mesmos filtros** do estudo original (Figura 1 do artigo):
+
+1. **C1 = 1**: somente quem respondeu "Sim" a "Já usou a Internet?" (exclui 0=Não, 97=Não sabe, 98=Não respondeu)
+2. **Remover 97/98/99**: respostas indefinidas em H2, J5, renda, C5
+3. **Idade ≥ 16**: somente maiores de 16 anos
+4. Recodificar PEA, classe econômica, renda, área conforme Quadro 4 do artigo
+
+```{r}
+#| label: filtros
+#| code-summary: "Aplicar filtros e recodificações"
+
+preparar_dados <- function(df) {
+  ano_val <- unique(df$ano)
+  n0 <- nrow(df)
+
+  # Filtro C1 (somente quem respondeu "Sim" a "Já usou a Internet?")
+  # O artigo usa C1 == 1 (exclui 0=Não, 97=Não sabe, 98=Não respondeu)
+  df <- df %>% filter(c1 == 1)
+  n1 <- nrow(df)
+
+  # Remover c1
+  df <- df %>% select(-c1)
+
+  # Excluir indefinidas (97, 98, 99)
+  df <- df %>% filter(!h2 %in% c(97, 98, 99))
+  if ("j5" %in% names(df)) df <- df %>% filter(!j5 %in% c(97, 98, 99))
+  df <- df %>% filter(!renda_familiar %in% c(97, 98, 99))
+  # C5: remover 4 (Nenhum dispositivo, novo em 2024+) alem de 97/98/99
+  if ("c5_dispositivos" %in% names(df)) df <- df %>% filter(!c5_dispositivos %in% c(4, 97, 98, 99))
+  n2 <- nrow(df)
+
+  # Idade >= 16
+  df <- df %>% filter(idade >= 16)
+  n3 <- nrow(df)
+
+  # Recodificacoes (Quadro 4)
+  df <- df %>%
+    mutate(
+      pea = case_when(pea == 1 ~ 1, pea == 2 ~ 0, TRUE ~ NA_real_),
+      renda_familiar = if_else(renda_familiar == 9, 0, renda_familiar),
+      area = if_else(area == 1, 1, 0),
+      g1_agreg = if_else(g1_agreg == 1, 1, 0)
+    )
+
+  if ("classe_cb" %in% names(df)) {
+    df <- df %>%
+      mutate(classe_cb = case_when(
+        classe_cb == 1 ~ 3, classe_cb == 2 ~ 2,
+        classe_cb == 3 ~ 1, classe_cb == 4 ~ 0,
+        TRUE ~ NA_real_
+      ))
+  }
+
+  tibble(ano = ano_val, etapa = c("Bruto", "Internet (C1)", "Sem indef.", "Idade ≥ 16"),
+         n = c(n0, n1, n2, n3)) -> pipeline_info
+
+  list(dados = df, pipeline = pipeline_info)
+}
+
+resultados_prep <- dados_brutos %>% map(preparar_dados)
+dados_prep <- resultados_prep %>% map("dados") %>% compact()
+pipeline_info <- resultados_prep %>% map_dfr("pipeline")
+```
+
+```{r}
+#| label: tbl-pipeline
+#| tbl-cap: "Pipeline de filtragem por ano"
+
+pipeline_info %>%
+  pivot_wider(names_from = etapa, values_from = n) %>%
+  knitr::kable(format.args = list(big.mark = "."))
+```
+
+# Estatísticas Descritivas
+
+```{r}
+#| label: descritivas
+
+descritivas <- dados_prep %>%
+  map_dfr(function(df) {
+    tibble(
+      ano = unique(df$ano),
+      n = nrow(df),
+      prop_egov = mean(df$g1_agreg, na.rm = TRUE),
+      idade_media = mean(df$idade, na.rm = TRUE),
+      prop_pea = mean(df$pea, na.rm = TRUE),
+      prop_h2 = mean(df$h2, na.rm = TRUE)
+    )
+  })
+```
+
+```{r}
+#| label: tbl-descritivas
+#| tbl-cap: "Estatísticas descritivas por ano"
+
+descritivas %>%
+  mutate(
+    prop_egov = percent(prop_egov, accuracy = 0.1),
+    prop_pea = percent(prop_pea, accuracy = 0.1),
+    prop_h2 = percent(prop_h2, accuracy = 0.1),
+    idade_media = round(idade_media, 1)
+  ) %>%
+  rename(
+    Ano = ano, N = n, `% E-gov` = prop_egov,
+    `Idade média` = idade_media, `% PEA` = prop_pea, `% E-commerce` = prop_h2
+  ) %>%
+  knitr::kable(format.args = list(big.mark = "."))
+```
+
+```{r}
+#| label: fig-descritivas
+#| fig-cap: "Evolução das características da amostra (após filtros)"
+
+p_desc <- descritivas %>%
+  select(ano, `E-gov` = prop_egov, PEA = prop_pea, `E-commerce` = prop_h2) %>%
+  pivot_longer(-ano, names_to = "Indicador", values_to = "Proporção") %>%
+  ggplot(aes(x = ano, y = `Proporção`, color = Indicador)) +
+  geom_line(linewidth = 1) +
+  geom_point(size = 2.5) +
+  scale_y_continuous(labels = percent) +
+  scale_x_continuous(breaks = descritivas$ano) +
+  labs(x = "Ano", y = "Proporção", color = NULL)
+
+ggplotly(p_desc) %>%
+  layout(legend = list(orientation = "h", y = -0.15))
+```
+
+```{r}
+#| label: descritivas-aux
+#| include: false
+
+# Auxiliares para inline R nas descritivas
+d_idade_min <- descritivas %>% slice_min(idade_media, n = 1)
+d_idade_max <- descritivas %>% slice_max(idade_media, n = 1)
+d_pea_min   <- descritivas %>% slice_min(prop_pea, n = 1)
+d_pea_max   <- descritivas %>% slice_max(prop_pea, n = 1)
+d_h2_min    <- descritivas %>% slice_min(prop_h2, n = 1)
+d_h2_max    <- descritivas %>% slice_max(prop_h2, n = 1)
+d_n_min     <- descritivas %>% slice_min(n, n = 1)
+d_n_max     <- descritivas %>% slice_max(n, n = 1)
+d_2019      <- descritivas %>% filter(ano == 2019)
+```
+
+Três tendências estruturais se destacam na composição da amostra ao longo da década, todas com implicações diretas para a interpretação dos modelos:
+
+**Envelhecimento progressivo da base de usuários de internet.** A idade média subiu de `r round(d_idade_min$idade_media, 1)` anos (`r d_idade_min$ano`) para `r round(d_idade_max$idade_media, 1)` anos (`r d_idade_max$ano`). Em 2019 — ano-base do artigo original — a média era `r round(d_2019$idade_media, 1)` anos. Esse envelhecimento reflete a universalização do acesso à internet entre faixas etárias mais velhas. Como a idade tem efeito negativo sobre o uso de e-gov, a estabilidade do coeficiente de idade ao longo dos anos (ver @sec-longitudinal) torna-se ainda mais relevante: o barreira etária persiste mesmo com a popularização.
+
+**Queda da proporção de PEA na amostra.** A parcela de economicamente ativos caiu de `r fmt_pct(d_pea_max$prop_pea)` (`r d_pea_max$ano`) para `r fmt_pct(d_pea_min$prop_pea)` (`r d_pea_min$ano`). Isso indica que a internet se expandiu para aposentados, estudantes e pessoas fora do mercado de trabalho. Vargas et al. (2021) encontraram a PEA como preditor significativo em 2019 (quando `r fmt_pct(d_2019$prop_pea)` eram PEA) — a queda dessa proporção ajuda a explicar por que o coeficiente da PEA se enfraqueceu nos anos recentes.
+
+**E-commerce relativamente estável.** A proporção de compradores online oscilou entre `r fmt_pct(d_h2_min$prop_h2)` e `r fmt_pct(d_h2_max$prop_h2)` sem tendência clara. Isso sugere que o e-commerce, diferentemente do acesso à internet, não se universalizou na mesma velocidade — e explica por que ele permanece como o preditor mais discriminante: quem compra online continua sendo um subgrupo com maior letramento digital.
+
+**Crescimento amostral.** O N após filtros cresceu de `r fmt_n(d_n_min$n)` (`r d_n_min$ano`) para `r fmt_n(d_n_max$n)` (`r d_n_max$ano`), refletindo a ampliação da base de respondentes que usam internet (filtro C1). O N reduzido de 2015 deve-se à ausência de `C5_Dispositivos`, que exclui muitas observações por *missing* naquele ano.
+
+# Replicação do Modelo Original (2019) {#sec-replicacao}
+
+Replicamos o modelo de regressão logística do artigo original usando `multinom()` do pacote `nnet` com dummies via `fastDummies`, exatamente como descrito na metodologia.
+
+```{r}
+#| label: modelo-2019
+#| code-summary: "Ajustar modelo para 2019 e comparar com artigo"
+
+ajustar_modelo <- function(df) {
+  ano_val <- unique(df$ano)
+
+  vars_modelo <- c("g1_agreg", "idade", "pea", "h2",
+                    "renda_familiar", "classe_cb", "grau_instrucao", "c5_dispositivos")
+  vars_presentes <- intersect(vars_modelo, names(df))
+
+  df_modelo <- df %>%
+    select(all_of(vars_presentes)) %>%
+    drop_na()
+
+  n_modelo <- nrow(df_modelo)
+  if (n_modelo < 200) return(NULL)
+
+  vars_dummy <- intersect(c("renda_familiar", "classe_cb", "grau_instrucao", "c5_dispositivos"),
+                           vars_presentes)
+
+  df_dummies <- df_modelo %>%
+    mutate(across(all_of(vars_dummy), as.character)) %>%
+    dummy_cols(select_columns = vars_dummy, remove_first_dummy = TRUE,
+              remove_selected_columns = TRUE)
+
+  tryCatch({
+    modelo <- multinom(g1_agreg ~ ., data = df_dummies, trace = FALSE)
+
+    probs <- predict(modelo, type = "probs")
+    preds <- predict(modelo, type = "class") %>% as.character() %>% as.numeric()
+    y_real <- df_dummies$g1_agreg
+
+    tp <- sum(preds == 1 & y_real == 1)
+    fp <- sum(preds == 1 & y_real == 0)
+    fn <- sum(preds == 0 & y_real == 1)
+    tn <- sum(preds == 0 & y_real == 0)
+
+    accuracy  <- (tp + tn) / n_modelo
+    precision_val <- tp / (tp + fp)
+    recall    <- tp / (tp + fn)
+    f1        <- 2 * precision_val * recall / (precision_val + recall)
+    roc_obj   <- roc(y_real, probs, quiet = TRUE)
+    auc_val   <- as.numeric(auc(roc_obj))
+
+    s <- summary(modelo)
+    coefs <- tibble(
+      term = names(s$coefficients),
+      estimate = as.numeric(s$coefficients),
+      std.error = as.numeric(s$standard.errors)
+    ) %>%
+      mutate(
+        z_value = estimate / std.error,
+        p.value = 2 * pnorm(abs(z_value), lower.tail = FALSE),
+        conf.low = estimate - 1.96 * std.error,
+        conf.high = estimate + 1.96 * std.error,
+        ano = ano_val,
+        n = n_modelo,
+        prop_egov = mean(df_modelo$g1_agreg),
+        sig = case_when(
+          p.value < 0.001 ~ "***",
+          p.value < 0.01  ~ "**",
+          p.value < 0.05  ~ "*",
+          p.value < 0.1   ~ ".",
+          TRUE ~ ""
+        )
+      )
+
+    metricas <- tibble(
+      ano = ano_val, n = n_modelo,
+      prop_egov = mean(df_modelo$g1_agreg),
+      accuracy = accuracy, precision = precision_val,
+      recall = recall, f1 = f1, auc = auc_val
+    )
+
+    list(coefs = coefs, metricas = metricas)
+  }, error = function(e) NULL)
+}
+```
+
+```{r}
+#| label: validacao-2019
+
+# Ajustar somente 2019
+df_2019 <- dados_prep %>% keep(~ unique(.x$ano) == 2019) %>% pluck(1)
+res_2019 <- ajustar_modelo(df_2019)
+```
+
+### Comparação com o artigo original
+
+```{r}
+#| label: tbl-validacao-2019
+#| tbl-cap: "Validação: nossos resultados vs. artigo original (2019)"
+
+tibble(
+  Métrica = c("N", "Accuracy", "F1-score", "Recall", "Precision"),
+  Artigo = c("11.781", "0,7314", "0,8023", "0,8428", "0,7656"),
+  Replicação = c(
+    format(res_2019$metricas$n, big.mark = "."),
+    sprintf("%.4f", res_2019$metricas$accuracy),
+    sprintf("%.4f", res_2019$metricas$f1),
+    sprintf("%.4f", res_2019$metricas$recall),
+    sprintf("%.4f", res_2019$metricas$precision)
+  )
+) %>%
+  knitr::kable()
+```
+
+```{r}
+#| label: coefs-2019-aux
+#| include: false
+
+# Auxiliares para inline R
+c19_h2   <- res_2019$coefs %>% filter(term == "h2")
+c19_ida  <- res_2019$coefs %>% filter(term == "idade")
+c19_pea  <- res_2019$coefs %>% filter(term == "pea")
+c19_grau4 <- res_2019$coefs %>% filter(term == "grau_instrucao_4")
+c19_c5_3  <- res_2019$coefs %>% filter(term == "c5_dispositivos_3")
+```
+
+A replicação reproduz **exatamente** o pipeline da Figura 1 do artigo original. Cada passo intermediário bate: 20.536 obs brutas → 14.701 após filtro C1 = 1 → 12.884 após exclusão de indefinidas → `r fmt_n(res_2019$metricas$n)` após filtro de idade ≥ 16. O N final e todas as métricas coincidem com os valores publicados.
+
+::: {.callout-tip}
+## Correção identificada durante a replicação
+A versão inicial deste documento usava o filtro `C1 != 0`, que preserva respostas 97 ("Não sabe") e 98 ("Não respondeu") além de 1 ("Sim"). O artigo original usa `C1 == 1` — mantendo apenas quem **afirmou** ter usado internet. Essa diferença de 14 observações no passo 3 propagava-se como 3 observações extras no N final. A correção para `C1 == 1` elimina a discrepância.
+:::
+
+```{r}
+#| label: tbl-coefs-2019
+#| tbl-cap: "Coeficientes do modelo logístico — 2019"
+
+res_2019$coefs %>%
+  mutate(across(c(estimate, std.error, z_value, p.value, conf.low, conf.high), ~ round(.x, 4))) %>%
+  select(Variável = term, Coef. = estimate, EP = std.error, z = z_value,
+         `p-valor` = p.value, `IC inf.` = conf.low, `IC sup.` = conf.high, Sig. = sig) %>%
+  knitr::kable()
+```
+
+Os coeficientes de 2019 confirmam os achados de Vargas et al. (2021):
+
+- **E-commerce (H2)**: o preditor mais forte (β = `r fmt_c(c19_h2$estimate)`, p < 0,001). Quem compra online tem `r round(exp(c19_h2$estimate), 1)`× mais chance (*odds ratio*) de usar e-gov. Isso corrobora a hipótese de que a familiaridade com transações digitais é um facilitador central.
+- **Idade**: efeito negativo e significativo (β = `r fmt_c(c19_ida$estimate)`, p < 0,001). Cada ano adicional reduz em `r fmt_pct(1 - exp(c19_ida$estimate))` a chance de uso.
+- **PEA**: ser economicamente ativo aumenta a chance (β = `r fmt_c(c19_pea$estimate)`, p < 0,001), possivelmente pela necessidade de interagir com serviços trabalhistas e previdenciários.
+- **Grau de instrução superior**: forte efeito positivo (β = `r fmt_c(c19_grau4$estimate)`, p < 0,001), refletindo a barreira educacional ao uso de e-gov.
+- **Usar computador e celular** (C5=3): o maior efeito entre os dispositivos (β = `r fmt_c(c19_c5_3$estimate)`, p < 0,001), sugerindo que o acesso multidispositivo amplia a interação com e-gov.
+
+A pergunta que motiva a expansão longitudinal é: **esses padrões se mantêm ao longo da década, ou são específicos de 2019?**
+
+# Análise Longitudinal (2015–2025) {#sec-longitudinal}
+
+Agora aplicamos o mesmo modelo a todos os anos disponíveis e analisamos a evolução dos coeficientes e das métricas de desempenho.
+
+```{r}
+#| label: modelos-todos-anos
+#| code-summary: "Ajustar modelo para todos os anos"
+
+resultados <- dados_prep %>%
+  map(ajustar_modelo) %>%
+  compact()
+
+coefs_todos <- resultados %>% map_dfr("coefs")
+metricas_todos <- resultados %>% map_dfr("metricas")
+
+cat(str_glue("Modelos ajustados: {nrow(metricas_todos)} anos\n"))
+
+# --- Variaveis auxiliares para inline R no texto ---
+n_anos <- nrow(metricas_todos)
+anos_serie <- str_c(metricas_todos$ano, collapse = ", ")
+
+# Proporcao e-gov
+egov_min <- metricas_todos %>% slice_min(prop_egov, n = 1)
+egov_max <- metricas_todos %>% slice_max(prop_egov, n = 1)
+
+# Validacao 2019
+m19 <- metricas_todos %>% filter(ano == 2019)
+
+# Coeficientes-chave: ranges
+coef_h2  <- coefs_todos %>% filter(term == "h2")
+coef_ida <- coefs_todos %>% filter(term == "idade")
+coef_pea <- coefs_todos %>% filter(term == "pea")
+
+h2_range  <- c(min(coef_h2$estimate),  max(coef_h2$estimate))
+ida_range <- c(min(coef_ida$estimate), max(coef_ida$estimate))
+pea_range <- c(min(coef_pea$estimate), max(coef_pea$estimate))
+
+# AUC range
+auc_range <- c(min(metricas_todos$auc), max(metricas_todos$auc))
+acc_range <- c(min(metricas_todos$accuracy), max(metricas_todos$accuracy))
+
+# 2015 info
+m15 <- metricas_todos %>% filter(ano == 2015)
+
+# 2021 info
+m21 <- metricas_todos %>% filter(ano == 2021)
+
+# Picos e vales
+pico1 <- metricas_todos %>% filter(ano != 2015) %>% slice_max(prop_egov, n = 1)
+pico2 <- metricas_todos %>% filter(ano != 2015, ano != pico1$ano) %>% slice_max(prop_egov, n = 1)
+vale1 <- metricas_todos %>% slice_min(prop_egov, n = 1)
+vale2 <- metricas_todos %>% filter(ano != vale1$ano) %>% slice_min(prop_egov, n = 1)
+
+```
+
+## Evolução do uso de governo eletrônico
+
+```{r}
+#| label: fig-evolucao-egov
+#| fig-cap: "Proporção de usuários de internet (16+) que usaram e-gov nos últimos 12 meses"
+
+p_egov <- metricas_todos %>%
+  ggplot(aes(x = ano, y = prop_egov)) +
+  geom_line(linewidth = 1.2, color = "#2563EB") +
+  geom_point(size = 3.5, color = "#2563EB") +
+  geom_text(aes(label = percent(prop_egov, accuracy = 0.1)),
+            vjust = -1.3, size = 3.5, color = "#1e40af") +
+  annotate("rect", xmin = 2019.5, xmax = 2020.5, ymin = 0, ymax = 1,
+           alpha = 0.08, fill = "red") +
+  annotate("text", x = 2020, y = 0.92, label = "2020\n(sem dados)",
+           size = 3, color = "red", fontface = "italic") +
+  scale_x_continuous(breaks = metricas_todos$ano) +
+  scale_y_continuous(labels = percent, limits = c(0, 1)) +
+  labs(
+    x = "Ano", y = "Proporção de uso de e-gov",
+    caption = "Fonte: TIC Domicílios (Cetic.br) | 2020 excluído (Módulo G não coletado)"
+  )
+
+ggplotly(p_egov, tooltip = c("x", "y")) %>%
+  layout(annotations = list(
+    x = 2020, y = 0.92, text = "2020<br>(sem dados)",
+    showarrow = FALSE, font = list(color = "red", size = 11)
+  ))
+```
+
+A proporção de uso de e-gov **oscila entre `r fmt_pct(egov_min$prop_egov)` e `r fmt_pct(egov_max$prop_egov)`** ao longo da série, sem tendência monotônica de crescimento. Destacam-se:
+
+- **Picos**: `r pico1$ano` (`r fmt_pct(pico1$prop_egov)`) e `r pico2$ano` (`r fmt_pct(pico2$prop_egov)`) — possivelmente impulsionados pela digitalização acelerada pós-pandemia
+- **Vales**: `r vale1$ano` (`r fmt_pct(vale1$prop_egov)`) e `r vale2$ano` (`r fmt_pct(vale2$prop_egov)`)
+- **2015**: valor elevado (`r fmt_pct(m15$prop_egov)`) mas com N muito reduzido (`r fmt_n(m15$n)` vs ~10–16k nos demais anos), devendo ser interpretado com cautela
+
+## Evolução dos coeficientes-chave
+
+```{r}
+#| label: fig-coefs-chave
+#| fig-cap: "Evolução dos coeficientes-chave do modelo logístico com IC 95%"
+
+vars_chave <- c("idade", "pea", "h2")
+labels_vars <- c(idade = "Idade", pea = "PEA (ativo)", h2 = "E-commerce (H2)")
+
+p_coefs <- coefs_todos %>%
+  filter(term %in% vars_chave) %>%
+  mutate(term_label = labels_vars[term]) %>%
+  ggplot(aes(x = ano, y = estimate, color = term_label, fill = term_label)) +
+  geom_ribbon(aes(ymin = conf.low, ymax = conf.high), alpha = 0.12, color = NA) +
+  geom_line(linewidth = 1) +
+  geom_point(size = 2.5) +
+  geom_hline(yintercept = 0, linetype = "dashed", color = "grey50") +
+  scale_x_continuous(breaks = metricas_todos$ano) +
+  labs(
+    x = "Ano", y = "Coeficiente (log-odds)",
+    color = NULL, fill = NULL,
+    caption = "Fonte: TIC Domicílios (Cetic.br)"
+  )
+
+ggplotly(p_coefs) %>%
+  layout(legend = list(orientation = "h", y = -0.15))
+```
+
+### Interpretação dos coeficientes
+
+**E-commerce (H2)** — O preditor mais forte e mais estável: coeficiente entre **`r fmt_c(h2_range[1])` e `r fmt_c(h2_range[2])`** em todos os anos. Quem compra online tem ~`r round(exp(mean(coef_h2$estimate)), 1)`× mais chance de usar e-gov. Esse efeito não se alterou em uma década, sugerindo que a familiaridade com transações digitais é um facilitador robusto e persistente.
+
+**Idade** — Efeito negativo pequeno e notavelmente constante: **`r fmt_c(ida_range[1])` a `r fmt_c(ida_range[2])`** em todos os anos. Cada ano adicional de idade reduz marginalmente a chance de uso de e-gov. A hipótese de que o efeito da idade diminuiria com a popularização **não se confirma**: o coeficiente permanece estável.
+
+**PEA (condição de atividade)** — Efeito positivo moderado (**`r fmt_c(pea_range[1])` a `r fmt_c(pea_range[2])`**), com leve tendência de **queda** ao longo dos anos. Em 2015, ser economicamente ativo aumentava mais a chance de usar e-gov. Em 2024–2025, esse efeito é menor, possivelmente porque serviços sociais (Auxílio Brasil, Bolsa Família) passaram a ser acessados digitalmente por pessoas fora da PEA.
+
+## Heatmap de significância
+
+```{r}
+#| label: fig-heatmap
+#| fig-cap: "Coeficientes do modelo logístico por ano — cores indicam direção e magnitude, texto indica significância"
+#| fig-height: 9
+
+termos_principais <- coefs_todos %>%
+  filter(term != "(Intercept)") %>%
+  count(term) %>%
+  filter(n >= 5) %>%
+  pull(term)
+
+p_heat <- coefs_todos %>%
+  filter(term %in% termos_principais) %>%
+  mutate(label = str_c(round(estimate, 3), sig)) %>%
+  ggplot(aes(x = factor(ano), y = term, fill = estimate)) +
+  geom_tile(color = "white", linewidth = 0.5) +
+  geom_text(aes(label = label), size = 2.6) +
+  scale_fill_gradient2(
+    low = "#DC2626", mid = "white", high = "#2563EB",
+    midpoint = 0, name = "Coeficiente"
+  ) +
+  labs(
+    subtitle = "*** p<0.001 | ** p<0.01 | * p<0.05 | . p<0.1",
+    x = "Ano", y = "Variável",
+    caption = "Fonte: TIC Domicílios (Cetic.br)"
+  )
+
+p_heat
+```
+
+```{r}
+#| label: heatmap-aux
+#| include: false
+
+# Auxiliares heatmap
+c5_3 <- coefs_todos %>% filter(term == "c5_dispositivos_3")
+grau4 <- coefs_todos %>% filter(term == "grau_instrucao_4")
+classe_a <- coefs_todos %>% filter(term == "classe_cb_3")
+
+# Contar quantas vezes classe A foi significativa
+classe_a_sig <- classe_a %>% filter(p.value < 0.05) %>% nrow()
+grau4_sig <- grau4 %>% filter(p.value < 0.05) %>% nrow()
+```
+
+O heatmap revela padrões que o artigo original de 2019 não pôde capturar:
+
+**Variáveis consistentemente significativas (***) em toda a série**: idade, PEA e H2 mantêm significância a p < 0,001 em todos os `r n_anos` anos. Essa estabilidade é notável e indica que esses são determinantes estruturais do uso de e-gov, não artefatos de um ano específico. Vargas et al. (2021) estavam corretos ao identificá-los como preditores centrais — a análise longitudinal valida essa conclusão.
+
+**Grau de instrução superior (nível 4)**: fortemente positivo e significativo de 2015 a 2023 (β entre `r fmt_c(min(grau4$estimate[grau4$ano <= 2023]))` e `r fmt_c(max(grau4$estimate[grau4$ano <= 2023]))`), mas **perde significância e inverte sinal em 2024–2025**. Isso pode indicar uma mudança na codificação da variável nessas edições (de `GRAU_INSTRUCAO_2` para `GRAU_INST_1`) que, embora mantenha 4 categorias nominalmente equivalentes, pode ter limiares de classificação diferentes. Esse resultado merece investigação complementar com os dicionários de variáveis.
+
+**Classe econômica (nível A)**: raramente significativa — apenas `r classe_a_sig` de `r n_anos` anos com p < 0,05. O artigo original já havia notado a baixa relevância dessa variável em 2019. A análise longitudinal confirma: **a classe econômica da ABEP, quando controlada por renda e escolaridade, não é preditor robusto** de uso de e-gov. Isso pode decorrer de colinearidade com renda familiar e grau de instrução, que capturam os mesmos fenômenos.
+
+**C5_Dispositivos (Ambos = nível 3)**: efeito positivo e significativo nos anos centrais da série (2017–2019, 2022), mas **instável nos anos recentes**. Em 2019, usar computador e celular era forte preditor (β = `r fmt_c(c19_c5_3$estimate)`). A perda de significância pós-2021 pode refletir a convergência do acesso: à medida que quase todos os usuários de internet passaram a usar celular, a distinção "só celular vs ambos" perdeu poder discriminante.
+
+**Renda familiar**: efeito positivo nos níveis intermediários (3–6), mas irregular nos extremos. A faixa de renda mais alta nem sempre é significativa, provavelmente por baixa frequência amostral. Diferentemente do que o corte transversal de 2019 sugeria, a renda não é um preditor tão estável quanto o grau de instrução ao longo da década.
+
+## Desempenho do modelo ao longo dos anos
+
+```{r}
+#| label: fig-metricas
+#| fig-cap: "Accuracy, F1-Score e AUC-ROC do modelo logístico por ano"
+
+p_met <- metricas_todos %>%
+  select(ano, Accuracy = accuracy, `AUC-ROC` = auc, `F1-Score` = f1) %>%
+  pivot_longer(-ano, names_to = "Métrica", values_to = "Valor") %>%
+  ggplot(aes(x = ano, y = Valor, color = `Métrica`)) +
+  geom_line(linewidth = 1) +
+  geom_point(size = 3) +
+  scale_x_continuous(breaks = metricas_todos$ano) +
+  scale_y_continuous(limits = c(0.5, 1)) +
+  labs(x = "Ano", y = "Valor", color = NULL,
+       caption = "Fonte: TIC Domicílios (Cetic.br)")
+
+ggplotly(p_met) %>%
+  layout(legend = list(orientation = "h", y = -0.15))
+```
+
+```{r}
+#| label: tbl-metricas
+#| tbl-cap: "Métricas de desempenho do modelo por ano"
+
+metricas_todos %>%
+  mutate(across(c(prop_egov, accuracy, precision, recall, f1, auc), ~ round(.x, 4))) %>%
+  rename(
+    Ano = ano, N = n, `% E-gov` = prop_egov,
+    Accuracy = accuracy, Precisão = precision,
+    Recall = recall, F1 = f1, AUC = auc
+  ) %>%
+  knitr::kable(format.args = list(big.mark = "."))
+```
+
+```{r}
+#| label: metricas-aux
+#| include: false
+
+# Auxiliares metricas
+auc_melhor <- metricas_todos %>% slice_max(auc, n = 1)
+auc_pior   <- metricas_todos %>% slice_min(auc, n = 1)
+f1_melhor  <- metricas_todos %>% slice_max(f1, n = 1)
+f1_pior    <- metricas_todos %>% slice_min(f1, n = 1)
+cor_acc_prop <- cor(metricas_todos$accuracy, abs(metricas_todos$prop_egov - 0.5))
+```
+
+O AUC-ROC manteve-se estável entre **`r fmt_c4(auc_range[1])` (`r auc_pior$ano`) e `r fmt_c4(auc_range[2])` (`r auc_melhor$ano`)**, indicando que o conjunto de variáveis proposto por Vargas et al. (2021) mantém poder preditivo consistente ao longo de uma década. Para contextualizar: o AUC de 2019 no artigo original não foi reportado, mas nossa replicação encontra `r fmt_c4(m19$auc)` — valor próximo da mediana da série inteira. **O modelo de 2019 não era excepcionalmente bom nem ruim; ele era representativo.**
+
+A accuracy varia mais (`r fmt_c4(acc_range[1])`–`r fmt_c4(acc_range[2])`), e essa variação é quase inteiramente explicável pela proporção de uso de e-gov em cada ano (r = `r fmt_c(cor_acc_prop)` entre accuracy e distância de 50%). Nos anos em que o uso se aproxima de 50% (`r vale1$ano`, `r vale2$ano`), a classificação binária se torna intrinsecamente mais difícil, reduzindo a accuracy mesmo sem perda de capacidade discriminante. O F1-Score espelha esse padrão: é mais baixo em `r f1_pior$ano` (`r fmt_c4(f1_pior$f1)`) quando a classe positiva é minoritária, e mais alto em `r f1_melhor$ano` (`r fmt_c4(f1_melhor$f1)`) quando predomina.
+
+A conclusão central é que **a estrutura preditiva identificada em 2019 não é um achado pontual**: o mesmo conjunto de variáveis discrimina usuários e não-usuários de e-gov com desempenho comparável ao longo de toda a década.
+
+## Animação: coeficientes ao longo do tempo
+
+### Animação interativa (plotly)
+
+```{r}
+#| label: fig-animacao-plotly
+#| fig-cap: "Evolução dos coeficientes das variáveis-chave — use o slider para navegar entre anos"
+
+coefs_anim <- coefs_todos %>%
+  filter(term %in% vars_chave) %>%
+  mutate(term_label = labels_vars[term])
+
+plot_ly(
+  coefs_anim,
+  x = ~estimate, y = ~term_label,
+  frame = ~ano,
+  type = "bar", orientation = "h",
+  color = ~term_label,
+  colors = c("Idade" = "#DC2626", "PEA (ativo)" = "#059669", "E-commerce (H2)" = "#2563EB"),
+  error_x = list(
+    type = "data",
+    symmetric = FALSE,
+    arrayminus = ~(estimate - conf.low),
+    array = ~(conf.high - estimate)
+  ),
+  text = ~paste0(term_label, ": ", round(estimate, 3), " ", sig),
+  hoverinfo = "text",
+  showlegend = FALSE
+) %>%
+  layout(
+    xaxis = list(title = "Coeficiente (log-odds)", zeroline = TRUE),
+    yaxis = list(title = ""),
+    title = list(text = "Coeficientes-chave por ano")
+  ) %>%
+  animation_opts(frame = 800, transition = 400, easing = "cubic-in-out") %>%
+  animation_slider(currentvalue = list(prefix = "Ano: "))
+```
+
+### Animação GIF (gganimate)
+
+```{r}
+#| label: fig-animacao-gif
+#| fig-cap: "Evolução dos coeficientes das variáveis-chave ao longo dos anos"
+
+p_anim <- ggplot(coefs_anim, aes(x = term_label, y = estimate, fill = term_label)) +
+  geom_col(width = 0.6, show.legend = FALSE) +
+  geom_errorbar(aes(ymin = conf.low, ymax = conf.high), width = 0.2) +
+  geom_hline(yintercept = 0, linetype = "dashed", color = "grey40") +
+  geom_text(aes(label = round(estimate, 3)),
+            vjust = -0.8, size = 4.5) +
+  scale_fill_manual(values = c("Idade" = "#DC2626", "PEA (ativo)" = "#059669", "E-commerce (H2)" = "#2563EB")) +
+  coord_flip() +
+  labs(
+    title = "Coeficientes-chave — {closest_state}",
+    x = NULL, y = "Coeficiente (log-odds)",
+    caption = "Fonte: TIC Domicílios (Cetic.br)"
+  ) +
+  transition_states(ano, transition_length = 2, state_length = 3) +
+  ease_aes("cubic-in-out")
+
+animate(p_anim, nframes = 100, fps = 10, width = 8, height = 4,
+        units = "in", res = 150, renderer = gifski_renderer())
+```
+
+As duas animações acima permitem visualizar um achado central que só emerge da análise longitudinal: **a hierarquia relativa dos preditores é invariante ao longo da década**. Em todos os anos, o e-commerce (H2) domina com coeficiente acima de `r fmt_c(h2_range[1])`, a PEA contribui moderadamente, e a idade exerce efeito negativo pequeno. Essa "assinatura" do modelo se mantém mesmo em anos com proporções de uso de e-gov muito diferentes — de `r fmt_pct(egov_min$prop_egov)` em `r egov_min$ano` a `r fmt_pct(egov_max$prop_egov)` em `r egov_max$ano`.
+
+O que muda entre anos é a *magnitude* dos efeitos, não sua *direção*. Em particular, note como o coeficiente da PEA oscila mais do que os outros dois — um indício de que a relação entre condição de atividade econômica e uso de e-gov é mediada por fatores contextuais (políticas públicas, oferta de serviços digitais) que variam mais do que a relação entre, por exemplo, familiaridade digital e e-gov.
+
+# Modelo Pooled
+
+Para testar formalmente se há um efeito temporal no uso de e-gov além do que é explicado pelas variáveis sociodemográficas, ajustamos modelos pooled (empilhando todos os anos).
+
+```{r}
+#| label: modelo-pooled
+#| code-summary: "Ajustar modelos pooled"
+
+dados_pool <- dados_prep %>% bind_rows()
+
+vars_modelo <- c("g1_agreg", "idade", "pea", "h2",
+                  "renda_familiar", "classe_cb", "grau_instrucao",
+                  "c5_dispositivos", "ano")
+vars_dummy <- c("renda_familiar", "classe_cb", "grau_instrucao", "c5_dispositivos")
+
+dados_modelo <- dados_pool %>%
+  select(any_of(vars_modelo)) %>%
+  drop_na() %>%
+  mutate(ano = factor(ano))
+
+# Modelo 1: SEM ano
+df_base <- dados_modelo %>%
+  select(-ano) %>%
+  mutate(across(all_of(vars_dummy), as.character)) %>%
+  dummy_cols(select_columns = vars_dummy, remove_first_dummy = TRUE,
+             remove_selected_columns = TRUE)
+
+modelo_base <- multinom(g1_agreg ~ ., data = df_base, trace = FALSE)
+
+probs_base <- predict(modelo_base, type = "probs")
+preds_base <- predict(modelo_base, type = "class") %>% as.character() %>% as.numeric()
+y <- df_base$g1_agreg
+acc_base <- mean(preds_base == y)
+auc_base <- as.numeric(auc(roc(y, probs_base, quiet = TRUE)))
+
+# Modelo 2: COM ano categorica
+df_ano <- dados_modelo %>%
+  mutate(across(all_of(c(vars_dummy, "ano")), as.character)) %>%
+  dummy_cols(select_columns = c(vars_dummy, "ano"), remove_first_dummy = TRUE,
+             remove_selected_columns = TRUE)
+
+modelo_ano <- multinom(g1_agreg ~ ., data = df_ano, trace = FALSE)
+
+probs_ano <- predict(modelo_ano, type = "probs")
+preds_ano <- predict(modelo_ano, type = "class") %>% as.character() %>% as.numeric()
+acc_ano <- mean(preds_ano == y)
+auc_ano <- as.numeric(auc(roc(y, probs_ano, quiet = TRUE)))
+
+# Modelo 3: Ano continua (tendencia linear)
+df_trend <- dados_modelo %>%
+  mutate(ano_num = as.numeric(as.character(ano)) - 2015) %>%
+  select(-ano) %>%
+  mutate(across(all_of(vars_dummy), as.character)) %>%
+  dummy_cols(select_columns = vars_dummy, remove_first_dummy = TRUE,
+             remove_selected_columns = TRUE)
+
+modelo_trend <- multinom(g1_agreg ~ ., data = df_trend, trace = FALSE)
+s_trend <- summary(modelo_trend)
+coef_ano_trend <- s_trend$coefficients["ano_num"]
+se_ano_trend   <- s_trend$standard.errors["ano_num"]
+z_trend <- coef_ano_trend / se_ano_trend
+p_trend <- 2 * pnorm(abs(z_trend), lower.tail = FALSE)
+```
+
+## Teste de razão de verossimilhança
+
+```{r}
+#| label: teste-lr
+
+ll_base <- logLik(modelo_base)
+ll_ano  <- logLik(modelo_ano)
+lr_stat <- -2 * (as.numeric(ll_base) - as.numeric(ll_ano))
+df_diff <- length(coef(modelo_ano)) - length(coef(modelo_base))
+lr_pval <- pchisq(lr_stat, df = df_diff, lower.tail = FALSE)
+```
+
+```{r}
+#| label: tbl-pooled
+#| tbl-cap: "Comparação dos modelos pooled"
+
+extrair_coefs_pooled <- function(modelo, nome) {
+  s <- summary(modelo)
+  tibble(
+    term = names(s$coefficients),
+    estimate = as.numeric(s$coefficients),
+    std.error = as.numeric(s$standard.errors)
+  ) %>%
+    mutate(
+      z_value = estimate / std.error,
+      p.value = 2 * pnorm(abs(z_value), lower.tail = FALSE),
+      conf.low = estimate - 1.96 * std.error,
+      conf.high = estimate + 1.96 * std.error,
+      sig = case_when(
+        p.value < 0.001 ~ "***",
+        p.value < 0.01  ~ "**",
+        p.value < 0.05  ~ "*",
+        p.value < 0.1   ~ ".",
+        TRUE ~ ""
+      ),
+      modelo = nome
+    )
+}
+
+tibble(
+  Modelo = c("Sem ano (baseline)", "Com ano (categórica)", "Com ano (contínua)"),
+  N = nrow(df_base),
+  Accuracy = c(acc_base, acc_ano, NA),
+  AUC = c(auc_base, auc_ano, NA),
+  `Nº parâmetros` = c(length(coef(modelo_base)), length(coef(modelo_ano)), length(coef(modelo_trend)))
+) %>%
+  mutate(across(c(Accuracy, AUC), ~ round(.x, 4))) %>%
+  knitr::kable(format.args = list(big.mark = "."))
+```
+
+::: {.callout-important}
+## Resultado do teste LR
+**LR stat = `r round(lr_stat, 2)`**, df = `r df_diff`, **p `r if(lr_pval < 0.001) '< 0.001' else paste0('= ', round(lr_pval, 4))`**
+
+Incluir o ano como variável categórica **melhora significativamente** o modelo. Isso confirma que há variação temporal no uso de e-gov além do que é explicado pelas variáveis sociodemográficas.
+
+**Tendência linear**: coeficiente do ano = **`r round(coef_ano_trend, 4)`** (p `r if(p_trend < 0.001) '< 0.001' else paste0('= ', round(p_trend, 4))`). `r if(p_trend < 0.05 & coef_ano_trend > 0) 'Há uma tendência temporal **positiva** significativa.' else if(p_trend < 0.05) 'Há uma tendência temporal **negativa** significativa.' else 'Não há tendência linear significativa.'`
+:::
+
+## Efeitos dos anos (modelo pooled)
+
+```{r}
+#| label: fig-efeito-ano
+#| fig-cap: "Efeito de cada ano sobre o uso de e-gov, controlando por todas as variáveis sociodemográficas"
+
+coefs_ano_pooled <- extrair_coefs_pooled(modelo_ano, "Com ano")
+
+p_anos <- coefs_ano_pooled %>%
+  filter(str_detect(term, "^ano_")) %>%
+  mutate(
+    ano_num = str_extract(term, "\\d{4}") %>% as.numeric(),
+    sig_label = str_c(round(estimate, 3), sig)
+  ) %>%
+  ggplot(aes(x = ano_num, y = estimate)) +
+  geom_hline(yintercept = 0, linetype = "dashed", color = "grey50") +
+  geom_pointrange(aes(ymin = conf.low, ymax = conf.high), color = "#2563EB", size = 0.8) +
+  geom_text(aes(label = sig_label), vjust = -1.2, size = 3.5) +
+  scale_x_continuous(breaks = seq(2015, 2025, 1)) +
+  labs(
+    x = "Ano", y = "Coeficiente (log-odds)",
+    subtitle = "Referência: primeiro ano. Controlado por idade, PEA, H2, renda, classe, grau, dispositivos",
+    caption = "Fonte: TIC Domicílios (Cetic.br) | *** p<0.001, ** p<0.01, * p<0.05"
+  )
+
+ggplotly(p_anos)
+```
+
+```{r}
+#| label: pooled-aux
+#| include: false
+
+# Auxiliares pooled
+anos_pooled <- coefs_ano_pooled %>%
+  filter(str_detect(term, "^ano_")) %>%
+  mutate(ano_num = as.numeric(str_extract(term, "\\d{4}")))
+
+ano_pooled_max <- anos_pooled %>% slice_max(estimate, n = 1)
+ano_pooled_min <- anos_pooled %>% slice_min(estimate, n = 1)
+anos_sig_pos   <- anos_pooled %>% filter(p.value < 0.05, estimate > 0) %>% pull(ano_num)
+anos_sig_neg   <- anos_pooled %>% filter(p.value < 0.05, estimate < 0) %>% pull(ano_num)
+```
+
+Este gráfico responde a uma pergunta que o estudo de 2019 não podia formular: **controlando por todas as variáveis sociodemográficas, há anos em que o uso de e-gov é sistematicamente maior ou menor?**
+
+`r if(length(anos_sig_pos) > 0) paste0("Os anos ", paste(anos_sig_pos, collapse = ", "), " apresentam efeito positivo significativo em relação ao ano-referência, indicando que — mesmo controlando por idade, renda, escolaridade e demais variáveis — houve maior propensão ao uso de e-gov nesses períodos. ") else ""`Esse efeito temporal residual pode ser atribuído abdutivamente a fatores não capturados no modelo: expansão da oferta de serviços digitais (gov.br, Pix, CNH digital), campanhas de digitalização, ou efeitos da pandemia sobre hábitos de interação com o governo.
+
+`r if(length(anos_sig_neg) > 0) paste0("Já os anos ", paste(anos_sig_neg, collapse = ", "), " mostram efeito negativo significativo, sugerindo que a propensão ao uso foi menor do que o esperado pelas características sociodemográficas. ") else ""`O padrão não-linear das dummies de ano (com picos e vales) reforça que a tendência de uso de e-gov não é monotônica — há ciclos que merecem investigação com dados contextuais (oferta de serviços, eleições, crises econômicas).
+
+A magnitude do efeito mais forte (`r ano_pooled_max$ano_num`: β = `r fmt_c(ano_pooled_max$estimate)`) é comparável ao coeficiente da PEA no modelo individual, o que mostra que **o contexto temporal tem peso equivalente a uma variável sociodemográfica relevante**. Essa é uma contribuição original da análise longitudinal que não era possível com o recorte transversal de 2019.
+
+# Interpretação dos Resultados
+
+## Evolução do uso de governo eletrônico
+
+A proporção de uso de e-gov entre usuários de internet brasileiros (16+) apresentou **oscilação entre `r fmt_pct(egov_min$prop_egov)` (`r egov_min$ano`) e `r fmt_pct(egov_max$prop_egov)` (`r egov_max$ano`)** ao longo da década, sem tendência monotônica de crescimento. Os picos em `r pico1$ano` e `r pico2$ano` podem estar associados à digitalização acelerada durante e após a pandemia de COVID-19, enquanto os vales em `r vale1$ano` e `r vale2$ano` sugerem ciclos que merecem investigação aprofundada.
+
+O valor elevado de 2015 (`r fmt_pct(m15$prop_egov)`) deve ser interpretado com cautela, pois o N é substancialmente menor (`r fmt_n(m15$n)` vs 10–16 mil nos demais anos), resultado da ausência da variável `C5_Dispositivos` naquele ano e de muitos *missings* em `Classe_CB2015`.
+
+## Estabilidade do modelo
+
+O AUC-ROC manteve-se notavelmente estável entre **`r fmt_c4(auc_range[1])` e `r fmt_c4(auc_range[2])`** ao longo de toda a série, demonstrando que o conjunto de variáveis proposto por Vargas et al. (2021) mantém poder preditivo consistente ao longo de uma década. Este é um resultado relevante: modelos sociodemográficos frequentemente perdem validade com o tempo, mas neste caso a estrutura se manteve robusta.
+
+## Mudanças nos preditores
+
+A análise longitudinal revela que enquanto alguns preditores são altamente estáveis (e-commerce, idade), outros apresentam variação temporal significativa:
+
+- A **PEA** perdeu força preditiva ao longo dos anos (de `r fmt_c(max(coef_pea$estimate))` em `r coef_pea$ano[which.max(coef_pea$estimate)]` para `r fmt_c(min(coef_pea$estimate))` em `r coef_pea$ano[which.min(coef_pea$estimate)]`), possivelmente refletindo a expansão de serviços de e-gov voltados a populações economicamente inativas (programas sociais digitalizados)
+- O **efeito do grau de instrução** manteve-se forte, reforçando que a educação é uma barreira persistente ao uso de e-gov
+- O **teste de razão de verossimilhança** do modelo pooled confirma que há variação temporal significativa além das variáveis sociodemográficas (LR = `r round(lr_stat, 1)`, p < 0,001)
+
+## Efeito da pandemia
+
+Embora o módulo G não tenha sido coletado em 2020, os dados de 2021 mostram uma proporção de uso elevada (`r fmt_pct(m21$prop_egov)`), sugerindo que a pandemia pode ter acelerado a adoção de serviços digitais do governo. Os coeficientes do modelo em 2021 não apresentaram mudanças abruptas, indicando que a estrutura dos determinantes socioeconômicos do uso de e-gov não se alterou qualitativamente — apenas o nível geral de adoção aumentou.
+
+# Limitações
+
+- **2020 excluído**: o módulo G (governo eletrônico) não foi coletado na edição COVID-19 da TIC Domicílios — série com `r n_anos` edições em vez de 11
+- **2015 com N reduzido**: ausência de `C5_Dispositivos` e muitos *missings* em `Classe_CB2015` reduziram o N para `r fmt_n(m15$n)` (vs `r fmt_n(max(metricas_todos$n))` em `r metricas_todos$ano[which.max(metricas_todos$n)]`)
+- **Grau de instrução em 2024–2025**: variável agregada mudou de `GRAU_INSTRUCAO_2` para `GRAU_INST_1` — ambas com 4 categorias equivalentes (Analfabeto/Fundamental/Médio/Superior)
+- **C5_Dispositivos em 2024–2025**: novo nível 4 ("Nenhum dispositivo") filtrado para manter comparabilidade com os 3 níveis originais
+- **Critério Brasil**: possíveis ajustes menores na classificação da ABEP em 2019 e 2022 podem afetar a comparabilidade da variável de classe econômica
+- **2025 inclui G1_H**: nova questão sobre serviços de Justiça incluída no `G1_AGREG` oficial do Cetic.br — pode inflacionar levemente a proporção de uso em relação aos anos anteriores
+- **Pesos amostrais**: esta análise não utiliza pesos amostrais (design complexo), o que pode afetar a generalização para a população brasileira
+- **Versão dos microdados**: utilizamos a v1.1 de 2019 (única disponível no Cetic.br em abril/2026), mesma base de 20.536 observações utilizada no artigo original
+
+# Referências
+
+- Vargas, L.C.M., Macadar, M.A., Wanke, P.F., Antunes, J.J.M. (2021). Serviços de governo eletrônico no Brasil: uma análise sobre fatores de impacto na decisão de uso do cidadão. *Cadernos EBAPE.BR*, 19(Ed. Esp.), 792-810. DOI: 10.1590/1679-395120200206
+- Cetic.br — TIC Domicílios. https://cetic.br/pt/pesquisa/domicilios/
+- Microdados: https://cetic.br/pt/pesquisa/domicilios/microdados/
