@@ -1,2 +1,16 @@
 /.quarto/
 **/*.quarto_ipynb
+.claude/
+quarto_render.log
+
+# Artefatos reprodutíveis (regere com Rscript fit_*.R)
+dados/ml_results.rds
+dados/i1a_results.rds
+dados/svyglm_results.rds
+fit_ml.log
+fit_i1a.log
+fit_svyglm.log
+screening_vars.log
+screening_full.log
+render.log
+Rplots.pdf

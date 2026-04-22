@@ -1,7 +1,7 @@
 pkgs <- c(
   "tidyverse", "haven", "broom", "pROC", "nnet",
   "caret", "fastDummies", "plotly", "gganimate",
-  "gifski", "scales"
+  "gifski", "scales", "rpart", "rpart.plot", "ranger", "doParallel"
 )
 
 faltantes <- pkgs[!sapply(pkgs, requireNamespace, quietly = TRUE)]

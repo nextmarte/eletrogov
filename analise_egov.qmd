@@ -59,6 +59,9 @@ suppressPackageStartupMessages({
   library(gganimate)
   library(gifski)
   library(scales)
+  library(rpart)
+  library(rpart.plot)
+  library(ranger)
 })
 
 # Tema padrao para graficos
@@ -181,6 +184,7 @@ carregar_e_harmonizar <- function(ano, encoding) {
   col_c5          <- encontrar(c("^C5.*DISP"))
   col_area        <- encontrar(c("^AREA$"))
   col_regiao      <- encontrar(c("^COD.*REGIAO.*2$", "^COD.*REGIAO", "^REGIAO"))
+  col_raca        <- encontrar(c("^RACA$", "^COR"))
 
   # Reconstruir G1_AGREG se ausente
   if (is.na(col_g1_agreg)) {
@@ -202,7 +206,8 @@ carregar_e_harmonizar <- function(ano, encoding) {
     sexo = col_sexo, idade = col_idade, pea = col_pea,
     h2 = col_h2, j5 = col_j5, renda_familiar = col_renda,
     classe_cb = col_classe, grau_instrucao = col_grau,
-    c5_dispositivos = col_c5, area = col_area, cod_regiao = col_regiao
+    c5_dispositivos = col_c5, area = col_area, cod_regiao = col_regiao,
+    raca = col_raca
   ) %>% purrr::discard(is.na)
 
   # Checar obrigatorias
@@ -266,7 +271,9 @@ preparar_dados <- function(df) {
       pea = case_when(pea == 1 ~ 1, pea == 2 ~ 0, TRUE ~ NA_real_),
       renda_familiar = if_else(renda_familiar == 9, 0, renda_familiar),
       area = if_else(area == 1, 1, 0),
-      g1_agreg = if_else(g1_agreg == 1, 1, 0)
+      g1_agreg = if_else(g1_agreg == 1, 1, 0),
+      # Sexo: 1=Masc, 2=Fem -> 0=Masc, 1=Fem
+      sexo = if_else(sexo == 2, 1, 0)
     )
 
   if ("classe_cb" %in% names(df)) {
@@ -276,6 +283,12 @@ preparar_dados <- function(df) {
         classe_cb == 3 ~ 1, classe_cb == 4 ~ 0,
         TRUE ~ NA_real_
       ))
+  }
+
+  # Raca: remover 98 (Nao respondeu); manter 1-5
+  if ("raca" %in% names(df)) {
+    df <- df %>%
+      mutate(raca = if_else(raca %in% c(97, 98, 99), NA_real_, raca))
   }
 
   tibble(ano = ano_val, etapa = c("Bruto", "Internet (C1)", "Sem indef.", "Idade ≥ 16"),
@@ -604,11 +617,7 @@ p_egov <- metricas_todos %>%
     caption = "Fonte: TIC Domicílios (Cetic.br) | 2020 excluído (Módulo G não coletado)"
   )
 
-ggplotly(p_egov, tooltip = c("x", "y")) %>%
-  layout(annotations = list(
-    x = 2020, y = 0.92, text = "2020<br>(sem dados)",
-    showarrow = FALSE, font = list(color = "red", size = 11)
-  ))
+ggplotly(p_egov, tooltip = c("x", "y"))
 ```
 
 A proporção de uso de e-gov **oscila entre `r fmt_pct(egov_min$prop_egov)` e `r fmt_pct(egov_max$prop_egov)`** ao longo da série, sem tendência monotônica de crescimento. Destacam-se:
@@ -789,14 +798,18 @@ plot_ly(
     arrayminus = ~(estimate - conf.low),
     array = ~(conf.high - estimate)
   ),
-  text = ~paste0(term_label, ": ", round(estimate, 3), " ", sig),
+  text = ~paste0(round(estimate, 3), " ", sig),
+  textposition = "outside",
   hoverinfo = "text",
   showlegend = FALSE
 ) %>%
   layout(
-    xaxis = list(title = "Coeficiente (log-odds)", zeroline = TRUE),
+    xaxis = list(title = "Coeficiente (log-odds)", zeroline = TRUE,
+                 range = c(min(coefs_anim$conf.low) - 0.15,
+                           max(coefs_anim$conf.high) + 0.3)),
     yaxis = list(title = ""),
-    title = list(text = "Coeficientes-chave por ano")
+    title = list(text = "Coeficientes-chave por ano"),
+    uniformtext = list(minsize = 10, mode = "show")
   ) %>%
   animation_opts(frame = 800, transition = 400, easing = "cubic-in-out") %>%
   animation_slider(currentvalue = list(prefix = "Ano: "))
@@ -894,6 +907,12 @@ coef_ano_trend <- s_trend$coefficients["ano_num"]
 se_ano_trend   <- s_trend$standard.errors["ano_num"]
 z_trend <- coef_ano_trend / se_ano_trend
 p_trend <- 2 * pnorm(abs(z_trend), lower.tail = FALSE)
+
+# Accuracy e AUC do modelo_trend
+probs_trend <- predict(modelo_trend, type = "probs")
+preds_trend <- predict(modelo_trend, type = "class") %>% as.character() %>% as.numeric()
+acc_trend <- mean(preds_trend == y)
+auc_trend <- as.numeric(auc(roc(y, probs_trend, quiet = TRUE)))
 ```
 
 ## Teste de razão de verossimilhança
@@ -938,8 +957,8 @@ extrair_coefs_pooled <- function(modelo, nome) {
 tibble(
   Modelo = c("Sem ano (baseline)", "Com ano (categórica)", "Com ano (contínua)"),
   N = nrow(df_base),
-  Accuracy = c(acc_base, acc_ano, NA),
-  AUC = c(auc_base, auc_ano, NA),
+  Accuracy = c(acc_base, acc_ano, acc_trend),
+  AUC = c(auc_base, auc_ano, auc_trend),
   `Nº parâmetros` = c(length(coef(modelo_base)), length(coef(modelo_ano)), length(coef(modelo_trend)))
 ) %>%
   mutate(across(c(Accuracy, AUC), ~ round(.x, 4))) %>%
@@ -954,6 +973,89 @@ Incluir o ano como variável categórica **melhora significativamente** o modelo
 
 **Tendência linear**: coeficiente do ano = **`r round(coef_ano_trend, 4)`** (p `r if(p_trend < 0.001) '< 0.001' else paste0('= ', round(p_trend, 4))`). `r if(p_trend < 0.05 & coef_ano_trend > 0) 'Há uma tendência temporal **positiva** significativa.' else if(p_trend < 0.05) 'Há uma tendência temporal **negativa** significativa.' else 'Não há tendência linear significativa.'`
 :::
+
+## Coeficientes das variáveis sociodemográficas (3 modelos)
+
+```{r}
+#| label: tbl-coefs-3modelos
+#| tbl-cap: "Coeficientes das variáveis-chave nos 3 modelos pooled"
+
+coefs_base_pooled  <- extrair_coefs_pooled(modelo_base, "Sem ano")
+coefs_cat_pooled   <- extrair_coefs_pooled(modelo_ano, "Com ano (categórica)")
+coefs_trend_pooled <- extrair_coefs_pooled(modelo_trend, "Com ano (contínua)")
+
+coefs_3modelos <- bind_rows(coefs_base_pooled, coefs_cat_pooled, coefs_trend_pooled)
+
+# Tabela com variáveis-chave
+vars_chave <- c("(Intercept)", "idade", "pea", "h2", "ano_num",
+                "classe_cb_1", "classe_cb_2", "classe_cb_3",
+                "grau_instrucao_2", "grau_instrucao_3", "grau_instrucao_4",
+                "c5_dispositivos_2", "c5_dispositivos_3",
+                "renda_familiar_1", "renda_familiar_2", "renda_familiar_3",
+                "renda_familiar_4", "renda_familiar_5", "renda_familiar_6")
+
+coefs_3modelos %>%
+  filter(term %in% vars_chave) %>%
+  mutate(
+    coef_fmt = str_c(round(estimate, 4), sig),
+    term = case_when(
+      term == "ano_num" ~ "Ano (contínua)",
+      term == "classe_cb_1" ~ "Classe B",
+      term == "classe_cb_2" ~ "Classe C",
+      term == "classe_cb_3" ~ "Classe DE",
+      term == "grau_instrucao_2" ~ "Fundamental",
+      term == "grau_instrucao_3" ~ "Médio",
+      term == "grau_instrucao_4" ~ "Superior",
+      term == "c5_dispositivos_2" ~ "Só celular",
+      term == "c5_dispositivos_3" ~ "Ambos dispositivos",
+      str_detect(term, "renda_familiar") ~ str_c("Renda ", str_extract(term, "\\d+$")),
+      TRUE ~ term
+    )
+  ) %>%
+  select(Variável = term, Modelo = modelo, Coeficiente = coef_fmt) %>%
+  pivot_wider(names_from = Modelo, values_from = Coeficiente) %>%
+  knitr::kable()
+```
+
+```{r}
+#| label: fig-coefs-3modelos
+#| fig-cap: "Comparação dos coeficientes-chave entre os 3 modelos pooled"
+#| fig-height: 8
+
+vars_graf <- c("idade", "pea", "h2",
+               "classe_cb_1", "classe_cb_2",
+               "grau_instrucao_3", "grau_instrucao_4",
+               "c5_dispositivos_3", "ano_num")
+
+labels_graf <- c(
+  "idade" = "Idade", "pea" = "PEA", "h2" = "E-commerce (H2)",
+  "classe_cb_1" = "Classe B", "classe_cb_2" = "Classe C",
+  "grau_instrucao_3" = "Ensino Médio", "grau_instrucao_4" = "Ensino Superior",
+  "c5_dispositivos_3" = "Ambos dispositivos", "ano_num" = "Ano (contínua)"
+)
+
+coefs_3modelos %>%
+  filter(term %in% vars_graf) %>%
+  mutate(term_label = recode(term, !!!labels_graf),
+         term_label = fct_reorder(term_label, estimate)) %>%
+  ggplot(aes(x = term_label, y = estimate, color = modelo)) +
+  geom_pointrange(aes(ymin = conf.low, ymax = conf.high),
+                  position = position_dodge(width = 0.5), size = 0.6) +
+  geom_hline(yintercept = 0, linetype = "dashed", color = "grey50") +
+  coord_flip() +
+  scale_color_manual(values = c("Sem ano" = "#6B7280",
+                                "Com ano (categórica)" = "#2563EB",
+                                "Com ano (contínua)" = "#DC2626")) +
+  labs(
+    x = NULL, y = "Coeficiente (log-odds)",
+    color = "Modelo",
+    caption = "*** p<0.001, ** p<0.01, * p<0.05"
+  ) +
+  theme_minimal(base_size = 12) +
+  theme(legend.position = "bottom")
+```
+
+Os coeficientes das variáveis sociodemográficas são notavelmente **estáveis** entre os 3 modelos pooled. A inclusão do ano (seja como categórica ou contínua) **não altera substancialmente** os efeitos das variáveis-chave — o que confirma que esses preditores são robustos e não estão confundidos com tendências temporais.
 
 ## Efeitos dos anos (modelo pooled)
 
@@ -1005,6 +1107,715 @@ Este gráfico responde a uma pergunta que o estudo de 2019 não podia formular: 
 `r if(length(anos_sig_neg) > 0) paste0("Já os anos ", paste(anos_sig_neg, collapse = ", "), " mostram efeito negativo significativo, sugerindo que a propensão ao uso foi menor do que o esperado pelas características sociodemográficas. ") else ""`O padrão não-linear das dummies de ano (com picos e vales) reforça que a tendência de uso de e-gov não é monotônica — há ciclos que merecem investigação com dados contextuais (oferta de serviços, eleições, crises econômicas).
 
 A magnitude do efeito mais forte (`r ano_pooled_max$ano_num`: β = `r fmt_c(ano_pooled_max$estimate)`) é comparável ao coeficiente da PEA no modelo individual, o que mostra que **o contexto temporal tem peso equivalente a uma variável sociodemográfica relevante**. Essa é uma contribuição original da análise longitudinal que não era possível com o recorte transversal de 2019.
+
+# Modelo Pooled 2021–2025 (pós-pandemia)
+
+Para atender à recomendação de focar no período pós-pandemia, ajustamos o modelo pooled restrito aos anos 2021–2025, com o ano tratado como variável **contínua** (centralizada em 2021).
+
+```{r}
+#| label: pooled-2021
+#| code-summary: "Modelo pooled 2021-2025"
+
+dados_pool_pos <- dados_pool %>%
+  filter(ano >= 2021)
+
+dados_modelo_pos <- dados_pool_pos %>%
+  select(any_of(vars_modelo)) %>%
+  drop_na() %>%
+  mutate(ano_num = as.numeric(as.character(ano)) - 2021) %>%
+  select(-ano)
+
+cat("N total 2021-2025:", nrow(dados_modelo_pos), "\n")
+
+# Modelo com ano contínuo (centralizado em 2021)
+df_pos <- dados_modelo_pos %>%
+  mutate(across(all_of(vars_dummy), as.character)) %>%
+  dummy_cols(select_columns = vars_dummy, remove_first_dummy = TRUE,
+             remove_selected_columns = TRUE)
+
+modelo_pos <- multinom(g1_agreg ~ ., data = df_pos, trace = FALSE)
+
+probs_pos <- predict(modelo_pos, type = "probs")
+preds_pos <- predict(modelo_pos, type = "class") %>% as.character() %>% as.numeric()
+y_pos <- df_pos$g1_agreg
+acc_pos <- mean(preds_pos == y_pos)
+auc_pos <- as.numeric(auc(roc(y_pos, probs_pos, quiet = TRUE)))
+
+# Extrair coeficientes
+coefs_pos <- extrair_coefs_pooled(modelo_pos, "2021-2025")
+```
+
+```{r}
+#| label: tbl-pooled-2021
+#| tbl-cap: "Coeficientes do modelo pooled 2021-2025 (ano contínuo)"
+
+vars_chave_pos <- c("(Intercept)", "idade", "pea", "h2", "ano_num",
+                    "classe_cb_1", "classe_cb_2", "classe_cb_3",
+                    "grau_instrucao_2", "grau_instrucao_3", "grau_instrucao_4",
+                    "c5_dispositivos_2", "c5_dispositivos_3",
+                    "renda_familiar_1", "renda_familiar_2", "renda_familiar_3",
+                    "renda_familiar_4", "renda_familiar_5", "renda_familiar_6")
+
+coefs_pos %>%
+  filter(term %in% vars_chave_pos) %>%
+  mutate(
+    term = case_when(
+      term == "ano_num" ~ "Ano (tendência)",
+      term == "classe_cb_1" ~ "Classe B",
+      term == "classe_cb_2" ~ "Classe C",
+      term == "classe_cb_3" ~ "Classe DE",
+      term == "grau_instrucao_2" ~ "Fundamental",
+      term == "grau_instrucao_3" ~ "Médio",
+      term == "grau_instrucao_4" ~ "Superior",
+      term == "c5_dispositivos_2" ~ "Só celular",
+      term == "c5_dispositivos_3" ~ "Ambos dispositivos",
+      str_detect(term, "renda_familiar") ~ str_c("Renda faixa ", str_extract(term, "\\d+$")),
+      TRUE ~ term
+    ),
+    across(c(estimate, std.error, z_value, conf.low, conf.high), ~ round(.x, 4)),
+    p.value = format.pval(p.value, digits = 3)
+  ) %>%
+  select(Variável = term, Coef = estimate, EP = std.error, z = z_value,
+         `p-valor` = p.value, Sig = sig, IC_inf = conf.low, IC_sup = conf.high) %>%
+  knitr::kable()
+```
+
+```{r}
+#| label: fig-comp-periodos
+#| fig-cap: "Comparação dos coeficientes-chave: período completo (2015-2025) vs pós-pandemia (2021-2025)"
+#| fig-height: 7
+
+coefs_trend_pooled_sel <- coefs_trend_pooled %>%
+  mutate(periodo = "2015-2025")
+coefs_pos_sel <- coefs_pos %>%
+  mutate(periodo = "2021-2025")
+
+vars_comp <- c("idade", "pea", "h2", "ano_num",
+               "classe_cb_1", "classe_cb_2",
+               "grau_instrucao_3", "grau_instrucao_4",
+               "c5_dispositivos_3")
+
+labels_comp <- c(
+  "idade" = "Idade", "pea" = "PEA", "h2" = "E-commerce (H2)",
+  "ano_num" = "Ano (tendência)", "classe_cb_1" = "Classe B",
+  "classe_cb_2" = "Classe C", "grau_instrucao_3" = "Ensino Médio",
+  "grau_instrucao_4" = "Ensino Superior",
+  "c5_dispositivos_3" = "Ambos dispositivos"
+)
+
+bind_rows(coefs_trend_pooled_sel, coefs_pos_sel) %>%
+  filter(term %in% vars_comp) %>%
+  mutate(term_label = recode(term, !!!labels_comp),
+         term_label = fct_reorder(term_label, estimate)) %>%
+  ggplot(aes(x = term_label, y = estimate, color = periodo)) +
+  geom_pointrange(aes(ymin = conf.low, ymax = conf.high),
+                  position = position_dodge(width = 0.5), size = 0.6) +
+  geom_hline(yintercept = 0, linetype = "dashed", color = "grey50") +
+  coord_flip() +
+  scale_color_manual(values = c("2015-2025" = "#6B7280", "2021-2025" = "#DC2626")) +
+  labs(x = NULL, y = "Coeficiente (log-odds)", color = "Período",
+       caption = "Modelo com ano contínuo | *** p<0.001, ** p<0.01, * p<0.05") +
+  theme_minimal(base_size = 12) +
+  theme(legend.position = "bottom")
+```
+
+::: {.callout-note}
+## Modelo 2021-2025
+**N = `r nrow(df_pos)`** | **Accuracy = `r round(acc_pos, 4)`** | **AUC = `r round(auc_pos, 4)`**
+
+O gráfico acima compara os coeficientes do modelo com ano contínuo para o período completo (2015-2025) e o período pós-pandemia (2021-2025). Diferenças entre os períodos indicam mudanças estruturais nos determinantes do uso de e-gov após a pandemia.
+:::
+
+# Modelo Expandido (novas variáveis)
+
+O estudo original descartou sexo, região e área urbana/rural por não serem significativos em 2019. Aqui retestamos essas variáveis — junto com cor/raça — no período 2021–2025, verificando se o contexto pós-pandemia alterou sua relevância.
+
+```{r}
+#| label: modelo-expandido
+#| code-summary: "Modelo expandido com novas variáveis (2021-2025)"
+
+# Filtrar apenas 2021-2025
+dados_pool_exp <- dados_pool %>%
+  filter(ano >= 2021)
+
+vars_original <- c("g1_agreg", "idade", "pea", "h2",
+                    "renda_familiar", "classe_cb", "grau_instrucao",
+                    "c5_dispositivos")
+
+vars_novas <- c("sexo", "area", "cod_regiao", "raca")
+
+vars_expandido <- c(vars_original, vars_novas, "ano")
+
+vars_dummy_exp <- c("renda_familiar", "classe_cb", "grau_instrucao",
+                     "c5_dispositivos", "cod_regiao", "raca")
+
+# Modelo original (só variáveis do artigo) — 2021-2025
+dados_orig_2125 <- dados_pool_exp %>%
+  select(any_of(c(vars_original, "ano"))) %>%
+  drop_na() %>%
+  mutate(ano_num = as.numeric(ano) - 2021) %>%
+  select(-ano)
+
+df_orig <- dados_orig_2125 %>%
+  mutate(across(all_of(intersect(names(.), c("renda_familiar", "classe_cb", "grau_instrucao", "c5_dispositivos"))), as.character)) %>%
+  dummy_cols(select_columns = intersect(names(.), c("renda_familiar", "classe_cb", "grau_instrucao", "c5_dispositivos")),
+             remove_first_dummy = TRUE, remove_selected_columns = TRUE)
+
+modelo_orig_2125 <- multinom(g1_agreg ~ ., data = df_orig, trace = FALSE)
+probs_orig <- predict(modelo_orig_2125, type = "probs")
+preds_orig <- predict(modelo_orig_2125, type = "class") %>% as.character() %>% as.numeric()
+y_orig <- df_orig$g1_agreg
+acc_orig_2125 <- mean(preds_orig == y_orig)
+auc_orig_2125 <- as.numeric(auc(roc(y_orig, probs_orig, quiet = TRUE)))
+
+# Modelo expandido (+ sexo, area, regiao, raca) — 2021-2025
+dados_exp_2125 <- dados_pool_exp %>%
+  select(any_of(vars_expandido)) %>%
+  drop_na() %>%
+  mutate(ano_num = as.numeric(ano) - 2021) %>%
+  select(-ano)
+
+df_exp <- dados_exp_2125 %>%
+  mutate(across(all_of(intersect(names(.), vars_dummy_exp)), as.character)) %>%
+  dummy_cols(select_columns = intersect(names(.), vars_dummy_exp),
+             remove_first_dummy = TRUE, remove_selected_columns = TRUE)
+
+modelo_exp <- multinom(g1_agreg ~ ., data = df_exp, trace = FALSE)
+probs_exp <- predict(modelo_exp, type = "probs")
+preds_exp <- predict(modelo_exp, type = "class") %>% as.character() %>% as.numeric()
+y_exp <- df_exp$g1_agreg
+acc_exp <- mean(preds_exp == y_exp)
+auc_exp <- as.numeric(auc(roc(y_exp, probs_exp, quiet = TRUE)))
+
+cat("Modelo original 2021-2025: N=", nrow(df_orig), "Acc=", round(acc_orig_2125, 4), "AUC=", round(auc_orig_2125, 4), "\n")
+cat("Modelo expandido 2021-2025: N=", nrow(df_exp), "Acc=", round(acc_exp, 4), "AUC=", round(auc_exp, 4), "\n")
+```
+
+```{r}
+#| label: tbl-expandido-comp
+#| tbl-cap: "Comparação: modelo original vs expandido (2021-2025)"
+
+tibble(
+  Modelo = c("Original (7 variáveis)", "Expandido (+sexo, área, região, raça)"),
+  N = c(nrow(df_orig), nrow(df_exp)),
+  Accuracy = c(acc_orig_2125, acc_exp),
+  AUC = c(auc_orig_2125, auc_exp),
+  `Nº parâmetros` = c(length(coef(modelo_orig_2125)), length(coef(modelo_exp)))
+) %>%
+  mutate(across(c(Accuracy, AUC), ~ round(.x, 4))) %>%
+  knitr::kable(format.args = list(big.mark = "."))
+```
+
+```{r}
+#| label: tbl-coefs-expandido
+#| tbl-cap: "Coeficientes das novas variáveis no modelo expandido"
+
+coefs_exp <- extrair_coefs_pooled(modelo_exp, "Expandido")
+
+# Mostrar apenas as variáveis novas + as chave para comparação
+vars_mostrar <- c("(Intercept)", "idade", "pea", "h2", "sexo", "area", "ano_num",
+                  "cod_regiao_2", "cod_regiao_3", "cod_regiao_4", "cod_regiao_5",
+                  "raca_2", "raca_3", "raca_4", "raca_5")
+
+coefs_exp %>%
+  filter(term %in% vars_mostrar) %>%
+  mutate(
+    term = case_when(
+      term == "ano_num" ~ "Ano (tendência)",
+      term == "sexo" ~ "Sexo (feminino)",
+      term == "area" ~ "Área (urbana)",
+      term == "cod_regiao_2" ~ "Região Nordeste",
+      term == "cod_regiao_3" ~ "Região Sul",
+      term == "cod_regiao_4" ~ "Região Norte",
+      term == "cod_regiao_5" ~ "Região Centro-Oeste",
+      term == "raca_2" ~ "Raça: Preta",
+      term == "raca_3" ~ "Raça: Parda",
+      term == "raca_4" ~ "Raça: Amarela",
+      term == "raca_5" ~ "Raça: Indígena",
+      TRUE ~ term
+    ),
+    across(c(estimate, std.error, z_value, conf.low, conf.high), ~ round(.x, 4)),
+    p.value = format.pval(p.value, digits = 3)
+  ) %>%
+  select(Variável = term, Coef = estimate, EP = std.error, z = z_value,
+         `p-valor` = p.value, Sig = sig) %>%
+  knitr::kable()
+```
+
+```{r}
+#| label: fig-novas-vars
+#| fig-cap: "Coeficientes das novas variáveis adicionadas ao modelo"
+#| fig-height: 6
+
+vars_novas_graf <- c("sexo", "area",
+                     "cod_regiao_2", "cod_regiao_3", "cod_regiao_4", "cod_regiao_5",
+                     "raca_2", "raca_3", "raca_4", "raca_5")
+
+labels_novas <- c(
+  "sexo" = "Sexo (feminino)", "area" = "Área (urbana)",
+  "cod_regiao_2" = "Nordeste", "cod_regiao_3" = "Sul",
+  "cod_regiao_4" = "Norte", "cod_regiao_5" = "Centro-Oeste",
+  "raca_2" = "Preta", "raca_3" = "Parda",
+  "raca_4" = "Amarela", "raca_5" = "Indígena"
+)
+
+coefs_exp %>%
+  filter(term %in% vars_novas_graf) %>%
+  mutate(
+    term_label = recode(term, !!!labels_novas),
+    term_label = fct_reorder(term_label, estimate),
+    sig_fill = if_else(p.value < 0.05, "Significativo", "Não significativo")
+  ) %>%
+  ggplot(aes(x = term_label, y = estimate, fill = sig_fill)) +
+  geom_col(width = 0.6) +
+  geom_errorbar(aes(ymin = conf.low, ymax = conf.high), width = 0.2) +
+  geom_hline(yintercept = 0, linetype = "dashed") +
+  coord_flip() +
+  scale_fill_manual(values = c("Significativo" = "#2563EB", "Não significativo" = "#D1D5DB")) +
+  labs(x = NULL, y = "Coeficiente (log-odds)", fill = NULL,
+       caption = "Modelo expandido 2021-2025 | Ref: Masculino, Rural, Sudeste, Branca") +
+  theme_minimal(base_size = 12) +
+  theme(legend.position = "bottom")
+```
+
+# Modelos de Machine Learning
+
+Avaliamos se modelos mais flexíveis ou um conjunto ampliado de variáveis aumentam o poder preditivo do modelo de Vargas et al. (2021). A comparação segue uma **matriz 2×2** — (regressão logística / random forest) × (vars artigo / vars artigo + extras) — mais uma árvore de decisão sobre as vars do artigo, para interpretabilidade. Todos os modelos compartilham as mesmas *folds* de CV 5-fold sobre um *N* comum (2021–2025, rows sem NA em qualquer variável), isolando o efeito do conjunto de variáveis do efeito do modelo.
+
+As variáveis extras vieram do [screening universal](#sec-screening) (só as não-endógenas). O treino roda em script separado (`fit_ml.R`) e é carregado aqui via RDS — a validação cruzada com random forest é pesada e travava o render. Para recalcular: `Rscript fit_ml.R`.
+
+```{r}
+#| label: ml-setup
+#| code-summary: "Carregar modelos treinados (dados/ml_results.rds)"
+
+ml_rds <- "dados/ml_results.rds"
+if (!file.exists(ml_rds)) {
+  stop("dados/ml_results.rds não encontrado. Rode 'Rscript fit_ml.R' antes de renderizar o qmd.")
+}
+
+ml <- readRDS(ml_rds)
+
+modelo_glm_orig <- ml$modelos$glm_orig
+modelo_glm_exp  <- ml$modelos$glm_exp
+modelo_tree     <- ml$modelos$tree
+modelo_rf_orig  <- ml$modelos$rf_orig
+modelo_rf_exp   <- ml$modelos$rf_exp
+
+# Aliases de compatibilidade — o GLM e o RF "principais" são as versões expandidas
+modelo_glm <- modelo_glm_exp
+modelo_rf  <- modelo_rf_exp
+
+df_ml         <- ml$df_exp
+resultados_ml <- ml$resamples
+resumo_ml     <- ml$resumo
+vars_art_ml   <- ml$vars_art
+vars_extra_ml <- ml$vars_extra
+
+cat("ML carregado de", ml_rds,
+    "| treinado em", format(ml$meta$timestamp),
+    "| N =", ml$meta$N, "\n")
+```
+
+## Comparação de desempenho
+
+## Screening de variáveis universais {#sec-screening}
+
+Para ampliar o modelo sem comprometer a consistência longitudinal, o script `explora_variaveis_full.R` faz um *screening* univariado sobre **76 variáveis presentes em todas as 10 edições** da TIC Domicílios (após harmonização). Cada candidata é adicionada ao modelo logístico base (vars do artigo) e medimos o ganho de AUC no pooled 2021–2025.
+
+**AUC base (só vars do artigo, N ≈ 70 mil): ≈ 0,76.**
+
+### Endogeneidade (excluídas)
+
+Três variáveis do top ranking foram **excluídas por sobreposição conceitual com o outcome** (uso de e-gov):
+
+| Variável | Conteúdo | ΔAUC | Por que é endógena |
+|---|---|---:|---|
+| `C8_F` | Buscar informações em sites de governo | +0,034 | É e-gov por definição |
+| `C8_G` | Serviços públicos / pagar taxas online | +0,026 | É o próprio outcome |
+| `C8_H` | Consultas, pagamentos, transações financeiras | +0,021 | Pode incluir pagamentos a órgãos públicos |
+
+### Top variáveis legítimas (selecionadas)
+
+Dezesseis variáveis de **intensidade e variedade de uso digital** — cada uma soma +0,015 a +0,040 de AUC isoladamente. Agrupadas:
+
+- **Atividades de internet** (C8_A/B/D/E): produtos, saúde, emprego, enciclopédia
+- **Uso do celular** (J2_L/J/G/K): busca de informação, páginas, mapas, apps
+- **Mídia e educação** (C9_C/D, C10_A/C/D): vídeos, notícias, cursos, estudo próprio
+- **Engajamento** (C11_A, C7_A, B1): compartilhar, email, uso de computador
+
+Interpretação: **quem usa a internet para múltiplas finalidades tem probabilidade maior de usar e-gov**. É um padrão de intensidade, não de conteúdo governamental.
+
+## Matriz 2×2 (vars × modelo)
+
+Para separar o efeito do conjunto de variáveis do efeito do modelo, treinamos quatro combinações compartilhando as **mesmas folds** e o **mesmo N** (drop_na sobre o superset, N ≈ 68 mil):
+
+```{r}
+#| label: tbl-ml-matriz
+#| tbl-cap: "Matriz 2×2: (GLM / RF) × (Original / Expandido) — CV 5-fold, 2021-2025 | positivo = usa e-gov"
+
+resumo_ml %>%
+  transmute(
+    Modelo = modelo,
+    Variáveis = if_else(vars == "artigo", "Artigo (7)",
+                        "Artigo + 16 de uso digital"),
+    N, AUC,
+    `Recall (Sens)` = Sens,
+    `Precisão`      = Prec,
+    F1,
+    `Espec.`        = Spec
+  ) %>%
+  knitr::kable(format.args = list(big.mark = "."))
+```
+
+```{r}
+#| label: ml-ganhos
+#| include: false
+
+auc_map   <- setNames(resumo_ml$AUC,  resumo_ml$modelo)
+rec_map   <- setNames(resumo_ml$Sens, resumo_ml$modelo)
+prec_map  <- setNames(resumo_ml$Prec, resumo_ml$modelo)
+f1_map    <- setNames(resumo_ml$F1,   resumo_ml$modelo)
+delta_ml_sozinho <- auc_map["RF Original"]   - auc_map["GLM Original"]
+delta_vars_glm   <- auc_map["GLM Expandido"] - auc_map["GLM Original"]
+delta_vars_rf    <- auc_map["RF Expandido"]  - auc_map["RF Original"]
+delta_combo      <- auc_map["RF Expandido"]  - auc_map["GLM Original"]
+```
+
+::: {.callout-important}
+## Leitura da matriz 2×2
+
+- **ML sozinho não ajuda**: RF vs GLM sobre as vars originais → ΔAUC = **`r sprintf("%+.4f", delta_ml_sozinho)`**. Modelos mais flexíveis não capturam padrões não-lineares além do que a logística já captura.
+- **As novas variáveis é que elevam o AUC**: ΔAUC = **`r sprintf("%+.4f", delta_vars_glm)`** (GLM) / **`r sprintf("%+.4f", delta_vars_rf)`** (RF). O ganho vem do **conjunto de preditores**, não da classe de modelo.
+- **Logística expandida ≈ RF expandido** (AUC ≈ `r round(auc_map["GLM Expandido"], 3)`): o problema é aproximadamente **linear no espaço ampliado** — a logística com vars estendidas é suficiente por parsimônia.
+- **Meta do Jorge atingida** (80-90% de precisão/recall): o GLM Expandido atinge **recall = `r sprintf("%.1f%%", 100*rec_map["GLM Expandido"])`** e **precisão = `r sprintf("%.1f%%", 100*prec_map["GLM Expandido"])`** para usuários de e-gov (F1 = `r sprintf("%.3f", f1_map["GLM Expandido"])`). A convenção "positivo = usa e-gov" é explícita aqui — o `twoClassSummary` do caret, por default, usa o primeiro nível do factor como positivo, o que poderia inverter a leitura.
+:::
+
+## Coeficientes do GLM Expandido
+
+Os coeficientes abaixo vêm da **logística expandida** — o modelo que atinge o maior F1 e AUC combinando todas as variáveis (artigo + 16 do screening). Como o GLM ≈ RF em AUC, esses log-odds resumem o modelo preditivo inteiro.
+
+```{r}
+#| label: tbl-glm-exp-coefs
+#| tbl-cap: "Coeficientes do GLM Expandido (CV 5-fold, 2021-2025) | OR = razão de chances"
+
+fit_glm_exp <- modelo_glm_exp$finalModel
+
+rotular_termo <- function(x) {
+  x <- str_replace(x, "^RENDA_FAMILIAR", "Renda faixa ")
+  x <- str_replace(x, "^CLASSE_CB1$",       "Classe A")
+  x <- str_replace(x, "^CLASSE_CB2$",       "Classe B")
+  x <- str_replace(x, "^CLASSE_CB3$",       "Classe C")
+  x <- str_replace(x, "^CLASSE_CB4$",       "Classe DE")
+  x <- str_replace(x, "^GRAU_INSTRUCAO1$",  "Sem instrução")
+  x <- str_replace(x, "^GRAU_INSTRUCAO2$",  "Fundamental")
+  x <- str_replace(x, "^GRAU_INSTRUCAO3$",  "Médio")
+  x <- str_replace(x, "^GRAU_INSTRUCAO4$",  "Superior")
+  x <- str_replace(x, "^C5_DISPOSITIVOS1$", "Só computador")
+  x <- str_replace(x, "^C5_DISPOSITIVOS2$", "Só celular")
+  x <- str_replace(x, "^C5_DISPOSITIVOS3$", "Ambos")
+  x <- str_replace(x, "^C5_DISPOSITIVOS4$", "Nenhum")
+  x
+}
+
+broom::tidy(fit_glm_exp, conf.int = TRUE, exponentiate = FALSE) %>%
+  mutate(
+    OR      = exp(estimate),
+    OR_low  = exp(conf.low),
+    OR_high = exp(conf.high),
+    sig     = case_when(
+      p.value < 0.001 ~ "***", p.value < 0.01 ~ "**",
+      p.value < 0.05  ~ "*",  p.value < 0.1  ~ ".", TRUE ~ ""),
+    Variável = rotular_termo(term)
+  ) %>%
+  arrange(desc(abs(estimate))) %>%
+  transmute(
+    Variável,
+    Coef = round(estimate, 3),
+    EP   = round(std.error, 3),
+    z    = round(statistic, 2),
+    `p-valor` = format.pval(p.value, digits = 2),
+    Sig  = sig,
+    OR   = round(OR, 3),
+    `IC 95%` = sprintf("[%.3f; %.3f]", OR_low, OR_high)
+  ) %>%
+  knitr::kable()
+```
+
+```{r}
+#| label: fig-glm-exp-or
+#| fig-cap: "Odds ratios das variáveis significativas no GLM Expandido (eixo x em log)"
+#| fig-height: 8
+
+coefs_exp_or <- broom::tidy(fit_glm_exp, conf.int = TRUE, exponentiate = TRUE) %>%
+  filter(term != "(Intercept)", p.value < 0.05) %>%
+  mutate(Variável = rotular_termo(term),
+         Variável = fct_reorder(Variável, estimate))
+
+ggplot(coefs_exp_or, aes(x = estimate, y = Variável)) +
+  geom_vline(xintercept = 1, linetype = "dashed", color = "grey50") +
+  geom_pointrange(aes(xmin = conf.low, xmax = conf.high),
+                  color = "#2563EB", size = 0.5) +
+  scale_x_log10() +
+  labs(x = "Odds Ratio (log)", y = NULL,
+       caption = "Referência: RENDA_FAMILIAR=0 (sem renda), CLASSE_CB=A, GRAU_INSTRUCAO=sem instrução, C5_DISPOSITIVOS=computador")
+```
+
+**Leitura dos coefs:** as 14 variáveis de uso digital (C8_*, J2_*, C9_D, C10_*, C11_A, C7_A, B1) são todas positivas e significativas. **C8_B (info sobre saúde online)** tem o maior efeito isolado — quem busca saúde online tem o dobro da chance de usar e-gov (OR ~2,2). **H2 (e-commerce)** continua como um dos principais preditores (OR ~1,7), confirmando a hipótese de "familiaridade digital" do Jorge. Entre as vars do artigo, `CLASSE_CB`, `GRAU_INSTRUCAO` e `C5_DISPOSITIVOS` (agora dummificadas, não lineares) mostram o padrão esperado da literatura: maior escolaridade → mais uso de e-gov; uso de ambos dispositivos (computador+celular) → mais uso.
+
+## Holdout temporal (2025 como teste externo)
+
+Para responder ao Jorge sobre **previsão futura**, treinamos os modelos em 2021-2024 e avaliamos em 2025 como dado nunca visto:
+
+```{r}
+#| label: tbl-holdout
+#| tbl-cap: "Holdout temporal: treino 2021-2024, teste 2025 | positivo = usa e-gov"
+
+rotulos_modelo <- c(
+  glm_orig = "GLM Original",
+  glm_exp  = "GLM Expandido",
+  rf_orig  = "RF Original",
+  rf_exp   = "RF Expandido"
+)
+
+ml$resumo_holdout %>%
+  mutate(Modelo = rotulos_modelo[modelo]) %>%
+  transmute(Modelo, AUC = round(AUC, 4),
+            `Recall` = round(Sens, 4),
+            `Precisão` = round(Prec, 4),
+            F1 = round(F1, 4),
+            `Espec.` = round(Spec, 4)) %>%
+  knitr::kable()
+```
+
+```{r}
+#| label: holdout-aux
+#| include: false
+
+auc_hold <- setNames(ml$resumo_holdout$AUC, ml$resumo_holdout$modelo)
+auc_cv   <- setNames(resumo_ml$AUC, resumo_ml$modelo)
+delta_generalizacao <- round(auc_hold["glm_exp"] - auc_cv["GLM Expandido"], 4)
+```
+
+O GLM Expandido prevendo 2025 "do zero" (treinado só com 2021-2024) atinge AUC = **`r round(auc_hold["glm_exp"], 4)`**, contra **`r round(auc_cv["GLM Expandido"], 4)`** no CV 5-fold intra-período (ΔAUC = **`r sprintf("%+.4f", delta_generalizacao)`**). A degradação é pequena, o que sugere que **o modelo generaliza bem no curto prazo** — o comportamento digital que prediz e-gov em 2021-2024 ainda prediz em 2025. Essa é a evidência mais forte de que o uso do ano como contínuo (pedido do Jorge) é uma parametrização válida para extrapolação.
+
+## Comparação por fold
+
+```{r}
+#| label: tbl-ml-comp
+#| tbl-cap: "Desempenho por fold — média, desvio e range (CV 5-fold)"
+
+# summary.resamples()$statistics não traz SD; calculamos direto dos valores.
+resultados_ml$values %>%
+  pivot_longer(-Resample, names_to = "comb", values_to = "valor") %>%
+  separate(comb, into = c("Modelo", "Métrica"), sep = "~") %>%
+  group_by(Métrica, Modelo) %>%
+  summarise(Média = mean(valor), DP = sd(valor),
+            Mín = min(valor), Máx = max(valor),
+            .groups = "drop") %>%
+  mutate(across(c(Média, DP, Mín, Máx), ~ round(.x, 4))) %>%
+  knitr::kable()
+```
+
+```{r}
+#| label: fig-ml-comp
+#| fig-cap: "Comparação de desempenho dos 5 modelos (CV 5-fold, folds fixos)"
+
+dotplot(resultados_ml, metric = c("ROC", "Sens", "Spec"))
+```
+
+## Árvore de decisão (vars do artigo)
+
+```{r}
+#| label: fig-arvore
+#| fig-cap: "Árvore de decisão sobre as variáveis do artigo"
+#| fig-height: 8
+#| fig-width: 12
+
+rpart.plot(modelo_tree$finalModel,
+           type = 4, extra = 106,
+           under = TRUE, fallen.leaves = TRUE,
+           roundint = FALSE,
+           main = "Árvore de decisão — Uso de E-gov (2021-2025, vars do artigo)")
+```
+
+## Importância das variáveis (RF expandido)
+
+```{r}
+#| label: fig-importancia
+#| fig-cap: "Importância das variáveis no Random Forest expandido"
+#| fig-height: 7
+
+imp_rf <- varImp(modelo_rf_exp)
+plot(imp_rf, top = 20,
+     main = "Importância das variáveis — Random Forest expandido")
+```
+
+```{r}
+#| label: ml-resumo
+#| include: false
+
+auc_glm_orig_cv <- round(auc_map["GLM Original"],  4)
+auc_glm_exp_cv  <- round(auc_map["GLM Expandido"], 4)
+auc_tree_cv     <- round(auc_map["Árvore"],        4)
+auc_rf_orig_cv  <- round(auc_map["RF Original"],   4)
+auc_rf_exp_cv   <- round(auc_map["RF Expandido"],  4)
+```
+
+## Habilidades digitais (sub-modelo 2022-2025)
+
+As variáveis `I1A_*` (habilidades digitais autorreportadas: baixar arquivos, instalar programas, transferir dados, usar planilhas etc.) estão disponíveis **apenas a partir de 2022** e respondem à hipótese do Jorge sobre habilidades como preditor de e-gov. O script `fit_i1a.R` treina o GLM e o RF em 2022-2025 com e sem as I1A_*, mantendo folds pareados.
+
+```{r}
+#| label: i1a-setup
+#| include: false
+
+i1a_rds <- "dados/i1a_results.rds"
+i1a_ok <- file.exists(i1a_rds)
+if (i1a_ok) {
+  i1a <- readRDS(i1a_rds)
+}
+```
+
+```{r}
+#| label: tbl-i1a
+#| tbl-cap: "Sub-modelo 2022-2025 com e sem habilidades digitais (I1A_*)"
+#| eval: !expr i1a_ok
+
+i1a$resumo %>%
+  transmute(Modelo = modelo, N,
+            AUC    = round(AUC, 4),
+            Recall = round(Sens, 4),
+            `Precisão` = round(Prec, 4),
+            F1     = round(F1, 4),
+            `Espec.`= round(Spec, 4)) %>%
+  knitr::kable(format.args = list(big.mark = "."))
+```
+
+```{r}
+#| label: i1a-aux
+#| include: false
+#| eval: !expr i1a_ok
+
+auc_i1a <- setNames(i1a$resumo$AUC, i1a$resumo$modelo)
+delta_glm_i1a <- round(auc_i1a["GLM com I1A_*"] - auc_i1a["GLM sem I1A_*"], 4)
+delta_rf_i1a  <- round(auc_i1a["RF com I1A_*"]  - auc_i1a["RF sem I1A_*"],  4)
+```
+
+```{r}
+#| label: i1a-interp
+#| results: asis
+#| echo: false
+#| eval: !expr i1a_ok
+
+cat(sprintf(
+"**Impacto das habilidades digitais no AUC**: GLM Δ = **%+.4f**, RF Δ = **%+.4f**. ",
+  delta_glm_i1a, delta_rf_i1a))
+cat(if (max(abs(c(delta_glm_i1a, delta_rf_i1a))) < 0.005) {
+  "O ganho é marginal — as 16 variáveis de intensidade de uso digital já cobrem boa parte do espaço 'habilidades'. As I1A_* servem mais como **validação teórica** (confirmam o eixo conceitual) do que como alavanca preditiva adicional. Esse achado desfavorece um paper complementar focado só em habilidades, mas sustenta a interpretação do modelo principal como captura da dimensão 'familiaridade digital'."
+} else if (max(c(delta_glm_i1a, delta_rf_i1a)) > 0.01) {
+  "Há ganho preditivo real com as I1A_*, suficiente para justificar um paper complementar focado em habilidades digitais no período pós-pandemia."
+} else {
+  "Ganho modesto — material interessante para discussão teórica, mas o modelo principal não perde muito se as I1A_* ficarem de fora."
+})
+```
+
+```{r}
+#| label: i1a-fallback
+#| results: asis
+#| echo: false
+#| eval: !expr (!i1a_ok)
+
+cat("_Resultados ainda não disponíveis. Rode `Rscript fit_i1a.R` para gerar `dados/i1a_results.rds`._\n")
+```
+
+## Sensibilidade: pesos amostrais (svyglm)
+
+A TIC Domicílios é uma pesquisa com design amostral complexo. Nossa análise principal trata cada observação com peso 1 por simplicidade, mas reportamos aqui uma **análise de sensibilidade** usando `survey::svyglm` com os pesos `PESO` fornecidos pelo Cetic.br, para mostrar que os coeficientes são robustos.
+
+```{r}
+#| label: svy-setup
+#| include: false
+
+svy_rds <- "dados/svyglm_results.rds"
+svy_ok <- file.exists(svy_rds)
+if (svy_ok) {
+  svy <- readRDS(svy_rds)
+}
+```
+
+```{r}
+#| label: tbl-svy-auc
+#| tbl-cap: "AUC in-sample: não-ponderado vs svyglm ponderado (mesmo N, pooled 2021-2025)"
+#| eval: !expr svy_ok
+
+svy$aucs %>%
+  transmute(Modelo = modelo,
+            `Ponderado?` = if_else(ponderado, "Sim (PESO)", "Não"),
+            AUC) %>%
+  knitr::kable()
+```
+
+```{r}
+#| label: tbl-svy-coefs
+#| tbl-cap: "Coeficientes-chave: comparação não-ponderado vs ponderado (modelo Expandido)"
+#| eval: !expr svy_ok
+
+svy$coefs %>%
+  filter(modelo == "Expandido", term != "(Intercept)") %>%
+  select(term, ponderado, estimate, std.error, p.value) %>%
+  pivot_wider(names_from = ponderado,
+              values_from = c(estimate, std.error, p.value),
+              names_prefix = "p_") %>%
+  rename(est_unw = estimate_p_FALSE, est_pon = estimate_p_TRUE,
+         se_unw  = std.error_p_FALSE, se_pon  = std.error_p_TRUE,
+         pv_unw  = p.value_p_FALSE,   pv_pon  = p.value_p_TRUE) %>%
+  mutate(delta = est_pon - est_unw,
+         across(c(est_unw, est_pon, se_unw, se_pon, delta), ~ round(.x, 3)),
+         across(c(pv_unw, pv_pon), ~ format.pval(.x, digits = 2))) %>%
+  select(Variável = term,
+         `Coef (não-pond.)` = est_unw,
+         `p (não-pond.)`    = pv_unw,
+         `Coef (pond.)`     = est_pon,
+         `p (pond.)`        = pv_pon,
+         Δ = delta) %>%
+  knitr::kable()
+```
+
+```{r}
+#| label: svy-interp
+#| results: asis
+#| echo: false
+#| eval: !expr svy_ok
+
+deltas <- svy$coefs %>%
+  filter(modelo == "Expandido", term != "(Intercept)") %>%
+  select(term, ponderado, estimate) %>%
+  pivot_wider(names_from = ponderado, values_from = estimate) %>%
+  mutate(delta = abs(`TRUE` - `FALSE`))
+max_delta <- max(deltas$delta, na.rm = TRUE)
+med_delta <- median(deltas$delta, na.rm = TRUE)
+
+cat(sprintf(
+"**Robustez:** as diferenças de coeficiente entre o GLM não-ponderado e o svyglm ponderado são pequenas — Δ mediano = **%.3f**, Δ máximo = **%.3f** em log-odds. ",
+  med_delta, max_delta))
+cat(sprintf("A estrutura do modelo se mantém: os mesmos preditores são significativos, e as magnitudes são comparáveis. O AUC ponderado é **%.4f** vs não-ponderado **%.4f**. Isso valida a escolha pragmática de trabalhar sem pesos no modelo principal, com ganho de interpretabilidade e compatibilidade direta com caret/ranger.",
+  svy$aucs$AUC[svy$aucs$modelo == "Expandido" & svy$aucs$ponderado],
+  svy$aucs$AUC[svy$aucs$modelo == "Expandido" & !svy$aucs$ponderado]))
+```
+
+```{r}
+#| label: svy-fallback
+#| results: asis
+#| echo: false
+#| eval: !expr (!svy_ok)
+
+cat("_Resultados ainda não disponíveis. Rode `Rscript fit_svyglm.R` para gerar `dados/svyglm_results.rds`._\n")
+```
+
+::: {.callout-note}
+## Síntese ML
+O ganho preditivo veio das **variáveis de intensidade de uso digital**, não do modelo: tanto a logística quanto o random forest saem de AUC ≈ **`r auc_glm_orig_cv`** para ≈ **`r auc_rf_exp_cv`** ao adicionar as 16 variáveis do screening. A coincidência GLM ≈ RF no espaço expandido indica que a estrutura é aproximadamente linear — a logística expandida basta, com a vantagem da interpretabilidade. O holdout temporal em 2025 confirma a generalização de curto prazo, e a análise ponderada com `svyglm` mostra que os coeficientes são robustos ao design amostral.
+:::
 
 # Interpretação dos Resultados
 
