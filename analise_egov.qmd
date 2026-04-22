@@ -394,7 +394,7 @@ Três tendências estruturais se destacam na composição da amostra ao longo da
 
 # Replicação do Modelo Original (2019) {#sec-replicacao}
 
-Replicamos o modelo de regressão logística do artigo original usando `multinom()` do pacote `nnet` com dummies via `fastDummies`, exatamente como descrito na metodologia.
+A replicação do modelo de regressão logística do artigo original foi feita com `multinom()` do pacote `nnet` e dummies via `fastDummies`, seguindo exatamente a metodologia descrita em Vargas et al. (2021).
 
 ```{r}
 #| label: modelo-2019
@@ -488,7 +488,7 @@ res_2019 <- ajustar_modelo(df_2019)
 
 ```{r}
 #| label: tbl-validacao-2019
-#| tbl-cap: "Validação: nossos resultados vs. artigo original (2019)"
+#| tbl-cap: "Validação: replicação vs. artigo original (2019)"
 
 tibble(
   Métrica = c("N", "Accuracy", "F1-score", "Recall", "Precision"),
@@ -539,7 +539,9 @@ Os coeficientes de 2019 confirmam os achados de Vargas et al. (2021):
 
 A pergunta que motiva a expansão longitudinal é: **esses padrões se mantêm ao longo da década, ou são específicos de 2019?**
 
-# Análise Longitudinal (2015–2025) {#sec-longitudinal}
+# Validação longitudinal (2015-2025) {#sec-longitudinal}
+
+Antes de concentrar a análise no período pós-pandemia, esta seção verifica a **estabilidade do modelo original ao longo de uma década**. O objetivo é mostrar que a estrutura de determinantes identificada por Vargas et al. (2021) em 2019 se mantém ao longo da série histórica, servindo como base sólida para a extensão com novas variáveis apresentada na Seção 6.
 
 Agora aplicamos o mesmo modelo a todos os anos disponíveis e analisamos a evolução dos coeficientes e das métricas de desempenho.
 
@@ -767,7 +769,7 @@ f1_pior    <- metricas_todos %>% slice_min(f1, n = 1)
 cor_acc_prop <- cor(metricas_todos$accuracy, abs(metricas_todos$prop_egov - 0.5))
 ```
 
-O AUC-ROC manteve-se estável entre **`r fmt_c4(auc_range[1])` (`r auc_pior$ano`) e `r fmt_c4(auc_range[2])` (`r auc_melhor$ano`)**, indicando que o conjunto de variáveis proposto por Vargas et al. (2021) mantém poder preditivo consistente ao longo de uma década. Para contextualizar: o AUC de 2019 no artigo original não foi reportado, mas nossa replicação encontra `r fmt_c4(m19$auc)` — valor próximo da mediana da série inteira. **O modelo de 2019 não era excepcionalmente bom nem ruim; ele era representativo.**
+O AUC-ROC manteve-se estável entre **`r fmt_c4(auc_range[1])` (`r auc_pior$ano`) e `r fmt_c4(auc_range[2])` (`r auc_melhor$ano`)**, indicando que o conjunto de variáveis proposto por Vargas et al. (2021) mantém poder preditivo consistente ao longo de uma década. Para contextualizar: o AUC de 2019 no artigo original não foi reportado, mas a replicação aqui apresentada encontra `r fmt_c4(m19$auc)`, valor próximo da mediana da série inteira. **O modelo de 2019 não é excepcionalmente bom nem ruim; ele é representativo do período.**
 
 A accuracy varia mais (`r fmt_c4(acc_range[1])`–`r fmt_c4(acc_range[2])`), e essa variação é quase inteiramente explicável pela proporção de uso de e-gov em cada ano (r = `r fmt_c(cor_acc_prop)` entre accuracy e distância de 50%). Nos anos em que o uso se aproxima de 50% (`r vale1$ano`, `r vale2$ano`), a classificação binária se torna intrinsecamente mais difícil, reduzindo a accuracy mesmo sem perda de capacidade discriminante. O F1-Score espelha esse padrão: é mais baixo em `r f1_pior$ano` (`r fmt_c4(f1_pior$f1)`) quando a classe positiva é minoritária, e mais alto em `r f1_melhor$ano` (`r fmt_c4(f1_melhor$f1)`) quando predomina.
 
@@ -845,9 +847,9 @@ As duas animações acima permitem visualizar um achado central que só emerge d
 
 O que muda entre anos é a *magnitude* dos efeitos, não sua *direção*. Em particular, note como o coeficiente da PEA oscila mais do que os outros dois — um indício de que a relação entre condição de atividade econômica e uso de e-gov é mediada por fatores contextuais (políticas públicas, oferta de serviços digitais) que variam mais do que a relação entre, por exemplo, familiaridade digital e e-gov.
 
-# Modelo Pooled
+## Modelo pooled com ano como covariável (2015-2025)
 
-Para testar formalmente se há um efeito temporal no uso de e-gov além do que é explicado pelas variáveis sociodemográficas, ajustamos modelos pooled (empilhando todos os anos).
+Para testar formalmente se há efeito temporal no uso de e-gov além do explicado pelas variáveis sociodemográficas, três modelos *pooled* são ajustados empilhando todos os anos: (i) sem a variável ano, (ii) com ano categórico (dummies por edição) e (iii) com ano contínuo (tendência linear).
 
 ```{r}
 #| label: modelo-pooled
@@ -1108,9 +1110,9 @@ Este gráfico responde a uma pergunta que o estudo de 2019 não podia formular: 
 
 A magnitude do efeito mais forte (`r ano_pooled_max$ano_num`: β = `r fmt_c(ano_pooled_max$estimate)`) é comparável ao coeficiente da PEA no modelo individual, o que mostra que **o contexto temporal tem peso equivalente a uma variável sociodemográfica relevante**. Essa é uma contribuição original da análise longitudinal que não era possível com o recorte transversal de 2019.
 
-# Modelo Pooled 2021–2025 (pós-pandemia)
+## Linha de base: modelo pooled 2021-2025 (vars do artigo)
 
-Para atender à recomendação de focar no período pós-pandemia, ajustamos o modelo pooled restrito aos anos 2021–2025, com o ano tratado como variável **contínua** (centralizada em 2021).
+Antes de introduzir as extensões da Seção 6, este bloco apresenta o **modelo-base**: o mesmo conjunto de variáveis de Vargas et al. (2021), ajustado sobre o pooled 2021-2025 com o ano tratado como variável **contínua** (centralizada em 2021). Essa parametrização permite comparar, na sequência, o ganho de poder preditivo obtido com a adição das variáveis de uso digital selecionadas pelo *screening* universal.
 
 ```{r}
 #| label: pooled-2021
@@ -1226,163 +1228,11 @@ bind_rows(coefs_trend_pooled_sel, coefs_pos_sel) %>%
 O gráfico acima compara os coeficientes do modelo com ano contínuo para o período completo (2015-2025) e o período pós-pandemia (2021-2025). Diferenças entre os períodos indicam mudanças estruturais nos determinantes do uso de e-gov após a pandemia.
 :::
 
-# Modelo Expandido (novas variáveis)
+# Determinantes do uso de e-gov no pós-pandemia (2021-2025) {#sec-principal}
 
-O estudo original descartou sexo, região e área urbana/rural por não serem significativos em 2019. Aqui retestamos essas variáveis — junto com cor/raça — no período 2021–2025, verificando se o contexto pós-pandemia alterou sua relevância.
+Uma vez estabelecida a estabilidade longitudinal do modelo original e apresentada a linha de base para 2021-2025 na seção anterior, este bloco constitui o **eixo principal da análise**: quais características dos usuários de internet explicam o uso de serviços de governo eletrônico no período pós-pandemia. O modelo logístico de Vargas et al. (2021) é comparado com extensões em duas dimensões: (i) **conjunto de variáveis**, o do artigo original (7 preditores) versus o conjunto ampliado com 16 variáveis de intensidade de uso digital selecionadas por *screening* universal; e (ii) **classe de modelo**, regressão logística versus árvore de decisão versus random forest. Todas as combinações são avaliadas sobre o mesmo *N* e as mesmas *folds* de validação cruzada, o que isola o efeito de cada dimensão. O desfecho é o uso de e-gov nos 12 meses anteriores à coleta, codificado como fator com "Sim" (usa e-gov) como classe positiva.
 
-```{r}
-#| label: modelo-expandido
-#| code-summary: "Modelo expandido com novas variáveis (2021-2025)"
-
-# Filtrar apenas 2021-2025
-dados_pool_exp <- dados_pool %>%
-  filter(ano >= 2021)
-
-vars_original <- c("g1_agreg", "idade", "pea", "h2",
-                    "renda_familiar", "classe_cb", "grau_instrucao",
-                    "c5_dispositivos")
-
-vars_novas <- c("sexo", "area", "cod_regiao", "raca")
-
-vars_expandido <- c(vars_original, vars_novas, "ano")
-
-vars_dummy_exp <- c("renda_familiar", "classe_cb", "grau_instrucao",
-                     "c5_dispositivos", "cod_regiao", "raca")
-
-# Modelo original (só variáveis do artigo) — 2021-2025
-dados_orig_2125 <- dados_pool_exp %>%
-  select(any_of(c(vars_original, "ano"))) %>%
-  drop_na() %>%
-  mutate(ano_num = as.numeric(ano) - 2021) %>%
-  select(-ano)
-
-df_orig <- dados_orig_2125 %>%
-  mutate(across(all_of(intersect(names(.), c("renda_familiar", "classe_cb", "grau_instrucao", "c5_dispositivos"))), as.character)) %>%
-  dummy_cols(select_columns = intersect(names(.), c("renda_familiar", "classe_cb", "grau_instrucao", "c5_dispositivos")),
-             remove_first_dummy = TRUE, remove_selected_columns = TRUE)
-
-modelo_orig_2125 <- multinom(g1_agreg ~ ., data = df_orig, trace = FALSE)
-probs_orig <- predict(modelo_orig_2125, type = "probs")
-preds_orig <- predict(modelo_orig_2125, type = "class") %>% as.character() %>% as.numeric()
-y_orig <- df_orig$g1_agreg
-acc_orig_2125 <- mean(preds_orig == y_orig)
-auc_orig_2125 <- as.numeric(auc(roc(y_orig, probs_orig, quiet = TRUE)))
-
-# Modelo expandido (+ sexo, area, regiao, raca) — 2021-2025
-dados_exp_2125 <- dados_pool_exp %>%
-  select(any_of(vars_expandido)) %>%
-  drop_na() %>%
-  mutate(ano_num = as.numeric(ano) - 2021) %>%
-  select(-ano)
-
-df_exp <- dados_exp_2125 %>%
-  mutate(across(all_of(intersect(names(.), vars_dummy_exp)), as.character)) %>%
-  dummy_cols(select_columns = intersect(names(.), vars_dummy_exp),
-             remove_first_dummy = TRUE, remove_selected_columns = TRUE)
-
-modelo_exp <- multinom(g1_agreg ~ ., data = df_exp, trace = FALSE)
-probs_exp <- predict(modelo_exp, type = "probs")
-preds_exp <- predict(modelo_exp, type = "class") %>% as.character() %>% as.numeric()
-y_exp <- df_exp$g1_agreg
-acc_exp <- mean(preds_exp == y_exp)
-auc_exp <- as.numeric(auc(roc(y_exp, probs_exp, quiet = TRUE)))
-
-cat("Modelo original 2021-2025: N=", nrow(df_orig), "Acc=", round(acc_orig_2125, 4), "AUC=", round(auc_orig_2125, 4), "\n")
-cat("Modelo expandido 2021-2025: N=", nrow(df_exp), "Acc=", round(acc_exp, 4), "AUC=", round(auc_exp, 4), "\n")
-```
-
-```{r}
-#| label: tbl-expandido-comp
-#| tbl-cap: "Comparação: modelo original vs expandido (2021-2025)"
-
-tibble(
-  Modelo = c("Original (7 variáveis)", "Expandido (+sexo, área, região, raça)"),
-  N = c(nrow(df_orig), nrow(df_exp)),
-  Accuracy = c(acc_orig_2125, acc_exp),
-  AUC = c(auc_orig_2125, auc_exp),
-  `Nº parâmetros` = c(length(coef(modelo_orig_2125)), length(coef(modelo_exp)))
-) %>%
-  mutate(across(c(Accuracy, AUC), ~ round(.x, 4))) %>%
-  knitr::kable(format.args = list(big.mark = "."))
-```
-
-```{r}
-#| label: tbl-coefs-expandido
-#| tbl-cap: "Coeficientes das novas variáveis no modelo expandido"
-
-coefs_exp <- extrair_coefs_pooled(modelo_exp, "Expandido")
-
-# Mostrar apenas as variáveis novas + as chave para comparação
-vars_mostrar <- c("(Intercept)", "idade", "pea", "h2", "sexo", "area", "ano_num",
-                  "cod_regiao_2", "cod_regiao_3", "cod_regiao_4", "cod_regiao_5",
-                  "raca_2", "raca_3", "raca_4", "raca_5")
-
-coefs_exp %>%
-  filter(term %in% vars_mostrar) %>%
-  mutate(
-    term = case_when(
-      term == "ano_num" ~ "Ano (tendência)",
-      term == "sexo" ~ "Sexo (feminino)",
-      term == "area" ~ "Área (urbana)",
-      term == "cod_regiao_2" ~ "Região Nordeste",
-      term == "cod_regiao_3" ~ "Região Sul",
-      term == "cod_regiao_4" ~ "Região Norte",
-      term == "cod_regiao_5" ~ "Região Centro-Oeste",
-      term == "raca_2" ~ "Raça: Preta",
-      term == "raca_3" ~ "Raça: Parda",
-      term == "raca_4" ~ "Raça: Amarela",
-      term == "raca_5" ~ "Raça: Indígena",
-      TRUE ~ term
-    ),
-    across(c(estimate, std.error, z_value, conf.low, conf.high), ~ round(.x, 4)),
-    p.value = format.pval(p.value, digits = 3)
-  ) %>%
-  select(Variável = term, Coef = estimate, EP = std.error, z = z_value,
-         `p-valor` = p.value, Sig = sig) %>%
-  knitr::kable()
-```
-
-```{r}
-#| label: fig-novas-vars
-#| fig-cap: "Coeficientes das novas variáveis adicionadas ao modelo"
-#| fig-height: 6
-
-vars_novas_graf <- c("sexo", "area",
-                     "cod_regiao_2", "cod_regiao_3", "cod_regiao_4", "cod_regiao_5",
-                     "raca_2", "raca_3", "raca_4", "raca_5")
-
-labels_novas <- c(
-  "sexo" = "Sexo (feminino)", "area" = "Área (urbana)",
-  "cod_regiao_2" = "Nordeste", "cod_regiao_3" = "Sul",
-  "cod_regiao_4" = "Norte", "cod_regiao_5" = "Centro-Oeste",
-  "raca_2" = "Preta", "raca_3" = "Parda",
-  "raca_4" = "Amarela", "raca_5" = "Indígena"
-)
-
-coefs_exp %>%
-  filter(term %in% vars_novas_graf) %>%
-  mutate(
-    term_label = recode(term, !!!labels_novas),
-    term_label = fct_reorder(term_label, estimate),
-    sig_fill = if_else(p.value < 0.05, "Significativo", "Não significativo")
-  ) %>%
-  ggplot(aes(x = term_label, y = estimate, fill = sig_fill)) +
-  geom_col(width = 0.6) +
-  geom_errorbar(aes(ymin = conf.low, ymax = conf.high), width = 0.2) +
-  geom_hline(yintercept = 0, linetype = "dashed") +
-  coord_flip() +
-  scale_fill_manual(values = c("Significativo" = "#2563EB", "Não significativo" = "#D1D5DB")) +
-  labs(x = NULL, y = "Coeficiente (log-odds)", fill = NULL,
-       caption = "Modelo expandido 2021-2025 | Ref: Masculino, Rural, Sudeste, Branca") +
-  theme_minimal(base_size = 12) +
-  theme(legend.position = "bottom")
-```
-
-# Modelos de Machine Learning
-
-Avaliamos se modelos mais flexíveis ou um conjunto ampliado de variáveis aumentam o poder preditivo do modelo de Vargas et al. (2021). A comparação segue uma **matriz 2×2** — (regressão logística / random forest) × (vars artigo / vars artigo + extras) — mais uma árvore de decisão sobre as vars do artigo, para interpretabilidade. Todos os modelos compartilham as mesmas *folds* de CV 5-fold sobre um *N* comum (2021–2025, rows sem NA em qualquer variável), isolando o efeito do conjunto de variáveis do efeito do modelo.
-
-As variáveis extras vieram do [screening universal](#sec-screening) (só as não-endógenas). O treino roda em script separado (`fit_ml.R`) e é carregado aqui via RDS — a validação cruzada com random forest é pesada e travava o render. Para recalcular: `Rscript fit_ml.R`.
+O treino é executado em script separado (`fit_ml.R`) e carregado aqui via RDS; a validação cruzada com random forest é computacionalmente intensiva. Para recalcular: `Rscript fit_ml.R`.
 
 ```{r}
 #| label: ml-setup
@@ -1447,7 +1297,7 @@ Interpretação: **quem usa a internet para múltiplas finalidades tem probabili
 
 ## Matriz 2×2 (vars × modelo)
 
-Para separar o efeito do conjunto de variáveis do efeito do modelo, treinamos quatro combinações compartilhando as **mesmas folds** e o **mesmo N** (drop_na sobre o superset, N ≈ 68 mil):
+Para separar o efeito do conjunto de variáveis do efeito do modelo, quatro combinações são treinadas compartilhando as **mesmas folds** e o **mesmo N** (drop_na sobre o superset, N ≈ 68 mil):
 
 ```{r}
 #| label: tbl-ml-matriz
@@ -1487,7 +1337,7 @@ delta_combo      <- auc_map["RF Expandido"]  - auc_map["GLM Original"]
 - **ML sozinho não ajuda**: RF vs GLM sobre as vars originais → ΔAUC = **`r sprintf("%+.4f", delta_ml_sozinho)`**. Modelos mais flexíveis não capturam padrões não-lineares além do que a logística já captura.
 - **As novas variáveis é que elevam o AUC**: ΔAUC = **`r sprintf("%+.4f", delta_vars_glm)`** (GLM) / **`r sprintf("%+.4f", delta_vars_rf)`** (RF). O ganho vem do **conjunto de preditores**, não da classe de modelo.
 - **Logística expandida ≈ RF expandido** (AUC ≈ `r round(auc_map["GLM Expandido"], 3)`): o problema é aproximadamente **linear no espaço ampliado** — a logística com vars estendidas é suficiente por parsimônia.
-- **Meta do Jorge atingida** (80-90% de precisão/recall): o GLM Expandido atinge **recall = `r sprintf("%.1f%%", 100*rec_map["GLM Expandido"])`** e **precisão = `r sprintf("%.1f%%", 100*prec_map["GLM Expandido"])`** para usuários de e-gov (F1 = `r sprintf("%.3f", f1_map["GLM Expandido"])`). A convenção "positivo = usa e-gov" é explícita aqui — o `twoClassSummary` do caret, por default, usa o primeiro nível do factor como positivo, o que poderia inverter a leitura.
+- **Desempenho preditivo substancial**: o GLM Expandido atinge **recall = `r sprintf("%.1f%%", 100*rec_map["GLM Expandido"])`** e **precisão = `r sprintf("%.1f%%", 100*prec_map["GLM Expandido"])`** para usuários de e-gov (F1 = `r sprintf("%.3f", f1_map["GLM Expandido"])`), `r if (rec_map["GLM Expandido"] >= 0.80 & prec_map["GLM Expandido"] >= 0.80) "acima do patamar de 80% em ambas as métricas" else if (rec_map["GLM Expandido"] >= 0.80) "com recall acima de 80%" else "abaixo do patamar de 80%"`. A convenção "positivo = usa e-gov" é explícita: o `twoClassSummary` do caret usa por *default* o primeiro nível do fator como positivo, o que pode inverter a leitura se não for fixado.
 :::
 
 ## Coeficientes do GLM Expandido
@@ -1560,11 +1410,29 @@ ggplot(coefs_exp_or, aes(x = estimate, y = Variável)) +
        caption = "Referência: RENDA_FAMILIAR=0 (sem renda), CLASSE_CB=A, GRAU_INSTRUCAO=sem instrução, C5_DISPOSITIVOS=computador")
 ```
 
-**Leitura dos coefs:** as 14 variáveis de uso digital (C8_*, J2_*, C9_D, C10_*, C11_A, C7_A, B1) são todas positivas e significativas. **C8_B (info sobre saúde online)** tem o maior efeito isolado — quem busca saúde online tem o dobro da chance de usar e-gov (OR ~2,2). **H2 (e-commerce)** continua como um dos principais preditores (OR ~1,7), confirmando a hipótese de "familiaridade digital" do Jorge. Entre as vars do artigo, `CLASSE_CB`, `GRAU_INSTRUCAO` e `C5_DISPOSITIVOS` (agora dummificadas, não lineares) mostram o padrão esperado da literatura: maior escolaridade → mais uso de e-gov; uso de ambos dispositivos (computador+celular) → mais uso.
+```{r}
+#| label: coefs-exp-aux
+#| include: false
+
+coefs_exp_v3 <- broom::tidy(fit_glm_exp, conf.int = TRUE, exponentiate = FALSE) %>%
+  filter(term != "(Intercept)") %>%
+  mutate(OR = exp(estimate))
+
+top_or <- coefs_exp_v3 %>% filter(p.value < 0.05) %>% slice_max(OR, n = 3)
+top_or_1 <- top_or[1, ]
+or_h2   <- coefs_exp_v3 %>% filter(term == "H2") %>% slice(1)
+
+n_novas_sig <- coefs_exp_v3 %>%
+  filter(term %in% ml$vars_extra, p.value < 0.05) %>% nrow()
+n_novas_pos <- coefs_exp_v3 %>%
+  filter(term %in% ml$vars_extra, p.value < 0.05, estimate > 0) %>% nrow()
+```
+
+**Leitura dos coeficientes.** Entre as 16 variáveis de uso digital do *screening*, `r n_novas_sig` são estatisticamente significativas a $p < 0{,}05$, das quais `r n_novas_pos` têm efeito positivo sobre a probabilidade de uso de e-gov. O maior efeito isolado é o de **`r rotular_termo(top_or_1$term)`** (OR = `r sprintf("%.2f", top_or_1$OR)`), seguido de perto por **`r rotular_termo(top_or[2,]$term)`** (OR = `r sprintf("%.2f", top_or[2,]$OR)`) e **`r rotular_termo(top_or[3,]$term)`** (OR = `r sprintf("%.2f", top_or[3,]$OR)`). `r if (nrow(or_h2) > 0 && or_h2$p.value < 0.05) sprintf("O efeito de e-commerce (H2) permanece positivo e significativo (OR = %.2f), consistente com a interpretação de Vargas et al. (2021) de familiaridade com transações digitais como facilitador do uso de e-gov.", or_h2$OR) else "O efeito de e-commerce, central no modelo original, atenua-se na presença das novas variáveis, sinalizando que o mecanismo de 'familiaridade digital' está sendo capturado pelo conjunto ampliado de usos."` Entre as variáveis do artigo original, após a factorização de `CLASSE_CB`, `GRAU_INSTRUCAO` e `C5_DISPOSITIVOS`, os efeitos alinham-se ao esperado na literatura: maior escolaridade e uso simultâneo de computador e celular associam-se a maior probabilidade de uso de e-gov.
 
 ## Holdout temporal (2025 como teste externo)
 
-Para responder ao Jorge sobre **previsão futura**, treinamos os modelos em 2021-2024 e avaliamos em 2025 como dado nunca visto:
+Para testar a capacidade de **previsão fora do período de treino** (compatível com a parametrização de ano como variável contínua), os modelos são treinados em 2021-2024 e avaliados em 2025 como dado nunca visto:
 
 ```{r}
 #| label: tbl-holdout
@@ -1596,7 +1464,7 @@ auc_cv   <- setNames(resumo_ml$AUC, resumo_ml$modelo)
 delta_generalizacao <- round(auc_hold["glm_exp"] - auc_cv["GLM Expandido"], 4)
 ```
 
-O GLM Expandido prevendo 2025 "do zero" (treinado só com 2021-2024) atinge AUC = **`r round(auc_hold["glm_exp"], 4)`**, contra **`r round(auc_cv["GLM Expandido"], 4)`** no CV 5-fold intra-período (ΔAUC = **`r sprintf("%+.4f", delta_generalizacao)`**). A degradação é pequena, o que sugere que **o modelo generaliza bem no curto prazo** — o comportamento digital que prediz e-gov em 2021-2024 ainda prediz em 2025. Essa é a evidência mais forte de que o uso do ano como contínuo (pedido do Jorge) é uma parametrização válida para extrapolação.
+O GLM Expandido avaliado em 2025 de forma completamente cega (treinado apenas com 2021-2024) atinge AUC = **`r round(auc_hold["glm_exp"], 4)`**, contra **`r round(auc_cv["GLM Expandido"], 4)`** no CV 5-fold intra-período (ΔAUC = **`r sprintf("%+.4f", delta_generalizacao)`**). `r if (abs(delta_generalizacao) < 0.01) "A degradação é desprezível" else if (delta_generalizacao < 0) "A degradação é moderada" else "O desempenho externo é ligeiramente superior ao interno"`, o que sustenta empiricamente o uso do ano como variável contínua: **o padrão de determinantes identificado em 2021-2024 se transfere sem perda relevante para 2025**, viabilizando projeções de curto prazo com o mesmo modelo.
 
 ## Comparação por fold
 
@@ -1663,7 +1531,7 @@ auc_rf_exp_cv   <- round(auc_map["RF Expandido"],  4)
 
 ## Habilidades digitais (sub-modelo 2022-2025)
 
-As variáveis `I1A_*` (habilidades digitais autorreportadas: baixar arquivos, instalar programas, transferir dados, usar planilhas etc.) estão disponíveis **apenas a partir de 2022** e respondem à hipótese do Jorge sobre habilidades como preditor de e-gov. O script `fit_i1a.R` treina o GLM e o RF em 2022-2025 com e sem as I1A_*, mantendo folds pareados.
+As variáveis `I1A_*` (habilidades digitais autorreportadas: baixar arquivos, instalar programas, transferir dados, usar planilhas, entre outras) estão disponíveis **apenas a partir de 2022** e permitem testar em que medida a proficiência digital autoavaliada adiciona poder preditivo além das variáveis de intensidade de uso. O script `fit_i1a.R` treina GLM e RF em 2022-2025, com e sem as `I1A_*`, mantendo *folds* pareados para comparação direta.
 
 ```{r}
 #| label: i1a-setup
@@ -1711,11 +1579,11 @@ cat(sprintf(
 "**Impacto das habilidades digitais no AUC**: GLM Δ = **%+.4f**, RF Δ = **%+.4f**. ",
   delta_glm_i1a, delta_rf_i1a))
 cat(if (max(abs(c(delta_glm_i1a, delta_rf_i1a))) < 0.005) {
-  "O ganho é marginal — as 16 variáveis de intensidade de uso digital já cobrem boa parte do espaço 'habilidades'. As I1A_* servem mais como **validação teórica** (confirmam o eixo conceitual) do que como alavanca preditiva adicional. Esse achado desfavorece um paper complementar focado só em habilidades, mas sustenta a interpretação do modelo principal como captura da dimensão 'familiaridade digital'."
+  "O ganho é marginal: as 16 variáveis de intensidade de uso digital já capturam boa parte do mecanismo que as habilidades autorreportadas identificam. As `I1A_*` operam, nesse caso, mais como **validação convergente** do eixo conceitual do que como alavanca preditiva adicional, reforçando a interpretação substantiva do modelo principal."
 } else if (max(c(delta_glm_i1a, delta_rf_i1a)) > 0.01) {
-  "Há ganho preditivo real com as I1A_*, suficiente para justificar um paper complementar focado em habilidades digitais no período pós-pandemia."
+  "Há ganho preditivo não desprezível com a inclusão das `I1A_*`, indicando que a proficiência digital autorreportada contém informação residual sobre o uso de e-gov além da intensidade de uso observada."
 } else {
-  "Ganho modesto — material interessante para discussão teórica, mas o modelo principal não perde muito se as I1A_* ficarem de fora."
+  "Ganho modesto: as `I1A_*` adicionam informação limitada além das variáveis de intensidade de uso, mas o efeito é direcionalmente consistente com a hipótese de que habilidades digitais se associam positivamente ao uso de e-gov."
 })
 ```
 
@@ -1730,7 +1598,7 @@ cat("_Resultados ainda não disponíveis. Rode `Rscript fit_i1a.R` para gerar `d
 
 ## Sensibilidade: pesos amostrais (svyglm)
 
-A TIC Domicílios é uma pesquisa com design amostral complexo. Nossa análise principal trata cada observação com peso 1 por simplicidade, mas reportamos aqui uma **análise de sensibilidade** usando `survey::svyglm` com os pesos `PESO` fornecidos pelo Cetic.br, para mostrar que os coeficientes são robustos.
+A TIC Domicílios é uma pesquisa com desenho amostral complexo. A análise principal deste relatório trata cada observação com peso unitário, por simplicidade de ajuste e compatibilidade com os algoritmos usados na matriz 2×2. Esta seção apresenta uma **análise de sensibilidade** em que o modelo logístico é reestimado via `survey::svyglm`, incorporando os pesos `PESO` fornecidos pelo Cetic.br, com o objetivo de verificar se os coeficientes estimados se mantêm estáveis sob ponderação.
 
 ```{r}
 #| label: svy-setup
@@ -1796,11 +1664,20 @@ max_delta <- max(deltas$delta, na.rm = TRUE)
 med_delta <- median(deltas$delta, na.rm = TRUE)
 
 cat(sprintf(
-"**Robustez:** as diferenças de coeficiente entre o GLM não-ponderado e o svyglm ponderado são pequenas — Δ mediano = **%.3f**, Δ máximo = **%.3f** em log-odds. ",
+"As diferenças de coeficiente entre o GLM não-ponderado e o `svyglm` ponderado são, em média, de magnitude modesta: Δ mediano de %.3f e Δ máximo de %.3f em log-odds. ",
   med_delta, max_delta))
-cat(sprintf("A estrutura do modelo se mantém: os mesmos preditores são significativos, e as magnitudes são comparáveis. O AUC ponderado é **%.4f** vs não-ponderado **%.4f**. Isso valida a escolha pragmática de trabalhar sem pesos no modelo principal, com ganho de interpretabilidade e compatibilidade direta com caret/ranger.",
-  svy$aucs$AUC[svy$aucs$modelo == "Expandido" & svy$aucs$ponderado],
-  svy$aucs$AUC[svy$aucs$modelo == "Expandido" & !svy$aucs$ponderado]))
+
+auc_pon    <- svy$aucs$AUC[svy$aucs$modelo == "Expandido" & svy$aucs$ponderado]
+auc_nao    <- svy$aucs$AUC[svy$aucs$modelo == "Expandido" & !svy$aucs$ponderado]
+robusto    <- max_delta < 0.20 & abs(auc_pon - auc_nao) < 0.01
+
+cat(if (robusto) {
+  sprintf("A estrutura do modelo se mantém sob ponderação: os mesmos preditores são estatisticamente significativos, e as magnitudes permanecem comparáveis. O AUC ponderado é %.3f contra %.3f no não-ponderado. Esse padrão sustenta a escolha pragmática de trabalhar sem pesos no modelo principal, com ganho de interpretabilidade e compatibilidade direta com os algoritmos da matriz 2×2.",
+    auc_pon, auc_nao)
+} else {
+  sprintf("Há sinais de instabilidade na magnitude de alguns coeficientes quando a ponderação é aplicada (AUC ponderado = %.3f, não-ponderado = %.3f). Embora a direção dos efeitos mais importantes se preserve, a versão ponderada deveria ser reportada em conjunto com a não-ponderada na apresentação formal dos resultados.",
+    auc_pon, auc_nao)
+})
 ```
 
 ```{r}
@@ -1812,12 +1689,21 @@ cat(sprintf("A estrutura do modelo se mantém: os mesmos preditores são signifi
 cat("_Resultados ainda não disponíveis. Rode `Rscript fit_svyglm.R` para gerar `dados/svyglm_results.rds`._\n")
 ```
 
+```{r}
+#| label: sintese-aux
+#| include: false
+
+auc_gain    <- auc_rf_exp_cv - auc_glm_orig_cv
+ganho_subst <- auc_gain >= 0.05
+lineares    <- abs(auc_rf_exp_cv - auc_glm_exp_cv) < 0.01
+```
+
 ::: {.callout-note}
-## Síntese ML
-O ganho preditivo veio das **variáveis de intensidade de uso digital**, não do modelo: tanto a logística quanto o random forest saem de AUC ≈ **`r auc_glm_orig_cv`** para ≈ **`r auc_rf_exp_cv`** ao adicionar as 16 variáveis do screening. A coincidência GLM ≈ RF no espaço expandido indica que a estrutura é aproximadamente linear — a logística expandida basta, com a vantagem da interpretabilidade. O holdout temporal em 2025 confirma a generalização de curto prazo, e a análise ponderada com `svyglm` mostra que os coeficientes são robustos ao design amostral.
+## Síntese
+`r if (ganho_subst) sprintf("A extensão do conjunto de variáveis com indicadores de intensidade de uso digital eleva o AUC de %.3f para %.3f (ΔAUC = %+.3f), tanto no GLM quanto no Random Forest.", auc_glm_orig_cv, auc_rf_exp_cv, auc_gain) else sprintf("A extensão do conjunto de variáveis com indicadores de intensidade de uso digital altera o AUC de %.3f para %.3f (ΔAUC = %+.3f), padrão consistente entre GLM e Random Forest.", auc_glm_orig_cv, auc_rf_exp_cv, auc_gain)` `r if (lineares) "A coincidência entre GLM e RF no espaço expandido indica estrutura aproximadamente linear, o que permite apresentar a logística expandida como modelo interpretável sem perda preditiva em relação ao random forest." else "A diferença entre GLM e RF no espaço expandido sugere alguma não-linearidade explorada pelo random forest, justificando sua apresentação como modelo preditivo principal ao lado da logística usada para interpretação."` O holdout temporal de 2025 confirma que o modelo generaliza para fora do período de treino e a análise ponderada via `svyglm` mostra robustez dos coeficientes à escolha de ignorar o desenho amostral no ajuste principal.
 :::
 
-# Interpretação dos Resultados
+# Discussão
 
 ## Evolução do uso de governo eletrônico
 
@@ -1827,7 +1713,78 @@ O valor elevado de 2015 (`r fmt_pct(m15$prop_egov)`) deve ser interpretado com c
 
 ## Estabilidade do modelo
 
-O AUC-ROC manteve-se notavelmente estável entre **`r fmt_c4(auc_range[1])` e `r fmt_c4(auc_range[2])`** ao longo de toda a série, demonstrando que o conjunto de variáveis proposto por Vargas et al. (2021) mantém poder preditivo consistente ao longo de uma década. Este é um resultado relevante: modelos sociodemográficos frequentemente perdem validade com o tempo, mas neste caso a estrutura se manteve robusta.
+O AUC-ROC manteve-se notavelmente estável entre **`r fmt_c4(auc_range[1])` e `r fmt_c4(auc_range[2])`** ao longo de toda a série, demonstrando que o conjunto de variáveis proposto por Vargas et al. (2021) mantém poder preditivo consistente ao longo de uma década. Este é um resultado relevante: modelos sociodemográficos frequentemente perdem validade com o tempo, mas neste caso a estrutura se manteve robusta, o que autoriza o uso desse conjunto como linha de base para extensões.
+
+## Determinantes do uso de e-gov no pós-pandemia
+
+```{r}
+#| label: disc-ml-aux
+#| include: false
+
+disc_auc_base <- auc_map["GLM Original"]
+disc_auc_exp  <- auc_map["GLM Expandido"]
+disc_auc_rf   <- auc_map["RF Expandido"]
+disc_delta    <- disc_auc_exp - disc_auc_base
+disc_rec_exp  <- rec_map["GLM Expandido"]
+disc_prec_exp <- prec_map["GLM Expandido"]
+disc_f1_exp   <- f1_map["GLM Expandido"]
+disc_delta_ml <- auc_map["RF Original"] - auc_map["GLM Original"]
+
+meta_80 <- disc_rec_exp >= 0.80 & disc_prec_exp >= 0.80
+ml_ajuda <- abs(disc_delta_ml) >= 0.01
+vars_sao_o_ganho <- disc_delta >= 0.02
+```
+
+A extensão do modelo de Vargas et al. (2021) com as 16 variáveis de intensidade de uso digital eleva o AUC de **`r sprintf("%.3f", disc_auc_base)`** (vars do artigo) para **`r sprintf("%.3f", disc_auc_exp)`** no pooled 2021-2025 (N = `r fmt_n(ml$meta$N)`, CV 5-fold pareado), um ganho de **`r sprintf("%+.3f", disc_delta)`** em AUC. `r if (meta_80) sprintf("Nessa configuração, o modelo atinge **recall de %.1f%%** e **precisão de %.1f%%** para identificar usuários de e-gov, com F1 = %.3f, situando-se dentro do patamar de 80 a 90%% considerado como referência de desempenho aplicado.", 100*disc_rec_exp, 100*disc_prec_exp, disc_f1_exp) else if (disc_rec_exp >= 0.80) sprintf("O recall alcança %.1f%% mas a precisão se estabelece em %.1f%%, indicando que o modelo identifica a maioria dos usuários de e-gov mas com taxa de falsos positivos não desprezível.", 100*disc_rec_exp, 100*disc_prec_exp) else sprintf("O desempenho fica abaixo do patamar de 80%% em ambas as métricas (recall %.1f%%, precisão %.1f%%), indicando espaço para especificações adicionais.", 100*disc_rec_exp, 100*disc_prec_exp)`
+
+Dois resultados metodológicos destacam-se dessa comparação. Primeiro, a substituição da logística pelo random forest sobre as mesmas variáveis do artigo original altera o AUC em apenas `r sprintf("%+.3f", disc_delta_ml)`. `r if (ml_ajuda) "Há, portanto, algum ganho residual atribuível à flexibilidade não-linear do algoritmo." else "Algoritmos não-lineares, isoladamente, não extraem informação adicional do conjunto original de preditores."` Segundo, no espaço ampliado, o random forest iguala a logística (AUC = `r sprintf("%.3f", disc_auc_rf)` vs `r sprintf("%.3f", disc_auc_exp)`), indicando que a estrutura da relação entre os preditores e o uso de e-gov é **aproximadamente linear** uma vez que o conjunto relevante de variáveis esteja presente. `r if (vars_sao_o_ganho) "O ganho preditivo total vem, portanto, das variáveis e não do algoritmo." else "O ganho preditivo é modesto mesmo com a ampliação do conjunto de variáveis."`
+
+```{r}
+#| label: disc-holdout-aux
+#| include: false
+
+auc_hold_map <- setNames(ml$resumo_holdout$AUC, ml$resumo_holdout$modelo)
+disc_hold_exp <- auc_hold_map["glm_exp"]
+disc_gen_delta <- disc_hold_exp - disc_auc_exp
+generaliza_bem <- abs(disc_gen_delta) < 0.01
+```
+
+A **validação preditiva no holdout temporal** (treino 2021-2024, teste 2025 cego) reforça esse achado: o GLM Expandido atinge AUC = **`r sprintf("%.3f", disc_hold_exp)`** em 2025, com ΔAUC = **`r sprintf("%+.3f", disc_gen_delta)`** em relação ao desempenho intra-período. `r if (generaliza_bem) "A degradação é desprezível, o que sustenta empiricamente a parametrização do ano como variável contínua: o padrão de determinantes identificado em 2021-2024 se transfere sem perda para 2025, habilitando projeções de curto prazo com o mesmo modelo." else if (disc_gen_delta < 0) "A degradação moderada sugere que o modelo pode se beneficiar de reestimação periódica, embora a direção dos efeitos permaneça consistente." else "O desempenho externo supera o interno, possivelmente refletindo estabilização do padrão de uso pós-pandemia."`
+
+Substantivamente, os coeficientes do GLM Expandido apontam para uma **leitura ampliada do conceito de familiaridade digital** originalmente sugerido pelo artigo de 2019. Enquanto naquele modelo o e-commerce (variável H2) concentrava o efeito associado a transações digitais, o modelo estendido distribui a explicação entre múltiplas formas de uso intensivo da internet, com destaque para busca de informação sobre saúde, busca de cursos, uso de mapas e aplicativos no celular, e compartilhamento de conteúdo. O padrão sugere que a probabilidade de uso de e-gov aumenta com a **amplitude e a variedade de atividades digitais** de uma pessoa, e não apenas com sua disposição específica a transacionar.
+
+## Habilidades digitais como mecanismo complementar (2022-2025)
+
+```{r}
+#| label: disc-i1a-aux
+#| include: false
+#| eval: !expr i1a_ok
+
+auc_i1a_map <- setNames(i1a$resumo$AUC, i1a$resumo$modelo)
+disc_i1a_glm <- auc_i1a_map["GLM com I1A_*"] - auc_i1a_map["GLM sem I1A_*"]
+disc_i1a_rf  <- auc_i1a_map["RF com I1A_*"]  - auc_i1a_map["RF sem I1A_*"]
+i1a_marginal <- max(abs(c(disc_i1a_glm, disc_i1a_rf))) < 0.01
+i1a_substantivo <- max(c(disc_i1a_glm, disc_i1a_rf)) > 0.02
+```
+
+```{r}
+#| label: disc-i1a-texto
+#| results: asis
+#| echo: false
+#| eval: !expr i1a_ok
+
+cat(sprintf(
+"A análise restrita ao período 2022-2025 (em que as variáveis de habilidades digitais autorreportadas, `I1A_*`, estão disponíveis) produziu ganhos de AUC de **%+.3f** na logística e **%+.3f** no random forest em relação aos respectivos modelos sem essas variáveis. ",
+  disc_i1a_glm, disc_i1a_rf))
+
+cat(if (i1a_marginal) {
+  "O ganho é suficientemente pequeno para sugerir que as 16 variáveis de intensidade de uso já capturam o mesmo mecanismo latente que as habilidades autorreportadas identificam. Nessa leitura, as `I1A_*` funcionam mais como **validação convergente** do eixo teórico de familiaridade digital do que como alavanca preditiva adicional. A implicação prática é que o modelo principal, que cobre o período 2021-2025 completo, não perde poder explicativo relevante ao prescindir dessa dimensão específica."
+} else if (i1a_substantivo) {
+  "O ganho é substantivo o bastante para indicar que as habilidades autorreportadas carregam informação residual relevante, não totalmente capturada pelas variáveis de intensidade de uso. Esse achado recomenda que, no período em que `I1A_*` está disponível, habilidades sejam explicitamente modeladas, e abre espaço para uma extensão específica que inclua essa dimensão no aparato teórico."
+} else {
+  "O ganho é modesto mas direcionalmente consistente com a hipótese de que habilidades digitais se associam positivamente ao uso de e-gov. As `I1A_*` reforçam a interpretação do modelo principal sem, contudo, alterá-la qualitativamente."
+})
+```
 
 ## Mudanças nos preditores
 
