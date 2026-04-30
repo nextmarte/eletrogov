@@ -1,0 +1,194 @@
+{
+  "total": 4224,
+  "count": 10,
+  "query": "\"digital divide\" AND Brazil AND survey",
+  "hits": [
+    {
+      "doi": "10.4018/ijpada.361998",
+      "title": "Digital Divide Factors for User Engagement",
+      "year": 2024,
+      "journal": "international journal of public administration in the digital age",
+      "authors": [
+        "Seok Kang",
+        "Christopher G. Reddick",
+        "Roger Enriquez"
+      ],
+      "tally": null,
+      "supporting": null,
+      "contrasting": null,
+      "mentioning": null,
+      "citingPubs": null,
+      "abstract": "This study examines the digital divide in older adults in a minority-majority urban community. Grounded in resources and appropriation theory, this study predicts that categorical disparities in society produce an unequal distribution of resources and that an unequal distribution of resources leads to unequal Internet use. To investigate the relationships in an older adult sample, personal (ethnicity and gender), positional factors (income, education, employment, and retirement), and appropriation factors (attitude, access, skills, and usage) were included in analyzing data from a community where minority ethnic groups are the majority. Data was collected from older adults in an urban area in the Southern United States. Hispanics' Internet skill levels were higher than the other ethnicities. More positive attitudes, access, skills, and usage were found in wealthier residential locations, higher income, and higher education. The results also underscored the crucial role of attitudinal factors in improving material access, Internet skills, and usage in the minority-majority community.",
+      "isOa": true,
+      "retraction_notices": null
+    },
+    {
+      "doi": "10.1111/ssqu.12270",
+      "title": "Gender and the Digital Divide in Latin America*",
+      "year": 2016,
+      "journal": "social science quarterly",
+      "authors": [
+        "Tricia Gray",
+        "Jason Gainous",
+        "Kevin M. Wagner"
+      ],
+      "tally": 78,
+      "supporting": 5,
+      "contrasting": 0,
+      "mentioning": 60,
+      "citingPubs": 110,
+      "abstract": "Objectives. We analyze differences in how men and women in Latin American countries are utilizing the Internet to identify a possible regional gendered digital divide in Internet use. The extent, degree, and implications of this gender digital divide are explored across countries with varying degrees of digital freedom. Methods. We employ a series of random-and fixed-effects models utilizing individual-level data from the 2010 Latin Barometer merged with country-level data obtained from the U.N. Gender Inequality Index. Results. Our results suggest that, in general, Latin American men tend to use the Internet more than women. Men also use more social media and gather political information more frequently. In addition, Internet use is higher across these categories in countries with more gender equality. Conclusion. The potential for the Internet to serve as a social and political equalizing force in Latin America is stymied in part by the gendered digital divide.",
+      "isOa": false,
+      "retraction_notices": null
+    },
+    {
+      "doi": "10.48550/arxiv.2110.02669",
+      "title": "Digital Divide and Social Dilemma of Privacy Preservation",
+      "year": 2021,
+      "journal": null,
+      "authors": [
+        "Hamoud Alhazmi",
+        "Ahmed Imran",
+        "Mohammad Abu Alsheikh"
+      ],
+      "tally": null,
+      "supporting": null,
+      "contrasting": null,
+      "mentioning": null,
+      "citingPubs": null,
+      "abstract": "While digital divide studies primarily focused on access to information and communications technology (ICT) in the past, its influence on other associated dimensions such as privacy is becoming critical with a far-reaching impact on the people and society. For example, the various levels of government legislation and compliance on information privacy worldwide have created a new era of digital divide in the privacy preservation domain. In this article, the concept \"digital privacy divide (DPD)\" is introduced to describe the perceived gap in the privacy preservation of individuals based on the geopolitical location of different countries. To better understand the DPD phenomenon, we created an online questionnaire and collected answers from more than 700 respondents from four different countries (the United States, Germany, Bangladesh, and India) who come from two distinct cultural orientations as per Hofstede's individualist vs. collectivist society. However, our results revealed some interesting findings. DPD does not depend on Hofstede's cultural orientation of the countries. For example, individuals residing in Germany and Bangladesh share similar privacy concerns, while there is a significant similarity among individuals residing in the United States and India. Moreover, while most respondents acknowledge the importance of privacy legislation to protect their digital privacy, they do not mind their governments to allow domestic companies and organizations collecting personal data on individuals residing outside their countries, if there are economic, employment, and crime prevention benefits. These results suggest a social dilemma in the perceived privacy preservation, which could be dependent on many other contextual factors beyond government legislation and countries' cultural orientation.",
+      "isOa": true,
+      "retraction_notices": null
+    },
+    {
+      "doi": "10.3126/dsaj.v12i0.22179",
+      "title": "The Digital Divide: An Inquiry from Feminist Perspectives",
+      "year": 2018,
+      "journal": "dhaulagiri journal of sociology and anthropology",
+      "authors": [
+        "Lina Gurung"
+      ],
+      "tally": 8,
+      "supporting": 0,
+      "contrasting": 0,
+      "mentioning": 8,
+      "citingPubs": 16,
+      "abstract": "Exponential use of ICT has brought colossal opportunities as well as challenges to the present society. In spite of increasing women’s involvement in Information, Communication and Technology (ICT) , gender inequality has yet remained critical across the nations and globe. The uneven access and skills to technology has intensified the degree of digital divide specially for the women. Further the multifaced attribute of ICT and its relation with women is changing discourses among the feminist scholars. This is a conceptual paper which focuses on the deliberations of different feminists based on optimistic and pessimistic perspectives. Some studies show that the gender digital divide is getting intense while some have reported of alleviating gaps with more involvement of women. The concept of digital divide is beyond the access and includes various dimensions such as perception, usage, motivation, participation and skills. The paper deals with the tension between utopian and dystopian views on technology benefits. Through literature review this conceptual paper examines and discusses the diverse standpoints of feminist scholars from west and east which buzzes to redefine the relationship of gender with technology. It recommends that empowerment of women in technological domain is equally important as social, economic and political. Further women should be motivated from within to embrace ICT and get benefitted from its prospects. Resisting modern technology in the digital era would further widen the digital gap and thus make difficult to observe gender equality. More studies are required to explore the strategies for technological empowerment of women.",
+      "isOa": true,
+      "retraction_notices": null
+    },
+    {
+      "doi": "10.1002/isd2.12088",
+      "title": "Using a digital divide index among enterprises in the context of public policies in Brazil",
+      "year": 2019,
+      "journal": "the electronic journal of information systems in developing countries",
+      "authors": [
+        "Érica Souza Siqueira",
+        "César Alexandre de Souza",
+        "Alexandre Barbosa"
+      ],
+      "tally": 12,
+      "supporting": 0,
+      "contrasting": 0,
+      "mentioning": 11,
+      "citingPubs": 13,
+      "abstract": "The aim of the present paper is to discuss the relevance of an index that is capable of measuring the digital divide among small and medium enterprises (SMEs) and to discuss its importance in the context of public policy design. It is contended that the digital divide mainly affects microenterprises and SMEs, and that this phenomenon is related to the low productivity and high mortality rates of these organisations. The methodology for creating the index is replicated here in order to discuss the quality criteria necessary for this index within the scope of its utility for public managers.",
+      "isOa": true,
+      "retraction_notices": null
+    },
+    {
+      "doi": "10.23919/cisti.2019.8760821",
+      "title": "Digital Divide in Latin America and Europe: Main Characteristics in Selected Countries",
+      "year": 2019,
+      "journal": null,
+      "authors": [
+        "Łukasz Tomczyk",
+        "Maria Amélia Eliseo",
+        "Vladimir Costas"
+      ],
+      "tally": 25,
+      "supporting": 0,
+      "contrasting": 0,
+      "mentioning": 17,
+      "citingPubs": 55,
+      "abstract": "This paper presents the characteristics of the digital divide (DD) in the Latin American countries on the example of:",
+      "isOa": false,
+      "retraction_notices": null
+    },
+    {
+      "doi": "10.1109/mwc.001.2100137",
+      "title": "6G for Bridging the Digital Divide: Wireless Connectivity to Remote Areas",
+      "year": 2022,
+      "journal": "ieee wireless communications",
+      "authors": [
+        "Abdelaali Chaoub",
+        "Marco Giordani",
+        "Brejesh Lall"
+      ],
+      "tally": 37,
+      "supporting": 0,
+      "contrasting": 0,
+      "mentioning": 37,
+      "citingPubs": 136,
+      "abstract": "In telecommunications, network service accessibility as a requirement is closely related to equitably serving the population residing at locations that can most appropriately be described as remote. Remote connectivity, however, would have benefited from a more inclusive consideration in the existing generations of mobile communications. To remedy this, sustainability and its social impact are being positioned as key drivers of sixth generation's (6G) research and standardization activities. In particular, there has been a conscious attempt to understand the demands of remote wireless connectivity, which has led to a better understanding of the challenges that lie ahead. In this perspective, this article overviews the key challenges associated with constraints on network design and deployment to be addressed for providing broadband connectivity to rural areas, and proposes novel approaches and solutions for bridging the digital divide in those regions.",
+      "isOa": true,
+      "retraction_notices": null
+    },
+    {
+      "doi": "10.1177/1749602019837793",
+      "title": "Class, pay TV access and Netflix in Latin America: Transformation within a digital divide",
+      "year": 2019,
+      "journal": "critical studies in television the international journal of television studies",
+      "authors": [
+        "Joseph Straubhaar",
+        "Deborah Castro",
+        "Luiz Guilherme Duarte"
+      ],
+      "tally": 19,
+      "supporting": 2,
+      "contrasting": 1,
+      "mentioning": 10,
+      "citingPubs": 43,
+      "abstract": "In the context of international flows of media products, this article offers an exploration of pay TV and the prospects for streaming television usage in the Latin American region. Based on audience preference data gathered by Kantar Media, the article offers an overview of how the pre-Netflix era looked like in the region. Drawing on the theories of cultural proximity and cultural discount, our results suggest that the international nature of Netflix programming is of particular interest and appeal among the upper middle class and elite, who have the cultural capital to enjoy and appreciate it. The findings also indicate that access to streaming television is hampered by a new digital divide, based in both age or generation, class and geography, which will limit the extent to which services like Netflix will disrupt broadcast and cable/satellite television.",
+      "isOa": true,
+      "retraction_notices": null
+    },
+    {
+      "doi": "10.5296/ijssr.v8i2.16579",
+      "title": "Teachers’ Views on the Digital Divide in Greece: A Qualitative Approach",
+      "year": 2020,
+      "journal": "international journal of social science research",
+      "authors": [
+        "Panagiotis Giavrimis",
+        "Souzanna-Maria Nikolaou"
+      ],
+      "tally": 4,
+      "supporting": 1,
+      "contrasting": 0,
+      "mentioning": 3,
+      "citingPubs": 3,
+      "abstract": "The purpose of this study is to investigate teachers’ views on the digital divide and its implications in the field of Primary education in Greece. The research questions were related to the conceptualization of the digital divide by teachers, its consequences and the role of teachers. A total of 22 elementary school teachers were selected out of which 8 were male and 14 were female. The semi-structured interview was used as a research tool and an interview guide was developed that had four themes. The first theme concerned teachers' conceptualizations on the digital divide, the second theme was related to the use of ICT in education, The third theme was about the consequences of the digital divide and the fourth theme included questions about how to deal with the digital divide. The results conclude that the teachers: a) signify the digital divide in a comprehensible way, distinguishing its forms, the factors that influence it, and their implications in their daily social life and educational practice, b) refer to the social inequalities being created in the social environment and c) education policy in Greece is often not supportive of teachers’ work.",
+      "isOa": true,
+      "retraction_notices": null
+    },
+    {
+      "doi": "10.18280/ijsdp.180516",
+      "title": "Digital Divide of Regions: Possible Growth Points for Their Digital Maturity",
+      "year": 2023,
+      "journal": "international journal of sustainable development and planning",
+      "authors": [
+        "Irina Glebova",
+        "Светлана Берман",
+        "Liliya V. Khafizova"
+      ],
+      "tally": 3,
+      "supporting": 0,
+      "contrasting": 0,
+      "mentioning": 3,
+      "citingPubs": 9,
+      "abstract": "The purpose of the study is to research the process of digitalization of the regional economy and society in order to identify the root causes for discrepancy in their progress and determine the main directions for improving regional management systems to reduce their digital inequality. This article analyzes the digital development of regions in Russia, based on statistical data from 2013 to 2020. The results show a significant gap between the leading and the underdeveloped regions. The study identifies the root causes of the imbalance and backwardness in digitalization, and provides insights for the further digital transformation of regions in the implementation of the Digital Economy National Program. The proposed methodology to assess the digital competitiveness of regions provides for an analysis of the key areas of digital transformation directly related to the digitalization of the public services sector, the economy and the social sphere. It enables to consider the innovative potential in the regional context, track the digital transformation of organizations and their involvement in digital ecosystems, and identify changes in households in terms of connecting to ICT and using personal computers, based on their digital literacy and competencies. The article provides valuable insights, which can be useful for managers and members of the scientific community involved in evaluating the effectiveness of developing the digital potential of regions and in promoting digital transformation in Russia.",
+      "isOa": true,
+      "retraction_notices": null
+    }
+  ]
+}

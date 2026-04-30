@@ -1,0 +1,170 @@
+{
+  "total": 2304,
+  "count": 9,
+  "query": "\"online activities\" AND \"public services\" AND adoption",
+  "hits": [
+    {
+      "doi": "10.1108/itp-08-2017-0260",
+      "title": "Evaluating digital public services",
+      "year": 2019,
+      "journal": "information technology and people",
+      "authors": [
+        "Rana Tassabehji",
+        "Ray Hackney",
+        "Takao Maruyama"
+      ],
+      "tally": 13,
+      "supporting": 0,
+      "contrasting": 0,
+      "mentioning": 10,
+      "citingPubs": 27,
+      "abstract": "Purpose\nThe purpose of this paper is to consider recent field evidence to analyse what online public services citizens need, explores potential citizen subsidy of these specific services and investigates where resources should be invested in terms of media accessibility. The authors explore these from a citizen-centric affordability perspective within three exemplar developing countries in sub-Saharan Africa. The World Bank and United Nations in particular promote initiatives under the “Information and Communication Technologies for Development” (ICT4D) to stress the relevance of e-Government as a way to ensure development and reduce poverty. The authors adopt a contingency value approach to determine directly reported citizens willingness to pay for digital public services. Hence, our focus is mainly upon an empirical investigation through extensive fieldwork in the context of sub-Sahara Africa. A substantive survey was conducted in the respective cities of Addis Ababa (Ethiopia), Lagos (Nigeria) and Johannesburg (South Africa). The sample of citizens was drawn from each respective Chamber of Commerce database for Ethiopia and South Africa, and for Nigeria a purchased database of businesses, based on stratified random sampling. These were randomly identified from both sectors ensuring all locations were covered with a total sample size of 1,297 respondents. It was found, in particular, that citizens were willing to pay to be able to access digital public services and that amounts of fees they were willing to pay varied depending on what services they wish to access and what devices they use (PCs or mobile phones).\n\n\nDesign/methodology/approach\nThe authors adopt a contingency value approach to determine directly reported citizens willingness to pay for digital public services. A survey was conducted in the respective cities of Addis Ababa (Ethiopia), Lagos (Nigeria) and Johannesburg (South Africa). The sample of citizens was drawn from each respective Chamber of Commerce database for Ethiopia and South Africa, and for Nigeria a purchased database of businesses, based on stratified random sampling. These were randomly identified from both sectors ensuring all locations were covered with a total sample size of 1,297 respondents.\n\n\nFindings\nThe findings suggest that by understanding citizen needs, demands and how they can benefit from online public services could drive decisions related to what public services need to be prioritised for economically active citizens, potentially explore citizen subsidy of these specific public services which will have a trickle-down benefit to poorer citizens by reducing the pressures on traditional channels of public service delivery and investigate where resources should be invested in terms of media to access online services. Willingness to pay between the top online public services showed no statistically significant difference among all respondents.\n\n\nResearch limitations/implications\nThe research focused on economically active digitally savvy citizens in the major capital cities in each of our selected countries. While these are not representative of the population at large, our intention was to understand what citizen-led government services would look like from the perspective of this group, with an insight into the value they place on these online services and their ability to access them. Technology diffusion starts with the early adopters (Rogers, 2010), and here the authors have focused on those that are likely to be early adopters.\n\n\nPractical implications\nPoor fiscal capacity, namely, the amount and type of resources a state has at its disposal, not only has an impact on economic wellbeing, but particularly relevant in this case, also has an impact on the quality of government (Baskaran and Bigsten, 2013). Thus, e-government is one way in which developing countries can focus on developing good governance and strengthening civil society to improve the quality of government and motivate citizens to participate in the political process.\n\n\nSocial implications\nThe economic performance of African countries has been viewed with pessimism, consistently considered to be the poorest continent (Harrison et al., 2014). Recent studies have empirically shown that new information technologies have contributed to longer term economic growth in African countries and stress the need for government to further invest in developing telecommunications infrastructures and internet access (Donou-Adonsou et al., 2016). However one of the major constraints and challenges for developing countries is the limited fiscal capacity and ability to mobilise fiscal resources to finance the provision of public services, which is essential for economic development (Ali et al., 2015).\n\n\nOriginality/value\nThe authors contribute to the World Bank and United Nations initiatives to promote ICT for Development’ (ICT4D) the relevance of e-government as a way to ensure development and reduce poverty. If online services are of no benefit, even if they are more convenient and lower cost, they are unlikely to be used. Accessing digital public services directly addresses the needs of economically active citizens and can also facilitate the steps towards an improved quality of government and interaction with civil society. The study has contributed to an insightful understanding of the value, cost and benefits of citizen-led e-Government in this respect.",
+      "isOa": true,
+      "retraction_notices": null
+    },
+    {
+      "doi": "10.57096/edunity.v1i05.34",
+      "title": "Law Enforcement Against Cybercrime in Online Activities",
+      "year": 2023,
+      "journal": "edunity kajian ilmu sosial dan pendidikan",
+      "authors": [
+        "Sutardi Sutardi",
+        "Lucky Ferdiles"
+      ],
+      "tally": null,
+      "supporting": null,
+      "contrasting": null,
+      "mentioning": null,
+      "citingPubs": null,
+      "abstract": "Indonesia, as a country based on law (rechtstaat), is not solely based on mere power (machtstaat), consequently that in the life of society, nation and state it is obligatory to comply with the will that has been regulated based on the applicable laws and regulations. One of the concepts in the theory of the welfare state is that the state has the responsibility to provide maximum health services to its citizens. Based on the provisions of Law Number 36 of 2009 concerning Health, in Article 5 paragraph (1) that; Everyone has the same right in obtaining access to resources in the health sector. One of the health sectors is the hospital which is an important part in the health sector and plays a role in supporting the survival of the community to live a healthy and prosperous life. Hospital medical records are an important component in the implementation of hospital management activities. According to the provisions of the legislation, namely Law Number 29 of 2004 concerning Medical Practice Article 46 paragraphs (1) to (3) and Minister of Health Regulation No. 269 of 2008 concerning Medical Records and Medical Records, made by doctors who are included in the management of their responsibilities which are intended for the condition of the patient. For this reason, medical secrets are the obligation of every doctor to maintain them as required by legislation. The obligation to keep medical secrets concerns things that are obtained through disease examination procedures or by chance, which are carried out by doctors, including those related to the patient's health. The problems that can be raised from this research are; 1. How is the construction of laws and regulations in regulating medical secrets? and, 2. Why does the legality of the disclosure of medical secrets require legal reform through a progressive legal approach? Solving the problem is done through a juridical normative research approach. The results of his research, that medical records are facilities that contain information about patients' illnesses and treatments aimed at maintaining and improving a health service regulated by Law No. 29 of 2004 concerning Medical Practice and Minister of Health Regulation No. 269 of 2008 concerning Medical Records. Legal reform regarding the disclosure of medical secrets through a progressive legal approach, constructively hospitals are obliged to comply with these laws and if violated are threatened with administrative sanctions ranging from verbal warnings, written warnings to license revocation and criminal sanctions",
+      "isOa": true,
+      "retraction_notices": null
+    },
+    {
+      "doi": "10.1002/poi3.249",
+      "title": "Crowdsourcing: Citizens as coproducers of public services",
+      "year": 2021,
+      "journal": "policy &amp; internet",
+      "authors": [
+        "Helen K. Liu"
+      ],
+      "tally": 36,
+      "supporting": 0,
+      "contrasting": 0,
+      "mentioning": 32,
+      "citingPubs": 67,
+      "abstract": "Crowdsourcing serves as a distributed problem‐solving production model for modern governments, and it has the potential to transform citizens into coproducers of public services. To consolidate the theoretical basis, this article provides a typology for crowdsourcing public services based on theories of coproduction, public sector volunteerism, and government–citizen relations. This typology includes two dimensions—the policy stage, and the functionality of citizens' effort—and four types of crowdsourcing, namely, complementary crowdsourcing in service implementation, supplementary crowdsourcing in service implementation, complementary crowdsourcing in policy and service design, and supplementary crowdsourcing in policy design. Four cases are selected for illustration. Designing crowdsourcing based on citizen and government relationships will help designers align goals and tasks to the right coproducers and enhance relationships in a democratic way. Furthermore, this typology will allow the field to systematically and collectively build knowledge.",
+      "isOa": true,
+      "retraction_notices": null
+    },
+    {
+      "doi": "10.1007/978-3-030-27397-2_10",
+      "title": "Who Are the Users of Digital Public Services?",
+      "year": 2019,
+      "journal": null,
+      "authors": [
+        "Bettina Distel",
+        "Ida Lindgren"
+      ],
+      "tally": 13,
+      "supporting": 1,
+      "contrasting": 0,
+      "mentioning": 12,
+      "citingPubs": 19,
+      "abstract": "Despite the importance of citizens as users of digital public services, e-government research has not explicitly considered different perspectives on citizens as users of said services. This paper sets out to explore the possible variations in which the citizen as a user of digital public services is conceptualized within the e-government literature. Through a qualitative and interpretive approach, we have analysed literature from different fields of e-government research to create an overview of how citizens as users of digital public services are conceptualized in e-government research. The structure of the review departs from, and is framed by, four established value paradigms for e-government management. Our approach reveals that -depending on the perspective taken -the conceptualization of the citizen varies considerably and, as a consequence, may impact the results and contributions of each research perspective. The conception of the citizen as a user of digital public services varies from being a passive recipient of government services, to being an active co-producer of services. This article contributes to e-government theory by unboxing the conceptions of citizens as users of digital public services that are existent in current research on digital public services. In providing a framework that relates these conceptions to previously known value paradigms, the article offers a starting point for taking a multidimensional perspective in e-government research that considers the citizen as a multifaceted and heterogeneous entity.",
+      "isOa": true,
+      "retraction_notices": null
+    },
+    {
+      "doi": "10.15575/jbpd.v6i1.38494",
+      "title": "Perusing Public Services in Religious Affairs Office: A Study of Responsive Governance",
+      "year": 2024,
+      "journal": "ministrate jurnal birokrasi dan pemerintahan daerah",
+      "authors": [
+        "Mohamad Ichsana Nur"
+      ],
+      "tally": null,
+      "supporting": null,
+      "contrasting": null,
+      "mentioning": null,
+      "citingPubs": null,
+      "abstract": "There has been a transformation of the public service sector at the Office of Religious Affairs in Indonesia, which was initially undertaken manually to become digital in order to improve more responsive services. This study aims to analyze the public services of the Office of Religious Affairs (KUA) in West Java Province from the perspective of Responsive Governance. This study uses a quantitative approach. This research uses a descriptive type of research. The locus taken in this study was the Office of Religious Affairs (KUA) in West Java Province. Technically, the researchers will divide it into four different clusters spread across the East, West, North, and South of West Java. In this study, primary data was obtained through the distribution of questionnaires. Secondary data is obtained through several studies of documents and other published materials, such as journal articles, theses, dissertations, research reports, other textbooks, and official office documents, such as annual reports, statistical reports, and other appropriate official documents. This study indicates that the implementation of public services at the Office of Religious Affairs in many areas of West Java Province can be said to be heading in a responsive direction. This research concludes that if the public service of the Office of Religious Affairs does not pay attention to the principle of responsiveness, given the development of an increasingly modern and dynamic era, it will have an impact on the emergence of dissatisfaction and even public skepticism.",
+      "isOa": true,
+      "retraction_notices": null
+    },
+    {
+      "doi": "10.31410/balkans.jetss.2021.4.2.100-109",
+      "title": "IMPACT OF THE LEVEL OF DIGITAL PUBLIC SERVICES ON THE FULFILLMENT OF TAX OBLIGATIONS",
+      "year": 2021,
+      "journal": "balkans journal of emerging trends in social sciences",
+      "authors": [
+        "Denisa Ihnatišinová"
+      ],
+      "tally": null,
+      "supporting": null,
+      "contrasting": null,
+      "mentioning": null,
+      "citingPubs": null,
+      "abstract": "The purpose of the paper is to find out how digitalization makes it possible to simplify the fulfilment of tax obligations of taxable persons - entrepreneurs. Digital development of tax administration means the level of digital services to tax entities. Taxpayers are perceived by the tax administration as clients who need to be simplified as much as possible. Introducing or increasing the provision of online services, pre-filled forms or electronization of invoices are current trends that reduce the time devoted to taxes. By monitoring the relationship between the development of the level of digital public services and the evolution of the number of hours needed to meet the tax obligations of the entrepreneur, it was found that the gradual introduction of digital projects reduces the administrative burden on taxable persons.",
+      "isOa": true,
+      "retraction_notices": null
+    },
+    {
+      "doi": "10.54783/endlessjournal.v6i2.188",
+      "title": "Analysis of Bandung City Muzaki Satisfaction with the Services of the National Amil Zakat Agency (BAZNAS)",
+      "year": 2023,
+      "journal": "endless international journal of future studies",
+      "authors": [
+        "Yudi Haryadi",
+        "Wasifah Hanim",
+        "Siti Mardiana"
+      ],
+      "tally": null,
+      "supporting": null,
+      "contrasting": null,
+      "mentioning": null,
+      "citingPubs": null,
+      "abstract": "The National Amil Zakat Agency in Indonesian “Badan Amil Zakat Nasional” (BAZNAS) in Bandung City places a high priority on measuring muzakki satisfaction in all aspects of service delivery. In order to increase the muzakki's (those who pay zakat) trust in BAZNAS in Bandung City, it is obvious that service improvement is required. This study has a descriptive study design and a quantitative methodology. Its goals are to assess the level of community satisfaction with the services supplied by the local institution, explain and comprehend the quality of services offered, and gauge how closely community satisfaction corresponds to the institution's actual performance of services. Purposive sampling is the method of sampling that was used, and 344 respondents made up the sample. The measurement method for the public service satisfaction index and the calculation described in the Regulation of the Minister of State Apparatus Empowerment and Bureaucratic Reform of the Republic of Indonesia Number 14 of 2017 regarding Guidelines for Preparing Public Service Organizer Satisfaction Surveys and SERVQUAL are combined in the analysis method used to calculate the muzakki satisfaction index for BAZNAS in Bandung City. 90% of the muzakki express concern and high concern for BAZNAS activities, despite the fact that they have no direct interaction with BAZNAS in Bandung City, according to an analysis of muzakki perceptions of zakat administration by BAZNAS in that city. 50.56% of the muzakki reported that the “Unit Pengumpul Zakat” UPZ (collecting and distribution units) at their individual universities are how they find out about BAZNAS initiatives. Information is accessed by the remaining 49.49% of the muzakki via various digital channels. About 60% of the muzakki in Bandung City believe that BAZNAS' official website and social media pages are \"informative\" in how they publish their activity reports. 85% of the muzakki in Bandung say that the needy and poor groups should be the focus of the zakat distribution carried out by BAZNAS. Bandung Sehat, Bandung Taqwa, Bandung Makmur, Bandung Cerdas, and Bandung Peduli are the five BAZNAS projects in Bandung City that earn the maximum support from the muzakki, each receiving 43.56%. Almost all of the components (indicators) of the muzakki satisfaction measurement fall into the \"good\" category, scoring between 3 and 4. Only one indication receives a score of 4.01 or above, which is in the trust area and represents a very good result. One more indication, rating 3.69 (good), is above 4.00 in the satisfaction category. The Bandung City Muzakki's impression of service quality was used to calculate the BAZNAS Service Quality Index, and the outcome is 77.03. In general, the muzakki rate the zakat management and distribution services offered by BAZNAS in Bandung City as being pretty satisfactory.",
+      "isOa": true,
+      "retraction_notices": null
+    },
+    {
+      "doi": "10.2991/assehr.k.200323.074",
+      "title": "6 in 1 Program Implementation to Improve the Quality of Public Services in the Population and Civil Service of Surabaya City",
+      "year": 2020,
+      "journal": null,
+      "authors": [
+        "Muhammad Haykal",
+        "Eko Supeno",
+        "Falih Suaedi"
+      ],
+      "tally": 1,
+      "supporting": 0,
+      "contrasting": 0,
+      "mentioning": 0,
+      "citingPubs": 2,
+      "abstract": "This study aims to describe how the implementation of the 6 in 1 program in the Department of Population and Civil Registration Surabaya. The background of this research is the many forms of public services that are not integrated that cause queues at the Population and Civil Registry Office. The high number of queues results in rampant brokers, and inefficient and ineffective administration processes. So the Surabaya city government conducted an innovation program called 6 in 1. These problems were overcome with a 6 in 1 innovation program (handling moving, moving, active, dead, married, and divorced online letters). The 6 in 1 program is expected to provide easy access to public services in the field of population administration based on e-government. This 6 in 1 program is able to increase effectiveness and efficiency in service. This research uses a qualitative method with a case study approach. The research location is the Surabaya Population and Civil Registry Office. The results of this study indicate that the results of the implementation of the 6 in 1 program in the Department of Population and Civil Registration is the maximum is the best solution in an effort to improve public services in the city government of Surabaya to the public so that it becomes better and more efficient. So that the realization of good administrative services to realize the principles of good governance. This success is due to the readiness of resources, disposition arrangements between institutions and communication between stakeholders that goes well.",
+      "isOa": true,
+      "retraction_notices": null
+    },
+    {
+      "doi": "10.1111/ntwe.12054",
+      "title": "Enacting the internet and social media on the public sector's frontline",
+      "year": 2015,
+      "journal": "new technology work and employment",
+      "authors": [
+        "G Mearns",
+        "Ranald Richardson",
+        "Liz Robson"
+      ],
+      "tally": 12,
+      "supporting": 1,
+      "contrasting": 0,
+      "mentioning": 11,
+      "citingPubs": 13,
+      "abstract": "Recognising their growing role in public services, this article draws on the notion of ‘enactment’ to argue that the internet and social media (I&SM) need to be understood in particular institutional, organisational and social contexts. Focusing on street‐level bureaucrats who deliver frontline services, we explore efforts to integrate I&SM into youth work with clients who are thought to be ‘digitally savvy’ but also in need of protection from the ‘online world’. As clients can be vulnerable and trust is a key relational component, organisation–practitioner–client boundaries are complex and under continuous renegotiation. However, the layering of new virtual channels of interaction adds extra complexity. This change necessitates the development of innovative routines, practices and protocols, but these are being developed in a wider social context where the norms of using social media have not caught up with practice and the use of these tools is still often surrounded by moral panic.",
+      "isOa": true,
+      "retraction_notices": null
+    }
+  ]
+}

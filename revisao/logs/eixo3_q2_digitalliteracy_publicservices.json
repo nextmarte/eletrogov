@@ -1,0 +1,188 @@
+{
+  "total": 5863,
+  "count": 10,
+  "query": "\"digital literacy\" AND \"public services\" AND adoption",
+  "hits": [
+    {
+      "doi": "10.26858/jiap.v13i1.45171",
+      "title": "Improving the Effectiveness of Public Services through Technology-Based Service Innovations in Indonesia",
+      "year": 2023,
+      "journal": "jurnal ilmiah ilmu administrasi publik",
+      "authors": [
+        "Nugroho Widianto"
+      ],
+      "tally": 1,
+      "supporting": 0,
+      "contrasting": 0,
+      "mentioning": 1,
+      "citingPubs": 1,
+      "abstract": "This study aimed to investigate the role of technology-based service innovations in improving the effectiveness of public services in Indonesia. The background of this study is based on the increasing demand for public services and the need for more efficient and effective service delivery methods. The study adopted a qualitative research method, including interviews and focus group discussions with key stakeholders involved in the delivery of public services. The findings of this study suggest that the implementation of technology-based service innovations can improve the effectiveness of public services by increasing accessibility, speed, and accuracy of service delivery. The study recommends that policymakers and public service providers should invest in technology-based innovations to improve the quality of public services and enhance the overall customer experience.",
+      "isOa": true,
+      "retraction_notices": null
+    },
+    {
+      "doi": "10.70062/managementdynamics.v2i4.386",
+      "title": "Digital Transformation in Public Services",
+      "year": 2025,
+      "journal": null,
+      "authors": [
+        "Syafaruddin Syafaruddin",
+        "Andi Rizka"
+      ],
+      "tally": null,
+      "supporting": null,
+      "contrasting": null,
+      "mentioning": null,
+      "citingPubs": null,
+      "abstract": "Digital transformation has fundamentally reshaped the landscape of public service delivery worldwide, with e-government emerging as a critical mechanism for enhancing government efficiency, transparency, and citizen engagement. This article provides a comprehensive analysis of e-government implementation in Indonesia, examining the trajectory of digital transformation in public services, the institutional frameworks supporting this transition, and the multifaceted impacts on service quality and governance outcomes. Through systematic literature review and critical policy analysis, this research explores the evolution of Indonesia's e-government initiatives from early adoption to current comprehensive digital service platforms, investigating both successes and persistent challenges. The findings reveal that Indonesia has made substantial progress in developing e-government infrastructure and applications across national and local government levels, with notable achievements including integrated digital identity systems, online business licensing platforms, and citizen complaint management systems. These initiatives have demonstrably improved service accessibility, reduced processing times, minimized corruption opportunities, and enhanced government responsiveness. However, implementation remains uneven across regions and government institutions, constrained by factors including digital infrastructure disparities, limited digital literacy among citizens and officials, organizational resistance to change, inadequate interoperability between systems, and cybersecurity vulnerabilities. The research identifies critical success factors for effective e-government implementation including strong leadership commitment, adequate resource allocation, comprehensive capacity building programs, citizen-centric design principles, robust legal frameworks, and collaborative partnerships between government, private sector, and civil society.",
+      "isOa": false,
+      "retraction_notices": null
+    },
+    {
+      "doi": "10.61838/kman.isslp.1.2.3",
+      "title": "Digital Governance: Citizen Perceptions and Expectations of Online Public Services",
+      "year": 2022,
+      "journal": null,
+      "authors": [
+        "Vanessa Indama"
+      ],
+      "tally": null,
+      "supporting": null,
+      "contrasting": null,
+      "mentioning": null,
+      "citingPubs": null,
+      "abstract": "This study aims to explore citizen perceptions and expectations of online public services within the context of digital governance. It seeks to identify the key factors that influence user satisfaction and trust in digital public services, thereby providing insights into how these services can be optimized to meet the evolving needs of the public. Adopting a qualitative research approach, the study conducted semi-structured interviews with 28 participants, selected through purposive sampling to ensure diversity in age, gender, socioeconomic status, and digital literacy levels. The interviews focused on participants' experiences and expectations regarding digital governance. Data were analyzed through thematic analysis to achieve theoretical saturation, identifying recurring themes and concepts related to digital public services. The analysis revealed four main themes: Access and Usability, Service Quality, Citizen Engagement, and Policy and Regulation. Within these themes, several categories and concepts were identified, including digital literacy, platform accessibility, service availability, user support, efficiency and speed, reliability, personalization, transparency, feedback and improvement, communication channels, participation opportunities, education and awareness, digital inclusion policies, data governance, e-government strategies, and cybersecurity measures. The study concludes that citizens' perceptions and expectations of online public services are shaped by a complex interplay of factors related to access, service quality, engagement, and regulatory policies. To enhance the effectiveness and equity of digital public services, it is imperative for policymakers and practitioners to adopt a citizen-centric approach that prioritizes accessibility, inclusivity, engagement, and ethical considerations.",
+      "isOa": true,
+      "retraction_notices": null
+    },
+    {
+      "doi": "10.55927/ijsmr.v1i11.7047",
+      "title": "Revitalizing Public Services: Addressing Challenges and Enhancing Satisfaction(A Study of Public Services in Palu City)",
+      "year": 2023,
+      "journal": "international journal of scientific multidisciplinary research",
+      "authors": [
+        "Mustainah Mappatoba"
+      ],
+      "tally": 0,
+      "supporting": 0,
+      "contrasting": 0,
+      "mentioning": 0,
+      "citingPubs": 1,
+      "abstract": "Research on the transformation of public services, specifically e-government, is lacking in Indonesia, particularly in Palu City. Conducting this research is crucial to contribute to the field of public administration. The aim of this study is to examine the transformation of public services through e-government in Palu City, utilizing a quantitative approach. The target population includes residents of Palu City, with a focus on the One-Stop Investment Office. Data collection methods include observations, questionnaires, and documentation, while data analysis involves multiple linear regression. The findings indicate that e-government and the quality of electronic services have an impact on the satisfaction of electronic services. This highlights the importance of implementing public service transformation, encompassing e-government and e-service quality, to enhance satisfaction and mitigate unethical bureaucratic behavior, thereby providing the community with fast, convenient, and equitable services",
+      "isOa": true,
+      "retraction_notices": null
+    },
+    {
+      "doi": "10.4018/jgim.295976",
+      "title": "Determinants of Smart Digital Infrastructure Diffusion for Urban Public Services",
+      "year": 2022,
+      "journal": "journal of global information management",
+      "authors": [
+        "Bhaskar Choudhuri",
+        "Praveen Ranjan Srivastava",
+        "Shivam Gupta"
+      ],
+      "tally": 13,
+      "supporting": 0,
+      "contrasting": 0,
+      "mentioning": 10,
+      "citingPubs": 23,
+      "abstract": "Government of India’s ‘Digital India’ initiative intends to build robust digital ecosystem that fosters innovation &amp; entrepreneurship enabling better citizen service &amp; citizen empowerment. Digitization in India involves geo-demographic &amp; socio-economic dependency, choice of smart technologies undergoing rapid innovation, strategic roll-out planning &amp; flawless implementation as prerequisite of technology diffusion &amp; benefit realization. This study identifies technical &amp; non-technical determinants of smart digital framework roll out that can accelerate digital diffusion in urban public services in India. This study follows inductive exploratory method, combining grounded theory &amp; text mining for primary data analysis. Study reveals digitization is an ecosystem of private &amp; public enterprises and citizen participation, identifies integrated use analytics &amp; IoT can enable connected smart city, whereas technology cost, digital literacy &amp; sustainable innovation as non-technological determinant towards resilient urban digital infrastructure in India.",
+      "isOa": true,
+      "retraction_notices": null
+    },
+    {
+      "doi": "10.38035/jlph.v6i2.2801",
+      "title": "Smart Village Concept And Improvement Of Public Services In Indonesia",
+      "year": 2026,
+      "journal": "journal of law politic and humanities",
+      "authors": [
+        "Tia Devianty",
+        "Nunung Hastika",
+        "Pandji Santosa"
+      ],
+      "tally": null,
+      "supporting": null,
+      "contrasting": null,
+      "mentioning": null,
+      "citingPubs": null,
+      "abstract": "The Smart Village concept in Indonesia seeks to integrate information and communication technology (ICT) into rural development to enhance public service efficiency, community empowerment, and overall quality of life. This study adopts a qualitative descriptive approach through document analysis to explore the implementation of Smart Village initiatives as a strategy to reduce disparities between urban and rural areas. Key challenges identified include infrastructure gaps, limited digital literacy, budget constraints, resistance to change, and data security concerns. Successful case studies such as Banyuwangi’s Smart Kampung, public-private partnerships in Pangandaran, and the adoption of telemedicine and e-learning platforms illustrate significant improvements in administrative efficiency, transparency, healthcare access, education, and local economic empowerment. The findings emphasize the importance of multi-stakeholder collaboration involving government, private sector, academia, and communities to overcome these barriers. Furthermore, the study outlines the phased process of digital transformation in public services: digitization, digitalization, integration, and intelligent governance, exemplified by initiatives such as e-KTP, the Village Information System (SID), and the One Data Indonesia portal. Policy frameworks including the National Electronic-Based Government System Architecture (SPBE) and the Digital Village Movement are identified as critical enablers. Ultimately, equitable infrastructure, comprehensive digital literacy, secure data governance, and sustainable funding models are essential to scale Smart Village initiatives nationwide, fostering inclusive and sustainable rural development.",
+      "isOa": false,
+      "retraction_notices": null
+    },
+    {
+      "doi": "10.29103/icospolhum.v4i.412",
+      "title": "Digital Transformation 5.0: Establishing ASN Professionalism and Integrity in Public Services",
+      "year": 2024,
+      "journal": "proceedings of international conference on social science political science and humanities (icospolhum)",
+      "authors": [
+        "Nurul Kamaly",
+        "Vidya Syauqi",
+        "Salsabiil Salsabiil"
+      ],
+      "tally": null,
+      "supporting": null,
+      "contrasting": null,
+      "mentioning": null,
+      "citingPubs": null,
+      "abstract": "The State Civil Apparatus (ASN) is required to provide quality public services based on the principles of public service. Therefore, we need a system that becomes a public service standard as a guide and commitment to the community in providing services that meet standards of quality, speed, ease of access, affordability and measurable service. Digital transformation in public services absolutely must be implemented in accordance with the development of the digital revolution 5.0. That the quality of ASN must change in an era that is also constantly changing, namely including managerial and decision-making abilities, speed, agility, adaptability and mastery of information technology. In reality, the quality of the State Civil Apparatus (ASN) still does not meet expectations. This is because the challenges in bureaucracy actually lie not only in the lack of skilled and competent human resources, but also in issues of character and behavior that do not reflect professionalism and integrity in providing services.",
+      "isOa": true,
+      "retraction_notices": null
+    },
+    {
+      "doi": "10.47577/tssj.v37i1.7723",
+      "title": "Public Services Based On e-Government in Digital Age",
+      "year": 2022,
+      "journal": "technium social sciences journal",
+      "authors": [
+        "Sri Weningsih",
+        "Adhi Iman Sulaiman",
+        "Chusmeru Chusmeru"
+      ],
+      "tally": 1,
+      "supporting": 0,
+      "contrasting": 0,
+      "mentioning": 1,
+      "citingPubs": 2,
+      "abstract": "The development of information and communication technology in the era of globalization, democratization, and decentralization has become a necessity as well as a challenge, especially for local governments in the development of communication for public services and community empowerment. The research used a qualitative case study method, with data collection through documentation, interviews, observations, and Focus Group Discussions (FGD). The research subjects were chosen purposively, namely local governments in four district governments in the southern region of Central Java in Indonesia, academics, observers, and digital media practitioners. The study used Cross Case Analysis to find the diversity, uniqueness, and depth of cases. The results of the study indicate that (1) Public services are important and strategic to be implemented through information and communication technology media in the form of e-Government to improve public services that are efficient, effective, participatory, responsive, and have transparency of information as well as budget accountability and implementation of development programs. (2) The government needs to anticipate the information technology gap so that it requires digital media literacy in improving the competence of human resources in government institutions, educational institutions, and social also business economics.",
+      "isOa": true,
+      "retraction_notices": null
+    },
+    {
+      "doi": "10.31258/jkp.v16i3.8876",
+      "title": "Enhancing Public Services through Strategic Digitalization of Population Documents in Bandar Lampung City",
+      "year": 2025,
+      "journal": "jurnal kebijakan publik",
+      "authors": [
+        "Komsiyah Komsiyah"
+      ],
+      "tally": null,
+      "supporting": null,
+      "contrasting": null,
+      "mentioning": null,
+      "citingPubs": null,
+      "abstract": "Population documents such as Identity Cards (KTP), Family Cards (KK), and Birth Certificates are basic rights of citizens and essential instruments for development planning, social protection, and public services. However, the effectiveness of population administration services still faces obstacles such as limited infrastructure, low adoption of digital services, and gaps in community digital literacy. This study aims to analyze the problems of population document services, formulate alternative solutions, and recommend strategic policies for digitalization. Using a qualitative policy research approach with a descriptive-analytical design, this study involved stakeholders from the Population and Civil Registration Office (Disdukcapil), government apparatus, and community representatives. Data were collected through document review, surveys, and in-depth interviews, analyzed using the Ultrasound (Urgency–Seriousness–Growth) method and the Bardach “Eightfold Path” framework to evaluate policy effectiveness, efficiency, and long-term implications. The findings show that dependence on manual services remains dominant due to weak infrastructure, limited digital capacity of the apparatus, and low community digital literacy. The policy evaluation identified three main alternatives: modernization of manual services, optimization of digitalization, and hybrid strategies. Strengthening digitalization supported by infrastructure improvement, capacity building, digital literacy enhancement, and multi-stakeholder collaboration was found to be the most feasible strategy. This study contributes by adapting the Avoid–Shift–Improve (ASI) framework into local digital governance analysis, providing a replicable model for other municipalities.",
+      "isOa": false,
+      "retraction_notices": null
+    },
+    {
+      "doi": "10.61996/economy.v2i2.77",
+      "title": "Bridging the Archipelago: E-Governance and Access to Public Services in Sulu, Philippines",
+      "year": 2024,
+      "journal": null,
+      "authors": [
+        "Datu Ansaruddin K. Kiram",
+        "Mharcelyn M. Kiram",
+        "Adzlan P. Hamsaji"
+      ],
+      "tally": null,
+      "supporting": null,
+      "contrasting": null,
+      "mentioning": null,
+      "citingPubs": null,
+      "abstract": "Geographic isolation, socioeconomic challenges, and security concerns have historically hindered public service delivery in Sulu, Philippines. This study investigated the role of e-governance in bridging this gap and enhancing citizen engagement with government services. A mixed-methods approach was employed. Quantitative analysis of government records assessed service utilization pre- and post-implementation of e-governance initiatives. A survey of 300 Sulu residents evaluated experiences with e-governance platforms. Qualitative data from semi-structured interviews with citizens and government officials provided contextual insights. E-governance platforms significantly increased public service utilization. Citizens reported improved convenience, reduced travel time and costs, and greater transparency. Challenges include digital literacy, limited internet connectivity, and trust in online platforms. In conclusion, e-governance has the potential to improve service access in Sulu. Successful implementation requires addressing infrastructure limitations, promoting digital literacy, and building trust in online services. This study informs strategies for leveraging technology for inclusive service delivery in marginalized communities.",
+      "isOa": true,
+      "retraction_notices": null
+    }
+  ]
+}

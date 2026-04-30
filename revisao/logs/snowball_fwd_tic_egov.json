@@ -1,0 +1,131 @@
+{
+  "total": 111,
+  "count": 10,
+  "query": "\"TIC Domicilios\" AND (\"e-government\" OR \"governo eletronico\")",
+  "hits": [
+    {
+      "doi": "10.5935/2763-9673.20220016",
+      "title": "O IMPACTO DA PANDEMIA DE COVID-19 NA CONTINUIDADE DAS POLÍTICAS PÚBLICAS DE IMPLANTAÇÃO DO GOVERNO ELETRÔNICO NO BRASIL1",
+      "year": 2022,
+      "journal": "revista de estudos em organizações e controladoria",
+      "authors": [
+        "JOSELIO JORGE TEIDER"
+      ],
+      "tally": null,
+      "abstract": "A pandemia de COVID-19 gerou profundos impactos na relação entre os governos e os cidadãos e, em especial, nas necessidades da prestação de serviços pelos canais on-line, diante da necessidade de isolamento social. Em que pese muitos estudos de qualidade sobre Governo Eletrônico estão sendo produzid"
+    },
+    {
+      "doi": "10.1590/0034-7612171925",
+      "title": "Serviços de governo eletrônico no Brasil: uma análise a partir das medidas de acesso e competências de uso da internet",
+      "year": 2018,
+      "journal": "revista de administração pública",
+      "authors": [
+        "Marcelo Henrique de Araújo",
+        "Nicolau Reinhard",
+        "Maria Alexandra Cunha"
+      ],
+      "tally": 18,
+      "abstract": "Resumo Este artigo tem como objetivo analisar como medidas de disponibilidade de acesso à internet e de competência de uso influenciam o uso de serviços de governo eletrônico no Brasil. A pesquisa se baseou na abordagem das capacidades de Amartya Sen para a análise dos microdados da pesquisa TIC Dom"
+    },
+    {
+      "doi": "10.1590/1679-395120200206",
+      "title": "Serviços de governo eletrônico no Brasil: uma análise sobre fatores de impacto na decisão de uso do cidadão",
+      "year": 2021,
+      "journal": "cadernos ebape br",
+      "authors": [
+        "LUIZ CLAUDIO MENDES VARGAS",
+        "Marie Anne Macadar",
+        "Peter Wänke"
+      ],
+      "tally": 0,
+      "abstract": "Resumo Este artigo trata dos fatores que influenciam a utilização de serviços de governo eletrônico pelos cidadãos. A literatura acadêmica tem promovido reflexões sobre a influência de diversos fatores, e este artigo tem como objetivo avaliar se aspectos sociodemográficos têm influência sobre a deci"
+    },
+    {
+      "doi": "10.38116/9786556350509cap15",
+      "title": "Capacidades estatais em tecnologias de informação e comunicação e exclusão digital nos estados brasileiros",
+      "year": 2023,
+      "journal": null,
+      "authors": [
+        "Manuella Maia Ribeiro",
+        "Javiera Fernanda Medina Macaya",
+        "Fabio Storino"
+      ],
+      "tally": null,
+      "abstract": "O capítulo tem como objetivo a proposição de uma análise multidimensional da presença de capacidades estatais em TICs e de habilidades digitais e uso de tecnologias por cidadãos, com foco nos estados brasileiros e no seu papel para acelerar a adoção das TICs tanto pelo setor público como pela socied"
+    },
+    {
+      "doi": "10.25194/rf.v15i1.1532",
+      "title": "GOVERNO ELETRÔNICO: ESTUDO  COMPARATIVO DOS SERVIÇOS DIGITAIS  DOS DEPARTAMENTOS ESTADUAIS DE  TRÂNSITO DE ALAGOAS E SERGIPE",
+      "year": 2022,
+      "journal": "revista formadores",
+      "authors": [
+        "Amanda Talita Dos Santos Sátiro",
+        "Aline Silva De Alcantara Mota",
+        "Ivo Pedro Gonzalez"
+      ],
+      "tally": null,
+      "abstract": "O presente artigo tem como pauta o Governo Eletrônico e suas características práticas de aproximação e democratização entre o poder público e a sociedade, por meio do uso de tecnologias da informação. Para que tais práticas possam ocorrer e continuar evoluindo, os governos têm disponibilizado canais"
+    },
+    {
+      "doi": "10.59731/vol1iss1pp200-218",
+      "title": "IMPORTÂNCIA DO GOVERNO ELETRÔNICO E DA UTILIZAÇÃO DE TECNOLOGIAS DA INFORMAÇÃO E COMUNICAÇÃO NO FORTALECIMENTO DA SEGURANÇA PÚBLICA E NO COMBATE AOS CRIMES DE FRONTEIRA",
+      "year": 2023,
+      "journal": "revista (re)definições das fronteiras",
+      "authors": [
+        "Higor Braga",
+        "Jéfferson Becker"
+      ],
+      "tally": null,
+      "abstract": "A nova realidade gerada pela sociedade do conhecimento, que utiliza massivamente ferramentas tecnológicas como smartphones, tablets e notebooks para buscar informações, trouxe a necessidade de criação de estruturas governamentais com foco voltado para implementação de políticas relacionadas ao Gover"
+    },
+    {
+      "doi": "10.26633/rpsp.2025.21",
+      "title": "Transformação digital inclusiva: panorama do uso de serviços digitais por mulheres no Brasil",
+      "year": 2025,
+      "journal": "revista panamericana de salud pública",
+      "authors": [
+        "Luciana Portilho",
+        "Javiera Fernanda Medina Macaya",
+        "Manuella Maia Ribeiro"
+      ],
+      "tally": null,
+      "abstract": "RESUMO\n    \n\n     O presente estudo utilizou dados da pesquisa TIC Domicílios, realizada em 2023 pelo Centro Regional de Estudos para o Desenvolvimento da Sociedade da Informação (Cetic.br|NIC.br), para analisar o acesso à internet por mulheres no Brasil, assim como a realização de atividades\n     \n"
+    },
+    {
+      "doi": "10.11606/issn.2238-2593.organicom.2024.224504",
+      "title": "Comunicação pública nos municípios brasileiros: canais, serviços e atendimento ao cidadão",
+      "year": 2024,
+      "journal": "organicom",
+      "authors": [
+        "Ana Marusia Pinheiro Lima Meneguin",
+        "Armando Medeiros de Faria",
+        "Paola Beraldo"
+      ],
+      "tally": null,
+      "abstract": "How does the municipal public administration communicate to citizens in Brazil? Based on this research question, this study overviews remote communicational services from the city halls in the 5,570 Brazilian municipalities following data from the Municipal Basic Information Survey in 2019 and other"
+    },
+    {
+      "doi": "10.18256/2238-0604.2023.v19i1.4836",
+      "title": "O acesso as tecnologias de informação e comunicação no Brasil: os reflexos da exclusão e da desigualdade digital nos direitos da personalidade",
+      "year": 2023,
+      "journal": "revista brasileira de direito",
+      "authors": [
+        "Dirceu Pereira Siqueira",
+        "Mayume Caires Moreira"
+      ],
+      "tally": null,
+      "abstract": "O artigo trata da incorporação das tecnologias de informação e comunicação (TICs), tendo como enfoque a pessoa em exclusão ou desigualdade digital e o desencadear nos direitos da personalidade. Analisa o contexto de acesso e utilização das TICs sob a perspectiva do livre desenvolvimento da personali"
+    },
+    {
+      "doi": "10.1177/08944393231176595",
+      "title": "Why Device-Related Digital Inequalities Matter for E-Government Engagement?",
+      "year": 2023,
+      "journal": "social science computer review",
+      "authors": [
+        "Matías Dodel"
+      ],
+      "tally": 0,
+      "abstract": "Mobile devices were key drivers for recent Internet expansion in lower-income countries, democratizing access. Nonetheless, concerns arose regarding their role in the creation of new digital underclass related to the capital-enhancing consequences of Internet use. Among these, e-government engagemen"
+    }
+  ]
+}

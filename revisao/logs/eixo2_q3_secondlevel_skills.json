@@ -1,0 +1,190 @@
+{
+  "total": 483,
+  "count": 10,
+  "query": "\"second-level digital divide\" AND skills",
+  "hits": [
+    {
+      "doi": "10.1007/978-3-030-45002-1_28",
+      "title": "A Methodology for Addressing the Second-Level Digital Divide",
+      "year": 2020,
+      "journal": null,
+      "authors": [
+        "Susana Muñoz-Hernández",
+        "Clara Benac Earle",
+        "Lars‐Åke Fredlund"
+      ],
+      "tally": 7,
+      "supporting": 1,
+      "contrasting": 0,
+      "mentioning": 6,
+      "citingPubs": 6,
+      "abstract": "In this article we describe a methodology, and its evaluation, for achieving technical competence through digital literacy training using self-learning training material. The key component is self-learning in the sense that the targeted population learns digital operational skills without the need of a teacher. This is achieved through the adaptation of the training material to the trained group. As training groups are diverse, e.g., including both populations in developing and developed countries, and varying in age aspects, gender, languages, literacy levels and technological literacy levels, materials and the speed which training takes place has to be adapted to take into account these differences. The methodology involves use of training videos, and use a dual screen approach where training material is shown on one screen and training takes place on a second screen (computer). The approach has been evaluated in both developing countries and developed countries, with training groups of different capabilities and backgrounds (in Kenya, El Salvador, Spain, France and The Netherlands), with promising results.",
+      "isOa": true,
+      "retraction_notices": null
+    },
+    {
+      "doi": "10.1177/1461444815604154",
+      "title": "Modeling the second-level digital divide: A five-country study of social differences in Internet use",
+      "year": 2016,
+      "journal": "new media &amp; society",
+      "authors": [
+        "Moritz Büchi",
+        "Natascha Just",
+        "Michael Latzer"
+      ],
+      "tally": 172,
+      "supporting": 5,
+      "contrasting": 2,
+      "mentioning": 139,
+      "citingPubs": 259,
+      "abstract": "Based on representative surveys on Internet use, this article advances comparative research on the second-level digital divide by modeling Internet usage disparities for five countries with narrowing access gaps. Four core Internet usage types are constructed and predicted by sociodemographic variables in a structural model. Overall, the findings confirm the recently identified shift in the digital divide from access to usage in five further countries. Results show that sociodemographics alone account for up to half of the variance in usage in these high-penetration countries, with age being the strongest predictor. Measurement invariance tests indicate that a direct comparison is only valid between three of the five countries explored. Methodologically, this points to the indispensability of such tests for unbiased comparative research.",
+      "isOa": false,
+      "retraction_notices": null
+    },
+    {
+      "doi": "10.1344/der.2023.44.61-75",
+      "title": "Assessing the Second-Level Digital Divide in Austria: A Representative Study on Demographic Differences in Digital Competences",
+      "year": 2023,
+      "journal": "digital education review",
+      "authors": [
+        "Alexander Schmölz",
+        "Corinna Geppert",
+        "Stephanie Schwarz"
+      ],
+      "tally": 0,
+      "supporting": 0,
+      "contrasting": 0,
+      "mentioning": 0,
+      "citingPubs": 3,
+      "abstract": "The second-level digital divide concerns individual levels of digital competences and demographic indicators of digital gaps. In this paper, we have analysed empirical data that allow a thorough and differentiated look into the second-level digital divide with a rigorous methodological quantitative approach. We investigated the relationship between results from a self-assessment of one’s own digital competences, and a knowledge test about digital tools among Austrian citizens (N=1109). The study explores second-level digital divides in gender, education level, age, first language, and length of time living in the country regarding respective competence levels and areas, referring to the Digital Competence Model for Austria - DigComp 2.2 AT. Results show that the digital gender divide is paramount across all competence areas, while the age divide remains strong when comparing under 18-year-olds with over 60-year-olds. Moreover, positive effects are related to education level and first language.",
+      "isOa": true,
+      "retraction_notices": null
+    },
+    {
+      "doi": "10.17648/acta.scientiae.6006",
+      "title": "Evidence from Google Trends of a Widening Second-level Digital Divide in Brazil. Even Worse with the Covid-19",
+      "year": 2020,
+      "journal": "acta scientiae",
+      "authors": [
+        "Renato P. dos Santos",
+        "Mustafa Şahin Bülbül",
+        "Isadora Luiz Lemes"
+      ],
+      "tally": 4,
+      "supporting": 0,
+      "contrasting": 0,
+      "mentioning": 4,
+      "citingPubs": 6,
+      "abstract": "Background: While Brazilian governmental initiatives focused on home broadband Internet access, availability of computers for students in schools has been drastically reduced since 2010. Furthermore, schools usually prohibits mobile Internet access in its premises, contrarily to the migration of students’ access to smartphones.  Objectives: This study investigates the impact of the increasing home and mobile Internet access on the existing educational inequalities. Design: This study made use of quantitative, locally statistical research to investigate the reproduction or closing of existing educational digital divide across already contrasting Brazilian regions. Setting and Participants: Child or adolescent from 9 to 17 years of age and their guardians, interviewed by CETIC.br. Data collection and analysis: Data was obtained from the CETIC.br data portal and the Google Trends webpage. Data were analysed by means of local geostatistical measures of spatial autocorrelation and inequality, as well as bivariate choropleth maps. Results: Our results suggest that the Brazilian school system is failing to cultivate in their students the more productive use of Internet access and therefore contributing to the widening of the existing second-level digital divide between regions and social classes. Conclusions: This digital divide was critically exacerbated by the arrival of the ongoing COVID-19 pandemic and the suspension of presential classes.Brazilian policymakers should concentrate efforts and resources in addressing this large-scale second-level digital divide, possibly by equipping educators and students with the knowledge and skills towards the educational, productive and responsible use of the Internet, as well as allowing mobile Internet access in school premises.",
+      "isOa": true,
+      "retraction_notices": null
+    },
+    {
+      "doi": "10.18662/rrem/12.2sup1/305",
+      "title": "Educational Resilience in Pandemic Times and Potential Impacts on Inequalities: the Case of Romania",
+      "year": 2020,
+      "journal": "revista romaneasca pentru educatie multidimensionala",
+      "authors": [
+        "Ana-Maria Zamfir"
+      ],
+      "tally": 5,
+      "supporting": 0,
+      "contrasting": 0,
+      "mentioning": 3,
+      "citingPubs": 6,
+      "abstract": "Coronavirus pandemic has affected millions of participants to education around the globe. School closure has been in the core of the preventive measures taken by authorities in order to limit COVID-19 spread. Resilience of the education systems in front of coronavirus crisis has relied on their capacity to continue education after the school closure. Home-schooling quickly has become a solution for many students. New tools of virtual education are being used by numerous teachers and students. The changes and shifts in education approach were more rapid and significant in pandemic times as ever. Education systems around the world have faced an unprecedented disruption. This paper argues that while the resilience of the education systems has relied extensively on virtual solutions, socioeconomic disparities and digital gaps could widen educational inequalities. Statistical data are presented in order to shed light on the potential impacts on educational equality in times of COVID-19 pandemic. A more coherent and rapid response of educational authorities is required in Romania in order to tackle such effects.",
+      "isOa": true,
+      "retraction_notices": null
+    },
+    {
+      "doi": "10.1177/15701255251321344",
+      "title": "Non-Use of Government Websites in Old Age: The Role of Ethnicity and Immigrant Status",
+      "year": 2025,
+      "journal": "information polity",
+      "authors": [
+        "Dennis Rosenberg"
+      ],
+      "tally": null,
+      "supporting": null,
+      "contrasting": null,
+      "mentioning": null,
+      "citingPubs": null,
+      "abstract": "This study aimed to show whether the link exists between ethnic/immigrant origin of older internet users and the two digital exclusion parameters - non-use of government websites and reporting skill insufficiency as a reason for their non-use. The second-level digital divide approach served as the theoretical framework for the study. Data were obtained from the 2020 Israel Social Survey. The sample included 1293 internet users aged 60 years and older. The results show that members of ethnic minority group and immigrants were more likely than members of ethnic majority group to both belong to the government website non-user group and provide insufficient skills as a reason for non-use. The results support the second-level digital divide approach. They suggest that being internet user does not protect older immigrants and members of ethnic minority from being excluded from the e-government use. The findings imply that tailored support and training are required for older internet users with ethnic minority or immigrant background in order to better integrate them into the world of online government services.",
+      "isOa": false,
+      "retraction_notices": null
+    },
+    {
+      "doi": "10.1093/jamia/ocv204",
+      "title": "Beyond access: barriers to internet health information seeking among the urban poor",
+      "year": 2016,
+      "journal": "journal of the american medical informatics association",
+      "authors": [
+        "Rachel McCloud",
+        "Cassandra A. Okechukwu",
+        "Glorian Sorensen"
+      ],
+      "tally": 94,
+      "supporting": 6,
+      "contrasting": 0,
+      "mentioning": 87,
+      "citingPubs": 139,
+      "abstract": "After initial internet access, a second-level digital divide emerged due to connectivity issues, highlighting the need to understand the complex network of barriers experienced by low-SEP internet users.",
+      "isOa": true,
+      "retraction_notices": null
+    },
+    {
+      "doi": "10.2139/ssrn.4291703",
+      "title": "Internet Use and Fertility Behavior Among Reproductive-Age Women in China",
+      "year": 2022,
+      "journal": "ssrn electronic journal",
+      "authors": [
+        "Peng Nie",
+        "Peng Xu",
+        "Tianyuan Luo"
+      ],
+      "tally": null,
+      "supporting": null,
+      "contrasting": null,
+      "mentioning": null,
+      "citingPubs": null,
+      "abstract": null,
+      "isOa": true,
+      "retraction_notices": null
+    },
+    {
+      "doi": "10.1007/978-3-319-71060-0_107-1",
+      "title": "Digital Divide: From a Peripheral to a Core Issue for all SDGs",
+      "year": 2020,
+      "journal": null,
+      "authors": [
+        "Violet B. Valdez",
+        "Samantha P. Javier"
+      ],
+      "tally": 0,
+      "supporting": 0,
+      "contrasting": 0,
+      "mentioning": 0,
+      "citingPubs": 4,
+      "abstract": null,
+      "isOa": false,
+      "retraction_notices": null
+    },
+    {
+      "doi": "10.1002/hbe2.140",
+      "title": "Digital inequalities in the age of artificial intelligence and big data",
+      "year": 2019,
+      "journal": "human behavior and emerging technologies",
+      "authors": [
+        "Christoph Lutz"
+      ],
+      "tally": 148,
+      "supporting": 0,
+      "contrasting": 0,
+      "mentioning": 143,
+      "citingPubs": 320,
+      "abstract": "In this literature review, I summarize key concepts and findings from the rich academic literature on digital inequalities. I propose that digital inequalities research should look more into labor‐ and big data‐related questions such as inequalities in online labor markets and the negative effects of algorithmic decision‐making for vulnerable population groups. The article engages with the sociological literature on digital inequalities and explains the general approach to digital inequalities, based on the distinction of first‐, second‐, and third‐level digital divides. First, inequalities in access to digital technologies are discussed. This discussion is extended to emerging technologies, including the Internet‐of‐things and artificial intelligence‐powered systems such as smart speakers. Second, inequalities in digital skills and technology use are reviewed and connected to the discourse on new forms of work such as the sharing economy or gig economy. Third and finally, the discourse on the outcomes, in the form of benefits or harms, from digital technology use is taken up. Here, I propose to integrate the digital inequalities literature more strongly with critical algorithm studies and recent discussions about datafication, digital footprints, and information privacy.",
+      "isOa": true,
+      "retraction_notices": null
+    }
+  ]
+}

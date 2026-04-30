@@ -1,0 +1,193 @@
+{
+  "total": 881,
+  "count": 10,
+  "query": "\"random forest\" AND \"household survey\" AND prediction",
+  "hits": [
+    {
+      "doi": "10.1371/journal.pone.0255519",
+      "title": "Multivariate random forest prediction of poverty and malnutrition prevalence",
+      "year": 2021,
+      "journal": "plos one",
+      "authors": [
+        "Chris Browne",
+        "David S. Matteson",
+        "Linden McBride"
+      ],
+      "tally": 44,
+      "supporting": 1,
+      "contrasting": 0,
+      "mentioning": 43,
+      "citingPubs": 54,
+      "abstract": "Advances in remote sensing and machine learning enable increasingly accurate, inexpensive, and timely estimation of poverty and malnutrition indicators to guide development and humanitarian agencies’ programming. However, state of the art models often rely on proprietary data and/or deep or transfer learning methods whose underlying mechanics may be challenging to interpret. We demonstrate how interpretable random forest models can produce estimates of a set of (potentially correlated) malnutrition and poverty prevalence measures using free, open access, regularly updated, georeferenced data. We demonstrate two use cases: contemporaneous prediction, which might be used for poverty mapping, geographic targeting, or monitoring and evaluation tasks, and a sequential nowcasting task that can inform early warning systems. Applied to data from 11 low and lower-middle income countries, we find predictive accuracy broadly comparable for both tasks to prior studies that use proprietary data and/or deep or transfer learning methods.",
+      "isOa": true,
+      "retraction_notices": null
+    },
+    {
+      "doi": "10.7708/ijtte.2016.6(3).10",
+      "title": "MULTIMODAL CHOICE MODELING USING RANDOM FOREST DECISION TREES",
+      "year": 2016,
+      "journal": "international journal for traffic and transport engineering",
+      "authors": [
+        "Ch. Sekhar",
+        "Minal Minal",
+        "Madhu Errampalli"
+      ],
+      "tally": 6,
+      "supporting": 0,
+      "contrasting": 0,
+      "mentioning": 6,
+      "citingPubs": 18,
+      "abstract": "Mode choice analysis forms an integral part of transportation planning process as it gives a complete insight to the mode choice preferences of the commuters and is also used as an instrument for evaluation of introduction of new transport systems. Mode choice analysis involves the procedure to study the factors in decision making process of the commuter while choosing the mode that renders highest utility to them. This study aims at modeling the mode choice behaviour of commuters in Delhi by considering Random Forest (RF) Decision Tree (DT) method. The RF model is one of the most efficient DT methods for solving classification problems. For the purpose of model development, about 5000 stratified household samples were collected in Delhi through household interview survey. A comparative evaluation has been carried out between traditional Multinomial Logit (MNL) model and DT model to demonstrate the suitableness of RF models in mode choice modeling. From the result, it was observed that model developed by Random Forest based DT model is the superior one with higher prediction accuracy (98.96%) than the Logit model prediction accuracy (77.31%).",
+      "isOa": true,
+      "retraction_notices": null
+    },
+    {
+      "doi": "10.1080/10942912.2021.1919703",
+      "title": "An Automatic Determining Food Security Status: Machine Learning based Analysis of Household Survey Data",
+      "year": 2021,
+      "journal": "international journal of food properties",
+      "authors": [
+        "Abdul Razzaq",
+        "Umar Ijaz Ahmed",
+        "Sarfraz Hashim"
+      ],
+      "tally": 5,
+      "supporting": 0,
+      "contrasting": 0,
+      "mentioning": 5,
+      "citingPubs": 15,
+      "abstract": "Household food security is a major issue in developing countries like Pakistan. Despite significant breakthroughs in grain production within the country, the problem of food availability and utilization persists. Diet is one of the most potent determinants of nutritional condition. The dietary intake method has been utilized to determine the food security status of households, which depends on various factors. There are no automatic and userfriendly methods available to decide food security status, which is generally determined by manually calculating calorie intakes. Due to its high performance and precision, machine learning holds major significance. In this paper, the status of food security has been examined by applying machine learning algorithms, namely, support vector machine, naïve Bayes, k-nearest neighbors, random forest, logistic regression, and neural network, on survey data of households for best predicting the status. A food analysis (FA) app has been developed to automatically predict the FAO status of a household's food security by implementing the random forest model that found higher precision among algorithms. Additionally, the proposed mobile app will also be helpful for collecting the households' data. Furthermore, the objective of the study was to enhance food security awareness among individuals.",
+      "isOa": true,
+      "retraction_notices": null
+    },
+    {
+      "doi": "10.1177/18747655251335761",
+      "title": "Integrating AI into household survey data encoding workflows",
+      "year": 2025,
+      "journal": "statistical journal of the iaos",
+      "authors": [
+        "Alejandro Ruiz-Sanchez",
+        "Alejandro Pimentel",
+        "J Pérez"
+      ],
+      "tally": null,
+      "supporting": null,
+      "contrasting": null,
+      "mentioning": null,
+      "citingPubs": null,
+      "abstract": "This paper explores the strategies employed to develop a system leveraging deep learning and natural language processing techniques for automating aspects of record coding in statistical data products. The work focuses on the Mexican Statistical Institute (INEGI), where the proposed AI model aims to reduce the volume of records requiring manual coding. The experiments conducted demonstrate the potential for these methodological innovations to partially replace traditional manual coding processes. Specifically, a novel phase has been introduced into INEGI’s data encoding workflows, utilizing an AI model to select a subset of records for which the model has a high degree of confidence in assigning the correct codes. This approach seeks to minimize the need for manual intervention. To evaluate the effectiveness of this proposal, a production line was implemented that mirrored the existing process but included the AI-based phase. The results show that the use of deep learning algorithms can achieve a significant 50% reduction in manual coding tasks without compromising the quality of the output.",
+      "isOa": false,
+      "retraction_notices": null
+    },
+    {
+      "doi": "10.1002/pop4.169",
+      "title": "Is Random Forest a Superior Methodology for Predicting Poverty? An Empirical Assessment",
+      "year": 2017,
+      "journal": "poverty &amp; public policy",
+      "authors": [
+        "Thomas Pave Sohnesen",
+        "Niels Stender"
+      ],
+      "tally": 23,
+      "supporting": 2,
+      "contrasting": 0,
+      "mentioning": 21,
+      "citingPubs": 38,
+      "abstract": "Random forest (RF) is in many fields of research a common method for data‐driven predictions. Within economics and prediction of poverty, RF is rarely used. Comparing out‐of‐sample predictions in surveys for the same year in six countries shows that RF is often more accurate than current common practice (multiple imputations with variables selected by Stepwise and Lasso), suggesting that this method could contribute to better poverty predictions. However, none of the methods consistently provides accurate predictions of poverty over time, highlighting that technical model fitting by any method within a single year is not always, by itself, sufficient for accurate predictions of poverty over time.",
+      "isOa": true,
+      "retraction_notices": null
+    },
+    {
+      "doi": "10.53479/34613",
+      "title": "A Score Function to Prioritize Editing in Household Survey Data: A Machine Learning Approach",
+      "year": 2023,
+      "journal": null,
+      "authors": [
+        "Nicolás Forteza",
+        "Sandra García-Uribe"
+      ],
+      "tally": null,
+      "supporting": null,
+      "contrasting": null,
+      "mentioning": null,
+      "citingPubs": null,
+      "abstract": "Errors in the collection of household finance survey data may proliferate in population estimates, especially when there is oversampling of some population groups. Manual case-by-case revision has been commonly applied in order to identify and correct potential errors and omissions such as omitted or misreported assets, income and debts. We derive a machine learning approach for the purpose of classifying survey data affected by severe errors and omissions in the revision phase. Using data from the Spanish Survey of Household Finances we provide the best-performing supervised classification algorithm for the task of prioritizing cases with substantial errors and omissions. Our results show that a Gradient Boosting Trees classifier outperforms several competing classifiers. We also provide a framework that takes into account the trade-off between precision and recall in the survey agency in order to select the optimal classification threshold.",
+      "isOa": true,
+      "retraction_notices": null
+    },
+    {
+      "doi": "10.1002/pam.70004",
+      "title": "Citizenship question effects on household survey response",
+      "year": 2025,
+      "journal": "journal of policy analysis and management",
+      "authors": [
+        "J. David Brown",
+        "Misty L. Heggeness"
+      ],
+      "tally": null,
+      "supporting": null,
+      "contrasting": null,
+      "mentioning": null,
+      "citingPubs": null,
+      "abstract": "AbstractDifferential coverage across demographic groups in a census or survey can reduce the accuracy and representativeness of the resulting statistics. Researchers traditionally have used community‐level measures to study response behavior and coverage, which can obscure patterns for small population groups. We illustrate this using household‐level citizenship and immigration status. We construct household‐level characteristics using administrative records for each address in a randomized control trial (RCT) survey that measured the effects of including a citizenship question on a decennial census questionnaire. Our results show that the self‐response rate to the questionnaire without the citizenship question ranges from 70.4% in households with only U.S.‐born non‐Hispanic Whites to 27.5% in those with at least one likely undocumented person (a 42.9 percentage point gap). Including the citizenship question widens the gap by a statistically significant 2.4 percentage points. Compared to households with all U.S.‐born non‐Hispanic Whites, the household roster omission rate in households with at least one likely undocumented member is 6.0 times higher without the citizenship question and 10.4 times higher with the question. These patterns help explain why administrative record‐based population data include more non‐citizens than survey‐based official statistics.",
+      "isOa": true,
+      "retraction_notices": null
+    },
+    {
+      "doi": "10.1177/0282423x241309971",
+      "title": "A Score Function to Prioritize Editing in Household Survey Data: A Machine Learning Approach",
+      "year": 2025,
+      "journal": "journal of official statistics",
+      "authors": [
+        "Nicolás Forteza",
+        "Sandra García-Uribe"
+      ],
+      "tally": 0,
+      "supporting": 0,
+      "contrasting": 0,
+      "mentioning": 0,
+      "citingPubs": 3,
+      "abstract": "Errors in household finance survey data collection can lead to inaccuracies in population estimates. Manual case-by-case revision has traditionally been used to identify and edit potential errors and omissions in the data, such as omitted or misreported assets, income, and debts. Selective editing strategies aim at reducing the editing burden by prioritizing cases through a scoring function. However, the application of traditional selective editing strategies to household finance survey data is challenging due to their underlying assumptions. Using data from the Spanish Survey of Household Finances, we develop a machine learning approach to classify data during the editing phase into cases affected by severe errors and omissions. We compare the performance of several supervised classification algorithms and find that a Gradient Boosting Trees classifier outperforms the competitors. We then use the resulting score to prioritize cases and consider data editing efforts into the choice of an optimal classification threshold.",
+      "isOa": true,
+      "retraction_notices": null
+    },
+    {
+      "doi": "10.1007/s40747-020-00185-w",
+      "title": "Forecasting mortality rates using hybrid Lee–Carter model, artificial neural network and random forest",
+      "year": 2020,
+      "journal": "complex &amp; intelligent systems",
+      "authors": [
+        "Wei Hong",
+        "Jia Hui Yap",
+        "Ganeshsree Selvachandran"
+      ],
+      "tally": 22,
+      "supporting": 0,
+      "contrasting": 0,
+      "mentioning": 22,
+      "citingPubs": 31,
+      "abstract": "Inaccurate prediction would cause the insurance company encounter catastrophic losses and may lead to overpriced premiums where low-earning consumers cannot afford to insure themselves. The ability to forecast mortality rates accurately can allow the insurance company to take preventive measures to introduce new policies with reasonable prices. In this paper, several Lee-Carter (LC) based models are used to forecast the mortality rates in a case study of the Malaysian population. The LC-ARIMA model and also a combination of the LC model with two machine learning (ML) methods, namely the random forest (RF) and artificial neural network (ANN) methods are utilized on the prediction of mortality rates for males and females in Malaysia, whereby the LC-Random Forest (LC-RF) hybrid model is a new model that is introduced in this paper. Seventeen years of mortality data in Malaysia are selected as the dataset for this research. To analyze how the forecasting models perform for other countries, we have determined the model that has the best fit and produced the best forecasted mortality rates for all the other countries that are studied. This research has showed that LC-ANN and LC-ARIMA are the best model in predicting the mortality rates of males and females in Malaysia, respectively. This study has also found that the LC-ARIMA model is the best performing model in forecasting the mortality rates in countries that have longer life expectancy and a good healthcare system such as",
+      "isOa": true,
+      "retraction_notices": null
+    },
+    {
+      "doi": "10.3390/su15108035",
+      "title": "Leveraging Machine Learning and Simulation to Advance Disaster Preparedness Assessments through FEMA National Household Survey Data",
+      "year": 2023,
+      "journal": "sustainability",
+      "authors": [
+        "Zhenlong Jiang",
+        "Yudi Chen",
+        "Ting-Yeh Yang"
+      ],
+      "tally": 2,
+      "supporting": 0,
+      "contrasting": 0,
+      "mentioning": 2,
+      "citingPubs": 5,
+      "abstract": "Effective household and individual disaster preparedness can minimize physical harm and property damage during catastrophic events. To assess the risk and vulnerability of affected areas, it is crucial for relief agencies to understand the level of public preparedness. Traditionally, government agencies have employed nationwide random telephone surveys to gauge the public’s attitudes and actions towards disaster preparedness. However, these surveys may lack generalizability in certain affected locations due to low response rates or areas not covered by the survey. To address this issue and enhance the comprehensiveness of disaster preparedness assessments, we develop a framework that seamlessly integrates machine learning and simulation. Our approach leverages machine learning algorithms to establish relationships between public attitudes towards disaster preparedness and demographic characteristics. Using Monte Carlo simulation, we generate datasets that incorporate demographic information of the affected location based on government-provided demographic distribution data. The generated dataset is then input into the machine learning model to predict the disaster preparedness attitudes of the affected population. We demonstrate the effectiveness of our framework by applying it to Miami-Dade County, where it accurately predicts the level of disaster preparedness. With this innovative approach, relief agencies can have a clearer and more comprehensive understanding of public disaster preparedness.",
+      "isOa": true,
+      "retraction_notices": null
+    }
+  ]
+}

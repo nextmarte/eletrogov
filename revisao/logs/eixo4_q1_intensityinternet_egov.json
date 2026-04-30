@@ -1,0 +1,189 @@
+{
+  "total": 52,
+  "count": 10,
+  "query": "\"intensity of internet use\" AND (\"e-government\" OR \"public services\" OR \"online services\")",
+  "hits": [
+    {
+      "doi": "10.32575/ppb.2021.1.11",
+      "title": "E-GOVERNMENT SERVICE ADOPTION THROUGH THE LENS OF THE KNOWLEDGE GAP",
+      "year": 2021,
+      "journal": "pro publico bono - magyar közigazgatás",
+      "authors": [
+        "Mihály Csótó"
+      ],
+      "tally": null,
+      "supporting": null,
+      "contrasting": null,
+      "mentioning": null,
+      "citingPubs": null,
+      "abstract": "The aim of the paper is to raise some issues in relation to the technology adoption-based e-government acceptance models and that the knowledge gap theory can  be applied to the use of online public administration services: higher status equals not only wider and more sophisticated usage of ICT tools, but also more  knowledge about public administration procedures themselves, which can result in various channel-preferences and routines among the users of different public services. Using data from the multivariable Good State Public Administration  Opinion Survey, the paper shows that the knowledge gap clearly exists in terms of  public administration-related knowledge. Based on this finding, the paper  recommends that the currently marginally used ‘necessary knowledge about  public administration procedures’ factor should be more widely incorporated in e- government adoption models, as it can have a significant effect on adoption, or alter the effect of other constructs in these models.",
+      "isOa": true,
+      "retraction_notices": null
+    },
+    {
+      "doi": "10.3389/fsoc.2023.1268613",
+      "title": "Internet usage, frequency and intensity in old age during the COVID-19 pandemic—a case study for Switzerland",
+      "year": 2023,
+      "journal": "frontiers in sociology",
+      "authors": [
+        "Ronny König",
+        "Alexander Seifert"
+      ],
+      "tally": 3,
+      "supporting": 0,
+      "contrasting": 0,
+      "mentioning": 3,
+      "citingPubs": 6,
+      "abstract": "IntroductionThis study examines the digital divide among older adults in Switzerland within the rapidly evolving digital environment. It investigates changes in internet usage among this population, focusing on the proportion of users, frequency, and the intensity of their internet usage during the COVID-19 pandemic.MethodsDrawing on Swiss data from the Survey of Health, Aging, and Retirement (SHARE), conducted in 2021, the study analyzes a sample of 1,205 older adults.ResultsThe findings indicate a growing proportion of internet users over time. It also highlights that gender differences persist but are decreasing. Notably, around 9% of individuals in this study had never used the internet, while recent users exhibited high activity levels, spending an average of approximately two and a half hours online daily. The study identified age, education, employment, living arrangements, and attitudes toward technology as influential factors shaping internet usage among older adults. Importantly, the COVID-19 pandemic did not have a significant impact on internet adoption among this demographic.DiscussionThese findings shed light on the complex dynamics that shape internet usage among older adults and underscore the need to promote digital inclusion and engagement within this population.",
+      "isOa": true,
+      "retraction_notices": null
+    },
+    {
+      "doi": "10.1016/j.respol.2017.11.007",
+      "title": "Internet use and well-being: A survey and a theoretical framework",
+      "year": 2018,
+      "journal": "research policy",
+      "authors": [
+        "Fulvio Castellacci",
+        "Vegard Tveito"
+      ],
+      "tally": 238,
+      "supporting": 7,
+      "contrasting": 0,
+      "mentioning": 218,
+      "citingPubs": 358,
+      "abstract": "How does Internet use affect well-being? This paper presents a survey of the literature investigating this question, and it develops a framework to analyze both positive effects and potential risks. We point out four distinct channels through which Internet can shape well-being: it changes time use patterns, creates new activities, facilitates access to information, and acts as powerful communication tool. We show how these four channels impact well-being in distinct domains of life. A central point emerging from the literature review is that the effects of Internet on well-being are mediated by a set of personal characteristics that are specific to each individual: psychological functioning, capabilities, and framing conditions (culture and beliefs). Hence, it is the interaction between human beings' activities in distinct domains of life and their own personal characteristics that explains why the use of Internet has stronger positive effects for some individuals and social groups than others.",
+      "isOa": true,
+      "retraction_notices": null
+    },
+    {
+      "doi": "10.1108/oir-04-2019-0121",
+      "title": "Exploring digital inequalities in Russia: an interregional comparative analysis",
+      "year": 2020,
+      "journal": "online information review",
+      "authors": [
+        "Анна Гладкова",
+        "Massimo Ragnedda"
+      ],
+      "tally": 21,
+      "supporting": 1,
+      "contrasting": 0,
+      "mentioning": 19,
+      "citingPubs": 36,
+      "abstract": "PurposeThis paper contributes to the literature by proposing an analysis of digital inequalities in Russia that focuses on two aspects hitherto under explored: the interregionality (by comparing and contrasting eight federal districts) and the multidimensionality of digital inequalities (by taking into account the three levels of digital divide). Therefore, the aim is to address the phenomenon of digital divide in Russia by discussing the three levels of the digital divide (access / skills / benefits) in a comparative and interregional perspective.Design/methodology/approachThis paper uses secondary data for its analysis, including both national (e.g. the total number of daily Internet users in Russia) and more regionalized data (related to particular federal districts of Russia). The choice of data sources was determined by an attempt to provide a detailed and multifaceted coverage of all three levels of the digital divide in Russia, which is not limited to the access problem only. For this purpose, we are using and re-elaborating various reports about the development of the Internet and ICTs in Russia prepared by national and international organizations to cover the first level of the digital divide. To shed light upon the second and third levels of the digital divide, we discuss digital literacy report (2018), the report on Internet openness index of Russian regions (2017) and the report on the digital life index of the Russian regions (2016). Finally, in the attempt to map out the key directions of the state policy aimed at decreasing digital inequality in Russia, on both federal and regional levels, we analyze the most important regional and national policy measures to foster digitalization such as the digital Russia program, the digital government program and the program of eliminating digital inequality in Russia.FindingsWe consider this study to be both a first exploration and a baseline of the three level digital divides in Russia. The paper shows how the level of socioeconomic development of the federal districts, as well as a number of objective factors (distance/isolation, urbanization level, availability of infrastructure and costs for building new infrastructure, etc.) have impact upon digitalization of the regions. As a result, several federal districts of Russia (Central, Northwestern, and, in a number of cases, Ural and Volga federal districts) more often than others take leading positions in rankings, in terms of degree of Internet penetration, audience numbers, use of e-services, etc. This correlation, however, is not universal as we will show, and some regions lacking behind in terms of access can be booming in terms of digital literacy or other factors, like it happened with the Far Eastern Federal district for example. All in all, our research showed that digital inequality in Russia is still on place and will require more time for complete elimination, even though current state and public initiatives are being actively developed.Originality/valueThis paper will bring to light meaningful insights into the three levels of digital divides in Russia. Based on a multilevel (three levels of digital divide) and multi-sectional approach (the interplay of different types of inequalities), this paper contributed to overall better understanding of the digital inequalities phenomenon in Russia. It also allowed for a comparative interregional perspective, which has been missing in most papers on digital inequalities in Russia so far.",
+      "isOa": true,
+      "retraction_notices": null
+    },
+    {
+      "doi": "10.2991/iccsr-18.2018.28",
+      "title": "Determinant Factors of Using E-Election in Indonesia",
+      "year": 2018,
+      "journal": null,
+      "authors": [
+        "Sari Ratih Nur Istiqomah",
+        "Noorlaelie Soewarno",
+        "Isnalita Isnalita"
+      ],
+      "tally": null,
+      "supporting": null,
+      "contrasting": null,
+      "mentioning": null,
+      "citingPubs": null,
+      "abstract": "An Election is one of the implementations of democracy in Indonesia. However, the implementation of the election is coloured by fraud, which results in the election of less qualified parties. The purpose of this article is to determine the determinants of citizen use in the context of applying electronic electoral systems in Indonesia. This analysis aims to test the validity and linear regression with the test using SPSS using 205 respondents. This method is used due to its lack of complexity. The results of the study indicate that the influence of citizens' intention to use an electoral system is relative advantage, compatibility and trust in the internet. The findings of the study provide further insights to researchers, citizen and governments involved. The study contributes to the growing literature on an electronic election system from Indonesia's perspective (a developing country's perspective).",
+      "isOa": true,
+      "retraction_notices": null
+    },
+    {
+      "doi": "10.1057/s41599-023-02110-1",
+      "title": "Going “beyond the GDP” in the digital economy: exploring the relationship between internet use and well-being in Spain",
+      "year": 2023,
+      "journal": "humanities and social sciences communications",
+      "authors": [
+        "Ana Suárez Álvarez",
+        "María Rosalía Vicente"
+      ],
+      "tally": 1,
+      "supporting": 0,
+      "contrasting": 0,
+      "mentioning": 1,
+      "citingPubs": 9,
+      "abstract": "AbstractIn recent years, as Internet use has become more widespread, the use of “beyond-GDP” measures have become increasingly important, bringing well-being analysis into a more prominent position within scientific research topics. At the same time, our society is going through a deep process of digital transformation, which is characterized by important digital inequalities, mainly rooted in traditional socio-economic divides between and within population groups. The aim of this paper is to explore the relationship between internet use and individuals’ perceived levels of well-being. Five dimensions of well-being are studied: happiness, life satisfaction, social meetings, personal connections and social life participation. The modelling strategy consists of a set of three-simultaneous equations, in which the first one explains individuals’ internet use; the second one, the intensity of usage (measured by the time spent on the internet) and the third one, focuses on the impact of such intensity on well-being. To estimate such models microdata from two rounds (2016 and 2018) of the European Social Survey (ESS) are collected for Spain. Results show that the effect of internet usage depends on the dimension of well-being considered, being negative for happiness, life satisfaction and meetings but positive as regards connections and participation. Furthermore, the relationship between individuals’ well-being and internet use depends, to a large extent, on the socio-economic and socio-demographic characteristics of the individuals.",
+      "isOa": true,
+      "retraction_notices": null
+    },
+    {
+      "doi": "10.17323/1813-8918-2023-1-20-30",
+      "title": "Intergenerational Analysis of the Relationship between Involvement in the Internet Space and Institutional Trust among Russians",
+      "year": 2023,
+      "journal": "психология журнал высшей школы экономики",
+      "authors": [
+        "A.V. Mironova"
+      ],
+      "tally": null,
+      "supporting": null,
+      "contrasting": null,
+      "mentioning": null,
+      "citingPubs": null,
+      "abstract": "This study attempts to analyze the relationship between involvement in the Internet space and institutional trust among Russians of different generations. This study is based on data from Round 8 of the European Social Survey. The data was collected between 2016 and 2017. The sample for Russia includes 2,430 respondents. The analysis was carried out using the method of multiple linear regression. Our study showed that the nature of the relationship between Internet use and institutional trust varies depending on their generation. Young people (18–30 years old) are the most active Internet users and they also have the highest levels of institutional trust relative to other generations. Furthermore, an increase in the time spent on the Internet is associated with an increase in institutional distrust among young people. Representatives of the middle (31–44 years old) and older (45–80) ages use the Internet relatively less frequently and have lower levels of trust in institutions. At the same time, the involvement of these age groups in the Internet space is associated with higher levels of institutional trust. Understanding the nature of the relationship between institutional trust and Internet use is important for the government policy planning and strengthening institutional trust among Russians.",
+      "isOa": true,
+      "retraction_notices": null
+    },
+    {
+      "doi": "10.1016/j.jdeveco.2018.11.003",
+      "title": "The internet and Chinese exports in the pre-ali baba era",
+      "year": 2019,
+      "journal": "journal of development economics",
+      "authors": [
+        "Ana M. Fernandes",
+        "Aaditya Mattoo",
+        "Huy Nguyen"
+      ],
+      "tally": 90,
+      "supporting": 5,
+      "contrasting": 0,
+      "mentioning": 77,
+      "citingPubs": 138,
+      "abstract": "The Policy Research Working Paper Series disseminates the findings of work in progress to encourage the exchange of ideas about development issues. An objective of the series is to get the findings out quickly, even if the presentations are less than fully polished. The papers carry the names of the authors and should be cited accordingly. The findings, interpretations, and conclusions expressed in this paper are entirely those of the authors. They do not necessarily represent the views of the International Bank for Reconstruction and Development/World Bank and its affiliated organizations, or those of the Executive Directors of the World Bank or the governments they represent.",
+      "isOa": true,
+      "retraction_notices": null
+    },
+    {
+      "doi": "10.1596/1813-9450-8262",
+      "title": "The Internet and Chinese Exports in the Pre-Alibaba Era",
+      "year": 2017,
+      "journal": null,
+      "authors": [
+        "Ana M. Fernandes",
+        "Huy Nguyen",
+        "Marc Schiffbauer"
+      ],
+      "tally": 14,
+      "supporting": 1,
+      "contrasting": 0,
+      "mentioning": 13,
+      "citingPubs": 26,
+      "abstract": "The Policy Research Working Paper Series disseminates the findings of work in progress to encourage the exchange of ideas about development issues. An objective of the series is to get the findings out quickly, even if the presentations are less than fully polished. The papers carry the names of the authors and should be cited accordingly. The findings, interpretations, and conclusions expressed in this paper are entirely those of the authors. They do not necessarily represent the views of the International Bank for Reconstruction and Development/World Bank and its affiliated organizations, or those of the Executive Directors of the World Bank or the governments they represent.",
+      "isOa": true,
+      "retraction_notices": null
+    },
+    {
+      "doi": "10.53555/ecb/2022.11.10.105",
+      "title": "EXAMINING THE RELATIONSHIP BETWEEN SERVICE QUALITY, CUSTOMER EXPECTATIONS, AND ONLINE PURCHASES ACROSS A RANGE OF PRODUCTS",
+      "year": 2022,
+      "journal": null,
+      "authors": [
+        "Mr. Sunny Masand",
+        "Mr.Maulik Chandnani Chandnani",
+        "Mr. Sandeep Saxena"
+      ],
+      "tally": null,
+      "supporting": null,
+      "contrasting": null,
+      "mentioning": null,
+      "citingPubs": null,
+      "abstract": "This study aims to investigate customer satisfaction with online shopping, considering factors such as value, product quality, and overall shopping convenience. Online shopping is recognized for providing competitive pricing, high-quality products, and a seamless shopping experience. The success of any e-commerce company in India is contingent upon its widespread popularity. In the contemporary business landscape, online shopping has become a significant phenomenon, offering a competitive advantage to firms. The evolution of online shopping has created opportunities for gaining a competitive edge. Over the years, online shopping has gained popularity, primarily due to its convenience for individuals who prefer shopping from the comfort of their homes or workplaces. The Internet has become an integral part of economic activities, and individuals increasingly express interest in online shopping.",
+      "isOa": true,
+      "retraction_notices": null
+    }
+  ]
+}

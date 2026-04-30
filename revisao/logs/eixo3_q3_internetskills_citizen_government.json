@@ -1,0 +1,189 @@
+{
+  "total": 737,
+  "count": 10,
+  "query": "\"Internet skills\" AND citizen AND government",
+  "hits": [
+    {
+      "doi": "10.3390/agriculture11121202",
+      "title": "Do Internet Skills Increase Farmers’ Willingness to Participate in Environmental Governance? Evidence from Rural China",
+      "year": 2021,
+      "journal": "agriculture",
+      "authors": [
+        "Qiang He",
+        "Xin Deng",
+        "Chuan Li"
+      ],
+      "tally": 6,
+      "supporting": 0,
+      "contrasting": 0,
+      "mentioning": 6,
+      "citingPubs": 12,
+      "abstract": "Environmental pollution is threatening the sustainable development of rural areas. Increasing farmers’ willingness to participate in environmental governance (FWPEG) can effectively reduce this threat. Fortunately, the internet can speed up the process. However, it is unclear whether and to what extent the mastery of internet skills will increase FWPEG. This study uses data from 3503 farmers in 30 provinces in mainland China. It uses the TE and IVQTE models to correct selection bias and quantitatively assess the impact of mastery of internet skills on FWPEG. The results show: (1) mastering internet skills can significantly increase FWPEG, and after correcting the endogenous deviation, the marginal benefit of farmers mastering internet skills is 0.124; (2) in the 34–81% quantile range, internet skills show a declining development trend in FWPEG, which is in line with “the law of diminishing marginal utility”, and mastery of the impact of internet skills on FWPEG has “leaping” (33% → 34%)” and “sagging (81% → 82%)” characteristics; (3) compared to that of the east, internet skills in central and western regions have a more significant role in promoting FWPEG. In general, internet skills can effectively increase FWPEG, and the impact will be more pronounced in underdeveloped areas. The influence of internet skills on FWPEG will gradually weaken with the increase of FWPEG. The results of this research help to coordinate the relationship between government environmental governance and rural environmental autonomy and provide some new ideas for realizing global rural revitalization.",
+      "isOa": true,
+      "retraction_notices": null
+    },
+    {
+      "doi": "10.1108/jices-06-2016-0022",
+      "title": "Teaching older people internet skills to minimize grey digital divides",
+      "year": 2017,
+      "journal": "journal of information communication and ethics in society",
+      "authors": [
+        "Farooq Mubarak",
+        "Michael Nycyk"
+      ],
+      "tally": 13,
+      "supporting": 0,
+      "contrasting": 0,
+      "mentioning": 12,
+      "citingPubs": 34,
+      "abstract": "If you would like to write for this, or any other Emerald publication, then please use our Emerald for Authors service information about how to choose which publication to write for and submission guidelines are available for all. Please visit www.emeraldinsight.com/authors for more information.\nAbout Emerald www.emeraldinsight.comEmerald is a global publisher linking research and practice to the benefit of society. The company manages a portfolio of more than 290 journals and over 2,350 books and book series volumes, as well as providing an extensive range of online products and additional customer resources and services.Emerald is both COUNTER 4 and TRANSFER compliant. The organization is a partner of the Committee on Publication Ethics (COPE) and also works with Portico and the LOCKSS initiative for digital archive preservation.\nAbstractPurpose -This paper's purpose is to explore how older people in developed and developing countries are affected by the grey digital divide. It argues country type and culture influence older people's willingness to access and learn Internet skills. Using the knowledge from researchers informs policy, funding and delivery of appropriate skilling to minimize this divide.Design/methodology/approach -A systematic literature search using specific keywords to locate digital divide research, specifically pertaining to older people across country types.Findings -Despite increased Internet access and affordability, older people still face challenges in learning Internet skills. Country type, economic challenges and cultural beliefs need to be considered in minimizing the grey divide. Governments recognize the importance of funding such teaching but evidence-based research must continue to inform policy to maximise funding and solve the many physical age and cultural issues affecting older people's access to Internet skills learning.Originality/value -This paper argues that research in developing countries into minimizing the grey digital divide is a crucial undertaking. As the Internet continues growing in developing countries, finding solutions that consider cultural and age differences issues are crucial to the success of having Internet literate societies that have growing populations of older people seeking to use it.",
+      "isOa": false,
+      "retraction_notices": null
+    },
+    {
+      "doi": "10.31219/osf.io/upb24",
+      "title": "INTERNET SKILLS AND RANGE OF ACTIVITIES: INFLUENCE OF INTERNET LITERACY ON RESILIENCE TO ONLINE PRIVACY VIOLATION",
+      "year": 2023,
+      "journal": null,
+      "authors": [
+        "Bruno Škrinjarić"
+      ],
+      "tally": null,
+      "supporting": null,
+      "contrasting": null,
+      "mentioning": null,
+      "citingPubs": null,
+      "abstract": "This research examines the impact of internet skills and a range of internet activities as the antecedent of resilience to online privacy violation. Previous research has found contradictory evidence that the perceived level of development of internet skills both increases and reduces resilience to online privacy violation; however, they do not analyze the factors that affect that relationship. Based on the survey data, an empirical analysis was conducted on a representative sample of internet users in Croatia. Empirical methodology is organized in the two steps. In the first step, the reliability, consistency, and dimensionality of latent constructs is tested. In the second step, the research model was estimated using regression techniques. This research fills the gap in existing literature by analyzing different perceptions of internet literacy development to make individual more resilient to online privacy violation in the context of socio-demographic characteristics of respondents, digital anxiety, as well as the intensity and variety of online activity of respondents. Initial results indicate that the range of internet activities is more important than development of internet skills to make an individual more resilient to online privacy violations. The results of this research could be useful to national policy and business strategy providers, particularly in the context of the new GDPR regulation introduced in 2018.",
+      "isOa": true,
+      "retraction_notices": null
+    },
+    {
+      "doi": "10.1108/tg-11-2019-0105",
+      "title": "Channel choice in China",
+      "year": 2020,
+      "journal": "transforming government people process and policy",
+      "authors": [
+        "Christopher G. Reddick",
+        "Yueping Zheng",
+        "Bruce J. Perlman"
+      ],
+      "tally": 1,
+      "supporting": 0,
+      "contrasting": 0,
+      "mentioning": 1,
+      "citingPubs": 7,
+      "abstract": "Purpose\nThis paper aims to examine the influence of user characteristics on preference for government service delivery channels. Preferences are understood as citizen use of and satisfaction with digital and traditional government contact modalities. User characteristics are represented by three constructs encapsulating the key elements of citizen features and attitudes.\n\n\nDesign/methodology/approach\nThe constructs are tested on data from a survey of 30 cities in China, resulting in 3,000 respondents, which asked questions on respondents’ use of and satisfaction with traditional modes (hotlines and service center channels) and digital modes (e-government and m-government channels) as well as respondents’ sociodemographics, technological capacity and view of government.\n\n\nFindings\nThe results showed two important findings. First, service channel use was related to the first and second constructs (sociodemographics and technological capacity). Second, service channel satisfaction showed strong evidence of relation to the third construct, view of government.\n\n\nResearch limitations/implications\nThe results of this study make an empirical contribution to understanding the features of citizens that influence channel choice for public service contacts.\n\n\nOriginality/value\nThis study contributes to the understanding of channel choice in three areas. First, it is an empirical study using survey data and so adds to a largely case-based and conceptual literature. Second, by looking at the impact of citizen attitudes about government and not just their sociodemographic features. Third, by examining channel choice in the context of a fast-developing country like China.",
+      "isOa": false,
+      "retraction_notices": null
+    },
+    {
+      "doi": "10.24251/hicss.2019.381",
+      "title": "A Proposed Model of Trust Factors for E-government Adoption and Civic Engagement",
+      "year": 2019,
+      "journal": null,
+      "authors": [
+        "Suha AlAwadhi"
+      ],
+      "tally": 16,
+      "supporting": 0,
+      "contrasting": 0,
+      "mentioning": 16,
+      "citingPubs": 21,
+      "abstract": "This study aims to explore trust factors affecting the use and adoption of e-government services and its impact on civic engagement. The constructs identified in this study are related to theories of technology adoption in addition to trust constructs: trust in government, trust in technology, and trust in egovernment. The study attempts to propose a model and validate it in the context of a developing country. As this study is exploratory in nature, a questionnaire survey is undertaken using a small sample of 137 participants. The findings show the validity and the reliability of the constructs which are positively correlated with each other. The findings of general Linear model analysis propose a model of trust factors that have significant relationships with the adoption of e-government services and leading to civic engagement.",
+      "isOa": true,
+      "retraction_notices": null
+    },
+    {
+      "doi": "10.23919/cisti.2017.7976044",
+      "title": "An initial approach to e-government acceptance and use: A literature analysis of e-Government acceptance determinants",
+      "year": 2017,
+      "journal": null,
+      "authors": [
+        "Soraia Nunes",
+        "José Martins",
+        "Frederico Branco"
+      ],
+      "tally": 7,
+      "supporting": 0,
+      "contrasting": 0,
+      "mentioning": 7,
+      "citingPubs": 10,
+      "abstract": "Information technology has become one of the core elements of electronic government (e-Government) and should figure prominently in future governance. E-Government services, through electronic means, should provide a more costeffective and convenient way for citizens to interact with government, however their adoption is still far from a satisfactory level. The study herein has examined research on the adoption of e-Government services. Using data obtained from previous research, this article identifies the variables that contribute to the adoption of e-Government by citizens and the model created is presented. Overall, this study concludes that e-Government has been adopted by many governments, but it is still at an early stage, and there are still barriers to its more widespread adoption in society.",
+      "isOa": true,
+      "retraction_notices": null
+    },
+    {
+      "doi": "10.1108/wjstsd-04-2021-0049",
+      "title": "The efficiency of e-government portal management from a citizen perspective: evidences from Turkey",
+      "year": 2021,
+      "journal": "world journal of science technology and sustainable development",
+      "authors": [
+        "Seda Yıldırım",
+        "Seda H. Bostancı"
+      ],
+      "tally": 22,
+      "supporting": 1,
+      "contrasting": 0,
+      "mentioning": 17,
+      "citingPubs": 29,
+      "abstract": "PurposeThis study aims to explore the key factors in achieving an efficient e-government portal management system from a citizen perspective. Accordingly, this study focuses on explaining how an e-government portal should manage its digital public services for citizens efficiently.Design/methodology/approachThis study employs a qualitative research design. As a sample case, this study preferred to analyze the Turkish e-government portal. The data is based on available open access data and information from the Turkish e-government portal, which is called e-Government Gateway in practice. In addition, the data of TURKSTAT (Turkish Statistical Institute) were used to determine the general profile of citizens about Internet skills and usage. Then, the data is analyzed by descriptive content analysis.FindingsAs a result of descriptive findings, user type, digital platform options, security and access options, and digital public service classification are all found as important factors for providing a well-designed e-government portal system from a citizen perspective. Especially, citizens should be informed about using options and service categories and types to be accessed by the e-government portal. Social media tools are efficient factors when informing citizens about the e-government portal and communicating with them.Research limitations/implicationsThis study provides an original model to explain how the Turkish e-government portal works from a citizen perspective. However, there are some limitations to the study. The findings and suggestions are based on the Turkish e-government portal and its digital public service management. Also, this study evaluates the efficiency of the e-government portal management from a citizen perspective. Future studies can investigate e-government portal management for different countries by different approaches or research designs.Practical implicationsBased on the Turkey case, it is determined that creating an e-government portal with having up-to-date public services, including both web-based and mobile-based platforms, will support the adoption and use of e-government portals.Social implicationsThe digital transformation of government is almost the main issue for policymakers in the world. But, this transformation process has some risk factors as well as challenges. To overcome these challenges, policymakers should design flexible and adaptable digital portals and systems to provide easy-to-use and self-use options for the citizens.Originality/valueThis study reveals key factors for efficient e-government portal management by providing descriptive evidence from Turkey. The main contribution of this study is expected to give practical implications and to guide other countries about the adoption of efficient e-government portals by citizens.",
+      "isOa": false,
+      "retraction_notices": null
+    },
+    {
+      "doi": "10.1007/978-3-030-91247-5_2",
+      "title": "The Digital Citizen",
+      "year": 2022,
+      "journal": null,
+      "authors": [
+        "Theo Lynn",
+        "Pierangelo Rosati",
+        "Edel Conway"
+      ],
+      "tally": 1,
+      "supporting": 0,
+      "contrasting": 0,
+      "mentioning": 1,
+      "citingPubs": 2,
+      "abstract": "AbstractTo fully function in a society permeated by digital technologies requires individuals and households to have both the access and skills to use these technologies effectively. Unfortunately, access to digital infrastructure and skills is not equal. This chapter begins with a discussion on the nature of the digital divide and digital literacy. It then considers how digital technologies are changing how, where and when people work, and the opportunities for rural communities that the sharing economy and gig economy present. The chapter concludes with a discussion of how extant international frameworks and composite indices measure access, competences, and use of digital technologies by individuals and households, highlighting the need for a more comprehensive and inclusive measurement approach.",
+      "isOa": false,
+      "retraction_notices": null
+    },
+    {
+      "doi": "10.1016/j.giq.2016.08.007",
+      "title": "Impact of the digital divide on e-government: Expanding from channel choice to channel usage",
+      "year": 2016,
+      "journal": "government information quarterly",
+      "authors": [
+        "Wolfgang E. Ebbers",
+        "Marloes Jansen",
+        "Alexander Johannes Aloysius Maria van Deursen"
+      ],
+      "tally": 93,
+      "supporting": 7,
+      "contrasting": 0,
+      "mentioning": 82,
+      "citingPubs": 142,
+      "abstract": null,
+      "isOa": true,
+      "retraction_notices": null
+    },
+    {
+      "doi": "10.47205/jdss.2023(4-i)08",
+      "title": "Digital Governance Initiatives in Pakistan to Combat COVID-19: Current Developments and Challenges for a Sustainable Future",
+      "year": 2023,
+      "journal": "journal of development and social sciences",
+      "authors": [
+        "Aisha Rizwan"
+      ],
+      "tally": 1,
+      "supporting": 0,
+      "contrasting": 0,
+      "mentioning": 0,
+      "citingPubs": 2,
+      "abstract": "This study aims to investigate the adoption of digitalized service delivery mechanisms by various government and non-governmental institutions in Pakistan to combat the COVID-19 Pandemic. The key study objectives are; to analyze the role of digital governance in managing the pandemic and promoting sustainable social and economic development in Pakistan while focusing on the Digital Pakistan Policy and its implementation; and highlighting its significance in public service delivery in the new normal era. The paper adds value by evaluating the key features of the indigenous digitized governance model of public service delivery in Pakistan to handle the pandemic and also unveils implementation challenges posed by the context which could be addressed in future by offering relevant strategies, policy directives/guidelines and recommendations to the public policy formulators and public managers. The study adopted a descriptive approach to discuss various measures adopted by the government of Pakistan to deliver services in a digitized manner during the pandemic. Data was collected through a review of literature as a secondary source, while official websites of the government were consulted to gather primary data as well. Digital governance policy suggestions proposed in this paper are drawn from recommendations provided by in-service bureaucracy, policymakers and public policy experts in academic conferences. Thus, the study has practical implications for the policymakers aiming to overcome the challenges of the current and future post-pandemic era by developing a resilient and contextually inspired model of digital governance.",
+      "isOa": true,
+      "retraction_notices": null
+    }
+  ]
+}

@@ -1,0 +1,193 @@
+{
+  "total": 1497,
+  "count": 10,
+  "query": "\"public value\" AND \"digital government\" AND citizen",
+  "hits": [
+    {
+      "doi": "10.1016/j.giq.2019.101421",
+      "title": "Public value creation in digital government",
+      "year": 2019,
+      "journal": "government information quarterly",
+      "authors": [
+        "Panos Panagiotopoulos",
+        "Bram Klievink",
+        "Antonio Cordella"
+      ],
+      "tally": 141,
+      "supporting": 2,
+      "contrasting": 0,
+      "mentioning": 137,
+      "citingPubs": 205,
+      "abstract": "Public value theory offers innovative ways to plan, design, and implement digital government initiatives. The theory has gained the attention of researchers due to its powerful proposition that shifts the focus of public sector management from internal efficiency to value creation processes that occur outside the organization. While public value creation has become the expectation that digital government initiatives have to fulfil, there is lack of theoretical clarity on what public value means and on how digital technologies can contribute to its creation. The special issue presents a collection of six papers that provide new insights on how digital technologies support public value creation. Building on their contributions, the editorial note conceptualizes the realm of public value creation by highlighting: (1) the integrated nature of public value creation supported by digital government implementations rather than enhancing the values provided by individual technologies or innovations, (2) how the outcome of public value creation is reflected in the combined consumption of the various services enabled by technologies and (3) how public value creation is enabled by organizational capabilities and configurations.",
+      "isOa": true,
+      "retraction_notices": null
+    },
+    {
+      "doi": "10.1145/3209281.3209302",
+      "title": "Digital government transformation",
+      "year": 2018,
+      "journal": null,
+      "authors": [
+        "Ida Lindgren",
+        "Anne Fleur van Veenstra"
+      ],
+      "tally": 35,
+      "supporting": 1,
+      "contrasting": 0,
+      "mentioning": 27,
+      "citingPubs": 79,
+      "abstract": "Digital government is often seen as an enabler or even driver of transformation of public administration, with the objective of creating public value. Such transformations are complex, requiring a long process of change; often, digitalization of public services is seen as the main means to this end. We investigate how digitalization of public services can be related to public sector transformation, and how this development can be linked to public value. In order to do so, this paper first conceptualizes digital government enabled transformation based on literature. Thereafter, we present an empirical example of public e-service development in Sweden. This case illustrates how e-service development can highlight shifts in societal values, and challenges that follow when trying to sustain changing societal values. Our findings suggest that in order to sustain transformation and (changing) public value, multiple processes of change and redesign need to be in place, not only of the organisational processes involved, but also of regulatory and institutional aspects, such as changes to the law and in the discretion and work practice of public officials.",
+      "isOa": true,
+      "retraction_notices": null
+    },
+    {
+      "doi": "10.1007/978-3-031-84748-6_13",
+      "title": "Empathy as a Public Value: Overcoming Administrative Vulnerability and Rehumanizing (Digital) Government",
+      "year": 2025,
+      "journal": null,
+      "authors": [
+        "Malou Beck",
+        "Sofia Ranchordás"
+      ],
+      "tally": null,
+      "supporting": null,
+      "contrasting": null,
+      "mentioning": null,
+      "citingPubs": null,
+      "abstract": "Abstract\n          Empathy is a fundamental value in evolutionary biology, human communication, and modern management. This paper argues that empathy, defined here as the ability to relate to others, should also be regarded as a public value and be employed as a response to the vulnerability experienced by many citizens when engaging with digital government, automated public services, and algorithmic decision-making.\n          Empathy in citizen-government interactions is increasingly important at a time when human interactions have become rare. The remaining human interactions are characterized by decreasing levels of assistance and compassion due to the lack of time, availability, training, and increasing polarization. This is problematic for two main reasons. First, it excludes citizens in vulnerable circumstances, thus ignoring the possibility that life, law, or socioeconomic circumstances can place citizens in situations that require additional understanding and thus empathic approaches. Second, since vulnerability is inherent to the human condition, empathy in the public sector is essential to ensure the adequate pursuit of the public interest.\n          Drawing on sociolegal and public administration scholarship, we argue that empathy can contribute to good governance as it has the potential to improve government communication, rehumanize government transactions, and contribute to the acceptance of administrative decisions.",
+      "isOa": false,
+      "retraction_notices": null
+    },
+    {
+      "doi": "10.1111/padm.70008",
+      "title": "Decoding Paradoxes in Digital Government: Strategies for the Pursuit of Public Value",
+      "year": 2025,
+      "journal": "public administration",
+      "authors": [
+        "Y Wang",
+        "Bing Ran",
+        "Liang Ma"
+      ],
+      "tally": null,
+      "supporting": null,
+      "contrasting": null,
+      "mentioning": null,
+      "citingPubs": null,
+      "abstract": "ABSTRACTThis study aims to analyze the complexities of paradoxes in digital government. Through a focused analysis of 34 selected articles, adhering to PRISMA guidelines, it codifies seven paradoxes, categorized into “internal governance paradoxes” and “external engagement paradoxes.” These paradoxes arise from conflicting values among governments, employees, citizens, and businesses, reflecting both the intricacies of decision‐making within government organizations and the dynamics of their interactions with external stakeholders. It also proposes a handling strategy that guides stakeholders in collaboratively pursuing public value through interventions in technology, organization, and environment (TOE), paving the way for more effective and coherent digital governance strategies.",
+      "isOa": true,
+      "retraction_notices": null
+    },
+    {
+      "doi": "10.37808/paq.45.3.2",
+      "title": "Digital Government: Business Model Development for Public Value Creation - A Dynamic Capabilities Based Framework",
+      "year": 2021,
+      "journal": "public administration quarterly",
+      "authors": [
+        "Bernd W. Wirtz",
+        "Paul F. Langer",
+        "Florian W. Schmidt"
+      ],
+      "tally": 4,
+      "supporting": 0,
+      "contrasting": 0,
+      "mentioning": 3,
+      "citingPubs": 19,
+      "abstract": "Rapid advances and the spread of digital technologies have changed the expectations of citizens, firms and organizations towards government services, which increasingly receive the call to transform services and structures according to changed needs and preferences. The concept of business model development provides a suitable approach for public institutions aiming at adjusting their services and operations. Since government institutions increasingly develop new services and products, this study provides a theoretic foundation to operational readiness as well as a guideline how to set up digital business models in a public sector context. Therefore, a framework is derived from conceptual studies in the field as well as related theoretical concepts such as business model theory in the public sector context, dynamic capacities and public value creation. Building on this foundation this study conceptualizes a process of business model development to create user oriented digital services in the public sector.",
+      "isOa": true,
+      "retraction_notices": null
+    },
+    {
+      "doi": "10.1145/2757401.2757403",
+      "title": "Interorganizational collaboration and value creation in digital government projects",
+      "year": 2015,
+      "journal": null,
+      "authors": [
+        "Sergio Picazo-Vela",
+        "Isis Gutiérrez-Martínez",
+        "François Duhamel"
+      ],
+      "tally": 5,
+      "supporting": 0,
+      "contrasting": 0,
+      "mentioning": 5,
+      "citingPubs": 8,
+      "abstract": "The importance of IT collaboration between government agencies and private organizations has been already identified in the literature. However, there is still a gap about the determinants of success of such collaborations. Using survey data, we look at the impact of the resources and processes of the public entity in delivering public value for private public IT collaborations in the context of Mexico, and the moderating role of collaboration with the private sector and with other public organizations in both causal relationships. Our results show that internal processes of the public entity have a positive impact on public value creation in their IT projects, while internal resources have no effect. Collaboration with the private sector moderates negatively the effect of internal resources on public value creation, and moderates positively the effect of internal processes on public value creation. Inter-organizational collaboration within other public sector organizations, on the other hand, moderates positively the relationship between internal resources and public value creation, and does not moderate the relationship between internal processes and public value creation.",
+      "isOa": false,
+      "retraction_notices": null
+    },
+    {
+      "doi": "10.1108/rausp-11-2023-0225",
+      "title": "Factors influencing the prioritization of rival public value positions in Brazilian digital government initiatives",
+      "year": 2025,
+      "journal": "rausp management journal",
+      "authors": [
+        "Karen Lopes",
+        "Edimara Mezzomo Luciano",
+        "Guilherme Costa Wiedenhöft"
+      ],
+      "tally": null,
+      "supporting": null,
+      "contrasting": null,
+      "mentioning": null,
+      "citingPubs": null,
+      "abstract": "Purpose\n                    This study aims to identify factors influencing the prioritization of rival public values, with Brazilian state governments as locus. The paper also proposes a conceptual model comprising the intervening factors and their relationships with the public and the value positions.\n                  \n                  \n                    Design/methodology/approach\n                    This exploratory study used a qualitative cross-sectional design. A focus group was used as the method of data collection, with 27 civil servants from 13 Brazilian states, representing all geographic regions, serving as respondents. Data analysis was based on the rhetoric of public managers’ discourses in counterpoint to their practical actions regarding decisions on prioritizing public value positions.\n                  \n                  \n                    Findings\n                    The government side was analyzed; however, the quantitative validation of the theoretical model remains to be conducted in further research.\n                  \n                  \n                    Research limitations/implications\n                    The data analysis revealed that political issues are the primary variable influencing digital government decisions. Therefore, political leadership is the decisive factor driving the choices regarding digital initiatives. It may also indicate why the values adopted differ from those defended by political agents and explain the imperative of efficiency, as political decision-making can interfere with internal factors. The media was the only external factor identified.\n                  \n                  \n                    Practical implications\n                    This research contributes to understanding the factors and variables that influence decision-making regarding digital government projects.\n                  \n                  \n                    Social implications\n                    The study can help in understanding public value positions, promoting transparency, inclusion and improving governance. Government social media efforts are key in cultivating digital participation and engagement. This digital transformation in government is vital, aligning with the growing expectations of digital experiences, thus empowering citizens and enhancing the relationship between government and citizens.\n                  \n                  \n                    Originality/value\n                    The proposed conceptual model makes a relevant theoretical contribution by illustrating the dynamics of prioritizing rival public value positions.",
+      "isOa": false,
+      "retraction_notices": null
+    },
+    {
+      "doi": "10.1787/4de9f5bb-en",
+      "title": "Digital Government Index",
+      "year": 2020,
+      "journal": null,
+      "authors": [
+        "OECD"
+      ],
+      "tally": 39,
+      "supporting": 0,
+      "contrasting": 0,
+      "mentioning": 38,
+      "citingPubs": 247,
+      "abstract": "This paper presents the overall rankings, results and key policy messages of the 2019 OECD Digital Government Index (DGI) and provides a detailed analysis of the results for each of the dimensions of the OECD Digital Government Policy Framework. The DGI measures the maturity level of digital government strategies in OECD member and partner countries based on evidence gathered through the Survey on Digital Government 1.0. Findings show the promising yet modest progress towards robust digital governments, and encourage governments to step up efforts to use digital technologies and data strategically for user-driven public services. The paper highlights how the DGI can support the design, implementation and monitoring of digital government policies and practices, which, in turn, help public sector organisations better respond to citizens' needs.",
+      "isOa": false,
+      "retraction_notices": null
+    },
+    {
+      "doi": "10.1108/tg-10-2025-0338",
+      "title": "Unpacking the citizen role in digital government maturity models",
+      "year": 2026,
+      "journal": "transforming government people process and policy",
+      "authors": [
+        "Åsa Agneta Waara",
+        "Abdolrasoul Habibipour",
+        "Tero Päivärinta"
+      ],
+      "tally": null,
+      "supporting": null,
+      "contrasting": null,
+      "mentioning": null,
+      "citingPubs": null,
+      "abstract": "Purpose\n                    This study aims to examine and illustrate the landscape of citizens’ roles in digital government maturity models (DGMM) based on public value positions. It seeks to answer: How are citizens’ roles conceptualized and integrated into DGMM?\n                  \n                  \n                    Design/methodology/approach\n                    This study uses an interpretive qualitative content analysis. This study examined 18 DGMMs, analysing both their explicit and implicit representations of citizens. Using Distel and Lindgren’s (2023) extended e-government value position framework as a theoretical lens, the authors positioned the role of citizens within these models.\n                  \n                  \n                    Findings\n                    The study reveals that DGMMs vary in how they view citizens’ roles. While all four value ideals acknowledge citizens, models emphasizing efficiency and professionalism tend to regard them as passive participants, whereas service and engagement ideals promote more active and participatory roles.\n                  \n                  \n                    Research limitations/implications\n                    The analysis examines 18 DGMMs. While diverse, it may not reflect all emerging models or regional variations. Citizen role interpretation involves some subjectivity, despite collaborative efforts for consistency.\n                  \n                  \n                    Practical implications\n                    The findings provide a framework for understanding citizens’ roles through different value positions, supporting the public sector in strengthening its citizen focus.\n                  \n                  \n                    Social implications\n                    The study offers insights for national and local levels on including citizens in digital transformation, contributing to greater awareness of their diverse roles in digital government maturity.\n                  \n                  \n                    Originality/value\n                    This study presents a novel synthesis of citizens’ roles within the extended public value framework, opening new avenues for research and policy development.",
+      "isOa": false,
+      "retraction_notices": null
+    },
+    {
+      "doi": "10.24857/rgsa.v18n2-092",
+      "title": "The Impact of Digital Government Initiatives on Public Value Creation: Evidence from Ho Chi Minh City –Vietnam",
+      "year": 2024,
+      "journal": "revista de gestão social e ambiental",
+      "authors": [
+        "Bui Ngoc Hien",
+        "Nguyen Thi Kim Tuyen",
+        "Nguyen Thanh Lan"
+      ],
+      "tally": null,
+      "supporting": null,
+      "contrasting": null,
+      "mentioning": null,
+      "citingPubs": null,
+      "abstract": "Objective: This research aims to evaluate the effects of digital government initiatives on generating public value, with a specific focus on boosting citizen engagement in Ho Chi Minh City, Vietnam.\n \nTheoretical framework: The study is grounded in the theory of digital governance, which posits that digital technologies can transform public administration by improving transparency, efficiency, accountability, and service delivery. It explores how these technological interventions facilitate a participatory governance model by enabling better citizen-government interactions.\n \nMethod: The study utilizes Structural Equation Modeling (SEM) to investigate key facets of digital governance, including transparency, cost-efficiency, data-driven policymaking, accountability, and service quality.\n \nResults and conclusion: The analysis reveals a strong positive link between the elements of digital governance and an increase in citizen engagement. These findings underscore the capacity of digitalization within public administration to enhance public participation and trust.\n \nImplications of the research: The study provides essential insights for policymakers regarding the impact of digital initiatives on urban governance. It underscores the importance of continued investment in technological advancements and data security to foster improved governance and citizen involvement.\n \nOriginality/value: This research contributes uniquely to the understanding of how digital government initiatives can create public value by enhancing citizen engagement. It offers a critical examination of digital governance components and their effectiveness in fostering greater public participation and trust, providing valuable recommendations for policymakers focused on urban governance and digital transformation.",
+      "isOa": true,
+      "retraction_notices": null
+    }
+  ]
+}

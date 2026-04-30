@@ -41,6 +41,66 @@ O estudo original analisou apenas os microdados da pesquisa **TIC Domicílios 20
 
 Variáveis significativas: **idade** (−), **PEA** (+), **e-commerce** (+), **grau de instrução** (+), **classe econômica** (+), **renda familiar** (+), **dispositivo de acesso** (+). Variáveis *não* significativas: sexo, região geográfica, área urbana/rural.
 
+# Referencial teórico
+
+## Adoção de tecnologia e governo eletrônico
+
+A literatura sobre adoção de governo eletrônico ancora-se em duas tradições teóricas convergentes. A primeira é a dos modelos de aceitação tecnológica: @davis1989perceive estabeleceu o Technology Acceptance Model (TAM), em que utilidade percebida e facilidade de uso percebida predizem intenção e uso; @venkatesh2003useracce consolidou a Unified Theory of Acceptance and Use of Technology (UTAUT), acrescentando expectativa de desempenho, expectativa de esforço, influência social e condições facilitadoras. @vandijk2008explaini estendeu a abordagem ao domínio governamental, em framework multidisciplinar que combina atributos de serviço com determinantes sociodemográficos (idade, gênero, escolaridade, ocupação) como preditores da intenção de uso.
+
+A segunda tradição é a de **public value**, que desloca o foco do setor público da eficiência interna para a criação de valor relacional fora da organização [@panagiotopou2019publicva]. @panagiotopou2019publicva argumentam que o valor público de e-gov é multidimensional e se manifesta no consumo combinado de múltiplos serviços, não em métricas técnicas isoladas. @cordella2025factorsi exploram empiricamente como prioridades rivais de public value se configuram em iniciativas brasileiras, e @macadar2025servicos avançam essa agenda em direção a *data justice* a partir do caso do Auxílio Emergencial.
+
+A revisão sistemática de @priyashantha2022determin, sobre 55 estudos Scopus 2015-2020, identifica como determinantes recorrentes da adoção: utilidade percebida, facilidade percebida, confiança, risco percebido, expectativas de desempenho e esforço, influência social, condições facilitadoras, *awareness*, custo, satisfação e desigualdade digital. O papel mediador da confiança é consolidado em meta-SEM por @tabbara2023clarifyi.
+
+Trabalhos brasileiros precursores [@araujoreinha2015contextu; @araujo2018servicos] apontaram fatores contextuais (classe social, local de acesso, competências de uso) como influenciadores do uso de e-gov, sem abordagem quantitativa em larga escala. @vargas2021 forneceram a primeira análise quantitativa nacional, identificando idade, renda, condição de atividade, classe econômica, escolaridade, dispositivo de acesso e uso de e-commerce como preditores significativos. Esse é o **modelo-base** que o presente trabalho estende.
+
+## Divisão digital multinível: do acesso aos outcomes
+
+A literatura sobre desigualdade digital evoluiu de uma concepção dicotômica (ter ou não ter acesso) para um modelo de **três níveis sucessivos** [@lutz2019digitali]: (1) acesso a tecnologias e infraestrutura, (2) habilidades e formas de uso, (3) outcomes obtidos a partir do uso. @vandeursen2018thefirst mostram que mesmo o "primeiro nível" se sofisticou: deslocou-se de inequalities em acesso *físico* para inequalities em acesso *material* (qualidade de dispositivos, planos de dados, banda).
+
+Em países com penetração ampla, o segundo e o terceiro nível assumiram centralidade analítica. @bchi2016modeling, em modelo de equações estruturais sobre cinco países, encontram que variáveis sociodemográficas explicam até **50%** da variância no uso da internet, com idade como preditor mais forte. Os ~50% restantes deixam espaço amplo para preditores ligados a habilidades e tipos de uso. Em países em desenvolvimento, @reisdorf2021whenbein documenta que estar conectado não basta: os níveis 2 e 3 do divide persistem mesmo após democratização do acesso. @lythreatis2021thedigit, em revisão pós-pandemia, sintetiza o estado da arte e aponta direções de pesquisa futuras.
+
+No Brasil, @susmiati2019usingadi propõem índice de digital divide entre empresas; @dodel2023whydevic [usando microdados TIC 2019] mostra que o **dispositivo de acesso** (apenas celular vs computador) tem efeito estrutural sobre o engajamento com e-gov, validando empiricamente a relevância do construto introduzido por @vandeursen2018thefirst. @hilbert2016genderan documenta o gap de gênero persistente na América Latina.
+
+## Intensidade e variedade de uso digital como mediador
+
+@castellacci2018internet propõem um framework teórico no qual a internet afeta outcomes via **quatro canais** distintos: alteração de padrões de tempo, criação de novas atividades, acesso à informação e ferramenta de comunicação. Os efeitos são mediados por características pessoais (psicológicas, capacidades, *framing* cultural). A heurística é clara: não é "uso de internet" em geral que importa, mas as **atividades específicas** combinadas com as **capacidades** do usuário. @reineke2015explicat distinguem **diversidade de uso** (net diversity) como construto distinto da intensidade pura, sustentando que a inclusão simultânea de frequência e variedade de atividades digitais captura informação não trivial. @pearce2019takingad, em análise qualitativa, mostram que o efeito da educação sobre outcomes positivos da internet opera **via mediadores** (prática, autonomia, diversidade de uso), não diretamente.
+
+@roztocki2022digitalf documenta como **pegadas digitais** (digital footprints) atuam como barreira ao e-gov: cidadãos sem histórico online enfrentam dificuldades adicionais para acessar serviços, reforçando que a intensidade prévia de uso da internet condiciona a possibilidade de adesão.
+
+## Habilidades digitais e familiaridade
+
+@ebbers2016impactof argumentam que o impacto do digital divide sobre e-gov **se expande de channel choice para channel usage**: dada a presença de acesso, escolhas de canal pouco se diferenciam por habilidade, mas a **intensidade e satisfação do uso** sim. A operacionalização de habilidades via experiência de uso da internet em diferentes atividades, incluindo compras online [@belanger2008trustand], antecipa nossa estratégia metodológica de usar e-commerce (variável H2 do TIC) e variáveis de uso intenso (C8/J2/C10/C11) como proxies de **familiaridade digital**. @lzroiu2020citizens evidenciam empiricamente a importância das habilidades digitais para o engajamento com e-gov na União Europeia.
+
+## Machine learning aplicado a surveys de e-gov
+
+A literatura específica de comparação entre regressão logística e machine learning em surveys aplicados a e-gov é escassa. @browne2021multivar demonstram que random forest interpretável aplicado a dados públicos georreferenciados produz acurácia comparável a *deep learning* para predição de pobreza e malnutrição em onze países de baixa e média renda; @mcbride2017israndom matiza o veredicto: random forest é superior em alguns contextos, equivalente em outros, conforme a estrutura dos dados. Em e-gov, @lupo2022egovernm aplica ML para predição de adoção na Europa em estudo recente com baixa difusão (3 citações), evidenciando lacuna ativa. @garcaro2023differen comparam diferentes abordagens analíticas no contexto da pandemia, sem dados brasileiros. @stier2018stagesan oferece o antecedente longitudinal mais próximo metodologicamente: doze anos de e-gov em cidades globais, com determinantes que mudam ao longo do tempo. **Não há, à nossa consciência, estudo brasileiro que compare GLM × ML em survey nacional aplicado a e-gov com janela longitudinal pós-pandemia.**
+
+## COVID-19, Auxílio Emergencial e e-gov no Brasil
+
+@vandeursen2020digitali, em survey holandês com 1733 respondentes, mostra que letramento, educação, atitude à internet, acesso material e habilidades digitais predizem usos e outcomes pandêmicos, enquanto recursos econômicos e sociais perdem significância após controles. **A pandemia reforça desigualdades preexistentes**, em vez de reduzi-las via familiarização forçada. Estudos em outros países corroboram o padrão [@vu2022driverso].
+
+No Brasil, @cardoso2020aimpleme analisa o **Auxílio Emergencial** instituído pela Lei 13.982/2020 como caso paradigmático de "system-level bureaucracy", em que decisões pré-programadas via algoritmos e fluxos digitais operam o serviço público em escala. O programa atendeu populações historicamente pouco familiarizadas com canais digitais, expondo limites de uma operação puramente digital sob exclusão pré-existente. Trabalhos complementares [@krepsky2023administ] confirmam que a implementação do Auxílio Emergencial evidenciou **cidadania digital como precondição material** para a efetividade de políticas dependentes de e-gov. @mardiana2020evidence, via Google Trends, sugere que o segundo nível do divide se ampliou no Brasil pós-COVID. Esses achados sustentam a relevância de uma janela 2021-2025 e da inclusão de variáveis que capturem **familiaridade digital** como mediadores estruturais.
+
+## Lacunas e contribuição deste trabalho
+
+A literatura recente identifica três deslocamentos convergentes — do acesso ao uso, do agregado ao específico, do método único ao comparativo — que não foram ainda articulados num desenho empírico aplicado ao caso brasileiro. Em particular, persistem três lacunas:
+
+1. **Lacuna empírica longitudinal**: estudos brasileiros recentes adotam corte transversal único [@vargas2021; @araujo2018servicos], impedindo o exame de trajetórias pré e pós-pandemia.
+2. **Lacuna nas variáveis de intensidade de uso**: a literatura internacional deslocou-se para os níveis 2 e 3 do divide [@bchi2016modeling; @lutz2019digitali; @ebbers2016impactof], mas estudos aplicados a e-gov no Brasil ainda operam predominantemente com variáveis sociodemográficas clássicas.
+3. **Lacuna metodológica comparativa**: comparações sistemáticas entre regressão logística e machine learning em surveys nacionais aplicados a e-gov são raras; quando existem [@browne2021multivar; @mcbride2017israndom], focam em pobreza ou saúde.
+
+Diante desse cenário, a contribuição deste trabalho posiciona-se em cinco frentes:
+
+1. **Extensão longitudinal pooled 2021-2025**: cobre o período pós-pandemia e captura tendências temporais que o corte 2019 de @vargas2021 não pode revelar.
+2. **Variáveis de intensidade e variedade de uso digital** (16 variáveis cobrindo busca de informação, uso de celular, mídia, educação e comunicação) elevam o AUC do modelo de 0,77 para 0,83, alinhado com a previsão da literatura de divide segundo nível [@bchi2016modeling; @ebbers2016impactof; @castellacci2018internet] de que sociodemográficas deixam ~50% inexplicado.
+3. **Sub-modelo de habilidades digitais autorelatadas (I1A_*)**: testa empiricamente o mediador "familiaridade digital" sugerido por @lutz2019digitali e @vandeursen2020digitali.
+4. **Comparação empírica GLM × random forest** sobre os mesmos dados mostra que o **ganho preditivo vem das variáveis, não do método** (RF Original ≈ GLM Original; RF Expandido ≈ GLM Expandido; ambos os Expandidos superam ambos os Originais), dialogando com o debate aberto [@browne2021multivar; @mcbride2017israndom].
+5. **Holdout temporal 2025**: valida generalização de modelos treinados em 2021-2024.
+
+A contribuição não substitui a discussão teórica de public value [@panagiotopou2019publicva; @cordella2025factorsi] nem a de *data justice* [@macadar2025servicos], mas adiciona um pilar empírico longitudinal que dialoga diretamente com o problema central: **quem usa e-gov no Brasil hoje, e o que predispõe a esse uso para além das características sociodemográficas clássicas**.
+
+A construção deste referencial seguiu protocolo PRISMA-P 2015 adaptado [@shamseer2015preferre], com 62 referências aceitas após três rodadas de busca via scite MCP, snowball backward e forward, e avaliação de qualidade em quatro dimensões. O detalhamento da metodologia da revisão está em `revisao/metodologia.qmd`.
+
 # Setup
 
 ```{r}
@@ -1286,14 +1346,34 @@ Três variáveis do top ranking foram **excluídas por sobreposição conceitual
 
 ### Top variáveis legítimas (selecionadas)
 
-Dezesseis variáveis de **intensidade e variedade de uso digital** — cada uma soma +0,015 a +0,040 de AUC isoladamente. Agrupadas:
+Dezesseis variáveis de **intensidade e variedade de uso digital** — cada uma soma +0,015 a +0,040 de AUC isoladamente. Receberam nomes interpretáveis (em UPPERCASE_UNDERSCORE) e agrupam-se em cinco eixos conceituais:
 
-- **Atividades de internet** (C8_A/B/D/E): produtos, saúde, emprego, enciclopédia
-- **Uso do celular** (J2_L/J/G/K): busca de informação, páginas, mapas, apps
-- **Mídia e educação** (C9_C/D, C10_A/C/D): vídeos, notícias, cursos, estudo próprio
-- **Engajamento** (C11_A, C7_A, B1): compartilhar, email, uso de computador
+- **Informação** (`BUSCA_PRODUTOS`, `BUSCA_SAUDE`, `BUSCA_EMPREGO`, `BUSCA_CONHECIMENTO`): busca ativa de informação (produtos, saúde, emprego, enciclopédia).
+- **Conteúdo via celular** (`CELULAR_BUSCA`, `CELULAR_WEB`, `CELULAR_MAPAS`, `CELULAR_APPS`): atividades específicas no smartphone.
+- **Mídia** (`CONTEUDO_VIDEO`, `CONTEUDO_NOTICIAS`): consumo de vídeo e leitura de notícias.
+- **Educação** (`ESTUDO_ESCOLAR`, `INFO_CURSOS`, `ESTUDO_AUTONOMO`): atividades formativas.
+- **Comunicação e acesso** (`COMPARTILHA_CONTEUDO`, `USO_EMAIL`, `TEM_COMPUTADOR`): troca interpessoal e infraestrutura.
+
+A correspondência completa com os códigos originais do questionário TIC Domicílios está no glossário a seguir.
 
 Interpretação: **quem usa a internet para múltiplas finalidades tem probabilidade maior de usar e-gov**. É um padrão de intensidade, não de conteúdo governamental.
+
+### Glossário das 16 variáveis de uso digital {#sec-glossario-vars}
+
+```{r}
+#| label: tbl-glossario-vars
+#| tbl-cap: "Variáveis de uso digital do modelo expandido: nome interpretável, código original do questionário TIC Domicílios e descrição."
+#| echo: false
+source("scripts/var_labels.R")
+
+tibble::tibble(
+  Variável    = names(vars_extra_desc),
+  `Código TIC` = unname(vars_extra_codigos_tic[names(vars_extra_desc)]),
+  Eixo        = unname(vars_extra_eixo[names(vars_extra_desc)]),
+  Descrição   = unname(vars_extra_desc)
+) |>
+  knitr::kable()
+```
 
 ## Matriz 2×2 (vars × modelo)
 

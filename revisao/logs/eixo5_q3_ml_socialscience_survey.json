@@ -1,0 +1,191 @@
+{
+  "total": 12211,
+  "count": 10,
+  "query": "\"machine learning\" AND \"logistic regression\" AND social science AND survey",
+  "hits": [
+    {
+      "doi": "10.37394/232032.2024.2.10",
+      "title": "Utilizing Logistic Regression for Analyzing Customer Behavior in an E-Retail Company",
+      "year": 2024,
+      "journal": "financial engineering",
+      "authors": [
+        "Hakan Alparslan",
+        "Safi̇ye Turgay",
+        "Recep YILMAZ"
+      ],
+      "tally": null,
+      "supporting": null,
+      "contrasting": null,
+      "mentioning": null,
+      "citingPubs": null,
+      "abstract": "The e-retail sector is growing day by day and the competitive environment is getting harder. Businesses have to compete with their competitors in order to survive. In parallel with the increasing internet penetration, the trade volume in E-Retail sites is also increasing therefore the data generated on these sites is enormous. Understanding these data with traditional analysis methods is difficult due to the size problem mentioned. Difficult to understand data causes loss of time, money and customers. In recent years, machine-learning algorithms have been frequently used to analyse these large-sized data and to use them in decision-making. This study aimed to perform predictive analysis for the product recommendation system established by using logistic regression, which is a supervised machine-learning algorithm. In addition, the binary classification algorithm preferred to predict whether customers make a purchase or not. As a result, the accuracy degree of the model was 79.73%. This study has the potential to affect the understanding of customers, ensuring customer satisfaction, increasing profit and market share, and contributes to a sustainable business purpose.",
+      "isOa": true,
+      "retraction_notices": null
+    },
+    {
+      "doi": "10.4108/eai.24-3-2022.2318769",
+      "title": "A Logistic Regression Model for Hate Speech Recognition",
+      "year": 2023,
+      "journal": null,
+      "authors": [
+        "Sania Zehra",
+        "Faraz Doja"
+      ],
+      "tally": null,
+      "supporting": null,
+      "contrasting": null,
+      "mentioning": null,
+      "citingPubs": null,
+      "abstract": "People feel entitled to express their opinions on social media, and many of these opinions may be hostile to others. Hate speech recognition is essential in today's world, where it is important to keep track of what is posted in public for all to see. This paper discusses ways to detect hateful language on any topic using data mining, natural language processing, and machine learning techniques on the social media site Twitter. A Logistic Regression Model for Hate Speech Recognition is proposed. The research conducted provides details of all the hate commenters as well as an overview of the topics on which the hate is being projected the most.",
+      "isOa": true,
+      "retraction_notices": null
+    },
+    {
+      "doi": "10.2139/ssrn.4436056",
+      "title": "Logistic Regression vs Machine Learning to Predict Evacuation Decisions in Fire Alarm Situations",
+      "year": 2023,
+      "journal": null,
+      "authors": [
+        "Adriana Balboa",
+        "Arturo Cuesta",
+        "Javier González‐Villa"
+      ],
+      "tally": 4,
+      "supporting": 1,
+      "contrasting": 0,
+      "mentioning": 3,
+      "citingPubs": 2,
+      "abstract": null,
+      "isOa": true,
+      "retraction_notices": null
+    },
+    {
+      "doi": "10.56726/irjmets40180",
+      "title": "IDENTIFYING ELECTRICITY THEFT USING MACHINE LEARNING",
+      "year": 2023,
+      "journal": "international research journal of modernization in engineering technology and science",
+      "authors": [
+        "Dhareppa Majage",
+        "Prasad Musale",
+        "Shraddha Pansare"
+      ],
+      "tally": null,
+      "supporting": null,
+      "contrasting": null,
+      "mentioning": null,
+      "citingPubs": null,
+      "abstract": "The principal source of electrical power loss that has a substantial impact on both the quantity and quality of electrical power is electricity theft. However, the approaches currently in use for detecting this theft-related criminal activity are varied and complex since it is difficult to extract useful information from time-series data due to the uneven nature of the dataset. As energy is so important nowadays, we want to use energy sources wisely, especially when it comes to electricity. In India, power theft has grown to be a serious issue. The generating, transmission, and distribution components make up the power system. Only on the transmission and distribution side is there power theft. Many strategies have been put out to lessen electricity theft. Direct connection to a distribution line, however, is more challenging to investigate. We suggest utilising several machine learning methods to detect electricity theft.",
+      "isOa": true,
+      "retraction_notices": null
+    },
+    {
+      "doi": "10.1051/e3sconf/202447700085",
+      "title": "Automatic Classification of Railway Complaints using Machine Learning",
+      "year": 2024,
+      "journal": "e3s web of conferences",
+      "authors": [
+        "Tulasi Sathivika Roy",
+        "G. Vasukidevi",
+        "T. Y. J. Naga Malleswari"
+      ],
+      "tally": 0,
+      "supporting": 0,
+      "contrasting": 0,
+      "mentioning": 0,
+      "citingPubs": 3,
+      "abstract": "People may now express their thoughts and ideas with a wider audience because of the popularity of social media sites like Twitter, Instagram, and Facebook. Businesses now utilise Twitter to reply to client comments, reviews, and grievances. Every day, millions of individuals discuss a wide range of issues on Twitter by sharing their ideas and interests. Sentiment analysis is a useful method for analysing such data, which involves identifying the sentiment of the source text and classifying it as positive, neutral, or negative. However, due to the vast amount of data, it can be challenging for businesses to address every customer’s question or complaint in a timely manner. Some issues may be urgent but delayed due to the volume of information. In order to prioritize emergency tweets, a system is proposed that utilizes machine learning algorithms such as Random Forest, Support Vector Machine, Logistic Regression, and Naïve Bayes to identify tweets based on their urgency. The proposed system gathers and preprocesses unstructured data, performs feature extraction, trains, assesses and compares multiple machine learning models to determine the best classifier with the highest accuracy, and uses vectorization via a pipeline to determine the sentiment of a new tweet provided as input.",
+      "isOa": true,
+      "retraction_notices": null
+    },
+    {
+      "doi": "10.54254/2753-8818/49/20241290",
+      "title": "Rheumatoid arthritis prediction and risk factor analysis based on logistic regression and machine learning: A NHANES survey",
+      "year": 2024,
+      "journal": "theoretical and natural science",
+      "authors": [
+        "Chunshen Pan"
+      ],
+      "tally": null,
+      "supporting": null,
+      "contrasting": null,
+      "mentioning": null,
+      "citingPubs": null,
+      "abstract": "Abstract. Rheumatoid arthritis (RA) is a chronic autoimmune disease characterized by inflammation of the synovial joints, leading to pain, swelling, and eventually joint deformity and disability. It affects approximately 0.5% to 1% of the global population, with higher prevalence rates observed in women and in developed countries. Therefore, offer potential strategies to identify at-risk individuals before the onset of overt symptoms, facilitating proactive interventions to mitigate disease progression. In this study, the National Health and Nutrition Examination Survey (NHANES) was used to derive several ML and logistic regression methods to predict the onset of RA among adults and compare the performance by Receiver Operating Characteristic (ROC) curve using 4 predicting models such as logistic regression, random forest, support victor machine and XGBoost. The logistic regression performed better than any other methods because of its AUC and easier interpretability. Also, with logistic regression risk factors like BMI, SII, diabetes, age, gender, smoking, education and PHQ-9 are determined. These results could help diagnose and decrease the development of RA.",
+      "isOa": true,
+      "retraction_notices": null
+    },
+    {
+      "doi": "10.56726/irjmets38764",
+      "title": "STROKE RISK PREDICTION: A COMPARATIVE STUDY OF MACHINE LEARNING ALGORITHMS",
+      "year": 2023,
+      "journal": "international research journal of modernization in engineering technology and science",
+      "authors": [
+        "Jishwan Es"
+      ],
+      "tally": null,
+      "supporting": null,
+      "contrasting": null,
+      "mentioning": null,
+      "citingPubs": null,
+      "abstract": "The timely detection of stroke is crucial for enhancing patient outcomes and delivering effective treatment. Over the past few years, machine learning algorithms have emerged as promising tools for predicting stroke risk based on patient data. This study investigates and evaluates the effectiveness of five popular machine learning algorithms, including decision tree, logistic regression, KNN, SVM, and random forest, for predicting the risk of stroke. We use a publicly available dataset of patient information, which includes demographic, lifestyle, and medical history variables. Our analysis includes data preprocessing, feature selection, and model training and testing. After evaluating the performance of each algorithm using various metrics, including accuracy, precision, recall, and F1 score, our study found that SVM achieved the highest accuracy score of 93.93%. We also find that certain variables, such as age, hypertension, and diabetes, are strong predictors of stroke risk across all algorithms. These findings have important implications for clinical practice and can inform the development of more accurate and personalized stroke risk prediction models.",
+      "isOa": true,
+      "retraction_notices": null
+    },
+    {
+      "doi": "10.1109/icac2n63387.2024.10894772",
+      "title": "Diabetes Prediction Using Machine Learning Algorithms",
+      "year": 2024,
+      "journal": null,
+      "authors": [
+        "Nikita Sharma",
+        "Shrddha Sagar"
+      ],
+      "tally": null,
+      "supporting": null,
+      "contrasting": null,
+      "mentioning": null,
+      "citingPubs": null,
+      "abstract": "This work includes machine learning algorithms to predict the diabetes of a person.in this project we have used three algorithms, to find the better algorithm for the diabetes prediction. Here we have used three algorithms named Adaboost, support vector machine, logistic regression algorithms. Among all this algorithms, we got the output with more accuracy is adaptive boosting algorithm. In this, we have used python coding. We have created a user interface to make it easy for the users. We have created the website using Django frame work. In that website after entering the values the prediction will show whether he has positive or negative. And after that we have added the precaution to be taken for both the positive and negative. So that, the person can take preventive measure for the diabetes .we have done the survey on the algorithms and created a comparison for three of them. By considering the specifications-accuracy, precision, Recall, F-measure .we have collected this info by confusion matrix these are the things included in this project..",
+      "isOa": false,
+      "retraction_notices": null
+    },
+    {
+      "doi": "10.1109/icaisc56366.2023.10085321",
+      "title": "Towards Fake News Identification using Machine Learning",
+      "year": 2023,
+      "journal": null,
+      "authors": [
+        "Yara Abdallah",
+        "Nazih Salhab",
+        "Ammar El Falou"
+      ],
+      "tally": 0,
+      "supporting": 0,
+      "contrasting": 0,
+      "mentioning": 0,
+      "citingPubs": 1,
+      "abstract": "The abundance of social media platforms and their usage for news dissemination has gained a lot of attention lately. However, they have some pros and cons. On the one hand, individuals consume latest news instantly and freely, while enjoying the ease of access of instantaneous information transmission. On the other hand, such abundance makes it easy to wide-spread \"fake news\", where the content purposefully incorporates incorrect information to serve some hidden agenda. In this paper, we investigate multiple machine learning algorithms on the road to identify fake news in a proactive manner. We first analyze the viability of applying the Natural Language Processing (NLP) technique to build a labeled dataset. We, then, introduce two approaches for NLP visualization and discuss their performance before selecting the best performer. Using logistic regression, and multinomial naïve Bayes algorithms, we classify fake news in new data. Finally, we discuss our achieved results and share our lessons learned and recommendations, especially that we achieved an accuracy of 98% in our experiments.",
+      "isOa": false,
+      "retraction_notices": null
+    },
+    {
+      "doi": "10.5121/ijcsit.2019.11507",
+      "title": "Detection of Fake Accounts in Instagram Using Machine Learning",
+      "year": 2019,
+      "journal": "international journal of computer science and information technology",
+      "authors": [
+        "Ananya Dey",
+        "Hamsashree Reddy",
+        "Manjistha Dey"
+      ],
+      "tally": 26,
+      "supporting": 0,
+      "contrasting": 0,
+      "mentioning": 22,
+      "citingPubs": 39,
+      "abstract": "With the advent of the Internet and social media, while hundreds of people have benefitted from the vast sources of information available, there has been an enormous increase in the rise of cyber-crimes, particularly targeted towards women. According to a 2019 report in the [4] Economics Times, India has witnessed a 457% rise in cybercrime in the five year span between 2011 and 2016. Most speculate that this is due to impact of social media such as Facebook, Instagram and Twitter on our daily lives. While these definitely help in creating a sound social network, creation of user accounts in these sites usually needs just an email-id. A real life person can create multiple fake IDs and hence impostors can easily be made. Unlike the real world scenario where multiple rules and regulations are imposed to identify oneself in a unique manner (for example while issuing one's passport or driver's license), in the virtual world of social media, admission does not require any such checks. In this paper, we study the different accounts of Instagram, in particular and try to assess an account as fake or real using Machine Learning techniques namely Logistic Regression and Random Forest Algorithm.",
+      "isOa": true,
+      "retraction_notices": null
+    }
+  ]
+}

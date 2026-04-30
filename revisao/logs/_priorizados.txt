@@ -1,0 +1,59 @@
+# DOIs prioritários para inclusão na revisão (avaliação preliminar)
+# Excluídos por off-topic apesar de alta tally:
+#  - 10.5121/ijcsit.2019.11507 (Fake accounts Instagram)
+#  - 10.1109/mwc.001.2100137 (6G wireless)
+#  - 10.1016/j.jdeveco.2018.11.003 (Chinese exports Alibaba)
+#  - 10.1596/1813-9450-8262 (idem)
+#  - 10.1007/s40747-020-00185-w (mortality forecasting)
+#  - 10.1002/poi3.249 (crowdsourcing public services)
+#  - 10.1177/1749602019837793 (Netflix LATAM divide)
+#  - 10.1787/120e170e-en (Primary Health Care BR)
+#  - 10.3390/su142013117 (HR digital skills, fora do foco e-gov)
+#  - 10.1007/s10639-022-11437-2 (smartphone problematic use)
+#  - 10.1111/ntwe.12054 (frontline workers)
+#  - 10.1093/jamia/ocv204 (saúde, parcial)
+
+# TIER 1 — centrais (definitivamente incluir)
+10.1016/j.respol.2017.11.007       # Castellacci & Tveito 2018 — Internet use & well-being
+10.1177/1461444815604154           # Büchi et al. 2016 — Second-level digital divide 5-country
+10.1002/hbe2.140                    # Robinson et al. 2019 — Digital inequalities AI/big data
+10.1016/j.giq.2019.101421          # Twizeyimana & Andersson 2019 — Public value digital gov
+10.2196/20073                      # Beaunoyer et al. 2020 — Digital inequality pandemic
+10.1016/j.giq.2016.08.007          # van Deursen & van Dijk 2016 — Digital divide e-gov channels ⭐
+10.1111/ssqu.12270                 # Hilbert 2016 — Gender Digital Divide LATAM
+10.1108/emjb-05-2014-0016          # Almuraqab 2016 — E-gov adoption satisfaction (UAE)
+10.1787/4de9f5bb-en                # OECD 2020 — Digital Government Index
+10.3390/su12176807                 # Lăzăroiu et al. 2020 — Citizens involvement EU digital skills
+10.1016/j.giq.2023.101866          # 2023 GIQ — Different approaches e-gov COVID ⭐
+10.3127/ajis.v27i0.4079            # Tabbara 2023 — Trust e-gov meta-analytic SEM
+10.4038/kjhrm.v17i1.107            # Priyashantha & Dilhani 2022 — SLR PRISMA e-gov determinants
+
+# TIER 2 — relevantes secundários
+10.1145/3209281.3209302            # Janowski 2018 — Digital gov transformation
+10.1504/eg.2019.096573             # Anwer 2019 — Facebook e-gov adoption
+10.1504/ijeg.2015.071564           # Rana 2015 — Abu Dhabi TAM
+10.18517/ijaseit.7.4.2518          # Susanto 2017 — Indonesia e-gov
+10.23919/cisti.2019.8760821        # Hilbert/Lloyd 2019 — LATAM/EU divide
+10.1371/journal.pone.0255519       # Browne et al. 2021 — RF poverty PLOS
+10.1002/pop4.169                   # McBride 2017 — Is RF superior for poverty?
+10.1108/wjstsd-04-2021-0049        # Yera 2021 — Turkey e-gov portal
+10.21511/im.18(1).2022.02          # Vietnam Stimuli e-gov COVID
+10.1108/oir-08-2021-0440           # Vietnam Drivers e-gov COVID
+10.1002/isd2.12088                 # Susmiati 2019 — Digital divide index Brazil enterprises
+10.4018/ijpada.2019100103          # Nasri 2019 — Tunisia TAM e-gov
+10.4018/ijpada.290307              # 2021 — E-Gov and Digital Inequality
+10.24251/hicss.2019.381            # Singh 2019 — Trust factors HICSS
+10.1108/oir-04-2019-0121           # Exploring digital inequalities Russia
+10.1108/jices-06-2016-0022         # Shore 2017 — Older internet skills grey divide
+10.1108/itp-08-2017-0260           # 2019 — Evaluating digital public services
+10.1007/978-3-030-27397-2_10       # 2019 — Who Are the Users of Digital Public Services
+10.1177/0093650215601883           # 2015 — Net Diversity in Trend Assessment
+10.1108/tg-10-2025-0338            # 2026 — Citizen role in digital gov maturity
+10.1108/rausp-11-2023-0225         # 2025 RAUSP — Brasilian digital gov public value ⭐ Brasil
+
+# TIER 3 — observação adicional
+10.1177/08944393231176595          # 2023 — Why device-related digital inequalities matter for e-gov engagement
+10.17648/acta.scientiae.6006       # 2020 — Mardiana — Google Trends widening 2nd-level divide BR + COVID ⭐
+10.1108/tg-10-2020-0305            # Yera 2021 — Peru e-gov environmental sustainability
+10.32575/ppb.2021.1.11             # Csótó 2021 — Knowledge gap + e-gov adoption
+10.1177/15701255251321344          # 2025 — Non-use of government websites old age

@@ -1,0 +1,101 @@
+{
+  "total": 240,
+  "count": 8,
+  "query": "\"digital inequality\" AND \"e-government\" AND outcomes",
+  "hits": [
+    {
+      "doi": "10.1177/08944393231176595",
+      "title": "Why Device-Related Digital Inequalities Matter for E-Government Engagement?",
+      "year": 2023,
+      "journal": "social science computer review",
+      "authors": [
+        "Matías Dodel"
+      ],
+      "tally": 0,
+      "abstract": "Mobile devices were key drivers for recent Internet expansion in lower-income countries, democratizing access. Nonetheless, concerns arose regarding their role in the creation of new digital underclass related to the capital-enhancing consequences of Internet use. Among these, e-government engagemen"
+    },
+    {
+      "doi": "10.1111/1758-5899.13140",
+      "title": "Digital footprints as barriers to accessing e‐government services",
+      "year": 2022,
+      "journal": "global policy",
+      "authors": [
+        "Kira Allmann",
+        "Roxana Radu"
+      ],
+      "tally": 9,
+      "abstract": "This article builds on existing literature on digital inequality and the digitised welfare state to elucidate one underexplored way in which the rise of e-government platforms further disadvantages already-marginalised people: by requiring that they possess a verifiable digital footprint distributed"
+    },
+    {
+      "doi": "10.4038/kjhrm.v17i1.107",
+      "title": "Determinants of E-government Adoption: A Systematic Literature Review",
+      "year": 2022,
+      "journal": "kelaniya journal of human resource management",
+      "authors": [
+        "K. G. Priyashantha",
+        "V. I. Dilhani"
+      ],
+      "tally": 6,
+      "abstract": "The adoption of E-government has significant benefits for both citizens and governments. The objectives of this study were to (1) find out the common areas investigated in the empirical research landscape on E-government adoption from 2015 to 2020, as well as (2) the areas that need more focus for r"
+    },
+    {
+      "doi": "10.1177/21582440211021407",
+      "title": "Exploring the Fundamental Factors of Digital Inequality in Bangladesh",
+      "year": 2021,
+      "journal": "sage open",
+      "authors": [
+        "Muhammad Nazrul Islam",
+        "Toki Tahmid Inan"
+      ],
+      "tally": 19,
+      "abstract": "Digital inequality is imperative to combat the perpetuation of national development and significantly exists in developing countries. Thus, the purpose of this article is to provide the underlying factors of creating digital inequality in Bangladesh. A mixed-method research approach was followed whe"
+    },
+    {
+      "doi": "10.60077/medkul.1453568",
+      "title": "Levels of Digital Inequality and The Process of Adaptation to Digital Culture",
+      "year": 2024,
+      "journal": null,
+      "authors": [
+        "Furkan Sürün",
+        "Ali Şimşek"
+      ],
+      "tally": null,
+      "abstract": "Digital inequality refers to the differences in individuals' access to, use of and benefits from digital technologies. This study aims to explore the effects of demographic differences on digital cultural inclusion and exclusion. The study is designed using a sequential mixed model. The population o"
+    },
+    {
+      "doi": "10.47100/herald.v1i2.59",
+      "title": "E - GOVERNMENT ROLE IN IMPROVEMENT OF KAZAKHSTAN PUBLIC ADMINISTRATION SYSTEM",
+      "year": 2020,
+      "journal": "herald of science of s seifullin kazakh agro technical university",
+      "authors": [
+        "Gulmira Sheryazdanova"
+      ],
+      "tally": null,
+      "abstract": "The term “good governance” is used to describe the concept of effective publicadministration. This article investigates the role of Kazakhstan e-governmentframework in public administration improvement and the country’s competitivegrowth through bureaucracy reduction and mitigation of corruption ris"
+    },
+    {
+      "doi": "10.32575/ppb.2021.1.11",
+      "title": "E-GOVERNMENT SERVICE ADOPTION THROUGH THE LENS OF THE KNOWLEDGE GAP",
+      "year": 2021,
+      "journal": "pro publico bono - magyar közigazgatás",
+      "authors": [
+        "Mihály Csótó"
+      ],
+      "tally": null,
+      "abstract": "The aim of the paper is to raise some issues in relation to the technology adoption-based e-government acceptance models and that the knowledge gap theory can  be applied to the use of online public administration services: higher status equals not only wider and more sophisticated usage of ICT tool"
+    },
+    {
+      "doi": "10.24251/hicss.2023.220",
+      "title": "Examining User Access Options for eGovernment Services During a Crisis from a Digital Inequality Perspective",
+      "year": 2023,
+      "journal": null,
+      "authors": [
+        "Francisco Javier Cabrerizo",
+        "Ignacio Pérez Pérez",
+        "Enrique Herrera‐Viedma"
+      ],
+      "tally": null,
+      "abstract": "City governments incorporate ICTs into government services to improve citizen participation and access to those services. Too much dependence on technology, however, can lead to concerns about creating a digital divide between different groups of citizens. The potential for digital inequality is a c"
+    }
+  ]
+}

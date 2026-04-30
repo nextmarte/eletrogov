@@ -1,0 +1,115 @@
+---
+title: "Determinants of e-government use in populations with digital heterogeneity: a systematic review"
+author: "Marcus"
+date: "2026-04-29"
+lang: en
+bibliography: refs.bib
+csl: abnt-cadernos-ebape.csl
+format:
+  html:
+    toc: true
+    number-sections: true
+---
+
+## Introduction {#sec-intro}
+
+Citizen adoption of electronic government (e-gov) services has been investigated since the popularization of the internet, with theoretical roots in technology acceptance models [@davis1989perceive; @venkatesh2003useracce] and their application to the public sector [@vandijk2008explaini]. In Brazil, @vargas2021 provided the most comprehensive quantitative analysis of the topic using TIC Domicílios 2019 microdata, identifying age, household income, labor market participation, economic class, education, access devices, and e-commerce use as significant determinants.
+
+Despite this contribution, three gaps remain in the recent literature on e-gov adoption in contexts of digital heterogeneity:
+
+1. **Longitudinal empirical gap**: Brazilian studies adopt single cross-sections [@vargas2021; @araujo2018servicos], precluding examination of pre/post-pandemic adoption trajectories.
+2. **Use-intensity variables gap**: international digital divide literature has shifted from level 1 (access) to levels 2 and 3 (skills, use, outcomes) [@bchi2016modeling; @lutz2019digitali; @ebbers2016impactof], yet Brazilian e-gov studies still operate predominantly with classical sociodemographics.
+3. **Methodological comparison gap**: systematic comparisons between logistic regression and machine learning (ML) on national surveys applied to e-gov are rare; when present [@browne2021multivar; @mcbride2017israndom], they focus on poverty or health.
+
+This review consolidates the relevant empirical and theoretical literature (2015-2026), with backward snowball for pre-2015 classics, and supports a methodological/empirical extension of @vargas2021 that: (a) expands to a pooled 2021-2025 analysis, (b) incorporates intensity and variety of digital use variables, (c) includes self-reported digital skills, and (d) empirically compares logistic regression against random forest.
+
+## Review methods {#sec-methods}
+
+Protocol adapted from PRISMA-P 2015 [@shamseer2015preferre]. Operational question framed in PICOC: population (Brazilian adults), interest (sociodemographic determinants + digital use intensity + skills), comparator (linear vs non-linear models), outcome (e-gov adoption), context (Brazil-priority, post-2015).
+
+Searches via scite MCP, covering PubMed, CrossRef, OpenAlex, across six thematic axes with specific Boolean strings. Inclusion: empirical or systematic review; 2015-2026; PT/EN/ES; verifiable DOI; e-gov adoption, digital divide, digital skills, ML on surveys, or socioeconomic determinants of digital use. Exclusion: editorials, commentary, retracted papers, technology-specific work disconnected from citizen adoption.
+
+Quality assessment in four dimensions (rigor, relevance, recency, venue), each 0-2; high class for score ≥ 6. Backward snowball from @vargas2021 references and central papers; forward snowball via smart citations to @vargas2021. Full-text excerpts saved per DOI for anti-hallucination audit.
+
+Final total: **55 accepted papers** across two search rounds (round 1 exploratory across six axes; round 2 refined to fill gaps in ML applied to e-gov, Brazil post-pandemic, and digital footprints). Distribution by origin: 39 from round 1 axes, 8 backward snowball (TAM/UTAUT/Van Dijk classics), 2 forward (the original authors' continuation), 6 from refined round 2. Twenty-four marked as central; twenty-nine classified as high quality.
+
+## Axis 1: E-gov adoption frameworks {#sec-axis1}
+
+The Brazilian and international literature on e-gov adoption draws on two traditions: technology acceptance models (TAM, UTAUT) and the public value perspective.
+
+@davis1989perceive proposed the Technology Acceptance Model (TAM): perceived usefulness and perceived ease of use predict adoption intention. @venkatesh2003useracce consolidated the Unified Theory of Acceptance and Use of Technology (UTAUT) by adding performance expectancy, effort expectancy, social influence, and facilitating conditions. @vandijk2008explaini extended the model to government, combining service attributes with sociodemographic factors (age, gender, education, occupation) in a multidisciplinary framework.
+
+The **public value** perspective shifts the focus from internal efficiency to relational value creation outside the organization [@panagiotopou2019publicva; @cordella2025factorsi]. @panagiotopou2019publicva argue that e-gov public value is multidimensional and reflected in the combined consumption of multiple services rather than isolated technology metrics. @cordella2025factorsi empirically explore how rival public value priorities manifest in Brazilian e-gov initiatives.
+
+The PRISMA systematic review by @priyashantha2022determin on 55 Scopus papers (2015-2020) finds recurrent determinants of e-gov adoption: perceived usefulness, perceived ease of use, trust, perceived risk, performance expectancy, effort expectancy, social influence, facilitating conditions, citizen awareness, cost, satisfaction, and digital inequality. @almuraqab2016egovernm reinforce satisfaction as a mediator of the adoption trajectory. @tabbara2023clarifyi consolidate via meta-SEM the central role of trust in e-gov success models.
+
+Brazilian precursors [@araujoreinha2015contextu; @araujo2018servicos] pointed to contextual factors (social class, place of access, use competencies) as influencers in qualitative or small-sample studies. @vargas2021 provided the first large-scale quantitative analysis of these determinants for Brazil using logistic regression on national microdata.
+
+## Axis 2: Digital divide in Brazil and Latin America {#sec-axis2}
+
+The digital divide literature recognizes three successive levels of inequality [@lutz2019digitali]: access (first level), skills and use (second level), and obtained outcomes (third level). In developed countries with widespread access, the second level has gained analytical centrality [@bchi2016modeling; @ebbers2016impactof].
+
+In Latin America, @hilbert2016genderan documents the gender gap in internet access, with persistence even after socioeconomic controls. Comparative studies between LATAM and Europe show divergent trajectories with partial convergence in mobile internet adoption. In Brazil, @susmiati2019usingadi propose a digital divide index among enterprises; @reineke2015explicat and @distel2023whydevic point to the **access device** (mobile only vs computer) as having structural effect on engagement with public services.
+
+Post-pandemic studies [@mardiana2020evidence] using Google Trends suggest COVID-19 **widened** the second-level digital divide in Brazil, especially in less favored socioeconomic strata, rather than narrowing it via forced familiarization with the digital.
+
+## Axis 3: Second-level divide and digital skills {#sec-axis3}
+
+@bchi2016modeling, in an SEM study across five countries with low access gaps, find that sociodemographics explain up to **50%** of the variance in internet use, with age as the strongest predictor. The remaining ~50% leaves wide room for additional predictors related to specific use types and skills.
+
+@ebbers2016impactof argue that the digital divide's impact on e-gov **expands from channel choice to channel usage**: given access, channel choices vary little by skill, but **use intensity and satisfaction** do. Operationalizing skills via internet experience across activities, including online purchases [@belanger2008trustand], anticipates our methodological strategy of including e-commerce (H2) and intensive-use variables (C8/J2/C10/C11) as proxies for digital familiarity.
+
+@lzroiu2020citizens evidence the importance of digital skills for citizen engagement with EU e-gov, empirically supporting skills as a structural mediator between access and adoption.
+
+## Axis 4: Digital use intensity and variety {#sec-axis4}
+
+@castellacci2018internet present a theoretical framework in which the internet affects well-being via four distinct channels: time-use patterns, new activities, information access, and communication tool. Effects vary with personal characteristics (psychological, capabilities, cultural framing). The empirical heuristic is clear: it is not "internet use" in general that matters, but the **specific activities** combined with the user's **capabilities**.
+
+@reineke2015explicat distinguish **diversity of internet use** (net diversity) as a construct distinct from pure intensity. This distinction supports the inclusion in the methodological extension of variables capturing both frequency and variety of digital activities.
+
+## Axis 5: Machine learning vs logistic regression on surveys {#sec-axis5}
+
+@browne2021multivar show that interpretable random forest applied to public georeferenced data produces accuracy comparable to deep learning for poverty and malnutrition prediction in eleven low/middle-income countries. @mcbride2017israndom, in earlier empirical assessment, qualify the verdict: random forest is superior to logistic in some contexts, equivalent in others, depending on data structure.
+
+Literature applied to e-gov adoption is sparse on this axis. Studies specifically comparing ML and GLM in surveys of digital government use are rare; @garcaro2023differen explore different analytical approaches in the pandemic context but not with Brazilian national data. @lupo2022egovernm applies ML for predicting e-gov adoption in Europe in a recent study still with low diffusion (3 citations), evidencing an active gap. This methodological gap is one of the points where our contribution is positioned.
+
+## Axis 6: COVID-19 and e-gov {#sec-axis6}
+
+@vandeursen2020digitali, in a Dutch survey with 1733 respondents, shows that literacy, education, internet attitude, material access, and digital skills predict COVID-19 uses and outcomes, while economic and social resources lose significance after controls. The central conclusion is that the pandemic **reinforces** preexisting inequalities: already-advantaged individuals use more and better the digital opportunities.
+
+Studies in other countries corroborate the finding: @vu2022driverso (Vietnam) identify performance expectancy, social influence, and facilitating conditions as drivers of e-gov adoption during COVID-19. @garcaro2023differen compare analytical approaches in the same period. @mardiana2020evidence documents the specific Brazilian effect of divide widening via Google Trends.
+
+In Brazilian context, the emblematic case is the **Auxílio Emergencial** instituted by Law 13.982/2020. @cardoso2020aimpleme analyzes its implementation as a "system-level bureaucracy" case, in which pre-programmed decisions via algorithms and digital flows operate the public service at scale. The program reached populations historically unfamiliar with digital channels, including approximately 59 million Brazilians with cash-use habits, exposing limits of a purely digital operation under preexisting exclusion. Complementary works [@krepsky2023administ] confirm that AE implementation made evident that digital citizenship is a material precondition for the effectiveness of e-gov-dependent policies.
+
+These findings support the relevance of the 2021-2025 window and the inclusion of variables capturing **digital familiarity** (intensive use, skills) as structural mediators of post-pandemic e-gov adoption in Brazil.
+
+Additionally, @roztocki2022digitalf document how **digital footprints** act as a barrier: citizens without an online history face additional difficulty accessing e-gov, reinforcing that prior internet use intensity conditions the possibility of adoption.
+
+## Synthesis and theoretical-empirical gap {#sec-synthesis}
+
+The literature shows three convergent shifts:
+
+1. **From access to use**: the digital divide consolidated as a multilevel phenomenon (access, skills, outcomes), with the second level gaining analytical centrality in contexts of broad penetration.
+2. **From aggregate to specific**: specific digital activities, their intensity and diversity, explain variance that isolated sociodemographics leave open (up to 50% of variance).
+3. **From single method to comparative**: ML expansion in social science applied to surveys is underway, with the verdict still undefined on when ML surpasses linear models.
+
+Applied to the Brazilian case, these three shifts identify an **empirical-methodological gap**: pooled 2021-2025 analysis of e-gov use in Brazil that (a) incorporates intensity and variety of digital use variables + self-reported digital skills, (b) empirically compares logistic regression and random forest, (c) validates generalization via temporal holdout.
+
+Continuation of the original work [@cordella2025factorsi; @macadar2025servicos] points to directions like public value and data justice but does not return to the quantitative strategy. This review opens space for a direct methodological extension of @vargas2021.
+
+## Positioning the contribution {#sec-contrib}
+
+This review supports five contributions of the continuation study:
+
+1. **Pooled longitudinal extension 2021-2025**: covers the post-pandemic period and captures temporal trends that the 2019 cross-section of @vargas2021 cannot reveal.
+2. **Intensity and variety of digital use variables**: sixteen use variables (C8/J2/C10/C11/C7/B1) raise the AUC from 0.77 to 0.83, aligned with the literature's prediction on second-level divide [@bchi2016modeling; @ebbers2016impactof; @castellacci2018internet] that sociodemographics leave ~50% unexplained.
+3. **Self-reported digital skills sub-model (I1A_*)**: empirically tests the "digital familiarity" mediator suggested by @lutz2019digitali and @vandeursen2020digitali.
+4. **Empirical comparison GLM × random forest**: contributes to the open debate [@browne2021multivar; @mcbride2017israndom] applied specifically to e-gov, showing that the predictive gain comes from the **variables** (not the method): random forest on the expanded set ties with logistic regression on the same set, but both surpass logistic regression on the original set.
+5. **Temporal holdout 2025**: validates generalization of models trained on 2021-2024 to the 2025 edition, addressing a recurrent methodological concern.
+
+The contribution does not replace public value [@panagiotopou2019publicva; @cordella2025factorsi] or data justice [@macadar2025servicos] discussions, but adds a longitudinal empirical pillar that engages directly with the central problem: **who uses e-gov in Brazil today, and what predisposes that use beyond classical sociodemographic characteristics**.
+
+## References {#sec-refs}
+
+::: {#refs}
+:::

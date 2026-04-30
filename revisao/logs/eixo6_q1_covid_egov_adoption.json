@@ -1,0 +1,187 @@
+{
+  "total": 5727,
+  "count": 10,
+  "query": "\"COVID-19\" AND \"e-government\" AND adoption",
+  "hits": [
+    {
+      "doi": "10.21511/im.18(1).2022.02",
+      "title": "Stimuli to adopt e-government services during Covid-19: Evidence from Vietnam",
+      "year": 2022,
+      "journal": "innovative marketing",
+      "authors": [
+        "Hai Ninh Nguyen",
+        "Mạnh Dũng Trần"
+      ],
+      "tally": 12,
+      "supporting": 0,
+      "contrasting": 0,
+      "mentioning": 11,
+      "citingPubs": 18,
+      "abstract": "The goal of this study is to ascertain the critical elements affecting public acceptance and readiness to advocate electronic government services in Vietnam. An online survey was conducted among Vietnamese citizens. The chosen respondents had experience with e-government services. The analysis was utilized with the data gathered from 316 clean and legitimate responses. PLS-SEM analytic techniques and the SmartPLS program were adopted to execute analyzing processes. The findings indicate that three essential factors influenced the adoption of e-government services: (i) perceived service value, (ii) citizen e-empowerment, and (iii) fear of Covid-19. The perceived value of services, fear of Covid-19, and acceptance of e-government services all have a beneficial effect on citizen intention to recommend e-public services. This study suggested three practical implications: (a) leveraging the challenges of Covid-19 pandemic is to promote e-government services; (b) enhancing public service quality and informational quality is critical and vital to adopting e-government services, and (c) promoting citizen e-empowerment, outcomes, values, self-responsibility, and working procedures of e-public services to all citizens is necessary.",
+      "isOa": true,
+      "retraction_notices": null
+    },
+    {
+      "doi": "10.1109/iiceta51758.2021.9717570",
+      "title": "COVID-19 and real e-government and e-learning Adoption in Iraq",
+      "year": 2021,
+      "journal": null,
+      "authors": [
+        "Amer S. Elameer"
+      ],
+      "tally": 8,
+      "supporting": 0,
+      "contrasting": 0,
+      "mentioning": 8,
+      "citingPubs": 6,
+      "abstract": null,
+      "isOa": false,
+      "retraction_notices": null
+    },
+    {
+      "doi": "10.1016/j.giq.2023.101866",
+      "title": "Different approaches to analyzing e-government adoption during the Covid-19 pandemic",
+      "year": 2023,
+      "journal": "government information quarterly",
+      "authors": [
+        "Esther García‐Río",
+        "Pedro R. Palos‐Sánchez",
+        "Pedro Baena‐Luna"
+      ],
+      "tally": 19,
+      "supporting": 2,
+      "contrasting": 0,
+      "mentioning": 17,
+      "citingPubs": 20,
+      "abstract": null,
+      "isOa": false,
+      "retraction_notices": null
+    },
+    {
+      "doi": "10.60692/xvrmg-cb492",
+      "title": "Stimuli to adopt e-government services during Covid-19: Evidence from Vietnam",
+      "year": 2022,
+      "journal": null,
+      "authors": [
+        "Hai Ninh Nguyen",
+        "Mạnh Dũng Trần"
+      ],
+      "tally": null,
+      "supporting": null,
+      "contrasting": null,
+      "mentioning": null,
+      "citingPubs": null,
+      "abstract": null,
+      "isOa": false,
+      "retraction_notices": null
+    },
+    {
+      "doi": "10.60692/eghs8-1gp12",
+      "title": "Stimuli to adopt e-government services during Covid-19: Evidence from Vietnam",
+      "year": 2022,
+      "journal": null,
+      "authors": [
+        "Hai Ninh Nguyen",
+        "Mạnh Dũng Trần"
+      ],
+      "tally": null,
+      "supporting": null,
+      "contrasting": null,
+      "mentioning": null,
+      "citingPubs": null,
+      "abstract": null,
+      "isOa": false,
+      "retraction_notices": null
+    },
+    {
+      "doi": "10.1108/oir-08-2021-0440",
+      "title": "Drivers of e-government use during the COVID-19 pandemic: the case of Vietnam",
+      "year": 2022,
+      "journal": "online information review",
+      "authors": [
+        "Hoai Than Nguyen",
+        "Elaine Q. Borazon"
+      ],
+      "tally": 18,
+      "supporting": 2,
+      "contrasting": 0,
+      "mentioning": 16,
+      "citingPubs": 8,
+      "abstract": "PurposeThe COVID-19 pandemic has disrupted various systems that drove people to adapt to certain technologies, such as electronic government services, for daily survival and to meet social distancing requirements. Therefore, this study aims to determine the antecedents of e-government use based on prospect theory and modified unified theory of acceptance use of technology (UTAUT) during a pandemic.Design/methodology/approachConvenience sampling of 368 respondents from Vietnam was conducted, and questionnaires were distributed personally or by email. The data were analyzed following a two-stage structural equation modeling (SEM) using SPSS v23 and AMOS v23. The validity and reliability of the instrument were tested and ensured.FindingsResults show that perceived severity drives government support and social influence while perceived security drives government support, social influence and trust. Social influence enhances government support and trust, which both drives e-government use. Mediation analysis shows that government support mediates perceived the influence of perceived severity on e-government use.Practical implicationsThe integration of prospect theory and UTAUT brings into light what will drive the adoption of e-government in the context of Vietnam. Supporting mechanisms, such as security measures, trust-building, government support and social influence, will drive citizens to adapt to technologies provided by the government but would also rely on the perceived risks and benefits.Originality/valueThis study integrates prospect theory and a modified version of UTAUT to explain the drivers of e-government use. The results reveal that under uncertainties, government support is critical in driving the use of e-government for people to manage the daily lives for survival.",
+      "isOa": false,
+      "retraction_notices": null
+    },
+    {
+      "doi": "10.35961/tanjak.v1i2.158",
+      "title": "IMPLEMENTASI E-GOVERNMENT DINAS PENDIDIKAN DAERAH PADA KONDISI PANDEMI CORONAVIRUS DISEASE (COVID-19)",
+      "year": 2020,
+      "journal": "tanjak journal of education and teaching",
+      "authors": [
+        "Ahmad Chuzairi"
+      ],
+      "tally": null,
+      "supporting": null,
+      "contrasting": null,
+      "mentioning": null,
+      "citingPubs": null,
+      "abstract": "Implementasi E-Government dinas Pendidikan daerah di Indonesia pada kondisi  pandemi Covid-19 dalam memberikan pelayanan kepada publik yang berkualitas. Penelitian ini bertujuan untuk menganalisa kualitas pelayanan yang diberikan dinas Pendidikan daerah dalam mengimplementasikan E-Government melalui website dinas pendidikan daerah dimasa pandemi Covid-19. Sampel yang digunakan adalah website dinas pendidikan daerah sebanyak 363 website yang terdiri dari dinas pemerintah provinsi, kabupaten dan kota. Hasil penelitian ini menunjukkan bahwa peranan E-Government melalui website sebagai bentuk pelayanan terpadu satu pintu (OSS/ One Stop Service) belum berjalan secara maksimal. Hal ini dapat dilihat bahwa E-Government belum memenuhi kebutuhan pelayanan publik yang berkualitas dan akuntabel  pada kondisi pandemi Covid-19.",
+      "isOa": true,
+      "retraction_notices": null
+    },
+    {
+      "doi": "10.21009/jobbe.005.1.02",
+      "title": "Taiwan’s E-Government Usability from Foreign Perspective and Website Accessibility amid COVID-19 Pandemic",
+      "year": 2021,
+      "journal": "journal of business and behavioural entrepreneurship",
+      "authors": [
+        "Husam Almaghalsah"
+      ],
+      "tally": 0,
+      "supporting": 0,
+      "contrasting": 0,
+      "mentioning": 0,
+      "citingPubs": 1,
+      "abstract": "The aim of this research intends to investigate Taiwanese egovernment websites with regards to Accessibility and Usability. The automated WAVE Accessibility tool and Nielsen’s 10 Heurestic Principle based surveys of foreign users of the English egovernment websites were used to test Accessibility and Usability respectively. The study found poor results that were unanimous across the board for Usability and total of just over 100 errors for Accessibility was the best performing website. The study proves that further research and investigation is necessary if Taiwan wants to meet its own governmental ambitions with regards to egovernment.",
+      "isOa": true,
+      "retraction_notices": null
+    },
+    {
+      "doi": "10.1108/tg-07-2022-0100",
+      "title": "E-government, political system and COVID-19 in Africa: lessons for future disruptive shocks",
+      "year": 2023,
+      "journal": "transforming government people process and policy",
+      "authors": [
+        "Saida Dammak",
+        "S. Mbarek",
+        "Mouna Moalla"
+      ],
+      "tally": null,
+      "supporting": null,
+      "contrasting": null,
+      "mentioning": null,
+      "citingPubs": null,
+      "abstract": "Purpose\nThis study aims to explore the role of mobile tracing applications as part of e-government services in combating the COVID-19 pandemic effects in Africa by analyzing the moderating role of sustainable development. This study also investigated the role of the political and economic systems in mitigating the negative consequences of COVID-19 and how e-government interacts in this relationship.\n\n\nDesign/methodology/approach\nThis study included the COVID-19 performance index for 94 countries belonging to different regions, including 20 African countries. Multiple linear regression was used for data analysis via Stata software. The study was conducted from the start of the pandemic to March 13, 2021.\n\n\nFindings\nThe results show that less economically and technologically developed countries with generally authoritarian political systems, including African countries, could limit the spread of the pandemic better than some democratic, economically and technologically developed countries in the first wave of the pandemic. The promotion of sustainable development goals moderates the relationship between mobile tracing applications as part of the e-government service and the fight against COVID-19.\n\n\nOriginality/value\nThis study provides insight into the role of mobile application technology as an e-governance service in mitigating the negative consequences of the COVID-19 pandemic in a context characterized by economic limitations, fragile public health infrastructure and relatively high political instability, especially in Africa. The findings shed light on some of the difficulties African countries may face in incorporating technology into their development projects.",
+      "isOa": false,
+      "retraction_notices": null
+    },
+    {
+      "doi": "10.35912/jgas.v2i1.1157",
+      "title": "The role of e-Government in overcoming the consequences of the COVID-19 pandemic in Nigeria",
+      "year": 2022,
+      "journal": "journal of governance and accountability studies",
+      "authors": [
+        "Henry Chima Ukwuoma",
+        "Nimfel Elisha Cirman",
+        "Peter Olorunleke Oye"
+      ],
+      "tally": 0,
+      "supporting": 0,
+      "contrasting": 0,
+      "mentioning": 0,
+      "citingPubs": 5,
+      "abstract": "Abstract: Purpose: The article aims at identifying the challenges of e-government amid the COVID-19 pandemic in Nigeria and proffered recommendations to arrest the identified challenges. This paper also examined e-Governance in selected countries such as the United States of America, the United Kingdom, and Canada and how it has fared including Nigeria revealing its implications for Nigeria as a developing nation.  Research Methodology: The article adopts a review study approach in analyzing the subject.  Results: Some of the challenges identified by the study include but are not limited to inadequate technical know-how and ICT skills to drive and sustain e-government. Recommendations from the study include, the Ministry of Communications Technology and Digital Economy to build a backbone that will connect all States of the country and the upskilling of the workforce through the Ministry of Labour and Employment amongst others.  Limitations: Insufficient quantitative data based on the subject under discourse  Contributions: Identified possible areas that the Nigerian government could look into to improve e-government in order to promote inclusivity, awareness, and most importantly reduce the cost of governance.  Keywords: 1. COVID-19 2. Digital Solutions 3. e-Governance 4. ICT",
+      "isOa": true,
+      "retraction_notices": null
+    }
+  ]
+}

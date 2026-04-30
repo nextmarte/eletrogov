@@ -1,0 +1,26 @@
+rodada,eixo,query,hits_brutos_retornados
+v1,1,"""e-government adoption"" AND (""UTAUT"" OR ""technology acceptance"")",n/a
+v1,1,"""public value"" AND ""digital government"" AND citizen",n/a
+v1,1,"""e-government"" AND determinants AND Brazil",n/a
+v1,2,"""digital divide"" AND Brazil AND survey",n/a
+v1,2,"""digital inclusion"" AND (""Latin America"" OR Brazil)",n/a
+v1,2,"""second-level digital divide"" AND skills",n/a
+v1,3,"""digital skills"" AND ""e-government""",n/a
+v1,3,"""digital literacy"" AND ""public services"" AND adoption",n/a
+v1,3,"""Internet skills"" AND citizen AND government",n/a
+v1,4,"""intensity of internet use"" AND (""e-government"" OR ""public services"" OR ""online services"")",n/a
+v1,4,"""diversity of internet use"" OR ""Internet uses"" AND citizen",n/a
+v1,4,"""online activities"" AND ""public services"" AND adoption",n/a
+v1,5,"""machine learning"" AND ""logistic regression"" AND survey AND comparison AND prediction",n/a
+v1,5,"""random forest"" AND ""household survey"" AND prediction",n/a
+v1,5,"""machine learning"" AND ""logistic regression"" AND social science AND survey",n/a
+v1,6,"""COVID-19"" AND ""e-government"" AND adoption",n/a
+v1,6,"""pandemic"" AND ""digital government services"" AND Brazil",n/a
+v2,v2,"""online activities"" AND ""civic engagement"" AND citizen",n/a
+v2,v2,"""machine learning"" AND ""e-government"" AND adoption",n/a
+v2,v2,"""gov.br"" OR ""Auxilio Emergencial"" AND digital",n/a
+v2,v2,"""e-government"" AND Brazil AND (""digital identity"" OR ""single sign-on"" OR platform)",n/a
+v3,v3,"""longitudinal"" AND ""e-government"" AND determinants AND survey",n/a
+v3,v3,"""digital inequality"" AND ""e-government"" AND outcomes",n/a
+v3,v3,"""DiSTO"" OR ""Internet outcomes"" AND ""third-level digital divide""",n/a
+v3,v3,"""e-government"" AND (""interpretable"" OR ""explainable"") AND ""machine learning""",n/a

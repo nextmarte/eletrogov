@@ -1,2 +1,7 @@
 project:
   output-dir: docs
+
+bibliography:
+  - revisao/refs.bib
+  - revisao/refs_pacotes.bib
+csl: revisao/abnt-cadernos-ebape.csl

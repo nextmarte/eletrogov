@@ -20,6 +20,10 @@ suppressPackageStartupMessages({
   library(doParallel)
 })
 
+# Dicionário canônico das 16 vars de uso digital (nomes interpretáveis).
+# Carrega: vars_extra (nomes novos), vars_extra_rename (mapa código TIC -> nome).
+source("scripts/var_labels.R")
+
 set.seed(42)
 t0 <- Sys.time()
 
@@ -67,17 +71,12 @@ vars_art <- c("IDADE", "PEA", "H2", "RENDA_FAMILIAR", "CLASSE_CB",
 vars_categoricas <- c("RENDA_FAMILIAR", "CLASSE_CB", "GRAU_INSTRUCAO", "C5_DISPOSITIVOS")
 
 # Top universais do screening (explora_variaveis_full.R), exclui endógenas
-# (C8_F busca-info-governo, C8_G serviços-públicos, C8_H pagamentos — outcome)
-vars_extra <- c(
-  "C8_A", "C8_B", "C8_D", "C8_E",       # atividades internet
-  "J2_L", "J2_J", "J2_G", "J2_K",       # celular
-  "C9_D", "C9_C",                       # mídia
-  "C10_A", "C10_C", "C10_D",            # educação
-  "C11_A", "C7_A",                      # engajamento
-  "B1"                                  # uso de computador
-)
+# (C8_F busca-info-governo, C8_G serviços-públicos, C8_H pagamentos — outcome).
+# Códigos TIC usados para SELECIONAR colunas dos SAVs; logo após o bind_rows
+# aplicamos rename(any_of(vars_extra_rename)) para os nomes interpretáveis.
+vars_extra_codigos <- unname(vars_extra_rename)
 
-vars_todas <- c("G1_AGREG", "C1", vars_art, vars_extra)
+vars_todas_codigos <- c("G1_AGREG", "C1", vars_art, vars_extra_codigos)
 
 dados_red <- map(dados, function(d) {
   if (!"G1_AGREG" %in% names(d)) {
@@ -85,13 +84,17 @@ dados_red <- map(dados, function(d) {
     d$G1_AGREG <- as.integer(rowSums(
       sapply(d[g1_cols], function(x) as.numeric(x) == 1), na.rm = TRUE) > 0)
   }
-  cols_ok <- intersect(vars_todas, names(d))
+  cols_ok <- intersect(vars_todas_codigos, names(d))
   d <- d[, c(cols_ok, ".ano")]
-  faltam <- setdiff(vars_todas, cols_ok)
+  faltam <- setdiff(vars_todas_codigos, cols_ok)
   for (f in faltam) d[[f]] <- NA_real_
-  d[, c(vars_todas, ".ano")]
+  d[, c(vars_todas_codigos, ".ano")]
 })
 pool <- bind_rows(dados_red)
+
+# Rename: códigos TIC -> nomes interpretáveis (BUSCA_SAUDE, CELULAR_MAPAS, ...)
+pool <- pool %>% rename(any_of(vars_extra_rename))
+vars_todas <- c("G1_AGREG", "C1", vars_art, vars_extra)
 cat(sprintf("  Pool bruto: %d × %d\n", nrow(pool), ncol(pool)))
 
 # ---- [3/6] Filtros + preparo ----

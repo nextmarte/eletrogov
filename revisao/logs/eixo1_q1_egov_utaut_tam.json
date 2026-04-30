@@ -1,0 +1,282 @@
+{
+  "total": 444,
+  "count": 15,
+  "query": "\"e-government adoption\" AND (\"UTAUT\" OR \"technology acceptance\")",
+  "hits": [
+    {
+      "doi": "10.4018/ijpada.2019100103",
+      "title": "E-Government Adoption in Tunisia Extending Technology Acceptance Model",
+      "year": 2019,
+      "journal": "international journal of public administration in the digital age",
+      "authors": [
+        "Wadie Nasri"
+      ],
+      "tally": 4,
+      "supporting": 0,
+      "contrasting": 0,
+      "mentioning": 3,
+      "citingPubs": 13,
+      "abstract": "The purpose of this study is to examine the factors which affect e-government services adoption of Tunisian's citizens by using a technology acceptance model (TAM). The proposed conceptual model was extended by adding social influence, awareness, and quality of internet connection. The proposed model was empirically tested using survey data provided by 150 respondents and was analyzed using a structural equation model (SEM). The findings indicate that the proposed model is a stable model and a good explanatory. Perceived usefulness is predicted mutually by social influence and awareness. Moreover, perceived ease of use is predicted by quality of internet connection. This study contributes to the literature by providing a new research model for understanding e-government services adoption in Tunisia and its findings provide useful guidelines to develop policies and strategies to increase the adoption of e-government services.",
+      "isOa": true,
+      "retraction_notices": null
+    },
+    {
+      "doi": "10.4038/kjhrm.v17i1.107",
+      "title": "Determinants of E-government Adoption: A Systematic Literature Review",
+      "year": 2022,
+      "journal": "kelaniya journal of human resource management",
+      "authors": [
+        "K. G. Priyashantha",
+        "V. I. Dilhani"
+      ],
+      "tally": 6,
+      "supporting": 0,
+      "contrasting": 0,
+      "mentioning": 6,
+      "citingPubs": 6,
+      "abstract": "The adoption of E-government has significant benefits for both citizens and governments. The objectives of this study were to (1) find out the common areas investigated in the empirical research landscape on E-government adoption from 2015 to 2020, as well as (2) the areas that need more focus for research. The systematic literature review methodology was used in this study. Fifty-five empirical articles published during the 2015-2020 period in journals were extracted from the Scopus database. The review's article selection and findings are published following the Preferred Reporting Items for Systematic Reviews and Meta-Analyses (PRISMA) guidelines. According to the findings, the perceived usefulness, perceived easiness, trust, and perceived risk of Technology Acceptance Models (TAM) and performance expectancy, effort expectancy, social influence, and facilitating conditions of the Unified Theory of Acceptance and Use of Technology (UTAUT) model have all been extensively studied. They are the determinants for E-government adoption. Additionally, citizen awareness, cost of services, citizen satisfaction, digital inequality, and individual motivators are determinants of E-government adoption. The research implications and future research agendas are also provided.",
+      "isOa": true,
+      "retraction_notices": null
+    },
+    {
+      "doi": "10.1504/eg.2019.096573",
+      "title": "The influence of utilising Facebook on e-government adoption",
+      "year": 2019,
+      "journal": "electronic government an international journal",
+      "authors": [
+        "Sara Sawalha",
+        "Maryam Al Jamal",
+        "Emad Abu-Shanab"
+      ],
+      "tally": 35,
+      "supporting": 2,
+      "contrasting": 0,
+      "mentioning": 28,
+      "citingPubs": 28,
+      "abstract": "E-government is becoming a major channel for citizens' communication, interaction and collaboration with their government. Utilising the increased use of social media, individuals, businesses and governments recognised the opportunity to benefit from these sites to open channels of communication and empowerment. In this paper, we measure the influence of social networks represented by Facebook on e-government in Jordan. We extended UTAUT2 with personal innovativeness and yielded a full support of all hypotheses assumed. Performance expectancy, social influence, effort expectancy, personal innovativeness and enjoyment significantly predicted the continuous use of e-government pages on Facebook. The estimated coefficient of determination R 2 was 0.48. Conclusions are stated at the end.",
+      "isOa": false,
+      "retraction_notices": null
+    },
+    {
+      "doi": "10.47833/2023.2.eco.009",
+      "title": "Validating UTAUT model for e-government adoption among employees: a pilot study",
+      "year": 2023,
+      "journal": "gradus",
+      "authors": [
+        "Nur Syuhaini Abdul Wahi",
+        "László Berényi"
+      ],
+      "tally": null,
+      "supporting": null,
+      "contrasting": null,
+      "mentioning": null,
+      "citingPubs": null,
+      "abstract": "E-government has been proven to be a powerful tool to achieve the objective of better performance in the public sector. Technological advancement has accelerated the development of ICT in the public sector worldwide, thus affecting the structure and work process of government staff. Implementing egovernment requires a holistic understanding of the adoption and usage factors. Several studies are available in this field, mainly focusing on citizens. The contribution of this study is investigating the adoption of e-government among employees. The goal is to check the usability and validity of an instrument based on the Unified Theory of Acceptance and Use of Technology (UTAUT) model in the Malaysian public sector. The analysis of a five-pillar model, including Performance Expectancy, Effort Expectancy, Social Influence, Facilitating Condition, Use, shows Cronbach Alpha values greater than 0.9 for each pillar. The Kaiser-MeyerOlkin values are greater than 0.7 for four pillars, and it is 0.5 for the Use. Moreover, the Bartlett’s sphericity test is significant in each case. The principal component analysis confirmed the usability of the planned structure of the survey items.",
+      "isOa": true,
+      "retraction_notices": null
+    },
+    {
+      "doi": "10.1108/jsit-01-2017-0007",
+      "title": "Increasing e-government adoption in Malaysia: MyEG case study",
+      "year": 2017,
+      "journal": "journal of systems and information technology",
+      "authors": [
+        "Mohd Heikal Husin",
+        "Niloufar Loghmani",
+        "Siti Salbiah Zainal Abidin"
+      ],
+      "tally": 8,
+      "supporting": 0,
+      "contrasting": 0,
+      "mentioning": 8,
+      "citingPubs": 16,
+      "abstract": "Purpose\nThis paper aims to study user acceptance of one of the Malaysian e-government services known as MyEG via a theoretical framework. The results are compared to a similar research conducted in Singapore. The motivation and benefits derived from this research can be used to improve the overall quality of services provided by MyEG and to enhance the efficiency as well as accountability of this e-government service.\n\n\nDesign/methodology/approach\nThis research was conducted by applying a theoretical framework known as technology acceptance model involving several factors such as intention to use, perceived ease of use, perceived usefulness, image, compatibility and trust. The research data were then validated by examining similar factors that had significance results, followed by the development of a simple prototype.\n\n\nFindings\nThe results obtained from this research would be beneficial to enhance the level of adoption among the citizens in Malaysia. The identification of the different factors influencing the acceptance levels of users can also provide a better vision on the end-user perspective for MyEG developers and lead them to achieve better results in future platform developments. In addition, this study also fills the current existing gap in e-government research of Malaysia and contributes to the literature on the public users’ perspective of e-government services.\n\n\nPractical implications\nThe results from this research would provide effective guidance to developers of e-government platforms to include specific criteria that would attract the general public in using the platforms.\n\n\nSocial implications\nBesides that, it provides a new perspective from the general public on their interest to use any e-government platform specifically MyEG.\n\n\nOriginality/value\nThe findings of this research would assist in the improvement of the implementation and adoption of the current MyEG system. Besides that, this research will allow researchers to gain new insights about e-government services and apply the knowledge to further improve the current and other platform development.",
+      "isOa": false,
+      "retraction_notices": null
+    },
+    {
+      "doi": "10.18517/ijaseit.7.4.2518",
+      "title": "A Conceptual Model Of E-Government Adoption in Indonesia",
+      "year": 2017,
+      "journal": "international journal on advanced science engineering and information technology",
+      "authors": [
+        "Darmawan Napitupulu"
+      ],
+      "tally": 21,
+      "supporting": 0,
+      "contrasting": 0,
+      "mentioning": 19,
+      "citingPubs": 38,
+      "abstract": "This study aims to determine various factors are related with the process of e-Government adoption. Many researchers have traced the success factors of e-Government but are still partial. This research contributes not only in terms of technological factors but also the attitudes and behaviours of its users (personality traits) which is also influential in the process of technology adoption. In this research, will be developed an adoption model of technology in the context of e-Government. This model incorporates some best practices related to the diffusion of technology such as TRI, TAM, UTAUT, IS/IT Success Model, as well as other factors influencing the adoption of e-Government such as Trust and Compatibility based on previous research. The conceptual model proposed could bring better understanding about important issues especially in e-Government adoption process in Indonesia.",
+      "isOa": true,
+      "retraction_notices": null
+    },
+    {
+      "doi": "10.4018/jitr.2016100103",
+      "title": "Critical Factors Influencing E-Government Adoption in India",
+      "year": 2016,
+      "journal": "journal of information technology research",
+      "authors": [
+        "Kriti Priya Gupta",
+        "Preeti Bhaskar",
+        "Swati Singh"
+      ],
+      "tally": 20,
+      "supporting": 0,
+      "contrasting": 0,
+      "mentioning": 20,
+      "citingPubs": 19,
+      "abstract": "In this paper, the authors present an integrated model based on Unified Theory of Acceptance and Use of Technology (UTAUT), trust and citizen satisfaction, to explore the factors which influence the adoption of e-government services in Delhi (India). The findings indicate that effort expectancy, performance expectancy, and trust in technology followed by trust in government, citizen satisfaction, and facilitating conditions are significant predictors of citizen adoption of e-government. The findings also reveal that facilitating conditions can be divided into two factors: ‘Available Facilitating Conditions' (AFC) which are concerned with the facilitating conditions available at the user's end and ‘Provided Facilitating Conditions' (PFC) which refer to the facilitating conditions provided by the government. According to the findings of the study, AFC has a greater impact on e-government adoption, as compared to PFC.",
+      "isOa": false,
+      "retraction_notices": null
+    },
+    {
+      "doi": "10.1504/ijeg.2015.071564",
+      "title": "Measuring e-government adoption in Abu Dhabi with technology acceptance model (TAM)",
+      "year": 2015,
+      "journal": "international journal of electronic governance",
+      "authors": [
+        "Mariam Dahi",
+        "Zoheir Ezziane"
+      ],
+      "tally": 28,
+      "supporting": 3,
+      "contrasting": 0,
+      "mentioning": 24,
+      "citingPubs": 40,
+      "abstract": null,
+      "isOa": false,
+      "retraction_notices": null
+    },
+    {
+      "doi": "10.1109/icces.2016.7822010",
+      "title": "A conceptual model for E-government adoption in Egypt",
+      "year": 2016,
+      "journal": null,
+      "authors": [
+        "Sara ELKheshin",
+        "Noha Saleeb"
+      ],
+      "tally": 6,
+      "supporting": 1,
+      "contrasting": 0,
+      "mentioning": 5,
+      "citingPubs": 11,
+      "abstract": "Full bibliographic details must be given when referring to, or quoting from full items including the author's name, the title of the work, publication details where relevant (place, publisher, date), pagination, and for theses or dissertations the awarding institution, the degree type awarded, and the date of the award.",
+      "isOa": false,
+      "retraction_notices": null
+    },
+    {
+      "doi": "10.4018/978-1-4666-8358-7.ch030",
+      "title": "Rethinking E-Government Adoption",
+      "year": 2015,
+      "journal": null,
+      "authors": [
+        "Ajax Persaud",
+        "Priya Persaud"
+      ],
+      "tally": 3,
+      "supporting": 0,
+      "contrasting": 0,
+      "mentioning": 2,
+      "citingPubs": 6,
+      "abstract": "E-government acceptance has attracted substantial research interest over the last fifteen years. The majority of this research is based on technology acceptance models primarily because e-government is viewed as a technology for achieving efficiency, transparency, and information management. However, the adoption of e-government ultimately depends on whether users perceive the technology as serving their needs and meeting their expectations. Thus, understanding and incorporating users' needs in the design, organisation, and deployment of e-government are crucial but have been overlooked. This study develops and tests a user-centric model of e-government by using six factors that have been widely discussed in the literature. The factors have been labelled content, accessibility, localisation, e-participation, user-friendliness and awareness/government literacy. The results show that all six factors plus the interaction of e-participation with user-friendliness are statistically significant in promoting e-government use. The research and practical implications of the results are discussed.",
+      "isOa": false,
+      "retraction_notices": null
+    },
+    {
+      "doi": "10.47191/jefms/v7-i7-38",
+      "title": "The Mediating Role of Service Quality in System Trust and E-Government Adoption in Jordan",
+      "year": 2024,
+      "journal": "journal of economics finance and management studies",
+      "authors": [
+        "Wafaa Abdullah Elayn Aldroubi",
+        "Yusnita Yusof"
+      ],
+      "tally": null,
+      "supporting": null,
+      "contrasting": null,
+      "mentioning": null,
+      "citingPubs": null,
+      "abstract": "This study investigates the factors influencing e-government adoption in the Great Amman Municipality, emphasizing the roles of system trust and service quality. Utilizing the Unified Theory of Acceptance and Use of Technology (UTAUT) framework, data were collected from 389 employees through a structured questionnaire. Confirmatory Factor Analysis (CFA) and Structural Equation Modeling (SEM) were employed to validate the measurement model and test hypothesized relationships. The findings reveal that system trust significantly impacts e-government adoption intentions both directly and indirectly through service quality, which acts as a mediator. Service quality itself is a critical determinant of adoption intention. The combined effect of system trust and service quality explains 56.7% of the variance in adoption intentions. These results underscore the importance of building trust and enhancing service quality to boost e-government adoption rates. The study offers valuable theoretical and practical insights, suggesting that robust cybersecurity measures, transparent communication, and continuous service improvement are essential strategies for encouraging e-government adoption. Future research should explore these relationships in diverse contexts and include longitudinal, qualitative, and comparative studies to provide a comprehensive understanding of e-government adoption dynamics.",
+      "isOa": true,
+      "retraction_notices": null
+    },
+    {
+      "doi": "10.11591/eecsi.v6i0.1964",
+      "title": "Civil Servant’s E-Government Adoption Levels: Are age and context matters?",
+      "year": 2019,
+      "journal": "proceeding of the electrical engineering computer science and informatics",
+      "authors": [
+        "Iman Sudirman",
+        "Atya Nur Aisha",
+        "Joe Monang"
+      ],
+      "tally": null,
+      "supporting": null,
+      "contrasting": null,
+      "mentioning": null,
+      "citingPubs": null,
+      "abstract": "This study examines the differences of e-government adoption by civil servants among age groups and between mandatory and voluntary context using UTAUT model. It used a non-probability sampling technique and an online survey to collect the data. A one-way ANOVA using SPSS was conducted to analyze the data. The study finds that most employees have the highest positive adoption levels in effort expectancy. Furthermore, there are significant mean differences between employee's age group of performance expectancy for mandatory system and facilitating conditions for voluntary system. However, there is no statistically different on civil servant's adoption level between mandatory and voluntary context.",
+      "isOa": false,
+      "retraction_notices": null
+    },
+    {
+      "doi": "10.11591/eecsi.v6.1964",
+      "title": "Civil Servant’s E-Government Adoption Levels: Are age and context matters?",
+      "year": 2019,
+      "journal": "proceeding of the electrical engineering computer science and informatics",
+      "authors": [
+        "Iman Sudirman",
+        "Atya Nur Aisha",
+        "Joe Monang"
+      ],
+      "tally": null,
+      "supporting": null,
+      "contrasting": null,
+      "mentioning": null,
+      "citingPubs": null,
+      "abstract": "This study examines the differences of e-government adoption by civil servants among age groups and between mandatory and voluntary context using UTAUT model. It used a non-probability sampling technique and an online survey to collect the data. A one-way ANOVA using SPSS was conducted to analyze the data. The study finds that most employees have the highest positive adoption levels in effort expectancy. Furthermore, there are significant mean differences between employee's age group of performance expectancy for mandatory system and facilitating conditions for voluntary system. However, there is no statistically different on civil servant's adoption level between mandatory and voluntary context.",
+      "isOa": false,
+      "retraction_notices": null
+    },
+    {
+      "doi": "10.1108/emjb-05-2014-0016",
+      "title": "E-government adoption and user’s satisfaction: an empirical investigation",
+      "year": 2016,
+      "journal": "euromed journal of business",
+      "authors": [
+        "Alaa Aldin A. Al Athmay",
+        "Kamel Fantazy",
+        "Vinod Kumar"
+      ],
+      "tally": 53,
+      "supporting": 6,
+      "contrasting": 0,
+      "mentioning": 45,
+      "citingPubs": 82,
+      "abstract": "Purpose\n                – The purpose of this paper is to examine the relationships among e-government attributes in terms of social influence, perceived effectiveness, system quality, and information quality user satisfaction and intention to use e-government services in United Arab Emirates (UAE). \n            \n            \n               Design/methodology/approach\n                – This study is based on previous research on e-government services, and has relied partially on Delone and Mclean’s (2004) updated IS success model and the new theoretical and accepted model (UTAUT). These models were used to examine the impact of some selected attributes of e-government on the adoption of e-government services in the UAE from the perspective of a citizen. A questionnaire survey was used to collect data from a total of 1,800 e-government users in the UAE and structural equation modeling was utilized to test the theoretical model. \n            \n            \n               Findings\n                – This study has identified five main findings. First, it provides evidence of the direct effects of e-government attributes on user satisfaction. Second, it provides evidence of the direct effects of user satisfaction on user intention to use e-government services. Third, it provides evidence of the direct effects of e-government attributes on intention to use. Fourth, it demonstrates the positive total effects (direct and indirect) of e-government attributes on the intention to use e-government services in the UAE through user satisfaction. Fifth, two attributes of e-government – system quality and information quality – have emerged as having a strong effect on the intention to use e-government services. \n            \n            \n               Research limitations/implications\n                – The research study was limited to the UAE geographical region. It would be very interesting to see if there are regional variations when compared to the findings of this research study. The target respondents for this study are internet users. Future research needs to be extended to include both users and nonusers of the internet for the purpose of comparison, and looking at the perception of a technology divide among citizens as a factor influencing citizen intention to adopt e-government services. \n            \n            \n               Practical implications\n                – This study would help policy makers understand e-government users and to implement policies at large to meet the citzens\n\t\t\t\t\t'\n\t\t\t\t needs of e-government services. The results of the study and the proposed model can be used as a guideline for e-government strategy formulation and implementation for the Government of UAE. The results of the study imply that decision makers of e-government programs should take into considerations these attributes when developing e-government programs because they affect users’ satisfaction and in turn enhances users’ intentions to use e-government services and consequently increase the success of e-government strategic programs. \n            \n            \n               Originality/value\n                – This paper is one of the few studies on e-government adoption in an Arab country and the first study on e-government adoption in the UAE. The paper’s originality and value comes from its theoretical contribution as a first paper in this region to empirically test the impact of some selected variables (social influence, perceived effectiveness, system quality, and information quality) on user satisfaction and intention to adopt e-government services. In contrast to previous research, this paper selected user satisfaction as a mediated, rather than a dependent variable.",
+      "isOa": false,
+      "retraction_notices": null
+    },
+    {
+      "doi": "10.1108/tg-10-2020-0305",
+      "title": "Increasing e-government adoption by emphasizing environmental sustainability: an extended case study in Peru",
+      "year": 2021,
+      "journal": "transforming government people process and policy",
+      "authors": [
+        "Sebastián Pérez",
+        "Jose Luis Rodriguez Vilchez",
+        "Jorge Antonio Cabrera Berrios"
+      ],
+      "tally": 0,
+      "supporting": 0,
+      "contrasting": 0,
+      "mentioning": 0,
+      "citingPubs": 4,
+      "abstract": "Purpose\nLow citizen adoption rates jeopardize the success and proliferation of e-government systems. This study aims to understand how the perception of environmental sustainability (ES) can influence a citizen’s intention to use e-government systems.\n\n\nDesign/methodology/approach\nIn a case study in Peru, the technology acceptance model (TAM) adoption model is extended with the construct of ES and evaluated with structural equation modeling. An 18-element, in-person survey was constructed and administered to citizens of Lima, Peru who had prior exposure to e-government systems.\n\n\nFindings\nThe results show that citizens can be positively influenced to adopt e-government systems if they perceive that doing so will contribute to ES.\n\n\nResearch limitations/implications\nAs this was a preliminary study, further research should focus on specific, as opposed to general, e-government systems, as well as encompassing a broader cross section of the population.\n\n\nPractical implications\nAdministrators of e-government initiatives can consider public-interest factors, alongside of the common self-interest factors, when looking to improve adoption rates of e-government systems.\n\n\nOriginality/value\nThis is the first time that TAM has been extended with the construct of ES.",
+      "isOa": false,
+      "retraction_notices": null
+    }
+  ]
+}

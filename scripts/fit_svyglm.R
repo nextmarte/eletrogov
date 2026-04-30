@@ -11,6 +11,9 @@ suppressPackageStartupMessages({
   library(pROC)
 })
 
+# Dicionário canônico (vars_extra com nomes interpretáveis)
+source("scripts/var_labels.R")
+
 set.seed(42)
 t0 <- Sys.time()
 
@@ -43,8 +46,9 @@ vars_art <- c("IDADE","PEA","H2","RENDA_FAMILIAR","CLASSE_CB",
               "GRAU_INSTRUCAO","C5_DISPOSITIVOS")
 vars_categoricas <- c("RENDA_FAMILIAR","CLASSE_CB","GRAU_INSTRUCAO","C5_DISPOSITIVOS")
 
-vars_extra <- c("C8_A","C8_B","C8_D","C8_E","J2_L","J2_J","J2_G","J2_K",
-                "C9_D","C9_C","C10_A","C10_C","C10_D","C11_A","C7_A","B1")
+# vars_extra carregado de scripts/var_labels.R (nomes interpretáveis).
+# vars_extra_codigos = códigos TIC originais (para selecionar dos SAVs).
+vars_extra_codigos <- unname(vars_extra_rename)
 
 cat("[1/3] Carregando 2021-2025\n")
 dados <- map(anos, function(a) {
@@ -56,7 +60,7 @@ dados <- map(anos, function(a) {
   d
 })
 
-vars_todas <- c("G1_AGREG","C1","PESO", vars_art, vars_extra)
+vars_todas_codigos <- c("G1_AGREG","C1","PESO", vars_art, vars_extra_codigos)
 
 dados_red <- map(dados, function(d) {
   if (!"G1_AGREG" %in% names(d)) {
@@ -64,13 +68,17 @@ dados_red <- map(dados, function(d) {
     d$G1_AGREG <- as.integer(rowSums(
       sapply(d[g1_cols], function(x) as.numeric(x) == 1), na.rm = TRUE) > 0)
   }
-  cols_ok <- intersect(vars_todas, names(d))
+  cols_ok <- intersect(vars_todas_codigos, names(d))
   d <- d[, c(cols_ok, ".ano")]
-  faltam <- setdiff(vars_todas, cols_ok)
+  faltam <- setdiff(vars_todas_codigos, cols_ok)
   for (f in faltam) d[[f]] <- NA_real_
-  d[, c(vars_todas, ".ano")]
+  d[, c(vars_todas_codigos, ".ano")]
 })
 pool <- bind_rows(dados_red)
+
+# Rename: códigos TIC -> nomes interpretáveis (BUSCA_SAUDE, CELULAR_MAPAS, ...)
+pool <- pool %>% rename(any_of(vars_extra_rename))
+vars_todas <- c("G1_AGREG","C1","PESO", vars_art, vars_extra)
 
 cat("\n[2/3] Preparo + filtros\n")
 recode_na <- function(x) { x <- as.numeric(x); x[x %in% c(97,98,99)] <- NA; x }

@@ -1,0 +1,104 @@
+{
+  "total": 13,
+  "count": 8,
+  "query": "\"DiSTO\" OR \"Internet outcomes\" AND \"third-level digital divide\"",
+  "hits": [
+    {
+      "doi": "10.1002/hbe2.140",
+      "title": "Digital inequalities in the age of artificial intelligence and big data",
+      "year": 2019,
+      "journal": "human behavior and emerging technologies",
+      "authors": [
+        "Christoph Lutz"
+      ],
+      "tally": 148,
+      "abstract": "In this literature review, I summarize key concepts and findings from the rich academic literature on digital inequalities. I propose that digital inequalities research should look more into labor‐ and big data‐related questions such as inequalities in online labor markets and the negative effects o"
+    },
+    {
+      "doi": "10.5325/jinfopoli.11.2021.0104",
+      "title": "When Being Connected is not Enough: An Analysis of the Second and Third Levels of the Digital Divide in a Developing Country",
+      "year": 2021,
+      "journal": "journal of information policy",
+      "authors": [
+        "Erezi Ogbo",
+        "Tim Brown",
+        "Jon Gant"
+      ],
+      "tally": 12,
+      "abstract": "ABSTRACT\n               The Internet has been identified as a tool to overcome poverty; by improving communication, facilitating innovation, and driving economic growth. However, as seen in studies on the benefits of Internet adoption and use, the welfare effect of technology is not only based on it"
+    },
+    {
+      "doi": "10.1016/j.poetic.2019.101426",
+      "title": "Taking advantage of the Internet: A qualitative analysis to explain why educational background is decisive in gaining positive outcomes",
+      "year": 2020,
+      "journal": "poetics",
+      "authors": [
+        "Anique Scheerder",
+        "Alexander Johannes Aloysius Maria van Deursen",
+        "Jan van Dijk"
+      ],
+      "tally": 29,
+      "abstract": ""
+    },
+    {
+      "doi": "10.1108/wwop-08-2023-0032",
+      "title": "Growing old in the digital era: a qualitative study of internet use and outcomes among urban Indian older adults",
+      "year": 2023,
+      "journal": "working with older people",
+      "authors": [
+        "Nidhi Bansal",
+        "Heena Choudhary"
+      ],
+      "tally": 4,
+      "abstract": "Purpose\nThis study acknowledges the existing digital divide in India, particularly for marginalised populations, and highlights the need for exceptional attention to address their unique needs, challenges and demands. Although previous research and policies have primarily focused on physical access "
+    },
+    {
+      "doi": "10.1108/gkmc-06-2020-0075",
+      "title": "The digital divide: a literature review and some directions for future research in light of COVID-19",
+      "year": 2021,
+      "journal": "global knowledge memory and communication",
+      "authors": [
+        "Najeh Aissaoui"
+      ],
+      "tally": 64,
+      "abstract": "Purpose\nCoronavirus (COVID-19) has exposed the digital divide (DD) like never before and has made it a hot topic of actuality. In this paper, a state of the art of research studies that dealt with the three levels of the digital divide and highlight its shortcomings in light of COVID-19 are presente"
+    },
+    {
+      "doi": "10.1177/1461444818797082",
+      "title": "The first-level digital divide shifts from inequalities in physical access to inequalities in material access",
+      "year": 2018,
+      "journal": "new media &amp; society",
+      "authors": [
+        "Alexander Johannes Aloysius Maria van Deursen",
+        "Jan AGM van Dijk"
+      ],
+      "tally": 584,
+      "abstract": "For a long time, a common opinion among policy-makers was that the digital divide problem would be solved when a country’s Internet connection rate reaches saturation. However, scholars of the second-level digital divide have concluded that the divides in Internet skills and type of use continue to "
+    },
+    {
+      "doi": "10.1108/edi-08-2022-0224",
+      "title": "The impact of digital inequality in achieving sustainable development: a systematic literature review",
+      "year": 2023,
+      "journal": "equality diversity and inclusion an international journal",
+      "authors": [
+        "Prabath Perera",
+        "Selva Selvanathan",
+        "Jayatilleke Bandaralage"
+      ],
+      "tally": 0,
+      "abstract": "PurposeDigital inequality is considered one of the leading causes of socioeconomic disparities nowadays and a barrier to sustainable development. However, a dearth of empirical research has examined the impact of digital inequality in attaining sustainable development. This study aims to systematica"
+    },
+    {
+      "doi": "10.2196/preprints.11279",
+      "title": "Characterizing the Digital Health Citizen: Mixed-Methods Study Deriving a New Typology (Preprint)",
+      "year": 2018,
+      "journal": null,
+      "authors": [
+        "John Powell",
+        "Ulrike Deetjen"
+      ],
+      "tally": null,
+      "abstract": "Abstract\nBackgroundA key challenge for health systems harnessing digital tools and services is that of digital inclusion. Typically, digital inequalities are conceptualised in relation to unequal access or usage. However, these differences do not fully explain the differing health outcomes individua"
+    }
+  ]
+}

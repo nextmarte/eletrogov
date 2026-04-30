@@ -1,0 +1,1002 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-BR" xml:lang="pt-BR"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.17">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Marcus Ramalho">
+<meta name="author" content="Jorge Junio Moreira Antunes">
+<meta name="keywords" content="governo eletrônico, prática digital, divisão digital, TIC Domicílios, regressão logística, machine learning, Brasil pós-pandemia">
+<meta name="description" content="PRÁTICA DIGITAL E ADOÇÃO DE E-GOV NO BRASIL">
+
+<title>A prática digital cotidiana complementa o perfil sociodemográfico na adoção de governo eletrônico no Brasil pós-pandemia</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 1em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="artigo_files/libs/clipboard/clipboard.min.js"></script>
+<script src="artigo_files/libs/quarto-html/quarto.js" type="module"></script>
+<script src="artigo_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="artigo_files/libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="artigo_files/libs/quarto-html/popper.min.js"></script>
+<script src="artigo_files/libs/quarto-html/tippy.umd.min.js"></script>
+<link href="artigo_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="artigo_files/libs/quarto-html/quarto-syntax-highlighting-ce4278342a015d016477ed09bce942c5.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="artigo_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="artigo_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="artigo_files/libs/bootstrap/bootstrap-efc71dfb1f11e3ff1781ce85ab7bfb1a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="artigo_files/libs/tabwid-1.1.3/tabwid.css" rel="stylesheet">
+<script src="artigo_files/libs/tabwid-1.1.3/tabwid.js"></script>
+
+
+<link rel="stylesheet" href="_extensions/wjschne/apaquarto/apa.css">
+</head>
+
+<body class="quarto-light">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article toc-left">
+<div id="quarto-sidebar-toc-left" class="sidebar toc-left">
+  
+<div class="quarto-alternate-formats"><h2>Outros formatos</h2><ul><li><a href="artigo.pdf"><i class="bi bi-file-pdf"></i>Typst (apaquarto)</a></li><li><a href="artigo.docx"><i class="bi bi-file-word"></i>MS Word (apaquarto)</a></li><li><a href="artigo.pdf"><i class="bi bi-file-pdf"></i>PDF (apaquarto)</a></li></ul></div></div>
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+</div>
+<main class="content" id="quarto-document-content">
+
+
+
+
+<br>
+
+<br>
+
+<section id="title" class="level1 title unnumbered unlisted">
+<h1 class="title unnumbered unlisted">A prática digital cotidiana complementa o perfil sociodemográfico na adoção de governo eletrônico no Brasil pós-pandemia</h1>
+<div class="Author">
+<br>
+
+<p>Marcus Ramalho and Jorge Junio Moreira Antunes</p>
+<p>Programa de Pós-Graduação em Administração, Instituto COPPEAD de Administração, Universidade Federal do Rio de Janeiro</p>
+</div>
+<br>
+
+<br>
+
+</section>
+<section id="author-note" class="level1 unnumbered unlisted AuthorNote">
+<h1 class="unnumbered unlisted AuthorNote">Author Note</h1>
+<p>Correspondence concerning this article should be addressed to Marcus Ramalho, Programa de Pós-Graduação em Administração, Instituto COPPEAD de Administração, Universidade Federal do Rio de Janeiro, Rio de Janeiro, RJ, Brasil, Email: <a href="mailto:marcus.ramalho@coppead.ufrj.br">marcus.ramalho@coppead.ufrj.br</a></p>
+<br>
+</section>
+<section id="abstract" class="level1 unnumbered unlisted AuthorNote">
+<h1 class="unnumbered unlisted AuthorNote">Resumo</h1>
+<div class="AbstractFirstParagraph">
+<p>O uso de serviços de governo eletrônico (e-gov) no Brasil é desigual, e a literatura nacional mapeou essa desigualdade predominantemente a partir do perfil sociodemográfico do cidadão. Em paralelo, a literatura internacional sobre divisão digital aponta que, em populações com penetração ampla de internet, o que separa adotantes de não adotantes já não é apenas o acesso, mas a prática digital cotidiana. Este estudo investiga em que medida a prática digital cotidiana complementa o perfil sociodemográfico na explicação da adoção de e-gov no Brasil pós-pandemia. Replicamos e estendemos o modelo de Vargas et al.&nbsp;(2021) sobre dados pooled da TIC Domicílios 2021-2025 (n ≈ 70 mil), incorporando 16 variáveis de prática digital cotidiana (busca de informação, conteúdo via celular, mídia, educação e comunicação). Comparamos regressão logística e Random Forest e validamos a estabilidade temporal por holdout no ano de 2025. Os achados mostram que a prática digital cotidiana eleva o AUC do modelo de 0,77 para 0,83 (ΔAUC = +0,06) e generaliza para o ano cego (AUC = 0,835). A análise de sensibilidade com habilidades digitais autorelatadas (I1A_*) indica ganho marginal adicional, sugerindo que o conjunto de práticas já absorve a maior parte do espaço de habilidades. As implicações são teóricas (a evidência empírica brasileira corrobora o deslocamento, previsto pela literatura internacional, do acesso ao uso) e práticas (políticas de e-gov atentas à prática digital cotidiana podem ampliar a adoção sem depender exclusivamente de mudanças sociodemográficas estruturais).</p>
+</div>
+<p><em>Palavras-chave</em>: governo eletrônico, prática digital, divisão digital, TIC Domicílios, regressão logística, machine learning, Brasil pós-pandemia</p>
+<br>
+</section>
+<section id="firstheader" class="level1 title unnumbered unlisted">
+<h1 class="title unnumbered unlisted">A prática digital cotidiana complementa o perfil sociodemográfico na adoção de governo eletrônico no Brasil pós-pandemia</h1>
+<section id="introdução" class="level2">
+<h2 data-anchor-id="introdução">Introdução</h2>
+<p>O governo eletrônico (e-gov) no Brasil cresceu em oferta na última década, mas a adesão dos cidadãos é desigual. Pesquisas brasileiras mapearam essa desigualdade pelo perfil sociodemográfico do cidadão (idade, renda, classe econômica, escolaridade, ocupação, tipo de dispositivo de acesso e uso de comércio eletrônico) <span class="citation" data-cites="vargas2021 araujoreinha2015contextu araujo2018servicos">(<a href="#ref-araujo2018servicos" role="doc-biblioref">Araujo, 2018</a>; <a href="#ref-araujoreinha2015contextu" role="doc-biblioref">AraujoReinhard, 2015</a>; <a href="#ref-vargas2021" role="doc-biblioref">Vargas et al., 2021</a>)</span>. Esses determinantes são robustos, mas explicam apenas parte da variação observada na decisão de uso.</p>
+<p>Em paralelo, a literatura internacional sobre divisão digital evoluiu de uma visão dicotômica de acesso para um modelo multinível <span class="citation" data-cites="lutz2019digitali">(<a href="#ref-lutz2019digitali" role="doc-biblioref">Lutz, 2019</a>)</span>: ao primeiro nível (acesso a tecnologias e infraestrutura) somam-se o segundo (habilidades e formas de uso) e o terceiro (outcomes obtidos a partir do uso). Em populações com penetração ampla de internet, evidências apontam que o que separa quem adota de quem não adota serviços digitais já não é só o acesso, mas como o cidadão usa a internet no cotidiano <span class="citation" data-cites="bchi2016modeling ebbers2016impactof castellacci2018internet">(<a href="#ref-bchi2016modeling" role="doc-biblioref">Büchi; Just; Latzer, 2016</a>; <a href="#ref-castellacci2018internet" role="doc-biblioref">Castellacci; Tveito, 2018</a>; <a href="#ref-ebbers2016impactof" role="doc-biblioref">Ebbers; Jansen; Deursen, 2016</a>)</span>. No Brasil, <span class="citation" data-cites="dodel2023whydevic">Dodel (<a href="#ref-dodel2023whydevic" role="doc-biblioref">2023</a>)</span> ofereceu evidência empírica nessa direção ao mostrar, com microdados da TIC Domicílios 2019 e o framework DiSTO, que o tipo de dispositivo de acesso (computador versus apenas celular) media efeitos socioeconômicos sobre o engajamento com e-gov.</p>
+<p>O quadro empírico brasileiro pede ampliação em três frentes complementares. A primeira é a <strong>variedade de práticas digitais cotidianas</strong>: a evidência existente concentra-se em dimensões pontuais (dispositivo, e-commerce, habilidades autorelatadas), e ainda há pouca compreensão sobre como diferentes tipos de uso da internet (busca de informação, conteúdo via celular, atividades educacionais, comunicação interpessoal) se integram para explicar a adoção de e-gov. A segunda é a <strong>janela pós-pandemia</strong>: estudos de referência <span class="citation" data-cites="vargas2021 dodel2023whydevic">(<a href="#ref-dodel2023whydevic" role="doc-biblioref">Dodel, 2023</a>; <a href="#ref-vargas2021" role="doc-biblioref">Vargas et al., 2021</a>)</span> usaram microdados de 2019, e o contexto pós-pandemia (2021-2025) ainda não foi sistematicamente examinado, embora haja razões para imaginar que práticas digitais ganharam peso preditivo após a forçada digitalização de serviços públicos <span class="citation" data-cites="cardoso2020aimpleme vandeursen2020digitali">(<a href="#ref-cardoso2020aimpleme" role="doc-biblioref">Cardoso, 2020</a>; <a href="#ref-vandeursen2020digitali" role="doc-biblioref">Deursen, 2020</a>)</span>. A terceira é a <strong>estabilidade temporal</strong>: até onde sabemos, modelos de adoção de e-gov no Brasil ainda não foram validados por holdout temporal (treinar em anos passados e testar em ano cego mais recente), o que limita a confiança em sua generalização.</p>
+<p>Diante desse quadro, este estudo investiga: <strong>em que medida a prática digital cotidiana complementa o perfil sociodemográfico na explicação da adoção de e-gov no Brasil?</strong></p>
+<p>Para responder, replicamos e estendemos o modelo de <span class="citation" data-cites="vargas2021">Vargas et al. (<a href="#ref-vargas2021" role="doc-biblioref">2021</a>)</span> com 16 variáveis de prática digital cotidiana, identificadas por <em>screening</em> universal sobre as edições da TIC Domicílios e organizadas em cinco eixos conceituais (busca de informação, conteúdo via celular, mídia, educação e comunicação). Os modelos são treinados sobre dados <em>pooled</em> 2021-2025 (n ≈ 70 mil), comparando regressão logística e Random Forest para isolar o efeito do conjunto de variáveis frente ao efeito da classe de modelo. A estabilidade temporal é avaliada por holdout no ano de 2025. Análises de sensibilidade incorporam habilidades digitais autorelatadas (I1A_*, 2022-2025) e estimação ponderada com pesos amostrais (svyglm), explorando a robustez dos achados.</p>
+<p>A construção do referencial teórico que segue foi guiada por protocolo de revisão sistemática adaptado de PRISMA-P 2015 <span class="citation" data-cites="shamseer2015preferre">(<a href="#ref-shamseer2015preferre" role="doc-biblioref">Shamseer, 2015</a>)</span>, com 62 referências aceitas após três rodadas de busca, snowball <em>backward</em> e <em>forward</em>, e avaliação de qualidade em quatro dimensões. Os procedimentos detalhados estão documentados separadamente.</p>
+</section>
+<section id="referencial-teórico" class="level2">
+<h2 data-anchor-id="referencial-teórico">Referencial teórico</h2>
+<section id="adoção-de-tecnologia-e-governo-eletrônico" class="level3">
+<h3 data-anchor-id="adoção-de-tecnologia-e-governo-eletrônico">Adoção de tecnologia e governo eletrônico</h3>
+<p>A literatura sobre adoção de governo eletrônico ancora-se em duas tradições teóricas convergentes. A primeira é a dos modelos de aceitação tecnológica: <span class="citation" data-cites="davis1989perceive">Davis (<a href="#ref-davis1989perceive" role="doc-biblioref">1989</a>)</span> estabeleceu o Technology Acceptance Model (TAM), em que utilidade percebida e facilidade de uso percebida predizem intenção e uso; <span class="citation" data-cites="venkatesh2003useracce">Venkatesh (<a href="#ref-venkatesh2003useracce" role="doc-biblioref">2003</a>)</span> consolidou a Unified Theory of Acceptance and Use of Technology (UTAUT), acrescentando expectativa de desempenho, expectativa de esforço, influência social e condições facilitadoras. <span class="citation" data-cites="vandijk2008explaini">VanDijk (<a href="#ref-vandijk2008explaini" role="doc-biblioref">2008</a>)</span> estendeu a abordagem ao domínio governamental, em <em>framework</em> multidisciplinar que combina atributos de serviço com determinantes sociodemográficos (idade, gênero, escolaridade, ocupação) como preditores da intenção de uso.</p>
+<p>A segunda tradição é a de <em>public value</em>, que desloca o foco do setor público da eficiência interna para a criação de valor relacional fora da organização <span class="citation" data-cites="panagiotopou2019publicva">(<a href="#ref-panagiotopou2019publicva" role="doc-biblioref">Panagiotopoulos; Klievink; Cordella, 2019</a>)</span>. <span class="citation" data-cites="panagiotopou2019publicva">Panagiotopoulos; Klievink; Cordella (<a href="#ref-panagiotopou2019publicva" role="doc-biblioref">2019</a>)</span> argumentam que o valor público de e-gov é multidimensional e se manifesta no consumo combinado de múltiplos serviços, não em métricas técnicas isoladas. <span class="citation" data-cites="cordella2025factorsi">Lopes; Luciano; Wiedenhöft (<a href="#ref-cordella2025factorsi" role="doc-biblioref">2025</a>)</span> exploram empiricamente como prioridades rivais de <em>public value</em> se configuram em iniciativas brasileiras, e <span class="citation" data-cites="macadar2025servicos">Macadar (<a href="#ref-macadar2025servicos" role="doc-biblioref">2025</a>)</span> avançam essa agenda em direção a <em>data justice</em> a partir do caso do Auxílio Emergencial.</p>
+<p>A revisão sistemática de <span class="citation" data-cites="priyashantha2022determin">Priyashantha; Dilhani (<a href="#ref-priyashantha2022determin" role="doc-biblioref">2022</a>)</span>, sobre 55 estudos publicados entre 2015 e 2020, identifica como determinantes recorrentes da adoção de e-gov: utilidade percebida, facilidade percebida, confiança, risco percebido, expectativas de desempenho e esforço, influência social, condições facilitadoras, <em>awareness</em>, custo, satisfação e desigualdade digital. O papel mediador da confiança é consolidado em meta-análise estrutural por <span class="citation" data-cites="tabbara2023clarifyi">Hooda; Gupta; Jeyaraj (<a href="#ref-tabbara2023clarifyi" role="doc-biblioref">2023</a>)</span>.</p>
+<p>Trabalhos brasileiros precursores <span class="citation" data-cites="araujoreinha2015contextu araujo2018servicos">(<a href="#ref-araujo2018servicos" role="doc-biblioref">Araujo, 2018</a>; <a href="#ref-araujoreinha2015contextu" role="doc-biblioref">AraujoReinhard, 2015</a>)</span> apontaram fatores contextuais (classe social, local de acesso, competências de uso) como influenciadores da adoção, em estudos qualitativos ou de pequeno porte. <span class="citation" data-cites="vargas2021">Vargas et al. (<a href="#ref-vargas2021" role="doc-biblioref">2021</a>)</span> forneceram a primeira análise quantitativa nacional em larga escala, identificando idade, renda familiar, condição de atividade, classe econômica, escolaridade, dispositivo de acesso e uso de e-commerce como preditores significativos sobre microdados da TIC Domicílios 2019. O modelo de <span class="citation" data-cites="vargas2021">Vargas et al. (<a href="#ref-vargas2021" role="doc-biblioref">2021</a>)</span> é a referência empírica direta que o presente trabalho estende.</p>
+</section>
+<section id="divisão-digital-multinível" class="level3">
+<h3 data-anchor-id="divisão-digital-multinível">Divisão digital multinível</h3>
+<p>A literatura sobre desigualdade digital evoluiu de uma concepção dicotômica para um modelo de três níveis sucessivos <span class="citation" data-cites="lutz2019digitali">(<a href="#ref-lutz2019digitali" role="doc-biblioref">Lutz, 2019</a>)</span>: acesso a tecnologias e infraestrutura, habilidades e formas de uso, e <em>outcomes</em> obtidos a partir do uso. <span class="citation" data-cites="vandeursen2018thefirst">VanDeursen (<a href="#ref-vandeursen2018thefirst" role="doc-biblioref">2018</a>)</span> mostram que mesmo o “primeiro nível” se sofisticou: deslocou-se de desigualdades em acesso <em>físico</em> para desigualdades em acesso <em>material</em>, isto é, na qualidade de dispositivos, planos de dados e banda.</p>
+<p>Em países com penetração ampla, o segundo e o terceiro nível assumiram centralidade analítica. <span class="citation" data-cites="bchi2016modeling">Büchi; Just; Latzer (<a href="#ref-bchi2016modeling" role="doc-biblioref">2016</a>)</span>, em modelo de equações estruturais sobre cinco países, encontram que variáveis sociodemográficas explicam até 50% da variância no uso da internet, com idade como preditor mais forte. Os ~50% restantes deixam espaço amplo para preditores ligados a habilidades e tipos de uso. Em países em desenvolvimento, <span class="citation" data-cites="reisdorf2021whenbein">Reisdorf (<a href="#ref-reisdorf2021whenbein" role="doc-biblioref">2021</a>)</span> documenta que estar conectado não basta: os níveis 2 e 3 do <em>divide</em> persistem mesmo após democratização do acesso. <span class="citation" data-cites="lythreatis2021thedigit">Lythreatis (<a href="#ref-lythreatis2021thedigit" role="doc-biblioref">2021</a>)</span>, em revisão pós-pandemia, sintetiza o estado da arte e aponta direções para pesquisa futura.</p>
+<p>No Brasil, <span class="citation" data-cites="susmiati2019usingadi">Siqueira; Souza; Barbosa (<a href="#ref-susmiati2019usingadi" role="doc-biblioref">2019</a>)</span> propõem um índice de <em>digital divide</em> entre empresas; <span class="citation" data-cites="dodel2023whydevic">Dodel (<a href="#ref-dodel2023whydevic" role="doc-biblioref">2023</a>)</span>, com microdados da TIC Domicílios 2019, mostra que o dispositivo de acesso (apenas celular versus computador) tem efeito estrutural sobre o engajamento com e-gov, validando empiricamente a relevância do construto introduzido por <span class="citation" data-cites="vandeursen2018thefirst">VanDeursen (<a href="#ref-vandeursen2018thefirst" role="doc-biblioref">2018</a>)</span>. <span class="citation" data-cites="hilbert2016genderan">Gray; Gainous; Wagner (<a href="#ref-hilbert2016genderan" role="doc-biblioref">2016</a>)</span> documenta o gap de gênero persistente na América Latina.</p>
+</section>
+<section id="intensidade-e-variedade-de-uso-digital" class="level3">
+<h3 data-anchor-id="intensidade-e-variedade-de-uso-digital">Intensidade e variedade de uso digital</h3>
+<p><span class="citation" data-cites="castellacci2018internet">Castellacci; Tveito (<a href="#ref-castellacci2018internet" role="doc-biblioref">2018</a>)</span> propõem um <em>framework</em> teórico no qual a internet afeta <em>outcomes</em> via quatro canais distintos: alteração de padrões de tempo, criação de novas atividades, acesso à informação e ferramenta de comunicação. Os efeitos são mediados por características pessoais (psicológicas, capacidades, <em>framing</em> cultural). A heurística é clara: não é “uso de internet” em geral que importa, mas as atividades específicas combinadas com as capacidades do usuário. <span class="citation" data-cites="reineke2015explicat">Park (<a href="#ref-reineke2015explicat" role="doc-biblioref">2015</a>)</span> distinguem <strong>diversidade de uso</strong> (<em>net diversity</em>) como construto distinto da intensidade pura, sustentando que a inclusão simultânea de frequência e variedade de atividades digitais captura informação não trivial. <span class="citation" data-cites="pearce2019takingad">Pearce (<a href="#ref-pearce2019takingad" role="doc-biblioref">2019</a>)</span>, em análise qualitativa, mostram que o efeito da educação sobre <em>outcomes</em> positivos da internet opera via mediadores (prática, autonomia, diversidade de uso) e não diretamente.</p>
+<p><span class="citation" data-cites="roztocki2022digitalf">Roztocki (<a href="#ref-roztocki2022digitalf" role="doc-biblioref">2022</a>)</span> documenta como pegadas digitais (<em>digital footprints</em>) atuam como barreira ao e-gov: cidadãos sem histórico online enfrentam dificuldades adicionais para acessar serviços, reforçando que a intensidade prévia de uso da internet condiciona a possibilidade de adesão.</p>
+</section>
+<section id="habilidades-digitais-e-familiaridade" class="level3">
+<h3 data-anchor-id="habilidades-digitais-e-familiaridade">Habilidades digitais e familiaridade</h3>
+<p><span class="citation" data-cites="ebbers2016impactof">Ebbers; Jansen; Deursen (<a href="#ref-ebbers2016impactof" role="doc-biblioref">2016</a>)</span> argumentam que o impacto do <em>digital divide</em> sobre e-gov se expande de <em>channel choice</em> para <em>channel usage</em>: dada a presença de acesso, escolhas de canal pouco se diferenciam por habilidade, mas a intensidade e a satisfação do uso sim. A operacionalização de habilidades via experiência de uso da internet em diferentes atividades, incluindo compras online <span class="citation" data-cites="belanger2008trustand">(<a href="#ref-belanger2008trustand" role="doc-biblioref">Belanger, 2008</a>)</span>, antecipa a estratégia metodológica adotada neste estudo, em que e-commerce (variável H2 do questionário TIC) e variáveis de uso intenso operam como <em>proxies</em> de familiaridade digital. <span class="citation" data-cites="lzroiu2020citizens">Rodriguez-Hevía; Navío-Marco; Ruiz-Gómez (<a href="#ref-lzroiu2020citizens" role="doc-biblioref">2020</a>)</span> evidenciam empiricamente a importância das habilidades digitais para o engajamento com e-gov na União Europeia.</p>
+</section>
+<section id="adoção-de-e-gov-no-brasil" class="level3">
+<h3 data-anchor-id="adoção-de-e-gov-no-brasil">Adoção de e-gov no Brasil</h3>
+<p>Estudos brasileiros sobre adoção de e-gov dialogam com diferentes ângulos do quadro multinível. <span class="citation" data-cites="araujoreinha2015contextu">AraujoReinhard (<a href="#ref-araujoreinha2015contextu" role="doc-biblioref">2015</a>)</span> e <span class="citation" data-cites="araujo2018servicos">Araujo (<a href="#ref-araujo2018servicos" role="doc-biblioref">2018</a>)</span> abriram a frente quantitativa com foco em fatores contextuais (classe, local de acesso, competências de uso). <span class="citation" data-cites="vargas2021">Vargas et al. (<a href="#ref-vargas2021" role="doc-biblioref">2021</a>)</span> forneceram a primeira análise nacional ampla com microdados da TIC Domicílios, identificando determinantes sociodemográficos significativos para 2019 e sugerindo, como direção de pesquisa futura, a inclusão de “tipos de serviço ou características de uso específicas”. <span class="citation" data-cites="dodel2023whydevic">Dodel (<a href="#ref-dodel2023whydevic" role="doc-biblioref">2023</a>)</span> respondeu parte dessa direção examinando uma dimensão de prática (dispositivo) e demonstrando seu papel mediador entre status socioeconômico e <em>e-government engagement</em>.</p>
+</section>
+<section id="covid-19-auxílio-emergencial-e-e-gov-no-brasil" class="level3">
+<h3 data-anchor-id="covid-19-auxílio-emergencial-e-e-gov-no-brasil">COVID-19, Auxílio Emergencial e e-gov no Brasil</h3>
+<p><span class="citation" data-cites="vandeursen2020digitali">Deursen (<a href="#ref-vandeursen2020digitali" role="doc-biblioref">2020</a>)</span>, em <em>survey</em> holandês com 1.733 respondentes, mostra que letramento, educação, atitude à internet, acesso material e habilidades digitais predizem usos e <em>outcomes</em> pandêmicos, enquanto recursos econômicos e sociais perdem significância após controles. A pandemia reforça desigualdades preexistentes em vez de reduzi-las via familiarização forçada. Estudos em outros países corroboram o padrão <span class="citation" data-cites="vu2022driverso">(<a href="#ref-vu2022driverso" role="doc-biblioref">Nguyen; Borazon, 2022</a>)</span>.</p>
+<p>No Brasil, <span class="citation" data-cites="cardoso2020aimpleme">Cardoso (<a href="#ref-cardoso2020aimpleme" role="doc-biblioref">2020</a>)</span> analisa o Auxílio Emergencial instituído pela Lei 13.982/2020 como caso paradigmático de “<em>system-level bureaucracy</em>”, em que decisões pré-programadas via algoritmos e fluxos digitais operam o serviço público em escala. O programa atendeu populações historicamente pouco familiarizadas com canais digitais, expondo limites de uma operação puramente digital sob exclusão preexistente. Trabalhos complementares <span class="citation" data-cites="krepsky2023administ">(<a href="#ref-krepsky2023administ" role="doc-biblioref">Krepsky, 2023</a>)</span> confirmam que a implementação do Auxílio Emergencial evidenciou cidadania digital como precondição material para a efetividade de políticas dependentes de e-gov. <span class="citation" data-cites="mardiana2020evidence">Santos; Bülbül; Lemes (<a href="#ref-mardiana2020evidence" role="doc-biblioref">2020</a>)</span>, via Google Trends, sugere que o segundo nível do <em>divide</em> se ampliou no Brasil pós-COVID. Esses achados sustentam a relevância de uma janela 2021-2025 e da inclusão de variáveis que capturem práticas digitais cotidianas como mediadores estruturais.</p>
+</section>
+</section>
+<section id="métodos" class="level2">
+<h2 data-anchor-id="métodos">Métodos</h2>
+<section id="dados" class="level3">
+<h3 data-anchor-id="dados">Dados</h3>
+<p>Os dados utilizados são os microdados da pesquisa TIC Domicílios, conduzida anualmente pelo Centro Regional de Estudos para o Desenvolvimento da Sociedade da Informação (Cetic.br) <span class="citation" data-cites="cetic2025">(<a href="#ref-cetic2025" role="doc-biblioref">Cetic.br, 2025</a>)</span>. A análise principal cobre as edições de <strong>2021 a 2025</strong> em formato <em>pooled</em>, totalizando aproximadamente 70 mil indivíduos após filtros de elegibilidade (uso de internet nos três meses anteriores à coleta e idade igual ou superior a 16 anos, em consonância com os critérios de <span class="citation" data-cites="vargas2021">Vargas et al. (<a href="#ref-vargas2021" role="doc-biblioref">2021</a>)</span>). A edição de 2020 foi excluída em razão da impossibilidade de coleta presencial durante o pico da pandemia, que comprometeu o módulo G (governo eletrônico).</p>
+<p>Procedimentos adicionais: a edição de 2019 foi utilizada para replicação do modelo original; as edições 2015-2018 servem como linha de base longitudinal e estão descritas no notebook técnico que acompanha o artigo. Códigos de “Não sei / Não respondeu” (97/98/99) foram tratados como ausentes nas variáveis preditoras. Para as variáveis de habilidades digitais autorelatadas (I1A_*), disponíveis a partir de 2022, “Não sei / Não respondeu” foi recodificado como ausência da habilidade (0), em consonância com a interpretação substantiva do construto.</p>
+</section>
+<section id="variáveis" class="level3">
+<h3 data-anchor-id="variáveis">Variáveis</h3>
+<p>A <strong>variável dependente</strong> é o uso de governo eletrônico nos 12 meses anteriores à coleta, codificada como variável binária (G1_AGREG) que agrega 29 questões do módulo G da TIC Domicílios em uma medida única de adoção, replicando o procedimento de <span class="citation" data-cites="vargas2021">Vargas et al. (<a href="#ref-vargas2021" role="doc-biblioref">2021</a>)</span>.</p>
+<p>As <strong>variáveis preditoras do modelo original</strong> (sete) replicam o conjunto utilizado em <span class="citation" data-cites="vargas2021">Vargas et al. (<a href="#ref-vargas2021" role="doc-biblioref">2021</a>)</span>: idade, condição de atividade (PEA), uso de e-commerce (variável H2), renda familiar (em faixas), classe econômica (Critério Brasil), grau de instrução, dispositivo de acesso (computador, celular, ambos ou nenhum). Variáveis categóricas entram no modelo como fatores, sem assumir linearidade entre níveis.</p>
+<p>As <strong>variáveis de prática digital cotidiana</strong> (16) são selecionadas por <em>screening</em> univariado sobre o conjunto de variáveis universais às dez edições da TIC Domicílios após harmonização. Cada candidata é avaliada pelo ganho marginal de AUC quando adicionada ao modelo logístico base. Foram excluídas variáveis endógenas em relação ao desfecho, isto é, as que medem busca de informação em sites governamentais (C8_F), uso de serviços públicos digitais (C8_G) e pagamentos ou transações financeiras com órgãos públicos (C8_H), por sobreposição conceitual com a variável dependente. As 16 variáveis aceitas (cada uma com ganho de +0,015 a +0,040 de AUC isoladamente) receberam nomes interpretáveis em PT-BR, organizadas em cinco eixos conceituais. A correspondência completa entre código original do questionário, nome interpretável e descrição está apresentada na <a href="#tbl-glossario" class="quarto-xref" aria-expanded="false">Tabela&nbsp;1</a>.</p>
+<div class="cell FigureWithoutNote" prefix="" data-tblnum="1" data-custom-style="FigureWithoutNote">
+<div id="tbl-glossario" class="cell quarto-float quarto-figure quarto-figure-center" data-tblnum="1" prefix="">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-glossario-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="FigureTitle" data-custom-style="FigureTitle">
+<p>Tabela&nbsp;1</p>
+</div>
+<div class="Caption" data-custom-style="Caption">
+<p>Variáveis de prática digital cotidiana incluídas no modelo expandido</p>
+</div>
+</figcaption>
+<div aria-describedby="tbl-glossario-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<div class="tabwid"><style>.cl-d5344ddc{}.cl-d52c4bf0{font-family:'DejaVu Sans';font-size:9pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-d52fcafa{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:3pt;padding-top:3pt;padding-left:3pt;padding-right:3pt;line-height: 1;background-color:transparent;}.cl-d52feca6{width:1.6in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-d52fecb0{width:0.8in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-d52fecba{width:1in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-d52fecc4{width:3in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-d52fecc5{width:1.6in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-d52fecce{width:0.8in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-d52feccf{width:1in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-d52fecd8{width:3in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-d52fecd9{width:1.6in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-d52fecda{width:0.8in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-d52fece2{width:1in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-d52fece3{width:3in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style><table data-quarto-disable-processing="true" class="cl-d5344ddc"><thead><tr style="overflow-wrap:break-word;"><th class="cl-d52feca6"><p class="cl-d52fcafa"><span class="cl-d52c4bf0">Variável</span></p></th><th class="cl-d52fecb0"><p class="cl-d52fcafa"><span class="cl-d52c4bf0">Código TIC</span></p></th><th class="cl-d52fecba"><p class="cl-d52fcafa"><span class="cl-d52c4bf0">Eixo</span></p></th><th class="cl-d52fecc4"><p class="cl-d52fcafa"><span class="cl-d52c4bf0">Descrição</span></p></th></tr></thead><tbody><tr style="overflow-wrap:break-word;"><td class="cl-d52fecc5"><p class="cl-d52fcafa"><span class="cl-d52c4bf0">BUSCA_PRODUTOS</span></p></td><td class="cl-d52fecce"><p class="cl-d52fcafa"><span class="cl-d52c4bf0">C8_A</span></p></td><td class="cl-d52feccf"><p class="cl-d52fcafa"><span class="cl-d52c4bf0">Informação</span></p></td><td class="cl-d52fecd8"><p class="cl-d52fcafa"><span class="cl-d52c4bf0">Procurar informações sobre produtos e serviços</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-d52fecc5"><p class="cl-d52fcafa"><span class="cl-d52c4bf0">BUSCA_SAUDE</span></p></td><td class="cl-d52fecce"><p class="cl-d52fcafa"><span class="cl-d52c4bf0">C8_B</span></p></td><td class="cl-d52feccf"><p class="cl-d52fcafa"><span class="cl-d52c4bf0">Informação</span></p></td><td class="cl-d52fecd8"><p class="cl-d52fcafa"><span class="cl-d52c4bf0">Procurar informações sobre saúde ou serviços de saúde</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-d52fecc5"><p class="cl-d52fcafa"><span class="cl-d52c4bf0">BUSCA_EMPREGO</span></p></td><td class="cl-d52fecce"><p class="cl-d52fcafa"><span class="cl-d52c4bf0">C8_D</span></p></td><td class="cl-d52feccf"><p class="cl-d52fcafa"><span class="cl-d52c4bf0">Informação</span></p></td><td class="cl-d52fecd8"><p class="cl-d52fcafa"><span class="cl-d52c4bf0">Procurar emprego ou enviar currículos</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-d52fecc5"><p class="cl-d52fcafa"><span class="cl-d52c4bf0">BUSCA_CONHECIMENTO</span></p></td><td class="cl-d52fecce"><p class="cl-d52fcafa"><span class="cl-d52c4bf0">C8_E</span></p></td><td class="cl-d52feccf"><p class="cl-d52fcafa"><span class="cl-d52c4bf0">Informação</span></p></td><td class="cl-d52fecd8"><p class="cl-d52fcafa"><span class="cl-d52c4bf0">Procurar em sites de enciclopédia (Wikipédia)</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-d52fecc5"><p class="cl-d52fcafa"><span class="cl-d52c4bf0">CELULAR_BUSCA</span></p></td><td class="cl-d52fecce"><p class="cl-d52fcafa"><span class="cl-d52c4bf0">J2_L</span></p></td><td class="cl-d52feccf"><p class="cl-d52fcafa"><span class="cl-d52c4bf0">Conteúdo</span></p></td><td class="cl-d52fecd8"><p class="cl-d52fcafa"><span class="cl-d52c4bf0">Usar celular para buscar informações</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-d52fecc5"><p class="cl-d52fcafa"><span class="cl-d52c4bf0">CELULAR_WEB</span></p></td><td class="cl-d52fecce"><p class="cl-d52fcafa"><span class="cl-d52c4bf0">J2_J</span></p></td><td class="cl-d52feccf"><p class="cl-d52fcafa"><span class="cl-d52c4bf0">Conteúdo</span></p></td><td class="cl-d52fecd8"><p class="cl-d52fcafa"><span class="cl-d52c4bf0">Usar celular para acessar páginas ou sites</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-d52fecc5"><p class="cl-d52fcafa"><span class="cl-d52c4bf0">CELULAR_MAPAS</span></p></td><td class="cl-d52fecce"><p class="cl-d52fcafa"><span class="cl-d52c4bf0">J2_G</span></p></td><td class="cl-d52feccf"><p class="cl-d52fcafa"><span class="cl-d52c4bf0">Conteúdo</span></p></td><td class="cl-d52fecd8"><p class="cl-d52fcafa"><span class="cl-d52c4bf0">Usar celular para mapas</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-d52fecc5"><p class="cl-d52fcafa"><span class="cl-d52c4bf0">CELULAR_APPS</span></p></td><td class="cl-d52fecce"><p class="cl-d52fcafa"><span class="cl-d52c4bf0">J2_K</span></p></td><td class="cl-d52feccf"><p class="cl-d52fcafa"><span class="cl-d52c4bf0">Conteúdo</span></p></td><td class="cl-d52fecd8"><p class="cl-d52fcafa"><span class="cl-d52c4bf0">Usar celular para baixar aplicativos</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-d52fecc5"><p class="cl-d52fcafa"><span class="cl-d52c4bf0">CONTEUDO_VIDEO</span></p></td><td class="cl-d52fecce"><p class="cl-d52fcafa"><span class="cl-d52c4bf0">C9_C</span></p></td><td class="cl-d52feccf"><p class="cl-d52fcafa"><span class="cl-d52c4bf0">Conteúdo</span></p></td><td class="cl-d52fecd8"><p class="cl-d52fcafa"><span class="cl-d52c4bf0">Assistir vídeos, filmes ou séries</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-d52fecc5"><p class="cl-d52fcafa"><span class="cl-d52c4bf0">CONTEUDO_NOTICIAS</span></p></td><td class="cl-d52fecce"><p class="cl-d52fcafa"><span class="cl-d52c4bf0">C9_D</span></p></td><td class="cl-d52feccf"><p class="cl-d52fcafa"><span class="cl-d52c4bf0">Conteúdo</span></p></td><td class="cl-d52fecd8"><p class="cl-d52fcafa"><span class="cl-d52c4bf0">Ler jornais, revistas ou notícias</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-d52fecc5"><p class="cl-d52fcafa"><span class="cl-d52c4bf0">ESTUDO_ESCOLAR</span></p></td><td class="cl-d52fecce"><p class="cl-d52fcafa"><span class="cl-d52c4bf0">C10_A</span></p></td><td class="cl-d52feccf"><p class="cl-d52fcafa"><span class="cl-d52c4bf0">Educação</span></p></td><td class="cl-d52fecd8"><p class="cl-d52fcafa"><span class="cl-d52c4bf0">Realizar atividades ou pesquisas escolares</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-d52fecc5"><p class="cl-d52fcafa"><span class="cl-d52c4bf0">INFO_CURSOS</span></p></td><td class="cl-d52fecce"><p class="cl-d52fcafa"><span class="cl-d52c4bf0">C10_C</span></p></td><td class="cl-d52feccf"><p class="cl-d52fcafa"><span class="cl-d52c4bf0">Educação</span></p></td><td class="cl-d52fecd8"><p class="cl-d52fcafa"><span class="cl-d52c4bf0">Buscar informações sobre cursos</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-d52fecc5"><p class="cl-d52fcafa"><span class="cl-d52c4bf0">ESTUDO_AUTONOMO</span></p></td><td class="cl-d52fecce"><p class="cl-d52fcafa"><span class="cl-d52c4bf0">C10_D</span></p></td><td class="cl-d52feccf"><p class="cl-d52fcafa"><span class="cl-d52c4bf0">Educação</span></p></td><td class="cl-d52fecd8"><p class="cl-d52fcafa"><span class="cl-d52c4bf0">Estudar pela internet por conta própria</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-d52fecc5"><p class="cl-d52fcafa"><span class="cl-d52c4bf0">COMPARTILHA_CONTEUDO</span></p></td><td class="cl-d52fecce"><p class="cl-d52fcafa"><span class="cl-d52c4bf0">C11_A</span></p></td><td class="cl-d52feccf"><p class="cl-d52fcafa"><span class="cl-d52c4bf0">Comunicação</span></p></td><td class="cl-d52fecd8"><p class="cl-d52fcafa"><span class="cl-d52c4bf0">Compartilhar conteúdo (textos, fotos, vídeos)</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-d52fecc5"><p class="cl-d52fcafa"><span class="cl-d52c4bf0">USO_EMAIL</span></p></td><td class="cl-d52fecce"><p class="cl-d52fcafa"><span class="cl-d52c4bf0">C7_A</span></p></td><td class="cl-d52feccf"><p class="cl-d52fcafa"><span class="cl-d52c4bf0">Comunicação</span></p></td><td class="cl-d52fecd8"><p class="cl-d52fcafa"><span class="cl-d52c4bf0">Enviar e receber e-mail</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-d52fecd9"><p class="cl-d52fcafa"><span class="cl-d52c4bf0">TEM_COMPUTADOR</span></p></td><td class="cl-d52fecda"><p class="cl-d52fcafa"><span class="cl-d52c4bf0">B1</span></p></td><td class="cl-d52fece2"><p class="cl-d52fcafa"><span class="cl-d52c4bf0">Acesso</span></p></td><td class="cl-d52fece3"><p class="cl-d52fcafa"><span class="cl-d52c4bf0">Já usou computador (mesa, notebook ou tablet)</span></p></td></tr></tbody></table></div>
+</div>
+</div>
+</figure>
+</div>
+</div>
+</section>
+<section id="modelagem" class="level3">
+<h3 data-anchor-id="modelagem">Modelagem</h3>
+<p>A análise comparou cinco modelos sobre o mesmo conjunto de dados <em>pooled</em> 2021-2025, com o mesmo <em>N</em> (após <code>drop_na</code> sobre o superset de preditores) e as <strong>mesmas folds</strong> de validação cruzada 5-fold (folds fixos para comparação pareada). Os modelos seguem uma matriz dois por dois cruzando o conjunto de variáveis (o de <span class="citation" data-cites="vargas2021">Vargas et al. (<a href="#ref-vargas2021" role="doc-biblioref">2021</a>)</span> com sete preditores; o expandido com 23 preditores, incluindo os sete do modelo de referência mais as 16 de prática digital) e a classe de modelo (regressão logística; Random Forest), acrescida de uma árvore de decisão sobre o conjunto de referência como <em>baseline</em> não-paramétrico simples.</p>
+<p>A classe positiva foi fixada explicitamente como “uso de e-gov” (Sim), de modo que a sensibilidade reportada corresponde ao <em>recall</em> do desfecho de interesse, conforme convenção da literatura aplicada.</p>
+<p>A <strong>estabilidade temporal</strong> foi avaliada por holdout: modelos foram treinados em 2021-2024 e testados na edição de 2025, completamente cega ao processo de estimação. A diferença de AUC entre o desempenho em validação cruzada <em>pooled</em> e o desempenho no ano cego operacionaliza a generalização temporal.</p>
+<p>Duas análises de sensibilidade complementam o modelo principal. A primeira incorpora as <strong>habilidades digitais autorelatadas</strong> (variáveis I1A_<em>, 12 itens disponíveis a partir de 2022), examinando se um construto explícito de habilidade adiciona poder explicativo às práticas digitais já incluídas no modelo expandido. Essa análise testa a hipótese teórica de <span class="citation" data-cites="lutz2019digitali">Lutz (<a href="#ref-lutz2019digitali" role="doc-biblioref">2019</a>)</span> e <span class="citation" data-cites="vandeursen2020digitali">Deursen (<a href="#ref-vandeursen2020digitali" role="doc-biblioref">2020</a>)</span> de que habilidades digitais constituem mediador estrutural. A segunda é uma estimação ponderada por <strong>pesos amostrais</strong> da TIC Domicílios via </em>svyglm* <span class="citation" data-cites="R-survey">(<a href="#ref-R-survey" role="doc-biblioref">Gao; Schneider; Kolenkikov, 2026</a>)</span>, comparando os coeficientes ponderados com os não ponderados para verificar a robustez dos efeitos a desvios da amostragem complexa.</p>
+</section>
+<section id="pacotes-computacionais" class="level3">
+<h3 data-anchor-id="pacotes-computacionais">Pacotes computacionais</h3>
+<p>Toda a análise foi conduzida em R <span class="citation" data-cites="R-base">(<a href="#ref-R-base" role="doc-biblioref">R Core Team, 2026</a>)</span>, com os pacotes <code>tidyverse</code> <span class="citation" data-cites="R-tidyverse">(<a href="#ref-R-tidyverse" role="doc-biblioref">Wickham, 2023</a>)</span> para manipulação de dados, <code>haven</code> <span class="citation" data-cites="R-haven">(<a href="#ref-R-haven" role="doc-biblioref">Wickham; Miller; Smith, 2025</a>)</span> para leitura de microdados em formato SPSS, <code>caret</code> <span class="citation" data-cites="R-caret">(<a href="#ref-R-caret" role="doc-biblioref">Kuhn, 2024</a>)</span> para a infraestrutura de validação cruzada com folds fixos, <code>ranger</code> <span class="citation" data-cites="R-ranger">(<a href="#ref-R-ranger" role="doc-biblioref">Wright, 2026</a>)</span> para Random Forest, <code>rpart</code> e <code>rpart.plot</code> <span class="citation" data-cites="R-rpart R-rpart.plot">(<a href="#ref-R-rpart.plot" role="doc-biblioref">Milborrow, 2026</a>; <a href="#ref-R-rpart" role="doc-biblioref">Therneau; Atkinson, 2026</a>)</span> para árvore de decisão, <code>pROC</code> <span class="citation" data-cites="R-pROC">(<a href="#ref-R-pROC" role="doc-biblioref">Robin et al., 2025</a>)</span> para curvas ROC e cálculo de AUC, <code>broom</code> <span class="citation" data-cites="R-broom">(<a href="#ref-R-broom" role="doc-biblioref">Robinson; Hayes; Couch, 2025</a>)</span> para <em>tidying</em> de coeficientes, <code>survey</code> <span class="citation" data-cites="R-survey">(<a href="#ref-R-survey" role="doc-biblioref">Gao; Schneider; Kolenkikov, 2026</a>)</span> para estimação ponderada, <code>doParallel</code> <span class="citation" data-cites="R-doParallel">(<a href="#ref-R-doParallel" role="doc-biblioref">Corporation; Weston, 2022</a>)</span> para paralelização das <em>folds</em> e <code>knitr</code> <span class="citation" data-cites="R-knitr">(<a href="#ref-R-knitr" role="doc-biblioref">Xie, 2025</a>)</span> para integração com o documento. O documento final foi compilado com Quarto <span class="citation" data-cites="quarto">(<a href="#ref-quarto" role="doc-biblioref">Posit Software, PBC, 2024</a>)</span>.</p>
+</section>
+</section>
+<section id="resultados" class="level2">
+<h2 data-anchor-id="resultados">Resultados</h2>
+<section id="estatísticas-descritivas" class="level3">
+<h3 data-anchor-id="estatísticas-descritivas">Estatísticas descritivas</h3>
+<p>A amostra <em>pooled</em> 2021-2025 totaliza 68.933 indivíduos elegíveis após filtros. A variável dependente (uso de e-gov nos 12 meses anteriores à coleta) apresenta proporção positiva próxima a 0% no período, com tendência de leve crescimento ao longo dos anos analisados.</p>
+</section>
+<section id="replicação-de-vargas2021-em-2019" class="level3">
+<h3 data-anchor-id="replicação-de-vargas2021-em-2019">Replicação de <span class="citation" data-cites="vargas2021">Vargas et al. (<a href="#ref-vargas2021" role="doc-biblioref">2021</a>)</span> em 2019</h3>
+<p>Antes da análise principal, o modelo de <span class="citation" data-cites="vargas2021">Vargas et al. (<a href="#ref-vargas2021" role="doc-biblioref">2021</a>)</span> foi replicado sobre microdados de 2019 isoladamente para validação. Os indicadores de desempenho obtidos (Accuracy, F1, Recall, Precision) reproduzem aproximadamente os reportados pelos autores originais, confirmando a robustez do procedimento de harmonização e codificação utilizado neste estudo.</p>
+</section>
+<section id="modelo-expandido-prática-digital-complementa-o-perfil-sociodemográfico" class="level3">
+<h3 data-anchor-id="modelo-expandido-prática-digital-complementa-o-perfil-sociodemográfico">Modelo expandido: prática digital complementa o perfil sociodemográfico</h3>
+<p>A <a href="#tbl-matriz" class="quarto-xref" aria-expanded="false">Tabela&nbsp;2</a> apresenta os cinco modelos avaliados sobre o pooled 2021-2025 com folds fixos:</p>
+<div class="cell FigureWithoutNote" prefix="" data-tblnum="2" data-custom-style="FigureWithoutNote">
+<div id="tbl-matriz" class="cell quarto-float quarto-figure quarto-figure-center" data-tblnum="2" prefix="">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-matriz-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="FigureTitle" data-custom-style="FigureTitle">
+<p>Tabela&nbsp;2</p>
+</div>
+<div class="Caption" data-custom-style="Caption">
+<p>Desempenho dos modelos: matriz GLM/RF × Original/Expandido + Árvore (CV 5-fold; N comum)</p>
+</div>
+</figcaption>
+<div aria-describedby="tbl-matriz-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<div class="tabwid"><style>.cl-d57493c4{}.cl-d56d90ec{font-family:'DejaVu Sans';font-size:9pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-d5708608{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:3pt;padding-top:3pt;padding-left:3pt;padding-right:3pt;line-height: 1;background-color:transparent;}.cl-d570861c{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:3pt;padding-top:3pt;padding-left:3pt;padding-right:3pt;line-height: 1;background-color:transparent;}.cl-d570a61a{width:1.183in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-d570a61b{width:1.285in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-d570a624{width:0.648in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-d570a625{width:0.569in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-d570a62e{width:0.59in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-d570a638{width:0.699in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-d570a639{width:0.736in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-d570a63a{width:1.183in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-d570a64c{width:1.285in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-d570a656{width:0.648in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-d570a657{width:0.569in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-d570a658{width:0.59in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-d570a660{width:0.699in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-d570a661{width:0.736in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-d570a66a{width:1.183in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-d570a66b{width:1.285in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-d570a66c{width:0.648in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-d570a674{width:0.569in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-d570a67e{width:0.59in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-d570a67f{width:0.699in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-d570a692{width:0.736in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-d570a693{width:1.183in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-d570a694{width:1.285in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-d570a6ba{width:0.648in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-d570a6c4{width:0.569in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-d570a6c5{width:0.59in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-d570a6c6{width:0.699in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-d570a6ce{width:0.736in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style><table data-quarto-disable-processing="true" class="cl-d57493c4"><thead><tr style="overflow-wrap:break-word;"><th class="cl-d570a61a"><p class="cl-d5708608"><span class="cl-d56d90ec">Modelo</span></p></th><th class="cl-d570a61b"><p class="cl-d5708608"><span class="cl-d56d90ec">Variáveis</span></p></th><th class="cl-d570a624"><p class="cl-d570861c"><span class="cl-d56d90ec">N</span></p></th><th class="cl-d570a625"><p class="cl-d570861c"><span class="cl-d56d90ec">AUC</span></p></th><th class="cl-d570a62e"><p class="cl-d570861c"><span class="cl-d56d90ec">Recall</span></p></th><th class="cl-d570a638"><p class="cl-d570861c"><span class="cl-d56d90ec">Especif.</span></p></th><th class="cl-d570a639"><p class="cl-d570861c"><span class="cl-d56d90ec">Precisão</span></p></th><th class="cl-d570a625"><p class="cl-d570861c"><span class="cl-d56d90ec">F1</span></p></th></tr></thead><tbody><tr style="overflow-wrap:break-word;"><td class="cl-d570a63a"><p class="cl-d5708608"><span class="cl-d56d90ec">GLM Original</span></p></td><td class="cl-d570a64c"><p class="cl-d5708608"><span class="cl-d56d90ec">Vargas (7)</span></p></td><td class="cl-d570a656"><p class="cl-d570861c"><span class="cl-d56d90ec">68.933</span></p></td><td class="cl-d570a657"><p class="cl-d570861c"><span class="cl-d56d90ec">0.767</span></p></td><td class="cl-d570a658"><p class="cl-d570861c"><span class="cl-d56d90ec">0.818</span></p></td><td class="cl-d570a660"><p class="cl-d570861c"><span class="cl-d56d90ec">0.540</span></p></td><td class="cl-d570a661"><p class="cl-d570861c"><span class="cl-d56d90ec">0.753</span></p></td><td class="cl-d570a657"><p class="cl-d570861c"><span class="cl-d56d90ec">0.784</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-d570a63a"><p class="cl-d5708608"><span class="cl-d56d90ec">GLM Expandido</span></p></td><td class="cl-d570a64c"><p class="cl-d5708608"><span class="cl-d56d90ec">Vargas + 16 (23)</span></p></td><td class="cl-d570a656"><p class="cl-d570861c"><span class="cl-d56d90ec">68.933</span></p></td><td class="cl-d570a657"><p class="cl-d570861c"><span class="cl-d56d90ec">0.831</span></p></td><td class="cl-d570a658"><p class="cl-d570861c"><span class="cl-d56d90ec">0.836</span></p></td><td class="cl-d570a660"><p class="cl-d570861c"><span class="cl-d56d90ec">0.649</span></p></td><td class="cl-d570a661"><p class="cl-d570861c"><span class="cl-d56d90ec">0.803</span></p></td><td class="cl-d570a657"><p class="cl-d570861c"><span class="cl-d56d90ec">0.819</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-d570a66a"><p class="cl-d5708608"><span class="cl-d56d90ec">Árvore</span></p></td><td class="cl-d570a66b"><p class="cl-d5708608"><span class="cl-d56d90ec">Vargas (7)</span></p></td><td class="cl-d570a66c"><p class="cl-d570861c"><span class="cl-d56d90ec">68.933</span></p></td><td class="cl-d570a674"><p class="cl-d570861c"><span class="cl-d56d90ec">0.740</span></p></td><td class="cl-d570a67e"><p class="cl-d570861c"><span class="cl-d56d90ec">0.816</span></p></td><td class="cl-d570a67f"><p class="cl-d570861c"><span class="cl-d56d90ec">0.536</span></p></td><td class="cl-d570a692"><p class="cl-d570861c"><span class="cl-d56d90ec">0.751</span></p></td><td class="cl-d570a674"><p class="cl-d570861c"><span class="cl-d56d90ec">0.782</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-d570a63a"><p class="cl-d5708608"><span class="cl-d56d90ec">RF Original</span></p></td><td class="cl-d570a64c"><p class="cl-d5708608"><span class="cl-d56d90ec">Vargas (7)</span></p></td><td class="cl-d570a656"><p class="cl-d570861c"><span class="cl-d56d90ec">68.933</span></p></td><td class="cl-d570a657"><p class="cl-d570861c"><span class="cl-d56d90ec">0.770</span></p></td><td class="cl-d570a658"><p class="cl-d570861c"><span class="cl-d56d90ec">0.828</span></p></td><td class="cl-d570a660"><p class="cl-d570861c"><span class="cl-d56d90ec">0.525</span></p></td><td class="cl-d570a661"><p class="cl-d570861c"><span class="cl-d56d90ec">0.749</span></p></td><td class="cl-d570a657"><p class="cl-d570861c"><span class="cl-d56d90ec">0.787</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-d570a693"><p class="cl-d5708608"><span class="cl-d56d90ec">RF Expandido</span></p></td><td class="cl-d570a694"><p class="cl-d5708608"><span class="cl-d56d90ec">Vargas + 16 (23)</span></p></td><td class="cl-d570a6ba"><p class="cl-d570861c"><span class="cl-d56d90ec">68.933</span></p></td><td class="cl-d570a6c4"><p class="cl-d570861c"><span class="cl-d56d90ec">0.830</span></p></td><td class="cl-d570a6c5"><p class="cl-d570861c"><span class="cl-d56d90ec">0.854</span></p></td><td class="cl-d570a6c6"><p class="cl-d570861c"><span class="cl-d56d90ec">0.618</span></p></td><td class="cl-d570a6ce"><p class="cl-d570861c"><span class="cl-d56d90ec">0.793</span></p></td><td class="cl-d570a6c4"><p class="cl-d570861c"><span class="cl-d56d90ec">0.822</span></p></td></tr></tbody></table></div>
+</div>
+</div>
+</figure>
+</div>
+</div>
+<div class="AfterWithoutNote" data-custom-style="AfterWithoutNote">
+<p>A leitura central é direta: o modelo expandido (sete variáveis sociodemográficas mais 16 de prática digital) eleva o AUC do modelo logístico de 0.767 para 0.831 (ΔAUC = +0.063), com aumento simultâneo de <em>recall</em>, especificidade, precisão e F1. A leitura específica nas dimensões de classe de modelo e conjunto de variáveis aponta dois resultados:</p>
+</div>
+<ul>
+<li><strong>A prática digital complementa substancialmente o perfil sociodemográfico</strong>: os ganhos de AUC entre os modelos Originais e Expandidos são de +0.063 para a regressão logística e +0.060 para o Random Forest. Em ambos os casos, o ganho é da ordem de seis pontos de AUC, reproduzindo o efeito independentemente da classe de modelo.</li>
+<li><strong>A escolha entre regressão logística e Random Forest, sobre o mesmo conjunto de variáveis, produz AUCs equivalentes</strong>: ΔAUC entre RF e GLM, sobre o conjunto Original, é de +0.003; sobre o conjunto Expandido, -0.001. O ganho preditivo do modelo expandido é praticamente todo atribuível ao conjunto de variáveis, não à flexibilidade da classe de modelo.</li>
+</ul>
+<p>A <a href="#fig-or" class="quarto-xref" aria-expanded="false">Figura&nbsp;1</a> apresenta os <em>odds ratios</em> das variáveis significativas no GLM Expandido, com intervalos de confiança a 95% e eixo logarítmico. Variáveis de prática digital com ORs mais altos incluem <code>BUSCA_SAUDE</code>, <code>INFO_CURSOS</code>, <code>CELULAR_MAPAS</code> e <code>CELULAR_APPS</code>, indicando que práticas associadas à busca de informação especializada e ao uso ativo do celular são as que mais elevam a chance de adoção, controlado o perfil sociodemográfico.</p>
+<div class="cell FigureWithoutNote" data-custom-style="FigureWithoutNote">
+<div class="cell-output-display">
+<div id="fig-or" class="quarto-float quarto-figure quarto-figure-center" data-fignum="1" prefix="">
+<figure class="quarto-float quarto-float-fig figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-fig" id="fig-or-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="FigureTitle" data-custom-style="FigureTitle">
+<p>Figura&nbsp;1</p>
+</div>
+<div class="Caption" data-custom-style="Caption">
+<p>Odds ratios das variáveis significativas no GLM Expandido (eixo x em escala logarítmica)</p>
+</div>
+</figcaption>
+<div aria-describedby="fig-or-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="artigo_files/figure-html/fig-or-1.svg" class="img-fluid figure-img" width="768">
+</div>
+</figure>
+</div>
+</div>
+</div>
+<div class="AfterWithoutNote" data-custom-style="AfterWithoutNote">
+<p>A <a href="#fig-importancia" class="quarto-xref" aria-expanded="false">Figura&nbsp;2</a> apresenta a importância relativa das variáveis no Random Forest Expandido (medida de impureza Gini, normalizada). A ordenação confirma o padrão observado nos <em>odds ratios</em> da regressão logística: variáveis de prática digital ocupam as primeiras posições, com <code>BUSCA_SAUDE</code> no topo, seguida por idade e variáveis de uso intenso de celular e de informação. A coerência entre os dois métodos sobre o mesmo conjunto de variáveis reforça que o sinal preditivo está nas variáveis, não no modelo.</p>
+</div>
+<div class="cell FigureWithoutNote" data-custom-style="FigureWithoutNote">
+<div class="cell-output-display">
+<div id="fig-importancia" class="quarto-float quarto-figure quarto-figure-center" data-fignum="2" prefix="">
+<figure class="quarto-float quarto-float-fig figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-fig" id="fig-importancia-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="FigureTitle" data-custom-style="FigureTitle">
+<p>Figura&nbsp;2</p>
+</div>
+<div class="Caption" data-custom-style="Caption">
+<p>Importância das variáveis no Random Forest Expandido (impureza Gini, normalizada)</p>
+</div>
+</figcaption>
+<div aria-describedby="fig-importancia-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="artigo_files/figure-html/fig-importancia-1.svg" class="img-fluid figure-img" width="672">
+</div>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="generalização-temporal-holdout-em-2025" class="level3">
+<h3 data-anchor-id="generalização-temporal-holdout-em-2025">Generalização temporal: holdout em 2025</h3>
+<p>Para verificar a estabilidade dos efeitos estimados, os modelos foram retreinados em 2021-2024 e testados na edição de 2025 cega ao processo de estimação. A <a href="#tbl-holdout" class="quarto-xref" aria-expanded="false">Tabela&nbsp;3</a> apresenta os resultados.</p>
+<div class="cell FigureWithoutNote" prefix="" data-tblnum="3" data-custom-style="FigureWithoutNote">
+<div id="tbl-holdout" class="cell quarto-float quarto-figure quarto-figure-center" data-tblnum="3" prefix="">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-holdout-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="FigureTitle" data-custom-style="FigureTitle">
+<p>Tabela&nbsp;3</p>
+</div>
+<div class="Caption" data-custom-style="Caption">
+<p>Desempenho dos modelos no holdout temporal (treino 2021-2024; teste na edição 2025)</p>
+</div>
+</figcaption>
+<div aria-describedby="tbl-holdout-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<div class="tabwid"><style>.cl-0dcc71e2{}.cl-0dc6b338{font-family:'DejaVu Sans';font-size:9pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-0dc92b7c{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:3pt;padding-top:3pt;padding-left:3pt;padding-right:3pt;line-height: 1;background-color:transparent;}.cl-0dc92b86{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:3pt;padding-top:3pt;padding-left:3pt;padding-right:3pt;line-height: 1;background-color:transparent;}.cl-0dc944b8{width:1.183in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-0dc944c2{width:0.569in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-0dc944c3{width:0.59in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-0dc944cc{width:0.736in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-0dc944cd{width:1.183in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-0dc944d6{width:0.569in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-0dc944e0{width:0.59in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-0dc944ea{width:0.736in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-0dc944eb{width:1.183in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-0dc944ec{width:0.569in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-0dc944f4{width:0.59in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-0dc944fe{width:0.736in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style><table data-quarto-disable-processing="true" class="cl-0dcc71e2"><thead><tr style="overflow-wrap:break-word;"><th class="cl-0dc944b8"><p class="cl-0dc92b7c"><span class="cl-0dc6b338">Modelo</span></p></th><th class="cl-0dc944c2"><p class="cl-0dc92b86"><span class="cl-0dc6b338">AUC</span></p></th><th class="cl-0dc944c3"><p class="cl-0dc92b86"><span class="cl-0dc6b338">Recall</span></p></th><th class="cl-0dc944cc"><p class="cl-0dc92b86"><span class="cl-0dc6b338">Precisão</span></p></th><th class="cl-0dc944c2"><p class="cl-0dc92b86"><span class="cl-0dc6b338">F1</span></p></th></tr></thead><tbody><tr style="overflow-wrap:break-word;"><td class="cl-0dc944cd"><p class="cl-0dc92b7c"><span class="cl-0dc6b338">GLM Original</span></p></td><td class="cl-0dc944d6"><p class="cl-0dc92b86"><span class="cl-0dc6b338">0.772</span></p></td><td class="cl-0dc944e0"><p class="cl-0dc92b86"><span class="cl-0dc6b338">0.649</span></p></td><td class="cl-0dc944ea"><p class="cl-0dc92b86"><span class="cl-0dc6b338">0.841</span></p></td><td class="cl-0dc944d6"><p class="cl-0dc92b86"><span class="cl-0dc6b338">0.732</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-0dc944cd"><p class="cl-0dc92b7c"><span class="cl-0dc6b338">GLM Expandido</span></p></td><td class="cl-0dc944d6"><p class="cl-0dc92b86"><span class="cl-0dc6b338">0.835</span></p></td><td class="cl-0dc944e0"><p class="cl-0dc92b86"><span class="cl-0dc6b338">0.680</span></p></td><td class="cl-0dc944ea"><p class="cl-0dc92b86"><span class="cl-0dc6b338">0.882</span></p></td><td class="cl-0dc944d6"><p class="cl-0dc92b86"><span class="cl-0dc6b338">0.768</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-0dc944cd"><p class="cl-0dc92b7c"><span class="cl-0dc6b338">RF Original</span></p></td><td class="cl-0dc944d6"><p class="cl-0dc92b86"><span class="cl-0dc6b338">0.767</span></p></td><td class="cl-0dc944e0"><p class="cl-0dc92b86"><span class="cl-0dc6b338">0.653</span></p></td><td class="cl-0dc944ea"><p class="cl-0dc92b86"><span class="cl-0dc6b338">0.833</span></p></td><td class="cl-0dc944d6"><p class="cl-0dc92b86"><span class="cl-0dc6b338">0.732</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-0dc944eb"><p class="cl-0dc92b7c"><span class="cl-0dc6b338">RF Expandido</span></p></td><td class="cl-0dc944ec"><p class="cl-0dc92b86"><span class="cl-0dc6b338">0.829</span></p></td><td class="cl-0dc944f4"><p class="cl-0dc92b86"><span class="cl-0dc6b338">0.726</span></p></td><td class="cl-0dc944fe"><p class="cl-0dc92b86"><span class="cl-0dc6b338">0.863</span></p></td><td class="cl-0dc944ec"><p class="cl-0dc92b86"><span class="cl-0dc6b338">0.789</span></p></td></tr></tbody></table></div>
+</div>
+</div>
+</figure>
+</div>
+</div>
+<div class="AfterWithoutNote" data-custom-style="AfterWithoutNote">
+<p>O AUC do GLM Expandido em 2025 cego é de aproximadamente 0,835, ligeiramente superior ao AUC obtido em validação cruzada <em>pooled</em> (0,831). A diferença é de magnitude desprezível, sugerindo que os efeitos estimados não dependem de particularidades dos anos de treino e generalizam para o ano subsequente.</p>
+</div>
+</section>
+<section id="sensibilidade-habilidades-digitais-e-estimação-ponderada" class="level3">
+<h3 data-anchor-id="sensibilidade-habilidades-digitais-e-estimação-ponderada">Sensibilidade: habilidades digitais e estimação ponderada</h3>
+<p>Duas análises complementam o achado principal.</p>
+<p>A primeira inclui as 12 variáveis de <strong>habilidades digitais autorelatadas</strong> (I1A_<em>) sobre os anos de 2022-2025 (n ≈ 56 mil), em que as variáveis estão disponíveis. O AUC do GLM expandido sem I1A_</em> sobre essa subamostra é de aproximadamente 0,831; com I1A_<em>, sobe para 0,839 (ΔAUC = +0,008). O Random Forest com I1A_</em> atinge AUC de 0,842 (ΔAUC = +0,010 sobre o RF expandido sem I1A_*). O ganho marginal pequeno indica que as 16 práticas digitais incluídas no modelo expandido já absorvem a maior parte do espaço de habilidades, leitura coerente com a noção teórica de <strong>familiaridade digital</strong> <span class="citation" data-cites="ebbers2016impactof lutz2019digitali">(<a href="#ref-ebbers2016impactof" role="doc-biblioref">Ebbers; Jansen; Deursen, 2016</a>; <a href="#ref-lutz2019digitali" role="doc-biblioref">Lutz, 2019</a>)</span>, em que prática frequente e variada converge funcionalmente com habilidades autorelatadas.</p>
+<p>A segunda análise estima o GLM Expandido com <strong>pesos amostrais</strong> da TIC Domicílios via <em>svyglm</em>, comparando os coeficientes ponderados com os não ponderados. Os coeficientes das 16 variáveis de prática digital mantêm sinal e significância em ambas as estimações; a diferença mediana em log-<em>odds</em> entre as duas estimativas é da ordem de 0,03 em valor absoluto. Algumas variáveis sociodemográficas (CLASSE_CB e níveis de C5_DISPOSITIVOS) perdem significância na estimação ponderada, mas o efeito principal das variáveis de prática digital permanece robusto. O resultado valida o uso da estimação não ponderada como modelo principal sem prejuízo substancial.</p>
+</section>
+</section>
+<section id="discussão" class="level2">
+<h2 data-anchor-id="discussão">Discussão</h2>
+<section id="a-prática-digital-cotidiana-complementa-o-perfil-sociodemográfico" class="level3">
+<h3 data-anchor-id="a-prática-digital-cotidiana-complementa-o-perfil-sociodemográfico">A prática digital cotidiana complementa o perfil sociodemográfico</h3>
+<p>O resultado principal, isto é, o ganho de AUC de aproximadamente seis pontos com a inclusão das 16 variáveis de prática digital cotidiana, oferece evidência direta de que a prática digital complementa, em vez de substituir, o perfil sociodemográfico na explicação da adoção de e-gov no Brasil. As variáveis sociodemográficas tradicionais permanecem com efeitos estatisticamente significativos no modelo expandido, mas seu poder explicativo é incrementado pela inclusão de práticas específicas. O resultado é coerente com a previsão teórica de <span class="citation" data-cites="bchi2016modeling">Büchi; Just; Latzer (<a href="#ref-bchi2016modeling" role="doc-biblioref">2016</a>)</span> de que sociodemográficas explicam até cerca de metade da variância no uso da internet em populações com acesso amplo, deixando espaço para preditores ligados a habilidades e tipos de uso. Em terreno brasileiro, esse “espaço de variância” começa a ser preenchido empiricamente com a evidência aqui reportada.</p>
+<p>A coerência entre os <em>odds ratios</em> da regressão logística e a importância relativa das variáveis no Random Forest, ambos identificando práticas digitais como preditores principais, sugere que o efeito é estrutural (i.e., atribuível ao conjunto de variáveis) e não dependente da classe de modelo escolhida. A <a href="#fig-or" class="quarto-xref" aria-expanded="false">Figura&nbsp;1</a> e a <a href="#fig-importancia" class="quarto-xref" aria-expanded="false">Figura&nbsp;2</a>, comparadas, mostram convergência substantiva sobre quais práticas mais pesam na adoção: busca de informação especializada (saúde, cursos), uso ativo do celular para mapas e <em>apps</em>, e atividades educacionais.</p>
+</section>
+<section id="diálogo-cumulativo-com-vargas2021-e-dodel2023whydevic" class="level3">
+<h3 data-anchor-id="diálogo-cumulativo-com-vargas2021-e-dodel2023whydevic">Diálogo cumulativo com <span class="citation" data-cites="vargas2021">Vargas et al. (<a href="#ref-vargas2021" role="doc-biblioref">2021</a>)</span> e <span class="citation" data-cites="dodel2023whydevic">Dodel (<a href="#ref-dodel2023whydevic" role="doc-biblioref">2023</a>)</span></h3>
+<p>Esta análise estende o trabalho de <span class="citation" data-cites="vargas2021">Vargas et al. (<a href="#ref-vargas2021" role="doc-biblioref">2021</a>)</span> em duas direções complementares. Na primeira, atende a uma sugestão explícita dos próprios autores em suas considerações finais (testar características de uso específicas além da agregação adotada para a variável dependente), incorporando 16 dimensões de prática digital cotidiana. Na segunda, amplia a janela temporal de uma única edição (2019) para o pooled 2021-2025, captando o contexto pós-pandemia, em que práticas digitais ganharam centralidade frente a serviços tradicionais.</p>
+<p><span class="citation" data-cites="dodel2023whydevic">Dodel (<a href="#ref-dodel2023whydevic" role="doc-biblioref">2023</a>)</span> abriu, no Brasil, a frente empírica de “prática digital media o efeito do perfil socioeconômico” ao examinar o dispositivo de acesso (computador versus apenas celular) com microdados da TIC Domicílios 2019 e o framework DiSTO. Nossa análise complementa essa contribuição cumulativa em três aspectos: (i) examina uma variedade ampla de práticas digitais cotidianas, não restrita ao dispositivo; (ii) cobre janela longitudinal pós-pandemia; (iii) avalia estabilidade temporal por holdout em ano cego. A leitura conjunta dos achados aponta para um quadro coerente: o uso da internet pelo cidadão, seja medido pelo dispositivo, seja pela variedade de atividades específicas, opera como camada estruturante da adoção de e-gov no Brasil, complementando os efeitos do perfil sociodemográfico mapeados pela literatura anterior.</p>
+</section>
+<section id="familiaridade-digital-como-construto" class="level3">
+<h3 data-anchor-id="familiaridade-digital-como-construto">Familiaridade digital como construto</h3>
+<p>A análise de sensibilidade com habilidades digitais autorelatadas (I1A_*) traz uma evidência conceitual relevante. O ganho marginal de AUC ao incluir habilidades é da ordem de 0,008 a 0,010, modesto frente ao ganho de seis pontos das 16 práticas. Uma leitura coerente com a literatura é a de <strong>familiaridade digital</strong> como construto convergente: prática frequente e variada da internet aproxima-se funcionalmente do conceito de habilidade autorrelatada, isto é, quem realiza atividades digitais cotidianas reporta-se mais hábil, e o conjunto de práticas observadas captura grande parte do que a autorrelato de habilidades adicionaria como informação. Esse é o sentido em que <span class="citation" data-cites="ebbers2016impactof">Ebbers; Jansen; Deursen (<a href="#ref-ebbers2016impactof" role="doc-biblioref">2016</a>)</span> falam do deslocamento “de <em>channel choice</em> para <em>channel usage</em>”: é o uso, e não a posse de habilidade declarada, que diferencia adoção quando há acesso.</p>
+</section>
+<section id="pandemia-auxílio-emergencial-e-implicações-para-o-brasil" class="level3">
+<h3 data-anchor-id="pandemia-auxílio-emergencial-e-implicações-para-o-brasil">Pandemia, Auxílio Emergencial e implicações para o Brasil</h3>
+<p>A janela 2021-2025 capta o contexto pós-pandêmico, em que o Auxílio Emergencial e a transformação digital de outros serviços públicos forçaram o engajamento de populações historicamente menos familiarizadas com canais digitais. <span class="citation" data-cites="cardoso2020aimpleme">Cardoso (<a href="#ref-cardoso2020aimpleme" role="doc-biblioref">2020</a>)</span> caracteriza esse momento como exemplo de “<em>system-level bureaucracy</em>”, em que decisões pré-programadas via algoritmos passaram a operar serviços públicos em escala. A leitura empírica que esta análise oferece complementa o relato qualitativo: o conjunto de práticas digitais mantém papel central na adoção de e-gov mesmo após o salto na oferta digitalizada, e os efeitos estimados são estáveis temporalmente. A pandemia, em vez de reduzir a importância da prática digital cotidiana (pela hipótese de familiarização forçada), parece ter reforçado seu papel preditivo, em consonância com o achado de <span class="citation" data-cites="vandeursen2020digitali">Deursen (<a href="#ref-vandeursen2020digitali" role="doc-biblioref">2020</a>)</span> em contexto holandês.</p>
+</section>
+<section id="implicação-metodológica" class="level3">
+<h3 data-anchor-id="implicação-metodológica">Implicação metodológica</h3>
+<p>Um achado secundário, mas relevante para a prática de pesquisa empírica em e-gov, é a equivalência de desempenho entre regressão logística, Random Forest e árvore de decisão sobre o mesmo conjunto de variáveis. As três técnicas, sobre os preditores expandidos, atingem AUC praticamente idêntico (cerca de 0,83). A leitura correta não é “o método não importa em geral”, mas sim que, para este desfecho com este conjunto de preditores, o sinal preditivo é majoritariamente linear no espaço ampliado. A escolha entre métodos pode então ser orientada por critérios de interpretabilidade (favorecendo a regressão logística, que oferece <em>odds ratios</em> diretamente comparáveis com a literatura tradicional) sem prejuízo de poder preditivo. Essa observação é coerente com o que <span class="citation" data-cites="browne2021multivar">Browne; Matteson; McBride (<a href="#ref-browne2021multivar" role="doc-biblioref">2021</a>)</span> e <span class="citation" data-cites="mcbride2017israndom">Sohnesen; Stender (<a href="#ref-mcbride2017israndom" role="doc-biblioref">2017</a>)</span> encontraram em domínios distintos (pobreza, malnutrição) e dialoga com o debate sobre quando <em>machine learning</em> mais flexível agrega valor frente a modelos lineares tradicionais.</p>
+</section>
+<section id="limitações" class="level3">
+<h3 data-anchor-id="limitações">Limitações</h3>
+<p>Quatro limitações merecem registro. Primeira, a estimação principal não incorpora pesos amostrais; a análise de sensibilidade via <em>svyglm</em> indica robustez dos efeitos das variáveis de prática digital, mas a generalização para a população brasileira como um todo deve considerar a estrutura amostral complexa da TIC Domicílios. Segunda, o desfecho G1_AGREG é uma agregação binária de 29 questões; uma análise de sensibilidade desagregada por tipo de serviço (declaração de imposto, agendamento médico, matrícula escolar) seria informativa, mas excede o escopo deste artigo. Terceira, a edição de 2025 incluiu uma nova questão sobre serviços de Justiça (G1_H), o que pode inflacionar levemente a proporção de uso comparativamente aos anos anteriores. Quarta, a relação entre perfil sociodemográfico e prática digital (adição, mediação, moderação) não foi formalmente decomposta por análise de mediação. A literatura indica que mediação é provável <span class="citation" data-cites="dodel2023whydevic">(<a href="#ref-dodel2023whydevic" role="doc-biblioref">Dodel, 2023</a>)</span>, e o teste rigoroso desse mecanismo permanece como direção promissora para pesquisa futura.</p>
+</section>
+</section>
+<section id="conclusão-e-implicações" class="level2">
+<h2 data-anchor-id="conclusão-e-implicações">Conclusão e implicações</h2>
+<p>Este estudo investigou em que medida a prática digital cotidiana complementa o perfil sociodemográfico na explicação da adoção de governo eletrônico no Brasil pós-pandemia. Os achados apontam para uma resposta clara: a prática digital adiciona substancialmente ao poder explicativo do perfil sociodemográfico, com ganho de aproximadamente seis pontos de AUC sobre o modelo de <span class="citation" data-cites="vargas2021">Vargas et al. (<a href="#ref-vargas2021" role="doc-biblioref">2021</a>)</span> e estabilidade temporal validada por holdout em 2025.</p>
+<p>Em termos teóricos, a contribuição é a de oferecer evidência empírica brasileira para o deslocamento conceitual, previsto pela literatura internacional de divisão digital, do plano do acesso ao plano do uso. As 16 dimensões de prática digital cotidiana operam como construto coerente, coerente com a noção de familiaridade digital, e ocupam parte expressiva do “espaço de variância” deixado pelas variáveis sociodemográficas tradicionais.</p>
+<p>Em termos práticos, o achado tem implicações para políticas de e-gov: ampliar a adoção depende não apenas de políticas redistributivas que alterem o perfil sociodemográfico (renda, escolaridade), mas também de iniciativas que estimulem práticas digitais cotidianas, como letramento digital aplicado, ofertas de informação online em domínios como saúde e educação e integração de serviços com aplicativos móveis comuns. A pandemia mostrou que a aceleração da oferta digital, isoladamente, não basta: é a familiaridade do cidadão com práticas digitais cotidianas que viabiliza a apropriação dos serviços.</p>
+<p>Direções para pesquisa futura incluem o teste formal de mediação entre perfil sociodemográfico, prática digital e adoção de e-gov; a análise desagregada por tipo de serviço público; e a comparação com países latino-americanos com microdados similares, em diálogo com a agenda de <span class="citation" data-cites="hilbert2016genderan">Gray; Gainous; Wagner (<a href="#ref-hilbert2016genderan" role="doc-biblioref">2016</a>)</span> e <span class="citation" data-cites="reisdorf2021whenbein">Reisdorf (<a href="#ref-reisdorf2021whenbein" role="doc-biblioref">2021</a>)</span>.</p>
+</section>
+
+<section id="referências" class="level2">
+<h2 data-anchor-id="referências">Referências</h2>
+<div id="refs" class="references csl-bib-body" data-entry-spacing="1" role="list">
+<div id="ref-araujo2018servicos" class="csl-entry" role="listitem">
+ARAUJO. <a href="https://doi.org/10.1590/0034-7612171925">Servicos de governo eletronico no Brasil: uma analise a partir das medidas de acesso e competencias de uso da internet</a>. 2018.
+</div>
+<div id="ref-araujoreinha2015contextu" class="csl-entry" role="listitem">
+ARAUJOREINHARD. <a href="https://doi.org/10.5700/rege579">Contextual factors that influence the adoption of e-government in Brazil</a>. 2015.
+</div>
+<div id="ref-belanger2008trustand" class="csl-entry" role="listitem">
+BELANGER. <a href="https://doi.org/10.1016/j.jsis.2007.12.002">Trust and risk in e-government adoption</a>. 2008.
+</div>
+<div id="ref-browne2021multivar" class="csl-entry" role="listitem">
+BROWNE, Chris; MATTESON, David S.; MCBRIDE, Linden. <a href="https://doi.org/10.1371/journal.pone.0255519">Multivariate random forest prediction of poverty and malnutrition prevalence</a>. <strong>Plos One</strong>, 2021.
+</div>
+<div id="ref-bchi2016modeling" class="csl-entry" role="listitem">
+BÜCHI, Moritz; JUST, Natascha; LATZER, Michael. <a href="https://doi.org/10.1177/1461444815604154">Modeling the second-level digital divide: A five-country study of social differences in Internet use</a>. <strong>New Media &amp; Society</strong>, 2016.
+</div>
+<div id="ref-cardoso2020aimpleme" class="csl-entry" role="listitem">
+CARDOSO. <a href="https://doi.org/10.1590/0034-761220200267">A implementacao do Auxilio Emergencial como medida excepcional de protecao social</a>. 2020.
+</div>
+<div id="ref-castellacci2018internet" class="csl-entry" role="listitem">
+CASTELLACCI, Fulvio; TVEITO, Vegard. <a href="https://doi.org/10.1016/j.respol.2017.11.007">Internet use and well-being: A survey and a theoretical framework</a>. <strong>Research Policy</strong>, 2018.
+</div>
+<div id="ref-cetic2025" class="csl-entry" role="listitem">
+CETIC.BR. <strong><span>TIC</span> <span>D</span>omicílios 2015-2025: microdados</strong>. Centro Regional de Estudos para o Desenvolvimento da Sociedade da Informação, 2025. Disponível em: &lt;<a href="https://cetic.br/pt/pesquisa/domicilios/microdados/">https://cetic.br/pt/pesquisa/domicilios/microdados/</a>&gt;
+</div>
+<div id="ref-R-doParallel" class="csl-entry" role="listitem">
+CORPORATION, Microsoft; WESTON, Steve. <strong><a href="https://github.com/RevolutionAnalytics/doparallel">doParallel: Foreach Parallel Adaptor for the parallel Package</a></strong>. <em>[S.l.: S.n.]</em>.
+</div>
+<div id="ref-davis1989perceive" class="csl-entry" role="listitem">
+DAVIS. <a href="https://doi.org/10.2307/249008">Perceived usefulness, perceived ease of use, and user acceptance of information technology</a>. 1989.
+</div>
+<div id="ref-vandeursen2020digitali" class="csl-entry" role="listitem">
+DEURSEN, Alexander Johannes Aloysius Maria van. <a href="https://doi.org/10.2196/20073">Digital Inequality During a Pandemic: Quantitative Study of Differences in COVID-19–Related Internet Uses and Outcomes Among the General Population</a>. <strong>Journal of Medical Internet Research</strong>, 2020.
+</div>
+<div id="ref-dodel2023whydevic" class="csl-entry" role="listitem">
+DODEL, Matías. <a href="https://doi.org/10.1177/08944393231176595">Why Device-Related Digital Inequalities Matter for E-Government Engagement?</a> <strong>Social Science Computer Review</strong>, 2023.
+</div>
+<div id="ref-ebbers2016impactof" class="csl-entry" role="listitem">
+EBBERS, Wolfgang E.; JANSEN, Marloes; DEURSEN, Alexander Johannes Aloysius Maria van. <a href="https://doi.org/10.1016/j.giq.2016.08.007">Impact of the digital divide on e-government: Expanding from channel choice to channel usage</a>. <strong>Government Information Quarterly</strong>, 2016.
+</div>
+<div id="ref-R-survey" class="csl-entry" role="listitem">
+GAO, Peter; SCHNEIDER, Ben; KOLENKIKOV, Stas. <strong><a href="http://r-survey.r-forge.r-project.org/survey/">survey: Analysis of Complex Survey Samples</a></strong>. <em>[S.l.: S.n.]</em>.
+</div>
+<div id="ref-hilbert2016genderan" class="csl-entry" role="listitem">
+GRAY, Tricia; GAINOUS, Jason; WAGNER, Kevin M. <a href="https://doi.org/10.1111/ssqu.12270">Gender and the Digital Divide in Latin America*</a>. <strong>Social Science Quarterly</strong>, 2016.
+</div>
+<div id="ref-tabbara2023clarifyi" class="csl-entry" role="listitem">
+HOODA, Apeksha; GUPTA, Parul; JEYARAJ, Anand. <a href="https://doi.org/10.3127/ajis.v27i0.4079">Clarifying the Role of E-Government Trust in E-Government Success Models: A Meta-analytic Structural Equation Modeling Approach</a>. <strong>Australasian Journal of Information Systems</strong>, 2023.
+</div>
+<div id="ref-krepsky2023administ" class="csl-entry" role="listitem">
+KREPSKY. <a href="https://doi.org/10.37885/230312300">Administracao Publica e exclusao digital: acesso ao Auxilio Emergencial e o direito fundamental a inclusao digital</a>. 2023.
+</div>
+<div id="ref-R-caret" class="csl-entry" role="listitem">
+KUHN, Max. <strong><a href="https://github.com/topepo/caret/">caret: Classification and Regression Training</a></strong>. <em>[S.l.: S.n.]</em>.
+</div>
+<div id="ref-cordella2025factorsi" class="csl-entry" role="listitem">
+LOPES, Karen; LUCIANO, Edimara Mezzomo; WIEDENHÖFT, Guilherme Costa. <a href="https://doi.org/10.1108/rausp-11-2023-0225">Factors influencing the prioritization of rival public value positions in Brazilian digital government initiatives</a>. <strong>Rausp Management Journal</strong>, 2025.
+</div>
+<div id="ref-lutz2019digitali" class="csl-entry" role="listitem">
+LUTZ, Christoph. <a href="https://doi.org/10.1002/hbe2.140">Digital inequalities in the age of artificial intelligence and big data</a>. <strong>Human Behavior and Emerging Technologies</strong>, 2019.
+</div>
+<div id="ref-lythreatis2021thedigit" class="csl-entry" role="listitem">
+LYTHREATIS. <a href="https://doi.org/10.1108/gkmc-06-2020-0075">The digital divide: a literature review and some directions for future research in light of COVID-19</a>. 2021.
+</div>
+<div id="ref-macadar2025servicos" class="csl-entry" role="listitem">
+MACADAR. <a href="https://doi.org/10.59490/dgo.2025.1002">Servicos eletronicos de governo, datafication e data justice</a>. 2025.
+</div>
+<div id="ref-R-rpart.plot" class="csl-entry" role="listitem">
+MILBORROW, Stephen. <strong><a href="http://www.milbo.org/rpart-plot/index.html">rpart.plot: Plot rpart Models: An Enhanced Version of plot.rpart</a></strong>. <em>[S.l.: S.n.]</em>.
+</div>
+<div id="ref-vu2022driverso" class="csl-entry" role="listitem">
+NGUYEN, Hoai Than; BORAZON, Elaine Q. <a href="https://doi.org/10.1108/oir-08-2021-0440">Drivers of e-government use during the COVID-19 pandemic: the case of Vietnam</a>. <strong>Online Information Review</strong>, 2022.
+</div>
+<div id="ref-panagiotopou2019publicva" class="csl-entry" role="listitem">
+PANAGIOTOPOULOS, Panos; KLIEVINK, Bram; CORDELLA, Antonio. <a href="https://doi.org/10.1016/j.giq.2019.101421">Public value creation in digital government</a>. <strong>Government Information Quarterly</strong>, 2019.
+</div>
+<div id="ref-reineke2015explicat" class="csl-entry" role="listitem">
+PARK, Yong‐Jin. <a href="https://doi.org/10.1177/0093650215601883">Explicating Net Diversity in Trend Assessment</a>. <strong>Communication Research</strong>, 2015.
+</div>
+<div id="ref-pearce2019takingad" class="csl-entry" role="listitem">
+PEARCE. <a href="https://doi.org/10.1016/j.poetic.2019.101426">Taking advantage of the Internet: a qualitative analysis to explain why educational background is decisive in gaining positive outcomes</a>. 2019.
+</div>
+<div id="ref-quarto" class="csl-entry" role="listitem">
+POSIT SOFTWARE, PBC. <strong><a href="https://quarto.org">Quarto: An Open-Source Scientific and Technical Publishing System</a></strong>. <em>[S.l.: S.n.]</em>.
+</div>
+<div id="ref-priyashantha2022determin" class="csl-entry" role="listitem">
+PRIYASHANTHA, K. G.; DILHANI, V. I. <a href="https://doi.org/10.4038/kjhrm.v17i1.107">Determinants of E-government Adoption: A Systematic Literature Review</a>. <strong>Kelaniya Journal of Human Resource Management</strong>, 2022.
+</div>
+<div id="ref-R-base" class="csl-entry" role="listitem">
+R CORE TEAM. <strong><a href="https://www.R-project.org/">R: A Language and Environment for Statistical Computing</a></strong>. Vienna, Austria: R Foundation for Statistical Computing, 2026.
+</div>
+<div id="ref-reisdorf2021whenbein" class="csl-entry" role="listitem">
+REISDORF. <a href="https://doi.org/10.5325/jinfopoli.11.2021.0104">When being connected is not enough: an analysis of the second and third levels of the digital divide in a developing country</a>. 2021.
+</div>
+<div id="ref-R-pROC" class="csl-entry" role="listitem">
+ROBIN, Xavier <em>et al.</em> <strong><a href="https://xrobin.github.io/pROC/">pROC: Display and Analyze ROC Curves</a></strong>. <em>[S.l.: S.n.]</em>.
+</div>
+<div id="ref-R-broom" class="csl-entry" role="listitem">
+ROBINSON, David; HAYES, Alex; COUCH, Simon. <strong><a href="https://broom.tidymodels.org/">broom: Convert Statistical Objects into Tidy Tibbles</a></strong>. <em>[S.l.: S.n.]</em>.
+</div>
+<div id="ref-lzroiu2020citizens" class="csl-entry" role="listitem">
+RODRIGUEZ-HEVÍA, Luisa Fernanda; NAVÍO-MARCO, Julio; RUIZ-GÓMEZ, Luis Manuel. <a href="https://doi.org/10.3390/su12176807">Citizens’ Involvement in E-Government in the European Union: The Rising Importance of the Digital Skills</a>. <strong>Sustainability</strong>, 2020.
+</div>
+<div id="ref-roztocki2022digitalf" class="csl-entry" role="listitem">
+ROZTOCKI. <a href="https://doi.org/10.1111/1758-5899.13140">Digital footprints as barriers to accessing e-government services</a>. 2022.
+</div>
+<div id="ref-mardiana2020evidence" class="csl-entry" role="listitem">
+SANTOS, Renato P. dos; BÜLBÜL, Mustafa Şahin; LEMES, Isadora Luiz. <a href="https://doi.org/10.17648/acta.scientiae.6006">Evidence from Google Trends of a Widening Second-level Digital Divide in Brazil. Even Worse with the Covid-19</a>. <strong>Acta Scientiae</strong>, 2020.
+</div>
+<div id="ref-shamseer2015preferre" class="csl-entry" role="listitem">
+SHAMSEER. <a href="https://doi.org/10.1136/bmj.g7647">Preferred reporting items for systematic review and meta-analysis protocols (PRISMA-P) 2015: elaboration and explanation</a>. 2015.
+</div>
+<div id="ref-susmiati2019usingadi" class="csl-entry" role="listitem">
+SIQUEIRA, Érica Souza; SOUZA, César Alexandre de; BARBOSA, Alexandre. <a href="https://doi.org/10.1002/isd2.12088">Using a digital divide index among enterprises in the context of public policies in Brazil</a>. <strong>the Electronic Journal of Information Systems in Developing Countries</strong>, 2019.
+</div>
+<div id="ref-mcbride2017israndom" class="csl-entry" role="listitem">
+SOHNESEN, Thomas Pave; STENDER, Niels. <a href="https://doi.org/10.1002/pop4.169">Is Random Forest a Superior Methodology for Predicting Poverty? An Empirical Assessment</a>. <strong>Poverty &amp; Public Policy</strong>, 2017.
+</div>
+<div id="ref-R-rpart" class="csl-entry" role="listitem">
+THERNEAU, Terry; ATKINSON, Beth. <strong><a href="https://github.com/bethatkinson/rpart">rpart: Recursive Partitioning and Regression Trees</a></strong>. <em>[S.l.: S.n.]</em>.
+</div>
+<div id="ref-vandeursen2018thefirst" class="csl-entry" role="listitem">
+VANDEURSEN. <a href="https://doi.org/10.1177/1461444818797082">The first-level digital divide shifts from inequalities in physical access to inequalities in material access</a>. 2018.
+</div>
+<div id="ref-vandijk2008explaini" class="csl-entry" role="listitem">
+VANDIJK. <a href="https://doi.org/10.1016/j.giq.2007.09.006">Explaining the acceptance and use of government Internet services: A multivariate analysis of 2006 survey data in the Netherlands</a>. 2008.
+</div>
+<div id="ref-vargas2021" class="csl-entry" role="listitem">
+VARGAS, Luiz Claudio Mendes <em>et al.</em> <a href="https://doi.org/10.1590/1679-395120200206">Serviços de governo eletrônico no <span>B</span>rasil: uma análise sobre fatores de impacto na decisão de uso do cidadão</a>. <strong>Cadernos <span>EBAPE.BR</span></strong>, v. 19, n. Ed. Esp., p. 792–810, 2021.
+</div>
+<div id="ref-venkatesh2003useracce" class="csl-entry" role="listitem">
+VENKATESH. <a href="https://doi.org/10.2307/30036540">User acceptance of information technology: Toward a unified view (UTAUT)</a>. 2003.
+</div>
+<div id="ref-R-tidyverse" class="csl-entry" role="listitem">
+WICKHAM, Hadley. <strong><a href="https://tidyverse.tidyverse.org">tidyverse: Easily Install and Load the Tidyverse</a></strong>. <em>[S.l.: S.n.]</em>.
+</div>
+<div id="ref-R-haven" class="csl-entry" role="listitem">
+WICKHAM, Hadley; MILLER, Evan; SMITH, Danny. <strong><a href="https://haven.tidyverse.org">haven: Import and Export SPSS, Stata and SAS Files</a></strong>. <em>[S.l.: S.n.]</em>.
+</div>
+<div id="ref-R-ranger" class="csl-entry" role="listitem">
+WRIGHT, Marvin N. <strong><a href="https://imbs-hl.github.io/ranger/">ranger: A Fast Implementation of Random Forests</a></strong>. <em>[S.l.: S.n.]</em>.
+</div>
+<div id="ref-R-knitr" class="csl-entry" role="listitem">
+XIE, Yihui. <strong><a href="https://yihui.org/knitr/">knitr: A General-Purpose Package for Dynamic Report Generation in R</a></strong>. <em>[S.l.: S.n.]</em>.
+</div>
+</div>
+</section>
+</section>
+
+<div id="quarto-appendix" class="default"><section id="apêndice" class="level2 appendix"><h2 class="anchored quarto-appendix-heading">Apêndice</h2><div class="quarto-appendix-contents">
+
+<section id="código-central-de-treinamento-dos-modelos" class="level3">
+<h3 data-anchor-id="código-central-de-treinamento-dos-modelos">Código central de treinamento dos modelos</h3>
+<p>O treinamento dos modelos foi realizado em três scripts standalone (<code>scripts/fit_ml.R</code>, <code>scripts/fit_i1a.R</code> e <code>scripts/fit_svyglm.R</code>), com saída em arquivos RDS lidos por este artigo. Reproduzem-se a seguir os trechos centrais para fins de transparência metodológica; o código completo está disponível no notebook técnico que acompanha o artigo.</p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>scripts/fit_ml.R (excerto)</strong></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-filename="scripts/fit_ml.R (excerto)"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Variáveis do artigo de referência (Vargas et al., 2021)</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>vars_art <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"IDADE"</span>, <span class="st">"PEA"</span>, <span class="st">"H2"</span>, <span class="st">"RENDA_FAMILIAR"</span>, <span class="st">"CLASSE_CB"</span>,</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>              <span class="st">"GRAU_INSTRUCAO"</span>, <span class="st">"C5_DISPOSITIVOS"</span>)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>vars_categoricas <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"RENDA_FAMILIAR"</span>, <span class="st">"CLASSE_CB"</span>, <span class="st">"GRAU_INSTRUCAO"</span>,</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>                      <span class="st">"C5_DISPOSITIVOS"</span>)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># 16 variáveis de prática digital cotidiana (selecionadas por screening)</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Códigos TIC originais renomeados em scripts/var_labels.R para nomes</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co"># interpretáveis (BUSCA_SAUDE, CELULAR_MAPAS, ESTUDO_AUTONOMO, ...)</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">"scripts/var_labels.R"</span>)</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Folds fixos para comparação pareada entre modelos</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>folds <span class="ot">&lt;-</span> caret<span class="sc">::</span><span class="fu">createFolds</span>(df<span class="sc">$</span>egov, <span class="at">k =</span> <span class="dv">5</span>, <span class="at">returnTrain =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>ctrl  <span class="ot">&lt;-</span> caret<span class="sc">::</span><span class="fu">trainControl</span>(<span class="at">method =</span> <span class="st">"cv"</span>, <span class="at">number =</span> <span class="dv">5</span>, <span class="at">index =</span> folds,</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>                             <span class="at">classProbs =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>                             <span class="at">summaryFunction =</span> caret<span class="sc">::</span>twoClassSummary,</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>                             <span class="at">savePredictions =</span> <span class="st">"final"</span>)</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Cinco modelos sobre o mesmo N e mesmas folds</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>glm_orig <span class="ot">&lt;-</span> caret<span class="sc">::</span><span class="fu">train</span>(egov <span class="sc">~</span> ., <span class="at">data =</span> df_orig, <span class="at">method =</span> <span class="st">"glm"</span>,</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>                         <span class="at">family =</span> <span class="st">"binomial"</span>, <span class="at">trControl =</span> ctrl, <span class="at">metric =</span> <span class="st">"ROC"</span>)</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>glm_exp  <span class="ot">&lt;-</span> caret<span class="sc">::</span><span class="fu">train</span>(egov <span class="sc">~</span> ., <span class="at">data =</span> df_exp,  <span class="at">method =</span> <span class="st">"glm"</span>,</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>                         <span class="at">family =</span> <span class="st">"binomial"</span>, <span class="at">trControl =</span> ctrl, <span class="at">metric =</span> <span class="st">"ROC"</span>)</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>tree     <span class="ot">&lt;-</span> caret<span class="sc">::</span><span class="fu">train</span>(egov <span class="sc">~</span> ., <span class="at">data =</span> df_orig, <span class="at">method =</span> <span class="st">"rpart"</span>,</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>                         <span class="at">trControl =</span> ctrl, <span class="at">metric =</span> <span class="st">"ROC"</span>)</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>rf_orig  <span class="ot">&lt;-</span> caret<span class="sc">::</span><span class="fu">train</span>(egov <span class="sc">~</span> ., <span class="at">data =</span> df_orig, <span class="at">method =</span> <span class="st">"ranger"</span>,</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>                         <span class="at">trControl =</span> ctrl, <span class="at">metric =</span> <span class="st">"ROC"</span>,</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>                         <span class="at">num.trees =</span> <span class="dv">300</span>, <span class="at">num.threads =</span> <span class="dv">1</span>)</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>rf_exp   <span class="ot">&lt;-</span> caret<span class="sc">::</span><span class="fu">train</span>(egov <span class="sc">~</span> ., <span class="at">data =</span> df_exp,  <span class="at">method =</span> <span class="st">"ranger"</span>,</span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>                         <span class="at">trControl =</span> ctrl, <span class="at">metric =</span> <span class="st">"ROC"</span>,</span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>                         <span class="at">num.trees =</span> <span class="dv">300</span>, <span class="at">num.threads =</span> <span class="dv">1</span>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>scripts/fit_i1a.R (excerto)</strong></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2" data-filename="scripts/fit_i1a.R (excerto)"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Habilidades digitais autorelatadas (12 itens, disponíveis a partir de 2022).</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co"># "Não sei / Não respondeu" (códigos 97/98/99) é tratado como ausência da</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co"># habilidade (0), evitando perda massiva de N por drop_na.</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>vars_i1a <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"I1A_A"</span>,<span class="st">"I1A_B"</span>,<span class="st">"I1A_C"</span>,<span class="st">"I1A_D"</span>,<span class="st">"I1A_E"</span>,<span class="st">"I1A_F"</span>,</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>              <span class="st">"I1A_G"</span>,<span class="st">"I1A_H"</span>,<span class="st">"I1A_I"</span>,<span class="st">"I1A_J"</span>,<span class="st">"I1A_K"</span>,<span class="st">"I1A_L"</span>)</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>recode_hab <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>  x <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(x)</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>  x[x <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">97</span>, <span class="dv">98</span>, <span class="dv">99</span>)] <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>  x</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>pool <span class="ot">&lt;-</span> pool <span class="sc">|&gt;</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="fu">across</span>(<span class="fu">all_of</span>(vars_i1a), recode_hab))</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+</div></section></div></main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copiada");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copiada");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

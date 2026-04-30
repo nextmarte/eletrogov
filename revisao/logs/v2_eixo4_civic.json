@@ -1,0 +1,102 @@
+{
+  "total": 1046,
+  "count": 8,
+  "query": "\"online activities\" AND \"civic engagement\" AND citizen",
+  "hits": [
+    {
+      "doi": "10.1093/oso/9780190082871.003.0009",
+      "title": "Digital Media’s Impact on Civic Engagement",
+      "year": 2022,
+      "journal": null,
+      "authors": [
+        "Michael A. Xenos"
+      ],
+      "tally": null,
+      "abstract": "Like those before them, contemporary youth are in the process of forming habits and orientations toward civic life that can establish patterns of political engagement that follow them through their lifetimes. Unlike earlier generations, however, early 21st-century “born digital” youth face a dramati"
+    },
+    {
+      "doi": "10.51983/arss-2019.8.s1.1500",
+      "title": "Social Media, Civic Engagement and Political Participation",
+      "year": 2019,
+      "journal": "asian review of social sciences",
+      "authors": [
+        "Boby John",
+        "John Kennedy"
+      ],
+      "tally": 0,
+      "abstract": "Civic engagement has traditionally been considered a much desired trait of good citizenship. Many researches in the past few decades have treated civic engagement level as one of the variables to measure political participation. Since active and constructive political participation of the citizenry "
+    },
+    {
+      "doi": "10.1177/0899764021999444",
+      "title": "Does Social Media Engagement Translate to Civic Engagement Offline?",
+      "year": 2021,
+      "journal": "nonprofit and voluntary sector quarterly",
+      "authors": [
+        "Jaclyn Piatak",
+        "Ian Mikkelsen"
+      ],
+      "tally": 12,
+      "abstract": "People increasingly engage in politics on social media, but does online engagement translate to offline engagement? Research is mixed with some suggesting how one uses the internet maters. We examine how political engagement on social media corresponds to offline engagement. Using data following the"
+    },
+    {
+      "doi": "10.2991/acec-18.2018.70",
+      "title": "Indonesian Politicians’ Social Media Role in Encouraging Civic Engagement",
+      "year": 2018,
+      "journal": null,
+      "authors": [
+        "Alia Azmi",
+        "Ike Sylvia",
+        "Desy Mardhiah"
+      ],
+      "tally": null,
+      "abstract": "Among the fields that benefit from the internet and social media use are political participation and civic engagement. Politicians have long been using social media for their interests including campaigning and communicating with their constituents. On the other hand, civic engagement, which might i"
+    },
+    {
+      "doi": "10.1177/08944393211067687",
+      "title": "Standby Ties that Mobilize: Social Media Platforms and Civic Engagement",
+      "year": 2022,
+      "journal": "social science computer review",
+      "authors": [
+        "Shelley Boulianne"
+      ],
+      "tally": 0,
+      "abstract": "Nonprofit organizations and groups depend on donations and volunteers for their survival. Digital media can help by offering a platform for making online donations and facilitating online volunteering, but also by identifying and connecting with people who are sympathetic to an organization’s missio"
+    },
+    {
+      "doi": "10.14434/josotl.v22i4.32846",
+      "title": "Implementing Campus-level Programming: Pathways for Online Civic Engagement",
+      "year": 2022,
+      "journal": "journal of the scholarship of teaching and learning",
+      "authors": [
+        "Angela M. McGowan-Kirsch"
+      ],
+      "tally": 0,
+      "abstract": "In a year marked by social unrest and a global pandemic, the 2020 presidential election occurred within a context of polarization and incivility. An American Democracy Project (ADP) campus believed that two ways to offset these complications were teaching students how to maintain norms of civility a"
+    },
+    {
+      "doi": "10.1111/1467-8268.70025",
+      "title": "The Impact of Online Activism on Civic Engagement in Sub‐Saharan Africa",
+      "year": 2025,
+      "journal": "african development review",
+      "authors": [
+        "Tchapo Gbandi",
+        "Yawo Agbényégan Noglo",
+        "Komivi Afawubo"
+      ],
+      "tally": null,
+      "abstract": "ABSTRACTSocial media has witnessed a significant surge over the past decade as a platform for diverse interactions across various domains, including politics and religion. However, the effects of social media in Africa remain underexplored. This paper analysed the impact of online political and reli"
+    },
+    {
+      "doi": "10.21831/jc.v18i2.41499",
+      "title": "Civic engagement: Digital activism of university students in Malang amidst covid-19 pandemic",
+      "year": 2021,
+      "journal": "jurnal civics media kajian kewarganegaraan",
+      "authors": [
+        "Nurbani Yusuf",
+        "Arif Prasetyo Wibowo"
+      ],
+      "tally": 4,
+      "abstract": "This research discusses: a) The digital activism of university students in Malang amidst COVID-19 pandemic, b) The media used by the students to run the digital activism amidst the COVID-19 pandemic, and c) Political movements carried out by the students amidst the COVID-19 pandemic. This present re"
+    }
+  ]
+}

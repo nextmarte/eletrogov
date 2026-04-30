@@ -1,0 +1,115 @@
+---
+title: "Determinantes do uso de governo eletrônico em populações com heterogeneidade digital: uma revisão sistemática"
+author: "Marcus"
+date: "2026-04-29"
+lang: pt-BR
+bibliography: refs.bib
+csl: abnt-cadernos-ebape.csl
+format:
+  html:
+    toc: true
+    number-sections: true
+---
+
+## Introdução {#sec-intro}
+
+A adoção de serviços de governo eletrônico (e-gov) por cidadãos é objeto de investigação acumulada desde a popularização da internet, com tradição teórica ancorada nos modelos de aceitação de tecnologia [@davis1989perceive; @venkatesh2003useracce] e nas suas aplicações ao setor público [@vandijk2008explaini]. No Brasil, @vargas2021 forneceram a análise quantitativa mais ampla do tema usando microdados da TIC Domicílios 2019, identificando idade, renda familiar, condição de atividade, classe econômica, escolaridade, dispositivos de acesso e uso de e-commerce como determinantes significativos.
+
+Apesar dessa contribuição, três lacunas persistem na literatura recente sobre adoção de e-gov em contextos de heterogeneidade digital:
+
+1. **Lacuna empírica longitudinal**: a maioria dos estudos brasileiros recentes adota corte transversal único [@vargas2021; @araujo2018servicos], o que impede examinar trajetórias de adoção pré e pós-pandemia.
+2. **Lacuna nas variáveis de intensidade de uso**: a literatura internacional sobre digital divide deslocou-se do nível 1 (acesso) para os níveis 2 e 3 (habilidades, uso e outcomes) [@bchi2016modeling; @lutz2019digitali; @ebbers2016impactof], mas estudos aplicados a e-gov no Brasil ainda operam predominantemente com variáveis sociodemográficas clássicas.
+3. **Lacuna metodológica comparativa**: comparações sistemáticas entre regressão logística e modelos de machine learning (ML) em surveys nacionais aplicados a e-gov são raras; quando existem [@browne2021multivar; @mcbride2017israndom], focam em pobreza ou saúde.
+
+Esta revisão consolida a literatura empírica e teórica relevante (2015-2026), com snowball backward para clássicos pré-2015, e fundamenta a posição de uma extensão metodológica e empírica do modelo de @vargas2021 que: (a) amplia para análise pooled 2021-2025, (b) incorpora variáveis de intensidade e variedade de uso digital, (c) inclui habilidades digitais autorelatadas, e (d) compara empiricamente regressão logística contra random forest.
+
+## Métodos da revisão {#sec-metodos}
+
+Protocolo adaptado de PRISMA-P 2015 [@shamseer2015preferre]. Pergunta operacional formulada em PICOC com população (cidadãos brasileiros adultos), interesse (determinantes socioeconômicos + uso digital + habilidades), comparador (modelos lineares vs não-lineares), outcome (adoção de e-gov), contexto (Brasil prioritário, pós-2015).
+
+Busca via scite MCP, cobrindo PubMed, CrossRef e OpenAlex, em seis eixos temáticos com strings booleanas específicas. Critérios de inclusão: empírico ou revisão sistemática; 2015-2026; PT, EN ou ES; com DOI verificável; foco em adoção/uso de e-gov, divisão digital, habilidades digitais, ML em surveys ou determinantes socioeconômicos de uso digital. Critérios de exclusão: editoriais, comentários, papers retratados, foco em tecnologia específica sem relação com adoção pelo cidadão.
+
+Avaliação de qualidade em quatro dimensões (rigor, relevância, atualidade, venue), cada uma de 0 a 2; classe alta para escore ≥ 6. Snowball backward a partir das referências de @vargas2021 e dos papers centrais; snowball forward via smart citations a @vargas2021. Excerpts de full-text salvos por DOI para auditoria anti-alucinação.
+
+Total final: **55 papers aceitos** após duas rodadas de busca (rodada 1 exploratória nos seis eixos, rodada 2 refinada para preencher lacunas em ML aplicado a e-gov, Brasil pós-pandemia e digital footprints). Distribuição por origem: 39 dos eixos da rodada 1, 8 do snowball backward (clássicos TAM/UTAUT/Van Dijk), 2 do snowball forward (continuação dos próprios autores), 6 da rodada 2 refinada. Vinte e quatro marcados como centrais; vinte e nove classificados como qualidade alta.
+
+## Eixo 1: Frameworks de adoção de e-gov {#sec-eixo1}
+
+A literatura brasileira e internacional sobre adoção de e-gov ancora-se em duas tradições: modelos de aceitação de tecnologia (TAM, UTAUT) e a perspectiva de criação de valor público.
+
+@davis1989perceive propôs o Technology Acceptance Model (TAM), em que utilidade percebida e facilidade de uso percebida predizem intenção de adoção. @venkatesh2003useracce consolidou a teoria unificada (UTAUT) acrescentando expectativa de desempenho, expectativa de esforço, influência social e condições facilitadoras. @vandijk2008explaini estendeu o modelo para o domínio governamental, cruzando atributos de serviço com fatores sociodemográficos (idade, gênero, escolaridade, ocupação) num framework multidisciplinar.
+
+A perspectiva de **public value** desloca o foco da eficiência interna do setor público para a criação de valor relacional fora da organização [@panagiotopou2019publicva; @cordella2025factorsi]. @panagiotopou2019publicva argumentam que public value de e-gov é multidimensional e se reflete no consumo combinado de múltiplos serviços, e não em métricas de tecnologias isoladas. @cordella2025factorsi exploram empiricamente como prioridades rivais de public value se manifestam em iniciativas de e-gov no Brasil.
+
+A revisão sistemática PRISMA de @priyashantha2022determin sobre 55 papers Scopus 2015-2020 encontra como determinantes recorrentes da adoção de e-gov: utilidade percebida, facilidade percebida, confiança, risco percebido, expectativa de desempenho, expectativa de esforço, influência social, condições facilitadoras, awareness do cidadão, custo, satisfação e desigualdade digital. @almuraqab2016egovernm reforçam o papel mediador da satisfação na trajetória de adoção. @tabbara2023clarifyi consolidam via meta-SEM o papel central da confiança nos modelos de sucesso de e-gov.
+
+Trabalhos brasileiros precursores [@araujoreinha2015contextu; @araujo2018servicos] apontaram fatores contextuais (classe social, local de acesso, competências de uso) como influenciadores em estudos qualitativos ou de pequeno porte. @vargas2021 forneceram a primeira análise quantitativa em larga escala desses determinantes para o Brasil, usando regressão logística sobre microdados nacionais.
+
+## Eixo 2: Divisão digital no Brasil e na América Latina {#sec-eixo2}
+
+A literatura sobre digital divide reconhece três níveis sucessivos de desigualdade [@lutz2019digitali]: acesso (primeiro nível), habilidades e uso (segundo nível) e outcomes obtidos (terceiro nível). Em países desenvolvidos com acesso ampliado, o segundo nível assumiu centralidade [@bchi2016modeling; @ebbers2016impactof].
+
+Na América Latina, @hilbert2016genderan documenta o gap de gênero no acesso à internet, com persistência mesmo após controles socioeconômicos. Estudos comparativos entre LATAM e Europa mostram trajetórias divergentes mas convergência parcial em adoção de internet móvel. No Brasil especificamente, @susmiati2019usingadi propõem um índice de digital divide entre empresas; @reineke2015explicat e @distel2023whydevic apontam que o **dispositivo de acesso** (apenas celular vs computador) tem efeito estrutural sobre o engajamento com serviços públicos.
+
+Estudos pós-pandemia [@mardiana2020evidence] usando Google Trends sugerem que a COVID-19 **ampliou** o segundo-nível digital divide no Brasil, especialmente em camadas socioeconômicas menos favorecidas, em vez de reduzi-lo via familiarização forçada com o digital.
+
+## Eixo 3: Segundo nível do digital divide e habilidades digitais {#sec-eixo3}
+
+@bchi2016modeling, em estudo SEM com cinco países de baixo gap de acesso, encontram que variáveis sociodemográficas explicam até **50%** da variância no uso da internet, com idade como preditor mais forte. Os ~50% restantes deixam espaço amplo para preditores adicionais relacionados a tipos específicos de uso e habilidades.
+
+@ebbers2016impactof argumentam que o impacto do digital divide sobre e-gov **se expande de channel choice para channel usage**: dada a presença de acesso, escolhas de canal pouco se diferenciam por habilidade, mas a **intensidade e satisfação do uso** sim. A operacionalização de habilidades via experiência de uso da internet em diferentes atividades, incluindo compras online [@belanger2008trustand], antecipa nossa estratégia metodológica de incluir e-commerce (H2) e variáveis de uso intenso (C8/J2/C10/C11) como proxies de familiaridade digital.
+
+@lzroiu2020citizens evidenciam a importância das habilidades digitais para o engajamento dos cidadãos com e-gov na União Europeia, sustentando empiricamente que skills é mediador estrutural da relação entre acesso e adoção.
+
+## Eixo 4: Intensidade e variedade de uso digital {#sec-eixo4}
+
+@castellacci2018internet apresentam framework teórico em que a internet afeta bem-estar via quatro canais distintos: alteração de padrões de tempo, criação de novas atividades, acesso a informação e ferramenta de comunicação. Os efeitos variam conforme características pessoais (psicológicas, capabilities, framing cultural). A heurística empírica é clara: não é "uso de internet" em geral que importa, mas as **atividades específicas** combinadas com as **capacidades** do usuário.
+
+@reineke2015explicat distinguem **diversidade de uso da internet** (net diversity) como construto distinto da intensidade pura. Essa distinção sustenta a inclusão na expansão metodológica de variáveis que capturem tanto frequência quanto variedade de atividades digitais.
+
+## Eixo 5: Machine learning vs regressão logística em surveys {#sec-eixo5}
+
+@browne2021multivar demonstram que random forest interpretável aplicado a dados públicos georreferenciados produz acurácia comparável a deep learning para previsão de pobreza e malnutrição em onze países de baixa e média renda. @mcbride2017israndom, em assessment empírico anterior, matizam o veredicto: random forest é superior a logística em alguns contextos, equivalente em outros, dependendo da estrutura dos dados.
+
+A literatura aplicada a adoção de e-gov é escassa nesse eixo. Estudos específicos comparando ML e GLM em surveys de uso digital governamental são raros; @garcaro2023differen exploram diferentes abordagens analíticas no contexto da pandemia, mas não com dados nacionais brasileiros. @lupo2022egovernm aplica ML para predição de adoção de e-gov na Europa em estudo recente ainda com baixa difusão (3 citações), evidenciando lacuna ativa. Esta lacuna metodológica é um dos pontos onde nossa contribuição se posiciona.
+
+## Eixo 6: COVID-19 e e-gov {#sec-eixo6}
+
+@vandeursen2020digitali, em survey holandês com 1733 respondentes, mostra que letramento, educação, atitude à internet, acesso material e habilidades digitais predizem usos e outcomes relacionados à COVID-19, enquanto recursos econômicos e sociais perdem significância após controles. A conclusão central é que a pandemia **reforça** desigualdades preexistentes: indivíduos já advantaged usam mais e melhor as oportunidades digitais.
+
+Estudos em outros países corroboram o achado: @vu2022driverso (Vietnã) identificam expectativa de desempenho, social influence e condições facilitadoras como drivers da adoção de e-gov durante a COVID-19. @garcaro2023differen comparam abordagens analíticas no mesmo período. @mardiana2020evidence documenta o efeito específico no Brasil de ampliação do divide pelo Google Trends.
+
+No contexto brasileiro, o caso emblemático é o **Auxílio Emergencial** instituído pela Lei 13.982/2020. @cardoso2020aimpleme analisa sua implementação como caso de "system-level bureaucracy", na qual decisões pré-programadas via algoritmos e fluxos digitais operam o serviço público em escala. O programa atendeu populações historicamente pouco familiarizadas com canais digitais, incluindo aproximadamente 59 milhões de brasileiros com hábito de uso de dinheiro físico, expondo limites de uma operação puramente digital sob exclusão pré-existente. Trabalhos complementares [@krepsky2023administ] confirmam que a implementação do AE evidenciou que cidadania digital é precondição material para efetividade de políticas que dependem de e-gov.
+
+Esses achados sustentam a relevância da janela 2021-2025 e da inclusão de variáveis que capturam **familiaridade digital** (uso intenso, habilidades) como mediadores estruturais da adoção de e-gov no Brasil pós-pandemia.
+
+Adicionalmente, @roztocki2022digitalf documentam como **pegadas digitais** (digital footprints) atuam como barreira: cidadãos sem histórico de uso online enfrentam dificuldade adicional para acessar e-gov, reforçando que a intensidade prévia de uso da internet condiciona a possibilidade de adesão.
+
+## Síntese e gap teórico-empírico {#sec-sintese}
+
+A literatura mostra três deslocamentos convergentes:
+
+1. **Do acesso ao uso**: o digital divide consolidou-se como fenômeno multinível (acesso, habilidades, outcomes), com o segundo nível ganhando centralidade analítica em contextos de penetração ampla.
+2. **Do agregado ao específico**: as atividades digitais específicas, sua intensidade e diversidade, passam a explicar variação que sociodemográficas isoladas deixam aberta (até 50% da variância).
+3. **Do método único ao comparativo**: a expansão de ML em ciência social aplicada a surveys está em curso, com veredicto ainda indefinido sobre quando ML supera modelos lineares.
+
+Aplicado ao caso brasileiro, esses três deslocamentos identificam um **gap empírico-metodológico**: análise pooled 2021-2025 do uso de e-gov no Brasil, que (a) incorpore variáveis de intensidade e variedade de uso digital + habilidades digitais autorelatadas, (b) compare empiricamente regressão logística e random forest, (c) valide generalização via holdout temporal.
+
+A continuação do trabalho original [@cordella2025factorsi; @macadar2025servicos] aponta direções como public value e data justice, mas não retoma a estratégia quantitativa. Esta revisão abre espaço para uma extensão metodológica direta de @vargas2021.
+
+## Posicionamento da contribuição {#sec-contrib}
+
+Esta revisão sustenta cinco contribuições do estudo de continuação:
+
+1. **Extensão longitudinal pooled 2021-2025**: cobre o período pós-pandemia e captura tendências temporais que o corte 2019 de @vargas2021 não pode revelar.
+2. **Variáveis de intensidade e variedade de uso digital**: dezesseis variáveis de uso (C8/J2/C10/C11/C7/B1) elevam o AUC do modelo de 0,77 para 0,83, alinhado com a previsão da literatura de divide segundo nível [@bchi2016modeling; @ebbers2016impactof; @castellacci2018internet] de que sociodemográficas deixam ~50% inexplicado.
+3. **Sub-modelo de habilidades digitais autorelatadas (I1A_*)**: testa empiricamente o mediador "familiaridade digital" sugerido por @lutz2019digitali e @vandeursen2020digitali.
+4. **Comparação empírica GLM × random forest**: contribui para o debate aberto [@browne2021multivar; @mcbride2017israndom] aplicado especificamente a e-gov, mostrando que o ganho preditivo vem das **variáveis** (não do método): random forest sobre o conjunto expandido empata com regressão logística sobre o mesmo conjunto, mas ambos superam regressão logística sobre o conjunto original.
+5. **Holdout temporal 2025**: valida generalização de modelos treinados em 2021-2024 para a edição 2025, abordando preocupação metodológica recorrente.
+
+A contribuição não substitui a discussão teórica de public value [@panagiotopou2019publicva; @cordella2025factorsi] nem a de data justice [@macadar2025servicos], mas adiciona um pilar empírico longitudinal que dialoga diretamente com o problema central: **quem usa e-gov no Brasil hoje, e o que predispõe a esse uso para além das características sociodemográficas clássicas**.
+
+## Referências {#sec-refs}
+
+::: {#refs}
+:::

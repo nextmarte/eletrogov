@@ -1,0 +1,186 @@
+{
+  "total": 11082,
+  "count": 10,
+  "query": "\"diversity of internet use\" OR \"Internet uses\" AND citizen",
+  "hits": [
+    {
+      "doi": "10.2196/20073",
+      "title": "Digital Inequality During a Pandemic: Quantitative Study of Differences in COVID-19–Related Internet Uses and Outcomes Among the General Population",
+      "year": 2020,
+      "journal": "journal of medical internet research",
+      "authors": [
+        "Alexander Johannes Aloysius Maria van Deursen"
+      ],
+      "tally": 131,
+      "supporting": 6,
+      "contrasting": 3,
+      "mentioning": 117,
+      "citingPubs": 215,
+      "abstract": "Background\n            The World Health Organization considers coronavirus disease (COVID-19) to be a public emergency threatening global health. During the crisis, the public’s need for web-based information and communication is a subject of focus. Digital inequality research has shown that internet access is not evenly distributed among the general population.\n          \n          \n            Objective\n            The aim of this study was to provide a timely understanding of how different people use the internet to meet their information and communication needs and the outcomes they gain from their internet use in relation to the COVID-19 pandemic. We also sought to reveal the extent to which gender, age, personality, health, literacy, education, economic and social resources, internet attitude, material access, internet access, and internet skills remain important factors in obtaining internet outcomes after people engage in the corresponding uses.\n          \n          \n            Methods\n            We used a web-based survey to draw upon a sample collected in the Netherlands. We obtained a dataset with 1733 respondents older than 18 years.\n          \n          \n            Results\n            Men are more likely to engage in COVID-19–related communication uses. Age is positively related to COVID-19–related information uses and negatively related to information and communication outcomes. Agreeableness is negatively related to both outcomes and to information uses. Neuroticism is positively related to both uses and to communication outcomes. Conscientiousness is not related to any of the uses or outcomes. Introversion is negatively related to communication outcomes. Finally, openness relates positively to all information uses and to both outcomes. Physical health has negative relationships with both outcomes. Health perception contributes positively to information uses and both outcomes. Traditional literacy has a positive relationship with information uses and both outcomes. Education has a positive relationship with information and communication uses. Economic and social resources played no roles. Internet attitude is positively related to information uses and outcomes but negatively related to communication uses and outcomes. Material access and internet access contributed to all uses and outcomes. Finally, several of the indicators and outcomes became insignificant after accounting for engagement in internet uses.\n          \n          \n            Conclusions\n            Digital inequality is a major concern among national and international scholars and policy makers. This contribution aimed to provide a broader understanding in the case of a major health pandemic by using the ongoing COVID-19 crisis as a context for empirical work. Several groups of people were identified as vulnerable, such as older people, less educated people, and people with physical health problems, low literacy levels, or low levels of internet skills. Generally, people who are already relatively advantaged are more likely to use the information and communication opportunities provided by the internet to their benefit in a health pandemic, while less advantaged individuals are less likely to benefit. Therefore, the COVID-19 crisis is also enforcing existing inequalities.",
+      "isOa": true,
+      "retraction_notices": null
+    },
+    {
+      "doi": "10.1007/s10639-022-11437-2",
+      "title": "Problematic smartphone use and specific problematic Internet uses among university students and associated predictive factors: a systematic review",
+      "year": 2022,
+      "journal": "education and information technologies",
+      "authors": [
+        "Magdalena Sánchez-Fernández",
+        "María de las Mercedes Borda Mas"
+      ],
+      "tally": 21,
+      "supporting": 1,
+      "contrasting": 0,
+      "mentioning": 20,
+      "citingPubs": 50,
+      "abstract": "AbstractUniversity students are a high-risk population with problematic online behaviours that include generalized problematic Internet/smartphone use and specific problematic Internet uses (for example, social media or gaming). The study of their predictive factors is needed in order to develop preventative strategies. This systematic review aims to understand the current state of play by examining the terminology, assessment instruments, prevalence, and predictive factors associated with problematic smartphone use and specific problematic Internet uses in university students. A literature review was conducted according to the PRISMA guidelines using four major databases. A total of 117 studies were included, divided into four groups according to the domain of problem behaviour: problematic smartphone use (n = 67), problematic social media use (n = 39), Internet gaming disorder (n = 9), and problematic online pornography use (n = 2). Variability was found in terminology, assessment tools, and prevalence rates in the four groups. Ten predictors of problematic smartphone use, five predictors of problematic social media use, and one predictor of problematic online gaming were identified. Negative affectivity is found to be a common predictor for all three groups, while social media use, psychological well-being, and Fear of Missing Out are common to problematic smartphone and social media use. Our findings reaffirm the need to reach consistent diagnostic criteria in cyber addictions and allow us to make progress in the investigation of their predictive factors, thus allowing formulation of preventive strategies.",
+      "isOa": true,
+      "retraction_notices": null
+    },
+    {
+      "doi": "10.2196/preprints.20073",
+      "title": "Digital Inequality During a Pandemic: Quantitative Study of Differences in COVID-19–Related Internet Uses and Outcomes Among the General Population (Preprint)",
+      "year": 2020,
+      "journal": null,
+      "authors": [
+        "Alexander Johannes Aloysius Maria van Deursen"
+      ],
+      "tally": null,
+      "supporting": null,
+      "contrasting": null,
+      "mentioning": null,
+      "citingPubs": null,
+      "abstract": "BACKGROUND\n                        The World Health Organization considers coronavirus disease (COVID-19) to be a public emergency threatening global health. During the crisis, the public’s need for web-based information and communication is a subject of focus. Digital inequality research has shown that internet access is not evenly distributed among the general population.\n                \n                                \n                    OBJECTIVE\n                        The aim of this study was to provide a timely understanding of how different people use the internet to meet their information and communication needs and the outcomes they gain from their internet use in relation to the COVID-19 pandemic. We also sought to reveal the extent to which gender, age, personality, health, literacy, education, economic and social resources, internet attitude, material access, internet access, and internet skills remain important factors in obtaining internet outcomes after people engage in the corresponding uses.\n                \n                                \n                    METHODS\n                        We used a web-based survey to draw upon a sample collected in the Netherlands. We obtained a dataset with 1733 respondents older than 18 years.\n                \n                                \n                    RESULTS\n                        Men are more likely to engage in COVID-19–related communication uses. Age is positively related to COVID-19–related information uses and negatively related to information and communication outcomes. Agreeableness is negatively related to both outcomes and to information uses. Neuroticism is positively related to both uses and to communication outcomes. Conscientiousness is not related to any of the uses or outcomes. Introversion is negatively related to communication outcomes. Finally, openness relates positively to all information uses and to both outcomes. Physical health has negative relationships with both outcomes. Health perception contributes positively to information uses and both outcomes. Traditional literacy has a positive relationship with information uses and both outcomes. Education has a positive relationship with information and communication uses. Economic and social resources played no roles. Internet attitude is positively related to information uses and outcomes but negatively related to communication uses and outcomes. Material access and internet access contributed to all uses and outcomes. Finally, several of the indicators and outcomes became insignificant after accounting for engagement in internet uses.\n                \n                                \n                    CONCLUSIONS\n                        Digital inequality is a major concern among national and international scholars and policy makers. This contribution aimed to provide a broader understanding in the case of a major health pandemic by using the ongoing COVID-19 crisis as a context for empirical work. Several groups of people were identified as vulnerable, such as older people, less educated people, and people with physical health problems, low literacy levels, or low levels of internet skills. Generally, people who are already relatively advantaged are more likely to use the information and communication opportunities provided by the internet to their benefit in a health pandemic, while less advantaged individuals are less likely to benefit. Therefore, the COVID-19 crisis is also enforcing existing inequalities.",
+      "isOa": false,
+      "retraction_notices": null
+    },
+    {
+      "doi": "10.5750/ejpch.v5i2.1271",
+      "title": "Mind the Gap Methods: Steps to making Participatory Action Analysis with Citizen Collaborators Work",
+      "year": 2017,
+      "journal": "european journal for person centered healthcare",
+      "authors": [
+        "Amy Price",
+        "Su May Liew",
+        "Jo Kirkpatric"
+      ],
+      "tally": 0,
+      "supporting": 0,
+      "contrasting": 0,
+      "mentioning": 0,
+      "citingPubs": 2,
+      "abstract": "Background, aims and objectives: Participants in health research want to be involved in the research. Researchers struggle with how to approach citizens as co-researchers, train them, tactfully reduce contributions that are less useful and what to do about compensation and where to include citizen input in a manuscript. The aim of this study was to use participatory action research to prioritize the research question and to explore projected solutions as citizens and researchers with equal voices in research. In the first section of this paper we provide an introductory explanation of Participatory Action. In the second section we discuss our findings. Methods: The research explored the strengths, weaknesses, opportunities and threats in clinical trials as represented through online communications. In this follow-up analysis we share learning points for successful research involvement. Researchers and citizens worked in a participatory research framework. They searched the Internet using key words to locate social media conversations and Internet interviews about clinical trials over 4 months until a saturation point was reached. Data were de-identified and coded into a SWOT analysis and further coded into themes and analyzed. The findings and solutions were discussed using a circle chart for problem solving. The data were prioritized by consensus and the process is reported here.Results: Investigators and participant researchers were not conflicted in assigning themes because the data were clearly stated and the same sentiments were repeated consistently. The teams reached consensus about which quotes to include to support the findings. These themes ranged from supportive researcher-to-participant and participant-peer relationships to experiences of shame, research disparity, intimidation and personal loss.Conclusions: This research engages citizen participants as equal partners in all aspects of this study. Public and patient involvement as co-production in research can be used to identify and suggest resolutions in research. The use of participatory action in research can improve consistency, communication, innovation and quality in clinical trials.",
+      "isOa": false,
+      "retraction_notices": null
+    },
+    {
+      "doi": "10.1177/0093650215601883",
+      "title": "Explicating Net Diversity in Trend Assessment",
+      "year": 2015,
+      "journal": "communication research",
+      "authors": [
+        "Yong‐Jin Park"
+      ],
+      "tally": 14,
+      "supporting": 1,
+      "contrasting": 2,
+      "mentioning": 11,
+      "citingPubs": 22,
+      "abstract": "This study tracks the increasing supply of Internet access and the diversity of Internet use by analyzing data from the three waves of a survey conducted in the United Kingdom in 2005, 2007, and 2009. Data on Internet access and three dimensions of online use (civic-government, economic-commerce, and generic information and news) reveal that the Internet not only offers an emergent promise of diversity but also presents a systematic divide in which the increase in benefits (of Internet capacities and actual consumed) does not uniformly occur, while the impacts of social disparities remain constant over time. Our discussion addresses how characteristics of social backgrounds are salient in harnessing types of Internet use that may be a critical tipping point for information diversity. We argue that policymakers will be better served by understanding the constraint of actual use that is to be in par with the continuous explosion of technological supply.",
+      "isOa": false,
+      "retraction_notices": null
+    },
+    {
+      "doi": "10.1177/14614448221134493",
+      "title": "Who is afraid of dataveillance? Attitudes toward online surveillance in a cross-cultural and generational perspective",
+      "year": 2022,
+      "journal": "new media &amp; society",
+      "authors": [
+        "Вероника Калмус",
+        "Göran Bolin",
+        "Rita Figueiras"
+      ],
+      "tally": 9,
+      "supporting": 0,
+      "contrasting": 0,
+      "mentioning": 9,
+      "citingPubs": 14,
+      "abstract": "This article compares surveillance-related experiences and attitudes of two generations of media users in countries with different historical surveillance regimes (Estonia, Portugal, and Sweden) and analyzes the predictors of the attitudes toward contemporary surveillance. A large-scale online survey ( N = 3221) reveals that attitudes toward online state and corporate surveillance are interrelated; the two attitudinal components are, however, generation-specific, having different predictors. Tolerance toward state surveillance is more characteristic of the older group, being predicted by trustful and obedient attitudes toward state authorities and institutions. Tolerance toward corporate dataveillance is more characteristic of the younger group, being predicted by active and self-confident media use. While the socio-historical context molds the intergenerational gaps in surveillance-related experiences and attitudes, individual-level experiences of state surveillance do not predict tolerance toward either type of contemporary surveillance, suggesting that global techno-cultural developments are probably more powerful factors than past experiences in forming generation-specific attitudes.",
+      "isOa": false,
+      "retraction_notices": null
+    },
+    {
+      "doi": "10.1787/3092726b-en",
+      "title": "Citizens with a say",
+      "year": 2017,
+      "journal": null,
+      "authors": [
+        "OECD"
+      ],
+      "tally": 2,
+      "supporting": 0,
+      "contrasting": 0,
+      "mentioning": 2,
+      "citingPubs": 1,
+      "abstract": "Figure 1: Change in average voting rates per decade in OECD countries, 1990s-2010s* Citizens with a say A well-functioning democracy relies on the knowledge, skills and engagement of its citizens as well as good institutional design. Empowering citizens to understand their rights and fully participate in their societies is part of the mission of schools in all OECD countries. Lower interest in politics On average, one in five people report not being at all interested in politics across OECD countries (OECD, 2016a). Interest is lower among the young, for whom the average is one in four. While interest is relatively high in Denmark, Germany and Japan, the share of the population that claims to have no interest in politics is around 40% in Chile and Portugal. Those aged 15 to 29 show lower interest than older populations in all OECD countries except for Portugal, Spain and Turkey. In addition, voter turnout has declined on average since 1990, from an average of 77% in 1990s to 69% in the 2010s (Figure 1). While voting rates have remained more or less stable in some countries, such as the Nordic countries (Denmark, Finland, Norway, Sweden), Hungary, Ireland or the Netherlands, rates in the Czech Republic, France, Slovakia and Slovenia fell by about 20 percentage points, and about 40 in Chile.",
+      "isOa": true,
+      "retraction_notices": null
+    },
+    {
+      "doi": "10.4018/ijpada.290307",
+      "title": "E-Government and Digital Inequality",
+      "year": 2021,
+      "journal": "international journal of public administration in the digital age",
+      "authors": [
+        "Stefano De Marco"
+      ],
+      "tally": 1,
+      "supporting": 0,
+      "contrasting": 0,
+      "mentioning": 1,
+      "citingPubs": 5,
+      "abstract": "The second level digital divide is generated by a combination of two factors. Firstly, the adoption of advantageous internet uses is strongly related to internet users’ material and educational resources. The higher the level of these resources, the higher the probability that advantageous internet uses will be adopted. Secondly, internet users’ offline resources have an influence on their digital skills. On the other hand, and according to the third level digital divide, advantageous internet use in not beneficial per se. In order to obtain tangible benefits from it, an adequate level of digital skills is required. In this paper, the Spanish case is used to study second and third level digital divides in relation to e-government. Results show the importance of educational and online resources, as well as higher levels of digital skills, in enhancing the probability of being able to use the internet to interact with the public administration and with government agencies. These results raise important questions in terms of digital citizenship and the democratic divide",
+      "isOa": true,
+      "retraction_notices": null
+    },
+    {
+      "doi": "10.1007/978-3-030-91247-5_2",
+      "title": "The Digital Citizen",
+      "year": 2022,
+      "journal": null,
+      "authors": [
+        "Theo Lynn",
+        "Pierangelo Rosati",
+        "Edel Conway"
+      ],
+      "tally": 1,
+      "supporting": 0,
+      "contrasting": 0,
+      "mentioning": 1,
+      "citingPubs": 2,
+      "abstract": "AbstractTo fully function in a society permeated by digital technologies requires individuals and households to have both the access and skills to use these technologies effectively. Unfortunately, access to digital infrastructure and skills is not equal. This chapter begins with a discussion on the nature of the digital divide and digital literacy. It then considers how digital technologies are changing how, where and when people work, and the opportunities for rural communities that the sharing economy and gig economy present. The chapter concludes with a discussion of how extant international frameworks and composite indices measure access, competences, and use of digital technologies by individuals and households, highlighting the need for a more comprehensive and inclusive measurement approach.",
+      "isOa": false,
+      "retraction_notices": null
+    },
+    {
+      "doi": "10.24818/imc/2023/02.09",
+      "title": "CORRELATION ANALYSIS REGARDING PUBLIC SECTOR DIGITALIZATION AND ITS FACTORS OF INFLUENCE",
+      "year": 2024,
+      "journal": null,
+      "authors": [
+        "Claudiu Cicea",
+        "Corina Marinescu",
+        "Silviu-Gabriel BACIU"
+      ],
+      "tally": null,
+      "supporting": null,
+      "contrasting": null,
+      "mentioning": null,
+      "citingPubs": null,
+      "abstract": "This research paper aims at explaining from a statistical perspective the relationship between digitalization in the public domain and several considered factors of influence. The analysis envisaged twenty-nine European countries as compare to the EU-27 average. By applying correlation analysis, the association between variables of interest will be captured. In the same time such type of analysis is able to render the strength of the link between variables. After presenting the correlation results, one can observe that for Romania, the link between digitization and digital skills is very weak. In the same time there is a strong association between digitization in the public sector and the degree of broadband coverage, as well as between it and the way of using the Internet (telephony and video activities). When the digitization process in the public system and the integration of digital technologies are put into balance, a weak correlation can be distinguished. A moderate association, but positive also appears between digitization in the public sector and the frequency of Internet access. Situations are different for each country included in the analysis.",
+      "isOa": true,
+      "retraction_notices": null
+    }
+  ]
+}

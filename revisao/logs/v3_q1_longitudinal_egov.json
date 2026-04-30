@@ -1,0 +1,106 @@
+{
+  "total": 1360,
+  "count": 8,
+  "query": "\"longitudinal\" AND \"e-government\" AND determinants AND survey",
+  "hits": [
+    {
+      "doi": "10.1109/access.2021.3093981",
+      "title": "How Does E-Government Affect Corruption? Provincial Panel Evidence From China",
+      "year": 2021,
+      "journal": "ieee access",
+      "authors": [
+        "Shaowen Li",
+        "Wei Wei",
+        "Ma Min"
+      ],
+      "tally": 2,
+      "abstract": "To investigate whether and how e-government affects corruption, this study collects longitudinal data (2006)(2007)(2008)(2009)(2010)(2011)(2012)(2013)(2014)(2015) from 29 Chinese provinces for empirical analysis by adopting Feasible Generalized Least Squares (FGLS) and Panel Threshold Regression (PT"
+    },
+    {
+      "doi": "10.1080/10967494.2018.1467987",
+      "title": "Stages and Determinants of E-Government Development: A Twelve-Year Longitudinal Study of Global Cities",
+      "year": 2018,
+      "journal": "international public management journal",
+      "authors": [
+        "Alex Ingrams",
+        "Aroon Manoharan",
+        "Lisa Schmidthuber"
+      ],
+      "tally": 58,
+      "abstract": "Global e-government innovations are at the forefront of municipal efforts to be better organized and more efficient in delivering services and improving outcomes for the public. Scholars have argued that such innovations are embedded in institutional and environmental factors, and municipal e-govern"
+    },
+    {
+      "doi": "10.31000/jgcs.v5i2.4848",
+      "title": "Factors Affecting Trust in E-Government",
+      "year": 2021,
+      "journal": "journal of government and civil society",
+      "authors": [
+        "Ulung Pribadi",
+        "Muhammad Iqbal",
+        "Fittia Restiane"
+      ],
+      "tally": 1,
+      "abstract": "This study examined perceived usefulness, information quality, and privacy and security to predict trust in e-government. This study used a survey data collection method and a random sampling technique with 100 residents who visit the local government's public services website as respondents. A Like"
+    },
+    {
+      "doi": "10.9734/jemt/2023/v29i31082",
+      "title": "A Study on E-government Service Quality and Effectiveness of  E-government Services in Selected Divisional Secretariats",
+      "year": 2023,
+      "journal": "journal of economics management and trade",
+      "authors": [
+        "Balachandran Sarangan",
+        "Rishaana Sarangan"
+      ],
+      "tally": null,
+      "abstract": "Acknowledge to the rapid global growth of internet and information technology, many governments around the world have transformed their services from traditional services to electronic means. Using the internet, nowadays governments are offering more convenient and faster access to their services an"
+    },
+    {
+      "doi": "10.1108/tg-09-2022-0120",
+      "title": "Government administrative capacity, e-government performance and citizen’s e-government adoption: evidence from a transition country",
+      "year": 2023,
+      "journal": "transforming government people process and policy",
+      "authors": [
+        "Toan Khanh Tran Pham"
+      ],
+      "tally": 0,
+      "abstract": "Purpose\nThe purpose of this study is to investigate the impact of government administrative capacity and e-government performance on the citizens’ intention to use e-government services by integrating into the technology acceptance model (TAM). In addition, the study investigates the mediating effec"
+    },
+    {
+      "doi": "10.1002/isd2.12308",
+      "title": "Maturity as a critical sustainability factor for e‐government: Toward a conceptual framework",
+      "year": 2023,
+      "journal": "the electronic journal of information systems in developing countries",
+      "authors": [
+        "Hiwot Feleke",
+        "Lemma Lessa"
+      ],
+      "tally": 0,
+      "abstract": "AbstractExtant literature reveals that many e‐government initiatives fail especially in developing countries. Despite the alarming failure rate of e‐government initiatives, governments of developing countries are allocating a huge budget to support and improve e‐government services. Prior research s"
+    },
+    {
+      "doi": "10.1007/978-3-030-64861-9_20",
+      "title": "Orchestration of an e-Government Network: Capturing the Dynamics of e-Government Service Delivery Through Theoretical Analysis and Mathematical Forecasting",
+      "year": 2020,
+      "journal": null,
+      "authors": [
+        "Sayantan Khanra",
+        "Rojers P. Joseph"
+      ],
+      "tally": 1,
+      "abstract": "Despite the recent growth in e-Government services, there is a paucity of research dedicated to explaining the dynamism of an e-Government network in the extant literature. The process of an e-Government service delivery is vulnerable to changes in the degree of benefits delivered to the public thro"
+    },
+    {
+      "doi": "10.11591/eecsi.v6i0.1964",
+      "title": "Civil Servant’s E-Government Adoption Levels: Are age and context matters?",
+      "year": 2019,
+      "journal": "proceeding of the electrical engineering computer science and informatics",
+      "authors": [
+        "Iman Sudirman",
+        "Atya Nur Aisha",
+        "Joe Monang"
+      ],
+      "tally": null,
+      "abstract": "This study examines the differences of e-government adoption by civil servants among age groups and between mandatory and voluntary context using UTAUT model. It used a non-probability sampling technique and an online survey to collect the data. A one-way ANOVA using SPSS was conducted to analyze th"
+    }
+  ]
+}

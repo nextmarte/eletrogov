@@ -1,0 +1,104 @@
+{
+  "total": 1673,
+  "count": 8,
+  "query": "\"e-government\" AND Brazil AND (\"digital identity\" OR \"single sign-on\" OR platform)",
+  "hits": [
+    {
+      "doi": "10.1111/1758-5899.13140",
+      "title": "Digital footprints as barriers to accessing e‐government services",
+      "year": 2022,
+      "journal": "global policy",
+      "authors": [
+        "Kira Allmann",
+        "Roxana Radu"
+      ],
+      "tally": 9,
+      "abstract": "This article builds on existing literature on digital inequality and the digitised welfare state to elucidate one underexplored way in which the rise of e-government platforms further disadvantages already-marginalised people: by requiring that they possess a verifiable digital footprint distributed"
+    },
+    {
+      "doi": "10.4236/blr.2023.143074",
+      "title": "Public Administration and Innovation: E-Government in the International Perspective",
+      "year": 2023,
+      "journal": "beijing law review",
+      "authors": [
+        "Leandro Sarai",
+        "Maurício Zockun",
+        "Flávio Garcia Cabral"
+      ],
+      "tally": 0,
+      "abstract": "The text seeks to understand the relationship between innovation and Public Administration and, based on this understanding, promote a reflection on Brazil's transition to \"Digital Government\" (e-Government). The questions posed in the research were: Would there be other possibilities for innovation"
+    },
+    {
+      "doi": "10.16930/2237-7662202131602",
+      "title": "E-government in local governments’ websites",
+      "year": 2021,
+      "journal": "revista catarinense da ciência contábil",
+      "authors": [
+        "Fabrício Ramos Neves",
+        "Polyana Batista da Silva"
+      ],
+      "tally": 0,
+      "abstract": "The literature perceives governments’ websites as an effective tool for increasing information delivery, user interaction, and the government services’ supply, being the most visible aspects of citizens concerning public management. However, the interaction of citizens with governments is still uncl"
+    },
+    {
+      "doi": "10.3127/ajis.v27i0.4079",
+      "title": "Clarifying the Role of E-Government Trust in E-Government Success Models:  A Meta-analytic Structural Equation Modeling Approach",
+      "year": 2023,
+      "journal": "australasian journal of information systems",
+      "authors": [
+        "Apeksha Hooda",
+        "Parul Gupta",
+        "Anand Jeyaraj"
+      ],
+      "tally": 12,
+      "abstract": "E-government implementation success is of critical importance for nations. Prior information systems (IS) success models emphasize the effects of information quality, service quality, system quality, and user satisfaction but do not consider e-government trust. This study incorporates e-government t"
+    },
+    {
+      "doi": "10.1787/084f6e33-en",
+      "title": "UN E-Government and E-Participation indices",
+      "year": 2022,
+      "journal": null,
+      "authors": [],
+      "tally": null,
+      "abstract": "The well-being of citizens is driven by multiple, interrelated dimensions. In fact, policy makers are required to reconcile economic, social and environmental objectives to ensure that their country's development path is inclusive and sustainable and that the lives of its citizens improve. This invo"
+    },
+    {
+      "doi": "10.37497/sdgs.v11i1.272",
+      "title": "E-government as a tool for communication with young people: legal aspects",
+      "year": 2023,
+      "journal": "journal of law and sustainable development",
+      "authors": [
+        "Andrey Akimov",
+        "Ksenia Kadysheva"
+      ],
+      "tally": 6,
+      "abstract": "Objective: The relevance of the topic is determined by the need to consider e-government not only as a tool for providing public services but also as a channel of communication with the population, especially young people.&#x0D;\nMethods: The authors use methods of analysis and synthesis to summarize"
+    },
+    {
+      "doi": "10.3390/joitmc6030046",
+      "title": "Adoption of e-Government in the Republic of Kazakhstan",
+      "year": 2020,
+      "journal": "journal of open innovation technology market and complexity",
+      "authors": [
+        "Yerlan Amanbek",
+        "Ilyas Balgayev",
+        "Kanat Batyrkhanov"
+      ],
+      "tally": 8,
+      "abstract": "Information and Communication Technology has been gaining importance in the economy of Kazakhstan, the largest landlocked country. In this paper, we investigate the factors that influence Kazakhstan’s e-Government portal use at the informational stage and describe the challenges encountered by citiz"
+    },
+    {
+      "doi": "10.1111/gove.12707",
+      "title": "Parsing the impact of E‐government on bureaucratic corruption",
+      "year": 2022,
+      "journal": "governance",
+      "authors": [
+        "Vaiva Kalesnikaite",
+        "Milena I. Neshkova",
+        "Sukumar Ganapati"
+      ],
+      "tally": 10,
+      "abstract": "Prior research has examined the effect of e-government on corruption but has only considered perceived political corruption that differs from the actual corruption that citizens experience in their routine encounters with street-level bureaucrats. This study focuses on petty corruption and delineate"
+    }
+  ]
+}

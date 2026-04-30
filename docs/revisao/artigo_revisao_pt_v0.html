@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-BR" xml:lang="pt-BR"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.17">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Marcus">
+
+<title>Determinantes do uso de governo eletrônico em populações com heterogeneidade digital: uma revisão sistemática</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 1em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="artigo_revisao_pt_v0_files/libs/clipboard/clipboard.min.js"></script>
+<script src="artigo_revisao_pt_v0_files/libs/quarto-html/quarto.js" type="module"></script>
+<script src="artigo_revisao_pt_v0_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="artigo_revisao_pt_v0_files/libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="artigo_revisao_pt_v0_files/libs/quarto-html/popper.min.js"></script>
+<script src="artigo_revisao_pt_v0_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="artigo_revisao_pt_v0_files/libs/quarto-html/anchor.min.js"></script>
+<link href="artigo_revisao_pt_v0_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="artigo_revisao_pt_v0_files/libs/quarto-html/quarto-syntax-highlighting-ce4278342a015d016477ed09bce942c5.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="artigo_revisao_pt_v0_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="artigo_revisao_pt_v0_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="artigo_revisao_pt_v0_files/libs/bootstrap/bootstrap-27cdab569355a3c2efbf7eed6dee1e75.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+
+
+</head>
+
+<body class="quarto-light">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+  <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Índice</h2>
+   
+  <ul>
+  <li><a href="#sec-intro" id="toc-sec-intro" class="nav-link active" data-scroll-target="#sec-intro"><span class="header-section-number">1</span> Introdução</a></li>
+  <li><a href="#sec-metodos" id="toc-sec-metodos" class="nav-link" data-scroll-target="#sec-metodos"><span class="header-section-number">2</span> Métodos da revisão</a></li>
+  <li><a href="#sec-eixo1" id="toc-sec-eixo1" class="nav-link" data-scroll-target="#sec-eixo1"><span class="header-section-number">3</span> Eixo 1: Frameworks de adoção de e-gov</a></li>
+  <li><a href="#sec-eixo2" id="toc-sec-eixo2" class="nav-link" data-scroll-target="#sec-eixo2"><span class="header-section-number">4</span> Eixo 2: Divisão digital no Brasil e na América Latina</a></li>
+  <li><a href="#sec-eixo3" id="toc-sec-eixo3" class="nav-link" data-scroll-target="#sec-eixo3"><span class="header-section-number">5</span> Eixo 3: Segundo nível do digital divide e habilidades digitais</a></li>
+  <li><a href="#sec-eixo4" id="toc-sec-eixo4" class="nav-link" data-scroll-target="#sec-eixo4"><span class="header-section-number">6</span> Eixo 4: Intensidade e variedade de uso digital</a></li>
+  <li><a href="#sec-eixo5" id="toc-sec-eixo5" class="nav-link" data-scroll-target="#sec-eixo5"><span class="header-section-number">7</span> Eixo 5: Machine learning vs regressão logística em surveys</a></li>
+  <li><a href="#sec-eixo6" id="toc-sec-eixo6" class="nav-link" data-scroll-target="#sec-eixo6"><span class="header-section-number">8</span> Eixo 6: COVID-19 e e-gov</a></li>
+  <li><a href="#sec-sintese" id="toc-sec-sintese" class="nav-link" data-scroll-target="#sec-sintese"><span class="header-section-number">9</span> Síntese e gap teórico-empírico</a></li>
+  <li><a href="#sec-contrib" id="toc-sec-contrib" class="nav-link" data-scroll-target="#sec-contrib"><span class="header-section-number">10</span> Posicionamento da contribuição</a></li>
+  <li><a href="#sec-refs" id="toc-sec-refs" class="nav-link" data-scroll-target="#sec-refs"><span class="header-section-number">11</span> Referências</a></li>
+  </ul>
+</nav>
+</div>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Determinantes do uso de governo eletrônico em populações com heterogeneidade digital: uma revisão sistemática</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Autor</div>
+    <div class="quarto-title-meta-contents">
+             <p>Marcus </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Data de Publicação</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">29 de abril de 2026</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="sec-intro" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="sec-intro"><span class="header-section-number">1</span> Introdução</h2>
+<p>A adoção de serviços de governo eletrônico (e-gov) por cidadãos é objeto de investigação acumulada desde a popularização da internet, com tradição teórica ancorada nos modelos de aceitação de tecnologia <span class="citation" data-cites="davis1989perceive venkatesh2003useracce">(<a href="#ref-davis1989perceive" role="doc-biblioref">Davis, 1989</a>; <a href="#ref-venkatesh2003useracce" role="doc-biblioref">Venkatesh, 2003</a>)</span> e nas suas aplicações ao setor público <span class="citation" data-cites="vandijk2008explaini">(<a href="#ref-vandijk2008explaini" role="doc-biblioref">VanDijk, 2008</a>)</span>. No Brasil, <span class="citation" data-cites="vargas2021">Vargas et al. (<a href="#ref-vargas2021" role="doc-biblioref">2021</a>)</span> forneceram a análise quantitativa mais ampla do tema usando microdados da TIC Domicílios 2019, identificando idade, renda familiar, condição de atividade, classe econômica, escolaridade, dispositivos de acesso e uso de e-commerce como determinantes significativos.</p>
+<p>Apesar dessa contribuição, três lacunas persistem na literatura recente sobre adoção de e-gov em contextos de heterogeneidade digital:</p>
+<ol type="1">
+<li><strong>Lacuna empírica longitudinal</strong>: a maioria dos estudos brasileiros recentes adota corte transversal único <span class="citation" data-cites="vargas2021 araujo2018servicos">(<a href="#ref-araujo2018servicos" role="doc-biblioref">Araujo, 2018</a>; <a href="#ref-vargas2021" role="doc-biblioref">Vargas et al., 2021</a>)</span>, o que impede examinar trajetórias de adoção pré e pós-pandemia.</li>
+<li><strong>Lacuna nas variáveis de intensidade de uso</strong>: a literatura internacional sobre digital divide deslocou-se do nível 1 (acesso) para os níveis 2 e 3 (habilidades, uso e outcomes) <span class="citation" data-cites="bchi2016modeling lutz2019digitali ebbers2016impactof">(<a href="#ref-bchi2016modeling" role="doc-biblioref">Büchi; Just; Latzer, 2016</a>; <a href="#ref-ebbers2016impactof" role="doc-biblioref">Ebbers; Jansen; Deursen, 2016</a>; <a href="#ref-lutz2019digitali" role="doc-biblioref">Lutz, 2019</a>)</span>, mas estudos aplicados a e-gov no Brasil ainda operam predominantemente com variáveis sociodemográficas clássicas.</li>
+<li><strong>Lacuna metodológica comparativa</strong>: comparações sistemáticas entre regressão logística e modelos de machine learning (ML) em surveys nacionais aplicados a e-gov são raras; quando existem <span class="citation" data-cites="browne2021multivar mcbride2017israndom">(<a href="#ref-browne2021multivar" role="doc-biblioref">Browne; Matteson; McBride, 2021</a>; <a href="#ref-mcbride2017israndom" role="doc-biblioref">Sohnesen; Stender, 2017</a>)</span>, focam em pobreza ou saúde.</li>
+</ol>
+<p>Esta revisão consolida a literatura empírica e teórica relevante (2015-2026), com snowball backward para clássicos pré-2015, e fundamenta a posição de uma extensão metodológica e empírica do modelo de <span class="citation" data-cites="vargas2021">Vargas et al. (<a href="#ref-vargas2021" role="doc-biblioref">2021</a>)</span> que: (a) amplia para análise pooled 2021-2025, (b) incorpora variáveis de intensidade e variedade de uso digital, (c) inclui habilidades digitais autorelatadas, e (d) compara empiricamente regressão logística contra random forest.</p>
+</section>
+<section id="sec-metodos" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="sec-metodos"><span class="header-section-number">2</span> Métodos da revisão</h2>
+<p>Protocolo adaptado de PRISMA-P 2015 <span class="citation" data-cites="shamseer2015preferre">(<a href="#ref-shamseer2015preferre" role="doc-biblioref">Shamseer, 2015</a>)</span>. Pergunta operacional formulada em PICOC com população (cidadãos brasileiros adultos), interesse (determinantes socioeconômicos + uso digital + habilidades), comparador (modelos lineares vs não-lineares), outcome (adoção de e-gov), contexto (Brasil prioritário, pós-2015).</p>
+<p>Busca via scite MCP, cobrindo PubMed, CrossRef e OpenAlex, em seis eixos temáticos com strings booleanas específicas. Critérios de inclusão: empírico ou revisão sistemática; 2015-2026; PT, EN ou ES; com DOI verificável; foco em adoção/uso de e-gov, divisão digital, habilidades digitais, ML em surveys ou determinantes socioeconômicos de uso digital. Critérios de exclusão: editoriais, comentários, papers retratados, foco em tecnologia específica sem relação com adoção pelo cidadão.</p>
+<p>Avaliação de qualidade em quatro dimensões (rigor, relevância, atualidade, venue), cada uma de 0 a 2; classe alta para escore ≥ 6. Snowball backward a partir das referências de <span class="citation" data-cites="vargas2021">Vargas et al. (<a href="#ref-vargas2021" role="doc-biblioref">2021</a>)</span> e dos papers centrais; snowball forward via smart citations a <span class="citation" data-cites="vargas2021">Vargas et al. (<a href="#ref-vargas2021" role="doc-biblioref">2021</a>)</span>. Excerpts de full-text salvos por DOI para auditoria anti-alucinação.</p>
+<p>Total final: <strong>55 papers aceitos</strong> após duas rodadas de busca (rodada 1 exploratória nos seis eixos, rodada 2 refinada para preencher lacunas em ML aplicado a e-gov, Brasil pós-pandemia e digital footprints). Distribuição por origem: 39 dos eixos da rodada 1, 8 do snowball backward (clássicos TAM/UTAUT/Van Dijk), 2 do snowball forward (continuação dos próprios autores), 6 da rodada 2 refinada. Vinte e quatro marcados como centrais; vinte e nove classificados como qualidade alta.</p>
+</section>
+<section id="sec-eixo1" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="sec-eixo1"><span class="header-section-number">3</span> Eixo 1: Frameworks de adoção de e-gov</h2>
+<p>A literatura brasileira e internacional sobre adoção de e-gov ancora-se em duas tradições: modelos de aceitação de tecnologia (TAM, UTAUT) e a perspectiva de criação de valor público.</p>
+<p><span class="citation" data-cites="davis1989perceive">Davis (<a href="#ref-davis1989perceive" role="doc-biblioref">1989</a>)</span> propôs o Technology Acceptance Model (TAM), em que utilidade percebida e facilidade de uso percebida predizem intenção de adoção. <span class="citation" data-cites="venkatesh2003useracce">Venkatesh (<a href="#ref-venkatesh2003useracce" role="doc-biblioref">2003</a>)</span> consolidou a teoria unificada (UTAUT) acrescentando expectativa de desempenho, expectativa de esforço, influência social e condições facilitadoras. <span class="citation" data-cites="vandijk2008explaini">VanDijk (<a href="#ref-vandijk2008explaini" role="doc-biblioref">2008</a>)</span> estendeu o modelo para o domínio governamental, cruzando atributos de serviço com fatores sociodemográficos (idade, gênero, escolaridade, ocupação) num framework multidisciplinar.</p>
+<p>A perspectiva de <strong>public value</strong> desloca o foco da eficiência interna do setor público para a criação de valor relacional fora da organização <span class="citation" data-cites="panagiotopou2019publicva cordella2025factorsi">(<a href="#ref-cordella2025factorsi" role="doc-biblioref">Lopes; Luciano; Wiedenhöft, 2025</a>; <a href="#ref-panagiotopou2019publicva" role="doc-biblioref">Panagiotopoulos; Klievink; Cordella, 2019</a>)</span>. <span class="citation" data-cites="panagiotopou2019publicva">Panagiotopoulos; Klievink; Cordella (<a href="#ref-panagiotopou2019publicva" role="doc-biblioref">2019</a>)</span> argumentam que public value de e-gov é multidimensional e se reflete no consumo combinado de múltiplos serviços, e não em métricas de tecnologias isoladas. <span class="citation" data-cites="cordella2025factorsi">Lopes; Luciano; Wiedenhöft (<a href="#ref-cordella2025factorsi" role="doc-biblioref">2025</a>)</span> exploram empiricamente como prioridades rivais de public value se manifestam em iniciativas de e-gov no Brasil.</p>
+<p>A revisão sistemática PRISMA de <span class="citation" data-cites="priyashantha2022determin">Priyashantha; Dilhani (<a href="#ref-priyashantha2022determin" role="doc-biblioref">2022</a>)</span> sobre 55 papers Scopus 2015-2020 encontra como determinantes recorrentes da adoção de e-gov: utilidade percebida, facilidade percebida, confiança, risco percebido, expectativa de desempenho, expectativa de esforço, influência social, condições facilitadoras, awareness do cidadão, custo, satisfação e desigualdade digital. <span class="citation" data-cites="almuraqab2016egovernm">Athmay; Fantazy; Kumar (<a href="#ref-almuraqab2016egovernm" role="doc-biblioref">2016</a>)</span> reforçam o papel mediador da satisfação na trajetória de adoção. <span class="citation" data-cites="tabbara2023clarifyi">Hooda; Gupta; Jeyaraj (<a href="#ref-tabbara2023clarifyi" role="doc-biblioref">2023</a>)</span> consolidam via meta-SEM o papel central da confiança nos modelos de sucesso de e-gov.</p>
+<p>Trabalhos brasileiros precursores <span class="citation" data-cites="araujoreinha2015contextu araujo2018servicos">(<a href="#ref-araujo2018servicos" role="doc-biblioref">Araujo, 2018</a>; <a href="#ref-araujoreinha2015contextu" role="doc-biblioref">AraujoReinhard, 2015</a>)</span> apontaram fatores contextuais (classe social, local de acesso, competências de uso) como influenciadores em estudos qualitativos ou de pequeno porte. <span class="citation" data-cites="vargas2021">Vargas et al. (<a href="#ref-vargas2021" role="doc-biblioref">2021</a>)</span> forneceram a primeira análise quantitativa em larga escala desses determinantes para o Brasil, usando regressão logística sobre microdados nacionais.</p>
+</section>
+<section id="sec-eixo2" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="sec-eixo2"><span class="header-section-number">4</span> Eixo 2: Divisão digital no Brasil e na América Latina</h2>
+<p>A literatura sobre digital divide reconhece três níveis sucessivos de desigualdade <span class="citation" data-cites="lutz2019digitali">(<a href="#ref-lutz2019digitali" role="doc-biblioref">Lutz, 2019</a>)</span>: acesso (primeiro nível), habilidades e uso (segundo nível) e outcomes obtidos (terceiro nível). Em países desenvolvidos com acesso ampliado, o segundo nível assumiu centralidade <span class="citation" data-cites="bchi2016modeling ebbers2016impactof">(<a href="#ref-bchi2016modeling" role="doc-biblioref">Büchi; Just; Latzer, 2016</a>; <a href="#ref-ebbers2016impactof" role="doc-biblioref">Ebbers; Jansen; Deursen, 2016</a>)</span>.</p>
+<p>Na América Latina, <span class="citation" data-cites="hilbert2016genderan">Gray; Gainous; Wagner (<a href="#ref-hilbert2016genderan" role="doc-biblioref">2016</a>)</span> documenta o gap de gênero no acesso à internet, com persistência mesmo após controles socioeconômicos. Estudos comparativos entre LATAM e Europa mostram trajetórias divergentes mas convergência parcial em adoção de internet móvel. No Brasil especificamente, <span class="citation" data-cites="susmiati2019usingadi">Siqueira; Souza; Barbosa (<a href="#ref-susmiati2019usingadi" role="doc-biblioref">2019</a>)</span> propõem um índice de digital divide entre empresas; <span class="citation" data-cites="reineke2015explicat">Park (<a href="#ref-reineke2015explicat" role="doc-biblioref">2015</a>)</span> e <span class="citation" data-cites="distel2023whydevic">Dodel (<a href="#ref-distel2023whydevic" role="doc-biblioref">2023</a>)</span> apontam que o <strong>dispositivo de acesso</strong> (apenas celular vs computador) tem efeito estrutural sobre o engajamento com serviços públicos.</p>
+<p>Estudos pós-pandemia <span class="citation" data-cites="mardiana2020evidence">(<a href="#ref-mardiana2020evidence" role="doc-biblioref">Santos; Bülbül; Lemes, 2020</a>)</span> usando Google Trends sugerem que a COVID-19 <strong>ampliou</strong> o segundo-nível digital divide no Brasil, especialmente em camadas socioeconômicas menos favorecidas, em vez de reduzi-lo via familiarização forçada com o digital.</p>
+</section>
+<section id="sec-eixo3" class="level2" data-number="5">
+<h2 data-number="5" class="anchored" data-anchor-id="sec-eixo3"><span class="header-section-number">5</span> Eixo 3: Segundo nível do digital divide e habilidades digitais</h2>
+<p><span class="citation" data-cites="bchi2016modeling">Büchi; Just; Latzer (<a href="#ref-bchi2016modeling" role="doc-biblioref">2016</a>)</span>, em estudo SEM com cinco países de baixo gap de acesso, encontram que variáveis sociodemográficas explicam até <strong>50%</strong> da variância no uso da internet, com idade como preditor mais forte. Os ~50% restantes deixam espaço amplo para preditores adicionais relacionados a tipos específicos de uso e habilidades.</p>
+<p><span class="citation" data-cites="ebbers2016impactof">Ebbers; Jansen; Deursen (<a href="#ref-ebbers2016impactof" role="doc-biblioref">2016</a>)</span> argumentam que o impacto do digital divide sobre e-gov <strong>se expande de channel choice para channel usage</strong>: dada a presença de acesso, escolhas de canal pouco se diferenciam por habilidade, mas a <strong>intensidade e satisfação do uso</strong> sim. A operacionalização de habilidades via experiência de uso da internet em diferentes atividades, incluindo compras online <span class="citation" data-cites="belanger2008trustand">(<a href="#ref-belanger2008trustand" role="doc-biblioref">Belanger, 2008</a>)</span>, antecipa nossa estratégia metodológica de incluir e-commerce (H2) e variáveis de uso intenso (C8/J2/C10/C11) como proxies de familiaridade digital.</p>
+<p><span class="citation" data-cites="lzroiu2020citizens">Rodriguez-Hevía; Navío-Marco; Ruiz-Gómez (<a href="#ref-lzroiu2020citizens" role="doc-biblioref">2020</a>)</span> evidenciam a importância das habilidades digitais para o engajamento dos cidadãos com e-gov na União Europeia, sustentando empiricamente que skills é mediador estrutural da relação entre acesso e adoção.</p>
+</section>
+<section id="sec-eixo4" class="level2" data-number="6">
+<h2 data-number="6" class="anchored" data-anchor-id="sec-eixo4"><span class="header-section-number">6</span> Eixo 4: Intensidade e variedade de uso digital</h2>
+<p><span class="citation" data-cites="castellacci2018internet">Castellacci; Tveito (<a href="#ref-castellacci2018internet" role="doc-biblioref">2018</a>)</span> apresentam framework teórico em que a internet afeta bem-estar via quatro canais distintos: alteração de padrões de tempo, criação de novas atividades, acesso a informação e ferramenta de comunicação. Os efeitos variam conforme características pessoais (psicológicas, capabilities, framing cultural). A heurística empírica é clara: não é “uso de internet” em geral que importa, mas as <strong>atividades específicas</strong> combinadas com as <strong>capacidades</strong> do usuário.</p>
+<p><span class="citation" data-cites="reineke2015explicat">Park (<a href="#ref-reineke2015explicat" role="doc-biblioref">2015</a>)</span> distinguem <strong>diversidade de uso da internet</strong> (net diversity) como construto distinto da intensidade pura. Essa distinção sustenta a inclusão na expansão metodológica de variáveis que capturem tanto frequência quanto variedade de atividades digitais.</p>
+</section>
+<section id="sec-eixo5" class="level2" data-number="7">
+<h2 data-number="7" class="anchored" data-anchor-id="sec-eixo5"><span class="header-section-number">7</span> Eixo 5: Machine learning vs regressão logística em surveys</h2>
+<p><span class="citation" data-cites="browne2021multivar">Browne; Matteson; McBride (<a href="#ref-browne2021multivar" role="doc-biblioref">2021</a>)</span> demonstram que random forest interpretável aplicado a dados públicos georreferenciados produz acurácia comparável a deep learning para previsão de pobreza e malnutrição em onze países de baixa e média renda. <span class="citation" data-cites="mcbride2017israndom">Sohnesen; Stender (<a href="#ref-mcbride2017israndom" role="doc-biblioref">2017</a>)</span>, em assessment empírico anterior, matizam o veredicto: random forest é superior a logística em alguns contextos, equivalente em outros, dependendo da estrutura dos dados.</p>
+<p>A literatura aplicada a adoção de e-gov é escassa nesse eixo. Estudos específicos comparando ML e GLM em surveys de uso digital governamental são raros; <span class="citation" data-cites="garcaro2023differen">García‐Río; Palos‐Sánchez; Baena‐Luna (<a href="#ref-garcaro2023differen" role="doc-biblioref">2023</a>)</span> exploram diferentes abordagens analíticas no contexto da pandemia, mas não com dados nacionais brasileiros. <span class="citation" data-cites="lupo2022egovernm">Lupo (<a href="#ref-lupo2022egovernm" role="doc-biblioref">2022</a>)</span> aplica ML para predição de adoção de e-gov na Europa em estudo recente ainda com baixa difusão (3 citações), evidenciando lacuna ativa. Esta lacuna metodológica é um dos pontos onde nossa contribuição se posiciona.</p>
+</section>
+<section id="sec-eixo6" class="level2" data-number="8">
+<h2 data-number="8" class="anchored" data-anchor-id="sec-eixo6"><span class="header-section-number">8</span> Eixo 6: COVID-19 e e-gov</h2>
+<p><span class="citation" data-cites="vandeursen2020digitali">Deursen (<a href="#ref-vandeursen2020digitali" role="doc-biblioref">2020</a>)</span>, em survey holandês com 1733 respondentes, mostra que letramento, educação, atitude à internet, acesso material e habilidades digitais predizem usos e outcomes relacionados à COVID-19, enquanto recursos econômicos e sociais perdem significância após controles. A conclusão central é que a pandemia <strong>reforça</strong> desigualdades preexistentes: indivíduos já advantaged usam mais e melhor as oportunidades digitais.</p>
+<p>Estudos em outros países corroboram o achado: <span class="citation" data-cites="vu2022driverso">Nguyen; Borazon (<a href="#ref-vu2022driverso" role="doc-biblioref">2022</a>)</span> (Vietnã) identificam expectativa de desempenho, social influence e condições facilitadoras como drivers da adoção de e-gov durante a COVID-19. <span class="citation" data-cites="garcaro2023differen">García‐Río; Palos‐Sánchez; Baena‐Luna (<a href="#ref-garcaro2023differen" role="doc-biblioref">2023</a>)</span> comparam abordagens analíticas no mesmo período. <span class="citation" data-cites="mardiana2020evidence">Santos; Bülbül; Lemes (<a href="#ref-mardiana2020evidence" role="doc-biblioref">2020</a>)</span> documenta o efeito específico no Brasil de ampliação do divide pelo Google Trends.</p>
+<p>No contexto brasileiro, o caso emblemático é o <strong>Auxílio Emergencial</strong> instituído pela Lei 13.982/2020. <span class="citation" data-cites="cardoso2020aimpleme">Cardoso (<a href="#ref-cardoso2020aimpleme" role="doc-biblioref">2020</a>)</span> analisa sua implementação como caso de “system-level bureaucracy”, na qual decisões pré-programadas via algoritmos e fluxos digitais operam o serviço público em escala. O programa atendeu populações historicamente pouco familiarizadas com canais digitais, incluindo aproximadamente 59 milhões de brasileiros com hábito de uso de dinheiro físico, expondo limites de uma operação puramente digital sob exclusão pré-existente. Trabalhos complementares <span class="citation" data-cites="krepsky2023administ">(<a href="#ref-krepsky2023administ" role="doc-biblioref">Krepsky, 2023</a>)</span> confirmam que a implementação do AE evidenciou que cidadania digital é precondição material para efetividade de políticas que dependem de e-gov.</p>
+<p>Esses achados sustentam a relevância da janela 2021-2025 e da inclusão de variáveis que capturam <strong>familiaridade digital</strong> (uso intenso, habilidades) como mediadores estruturais da adoção de e-gov no Brasil pós-pandemia.</p>
+<p>Adicionalmente, <span class="citation" data-cites="roztocki2022digitalf">Roztocki (<a href="#ref-roztocki2022digitalf" role="doc-biblioref">2022</a>)</span> documentam como <strong>pegadas digitais</strong> (digital footprints) atuam como barreira: cidadãos sem histórico de uso online enfrentam dificuldade adicional para acessar e-gov, reforçando que a intensidade prévia de uso da internet condiciona a possibilidade de adesão.</p>
+</section>
+<section id="sec-sintese" class="level2" data-number="9">
+<h2 data-number="9" class="anchored" data-anchor-id="sec-sintese"><span class="header-section-number">9</span> Síntese e gap teórico-empírico</h2>
+<p>A literatura mostra três deslocamentos convergentes:</p>
+<ol type="1">
+<li><strong>Do acesso ao uso</strong>: o digital divide consolidou-se como fenômeno multinível (acesso, habilidades, outcomes), com o segundo nível ganhando centralidade analítica em contextos de penetração ampla.</li>
+<li><strong>Do agregado ao específico</strong>: as atividades digitais específicas, sua intensidade e diversidade, passam a explicar variação que sociodemográficas isoladas deixam aberta (até 50% da variância).</li>
+<li><strong>Do método único ao comparativo</strong>: a expansão de ML em ciência social aplicada a surveys está em curso, com veredicto ainda indefinido sobre quando ML supera modelos lineares.</li>
+</ol>
+<p>Aplicado ao caso brasileiro, esses três deslocamentos identificam um <strong>gap empírico-metodológico</strong>: análise pooled 2021-2025 do uso de e-gov no Brasil, que (a) incorpore variáveis de intensidade e variedade de uso digital + habilidades digitais autorelatadas, (b) compare empiricamente regressão logística e random forest, (c) valide generalização via holdout temporal.</p>
+<p>A continuação do trabalho original <span class="citation" data-cites="cordella2025factorsi macadar2025servicos">(<a href="#ref-cordella2025factorsi" role="doc-biblioref">Lopes; Luciano; Wiedenhöft, 2025</a>; <a href="#ref-macadar2025servicos" role="doc-biblioref">Macadar, 2025</a>)</span> aponta direções como public value e data justice, mas não retoma a estratégia quantitativa. Esta revisão abre espaço para uma extensão metodológica direta de <span class="citation" data-cites="vargas2021">Vargas et al. (<a href="#ref-vargas2021" role="doc-biblioref">2021</a>)</span>.</p>
+</section>
+<section id="sec-contrib" class="level2" data-number="10">
+<h2 data-number="10" class="anchored" data-anchor-id="sec-contrib"><span class="header-section-number">10</span> Posicionamento da contribuição</h2>
+<p>Esta revisão sustenta cinco contribuições do estudo de continuação:</p>
+<ol type="1">
+<li><strong>Extensão longitudinal pooled 2021-2025</strong>: cobre o período pós-pandemia e captura tendências temporais que o corte 2019 de <span class="citation" data-cites="vargas2021">Vargas et al. (<a href="#ref-vargas2021" role="doc-biblioref">2021</a>)</span> não pode revelar.</li>
+<li><strong>Variáveis de intensidade e variedade de uso digital</strong>: dezesseis variáveis de uso (C8/J2/C10/C11/C7/B1) elevam o AUC do modelo de 0,77 para 0,83, alinhado com a previsão da literatura de divide segundo nível <span class="citation" data-cites="bchi2016modeling ebbers2016impactof castellacci2018internet">(<a href="#ref-bchi2016modeling" role="doc-biblioref">Büchi; Just; Latzer, 2016</a>; <a href="#ref-castellacci2018internet" role="doc-biblioref">Castellacci; Tveito, 2018</a>; <a href="#ref-ebbers2016impactof" role="doc-biblioref">Ebbers; Jansen; Deursen, 2016</a>)</span> de que sociodemográficas deixam ~50% inexplicado.</li>
+<li>**Sub-modelo de habilidades digitais autorelatadas (I1A_*)**: testa empiricamente o mediador “familiaridade digital” sugerido por <span class="citation" data-cites="lutz2019digitali">Lutz (<a href="#ref-lutz2019digitali" role="doc-biblioref">2019</a>)</span> e <span class="citation" data-cites="vandeursen2020digitali">Deursen (<a href="#ref-vandeursen2020digitali" role="doc-biblioref">2020</a>)</span>.</li>
+<li><strong>Comparação empírica GLM × random forest</strong>: contribui para o debate aberto <span class="citation" data-cites="browne2021multivar mcbride2017israndom">(<a href="#ref-browne2021multivar" role="doc-biblioref">Browne; Matteson; McBride, 2021</a>; <a href="#ref-mcbride2017israndom" role="doc-biblioref">Sohnesen; Stender, 2017</a>)</span> aplicado especificamente a e-gov, mostrando que o ganho preditivo vem das <strong>variáveis</strong> (não do método): random forest sobre o conjunto expandido empata com regressão logística sobre o mesmo conjunto, mas ambos superam regressão logística sobre o conjunto original.</li>
+<li><strong>Holdout temporal 2025</strong>: valida generalização de modelos treinados em 2021-2024 para a edição 2025, abordando preocupação metodológica recorrente.</li>
+</ol>
+<p>A contribuição não substitui a discussão teórica de public value <span class="citation" data-cites="panagiotopou2019publicva cordella2025factorsi">(<a href="#ref-cordella2025factorsi" role="doc-biblioref">Lopes; Luciano; Wiedenhöft, 2025</a>; <a href="#ref-panagiotopou2019publicva" role="doc-biblioref">Panagiotopoulos; Klievink; Cordella, 2019</a>)</span> nem a de data justice <span class="citation" data-cites="macadar2025servicos">(<a href="#ref-macadar2025servicos" role="doc-biblioref">Macadar, 2025</a>)</span>, mas adiciona um pilar empírico longitudinal que dialoga diretamente com o problema central: <strong>quem usa e-gov no Brasil hoje, e o que predispõe a esse uso para além das características sociodemográficas clássicas</strong>.</p>
+</section>
+<section id="sec-refs" class="level2" data-number="11">
+<h2 data-number="11" class="anchored" data-anchor-id="sec-refs"><span class="header-section-number">11</span> Referências</h2>
+<div id="refs" class="references csl-bib-body" data-entry-spacing="1" role="list">
+<div id="ref-araujo2018servicos" class="csl-entry" role="listitem">
+ARAUJO. <a href="https://doi.org/10.1590/0034-7612171925">Servicos de governo eletronico no Brasil: uma analise a partir das medidas de acesso e competencias de uso da internet</a>. 2018.
+</div>
+<div id="ref-araujoreinha2015contextu" class="csl-entry" role="listitem">
+ARAUJOREINHARD. <a href="https://doi.org/10.5700/rege579">Contextual factors that influence the adoption of e-government in Brazil</a>. 2015.
+</div>
+<div id="ref-almuraqab2016egovernm" class="csl-entry" role="listitem">
+ATHMAY, Alaa Aldin A. Al; FANTAZY, Kamel; KUMAR, Vinod. <a href="https://doi.org/10.1108/emjb-05-2014-0016">E-government adoption and user’s satisfaction: an empirical investigation</a>. <strong>Euromed Journal of Business</strong>, 2016.
+</div>
+<div id="ref-belanger2008trustand" class="csl-entry" role="listitem">
+BELANGER. <a href="https://doi.org/10.1016/j.jsis.2007.12.002">Trust and risk in e-government adoption</a>. 2008.
+</div>
+<div id="ref-browne2021multivar" class="csl-entry" role="listitem">
+BROWNE, Chris; MATTESON, David S.; MCBRIDE, Linden. <a href="https://doi.org/10.1371/journal.pone.0255519">Multivariate random forest prediction of poverty and malnutrition prevalence</a>. <strong>Plos One</strong>, 2021.
+</div>
+<div id="ref-bchi2016modeling" class="csl-entry" role="listitem">
+BÜCHI, Moritz; JUST, Natascha; LATZER, Michael. <a href="https://doi.org/10.1177/1461444815604154">Modeling the second-level digital divide: A five-country study of social differences in Internet use</a>. <strong>New Media &amp; Society</strong>, 2016.
+</div>
+<div id="ref-cardoso2020aimpleme" class="csl-entry" role="listitem">
+CARDOSO. <a href="https://doi.org/10.1590/0034-761220200267">A implementacao do Auxilio Emergencial como medida excepcional de protecao social</a>. 2020.
+</div>
+<div id="ref-castellacci2018internet" class="csl-entry" role="listitem">
+CASTELLACCI, Fulvio; TVEITO, Vegard. <a href="https://doi.org/10.1016/j.respol.2017.11.007">Internet use and well-being: A survey and a theoretical framework</a>. <strong>Research Policy</strong>, 2018.
+</div>
+<div id="ref-davis1989perceive" class="csl-entry" role="listitem">
+DAVIS. <a href="https://doi.org/10.2307/249008">Perceived usefulness, perceived ease of use, and user acceptance of information technology</a>. 1989.
+</div>
+<div id="ref-vandeursen2020digitali" class="csl-entry" role="listitem">
+DEURSEN, Alexander Johannes Aloysius Maria van. <a href="https://doi.org/10.2196/20073">Digital Inequality During a Pandemic: Quantitative Study of Differences in COVID-19–Related Internet Uses and Outcomes Among the General Population</a>. <strong>Journal of Medical Internet Research</strong>, 2020.
+</div>
+<div id="ref-distel2023whydevic" class="csl-entry" role="listitem">
+DODEL, Matías. <a href="https://doi.org/10.1177/08944393231176595">Why Device-Related Digital Inequalities Matter for E-Government Engagement?</a> <strong>Social Science Computer Review</strong>, 2023.
+</div>
+<div id="ref-ebbers2016impactof" class="csl-entry" role="listitem">
+EBBERS, Wolfgang E.; JANSEN, Marloes; DEURSEN, Alexander Johannes Aloysius Maria van. <a href="https://doi.org/10.1016/j.giq.2016.08.007">Impact of the digital divide on e-government: Expanding from channel choice to channel usage</a>. <strong>Government Information Quarterly</strong>, 2016.
+</div>
+<div id="ref-garcaro2023differen" class="csl-entry" role="listitem">
+GARCÍA‐RÍO, Esther; PALOS‐SÁNCHEZ, Pedro R.; BAENA‐LUNA, Pedro. <a href="https://doi.org/10.1016/j.giq.2023.101866">Different approaches to analyzing e-government adoption during the Covid-19 pandemic</a>. <strong>Government Information Quarterly</strong>, 2023.
+</div>
+<div id="ref-hilbert2016genderan" class="csl-entry" role="listitem">
+GRAY, Tricia; GAINOUS, Jason; WAGNER, Kevin M. <a href="https://doi.org/10.1111/ssqu.12270">Gender and the Digital Divide in Latin America*</a>. <strong>Social Science Quarterly</strong>, 2016.
+</div>
+<div id="ref-tabbara2023clarifyi" class="csl-entry" role="listitem">
+HOODA, Apeksha; GUPTA, Parul; JEYARAJ, Anand. <a href="https://doi.org/10.3127/ajis.v27i0.4079">Clarifying the Role of E-Government Trust in E-Government Success Models: A Meta-analytic Structural Equation Modeling Approach</a>. <strong>Australasian Journal of Information Systems</strong>, 2023.
+</div>
+<div id="ref-krepsky2023administ" class="csl-entry" role="listitem">
+KREPSKY. <a href="https://doi.org/10.37885/230312300">Administracao Publica e exclusao digital: acesso ao Auxilio Emergencial e o direito fundamental a inclusao digital</a>. 2023.
+</div>
+<div id="ref-cordella2025factorsi" class="csl-entry" role="listitem">
+LOPES, Karen; LUCIANO, Edimara Mezzomo; WIEDENHÖFT, Guilherme Costa. <a href="https://doi.org/10.1108/rausp-11-2023-0225">Factors influencing the prioritization of rival public value positions in Brazilian digital government initiatives</a>. <strong>Rausp Management Journal</strong>, 2025.
+</div>
+<div id="ref-lupo2022egovernm" class="csl-entry" role="listitem">
+LUPO. <a href="https://doi.org/10.21203/rs.3.rs-1396665/v1">e-Government in Europe: A Machine Learning Approach</a>. 2022.
+</div>
+<div id="ref-lutz2019digitali" class="csl-entry" role="listitem">
+LUTZ, Christoph. <a href="https://doi.org/10.1002/hbe2.140">Digital inequalities in the age of artificial intelligence and big data</a>. <strong>Human Behavior and Emerging Technologies</strong>, 2019.
+</div>
+<div id="ref-macadar2025servicos" class="csl-entry" role="listitem">
+MACADAR. <a href="https://doi.org/10.59490/dgo.2025.1002">Servicos eletronicos de governo, datafication e data justice</a>. 2025.
+</div>
+<div id="ref-vu2022driverso" class="csl-entry" role="listitem">
+NGUYEN, Hoai Than; BORAZON, Elaine Q. <a href="https://doi.org/10.1108/oir-08-2021-0440">Drivers of e-government use during the COVID-19 pandemic: the case of Vietnam</a>. <strong>Online Information Review</strong>, 2022.
+</div>
+<div id="ref-panagiotopou2019publicva" class="csl-entry" role="listitem">
+PANAGIOTOPOULOS, Panos; KLIEVINK, Bram; CORDELLA, Antonio. <a href="https://doi.org/10.1016/j.giq.2019.101421">Public value creation in digital government</a>. <strong>Government Information Quarterly</strong>, 2019.
+</div>
+<div id="ref-reineke2015explicat" class="csl-entry" role="listitem">
+PARK, Yong‐Jin. <a href="https://doi.org/10.1177/0093650215601883">Explicating Net Diversity in Trend Assessment</a>. <strong>Communication Research</strong>, 2015.
+</div>
+<div id="ref-priyashantha2022determin" class="csl-entry" role="listitem">
+PRIYASHANTHA, K. G.; DILHANI, V. I. <a href="https://doi.org/10.4038/kjhrm.v17i1.107">Determinants of E-government Adoption: A Systematic Literature Review</a>. <strong>Kelaniya Journal of Human Resource Management</strong>, 2022.
+</div>
+<div id="ref-lzroiu2020citizens" class="csl-entry" role="listitem">
+RODRIGUEZ-HEVÍA, Luisa Fernanda; NAVÍO-MARCO, Julio; RUIZ-GÓMEZ, Luis Manuel. <a href="https://doi.org/10.3390/su12176807">Citizens’ Involvement in E-Government in the European Union: The Rising Importance of the Digital Skills</a>. <strong>Sustainability</strong>, 2020.
+</div>
+<div id="ref-roztocki2022digitalf" class="csl-entry" role="listitem">
+ROZTOCKI. <a href="https://doi.org/10.1111/1758-5899.13140">Digital footprints as barriers to accessing e-government services</a>. 2022.
+</div>
+<div id="ref-mardiana2020evidence" class="csl-entry" role="listitem">
+SANTOS, Renato P. dos; BÜLBÜL, Mustafa Şahin; LEMES, Isadora Luiz. <a href="https://doi.org/10.17648/acta.scientiae.6006">Evidence from Google Trends of a Widening Second-level Digital Divide in Brazil. Even Worse with the Covid-19</a>. <strong>Acta Scientiae</strong>, 2020.
+</div>
+<div id="ref-shamseer2015preferre" class="csl-entry" role="listitem">
+SHAMSEER. <a href="https://doi.org/10.1136/bmj.g7647">Preferred reporting items for systematic review and meta-analysis protocols (PRISMA-P) 2015: elaboration and explanation</a>. 2015.
+</div>
+<div id="ref-susmiati2019usingadi" class="csl-entry" role="listitem">
+SIQUEIRA, Érica Souza; SOUZA, César Alexandre de; BARBOSA, Alexandre. <a href="https://doi.org/10.1002/isd2.12088">Using a digital divide index among enterprises in the context of public policies in Brazil</a>. <strong>the Electronic Journal of Information Systems in Developing Countries</strong>, 2019.
+</div>
+<div id="ref-mcbride2017israndom" class="csl-entry" role="listitem">
+SOHNESEN, Thomas Pave; STENDER, Niels. <a href="https://doi.org/10.1002/pop4.169">Is Random Forest a Superior Methodology for Predicting Poverty? An Empirical Assessment</a>. <strong>Poverty &amp; Public Policy</strong>, 2017.
+</div>
+<div id="ref-vandijk2008explaini" class="csl-entry" role="listitem">
+VANDIJK. <a href="https://doi.org/10.1016/j.giq.2007.09.006">Explaining the acceptance and use of government Internet services: A multivariate analysis of 2006 survey data in the Netherlands</a>. 2008.
+</div>
+<div id="ref-vargas2021" class="csl-entry" role="listitem">
+VARGAS, Luiz Claudio Mendes <em>et al.</em> <a href="https://doi.org/10.1590/1679-395120200206">Serviços de governo eletrônico no <span>B</span>rasil: uma análise sobre fatores de impacto na decisão de uso do cidadão</a>. <strong>Cadernos <span>EBAPE.BR</span></strong>, v. 19, n. Ed. Esp., p. 792–810, 2021.
+</div>
+<div id="ref-venkatesh2003useracce" class="csl-entry" role="listitem">
+VENKATESH. <a href="https://doi.org/10.2307/30036540">User acceptance of information technology: Toward a unified view (UTAUT)</a>. 2003.
+</div>
+</div>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copiada");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copiada");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

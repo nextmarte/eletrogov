@@ -1,0 +1,187 @@
+{
+  "total": 3063,
+  "count": 10,
+  "query": "\"e-government\" AND determinants AND Brazil",
+  "hits": [
+    {
+      "doi": "10.21776/ub.ijds.2018.005.02.7",
+      "title": "E-GOVERNMENT ACCESSIBILITY FOR DISABILITY PERSONS",
+      "year": 2018,
+      "journal": "ijds indonesian journal of disability studies",
+      "authors": [
+        "Genoveva Ghea Auditia"
+      ],
+      "tally": 1,
+      "supporting": 0,
+      "contrasting": 0,
+      "mentioning": 0,
+      "citingPubs": 2,
+      "abstract": "The importance of e-government, especially the government website in providing information demands the government website can be accessed by all circles, especially persons with disabilities. To measure the accessibility of a government website, the Web Content Accessibility Guidelines Working Group (WCAG) guidelines are used. To be accessible, a website must be able to meet the minimum level of WCAG, level A. The purpose of writing this article is to determine the accessibility of e-government for people with disabilities in developing and developed countries using systematic literature review method. According to the results, there are still many countries that have not provide e-government that accessible for people with disabilities yet, both from developed and developing countries. However, developed countries have e-government that is more accessible than e-government in developing countries due to strong government policies on people with disabilities. Other influential factors are government and community awareness on accessibility. From this result, the research recommends research on the importance of egovernment accessibility for PwDs to achieve equality of persons with disabilities to receive information accessibility.",
+      "isOa": true,
+      "retraction_notices": null
+    },
+    {
+      "doi": "10.16930/2237-7662202131602",
+      "title": "E-government in local governments’ websites",
+      "year": 2021,
+      "journal": "revista catarinense da ciência contábil",
+      "authors": [
+        "Fabrício Ramos Neves",
+        "Polyana Batista da Silva"
+      ],
+      "tally": 0,
+      "supporting": 0,
+      "contrasting": 0,
+      "mentioning": 0,
+      "citingPubs": 2,
+      "abstract": "The literature perceives governments’ websites as an effective tool for increasing information delivery, user interaction, and the government services’ supply, being the most visible aspects of citizens concerning public management. However, the interaction of citizens with governments is still unclear. The practical implications of conducting e-government, capable of expanding this relationship, are still invisible. This study aims to provide an understanding of how governments’ websites are used as an e-government tool in local governments, highlighting how e-government concepts have been empirically employed. The study takes a qualitative approach, examining five municipalities in a microregion in the Brazilian state of Bahia. We gathered the data using a triangulation process that included semi-structured interviews, analysis of the websites, and opinion questionnaires to the citizens. Our research shows that governments lack compelling actions and coordinated internal procedures, resulting in a gap between practice and digital governance policies, resulting in low citizens' participation, and unfamiliarity with government communication channels. The study contributes to the e-government literature by offering further insight into how people and organizations influence technology use, providing elements that can guide motivated public managers to increase relationships and communication with society. We highlight the need to investigate the phenomenon of digital transformation in governments at the organizational level.",
+      "isOa": true,
+      "retraction_notices": null
+    },
+    {
+      "doi": "10.18356/1a63be5d-en",
+      "title": "E-government for policy integration",
+      "year": 2017,
+      "journal": null,
+      "authors": [
+        "Desa"
+      ],
+      "tally": null,
+      "supporting": null,
+      "contrasting": null,
+      "mentioning": null,
+      "citingPubs": null,
+      "abstract": null,
+      "isOa": false,
+      "retraction_notices": null
+    },
+    {
+      "doi": "10.18356/91c53096-en",
+      "title": "World e-government rankings",
+      "year": 2017,
+      "journal": null,
+      "authors": [
+        "Desa"
+      ],
+      "tally": 0,
+      "supporting": 0,
+      "contrasting": 0,
+      "mentioning": 0,
+      "citingPubs": 1,
+      "abstract": "The United Nations E-Government Survey 2010 finds that citizens are benefiting from more advanced e-service delivery, better access to information, more efficient government management and improved interactions with governments, primarily as a result of increasing use by the public sector of information and communications technology. Most countries have published a tremendous amount of information online, many going beyond basic websites to provide national portals that serve as a major starting point for users to connect to government services in different ministries. At the same time, many developing countries need to devote additional energy to transactional services as well as the electronic means of engaging citizens in public consultation and decision-making. To better reflect the higher expectations of e-government development around the world, the United Nations Department of Economic and Social Affairs introduced significant changes to the survey instrument in this round, focusing more on how governments are using websites and Web portals to deliver public services and expand opportunities for citizens to participate in decision-making. The number of questions increased from 86 in 2008 to 95 in 2010. More specifically, twenty-five questions were added and 16 questions removed from the questionnaire in the 2010 survey round, while 29 questions were modified.",
+      "isOa": false,
+      "retraction_notices": null
+    },
+    {
+      "doi": "10.22219/logos.v5i1.19784",
+      "title": "A Systematic Literature Review of E-Government Evaluation",
+      "year": 2022,
+      "journal": "journal of local government issues",
+      "authors": [
+        "Mohammad Nurul Huda",
+        "Etry Novica Kurniasari",
+        "Siti Mas Ruroh"
+      ],
+      "tally": 3,
+      "supporting": 0,
+      "contrasting": 0,
+      "mentioning": 3,
+      "citingPubs": 12,
+      "abstract": "The adoption of information and communication technology has had an effect on remodeling the general public service delivery system called e-government. E-government evaluation is a crucial aspect to evaluate how a long way the improvement in the quality of the public service delivery system provided by the technology. This study aim was to summarize and to decide the influencing factors in e-government evaluation by analyzing published scientific articles. This research method used a systematic literature review. The authors performed searches for scientific articles in online database Elsevier (Scopus) written in English and can be accessed in full paper.  This study uses 18 articles of data to conduct a systematic literature review. The findings show that most previous studies on e-government service evaluation published in 2018 and 2020. The findings also show that developing countries are the most dominating research locations. In addition, the findings show the influencing factors in e-government evaluation are 1) user satisfaction consist of reliability/efficiency, compatibility, perceived of benefit, trust, responsiveness, overall satisfaction; 2) Site Quality consist of information quality, system quality, service quality, perceived usefulness, ease to use, accessibility, security and privacy, effectiveness, design, and content; 3) Facilitating condition consist of IT infrastructure. These twelve variables can be used as basis for future research to evaluate the quality of e-government. This study has limitations because it only uses the online database Elsevier (Scopus) as a database to obtain published scientific article data during 2014-2021.",
+      "isOa": true,
+      "retraction_notices": null
+    },
+    {
+      "doi": "10.1177/08944393231176595",
+      "title": "Why Device-Related Digital Inequalities Matter for E-Government Engagement?",
+      "year": 2023,
+      "journal": "social science computer review",
+      "authors": [
+        "Matías Dodel"
+      ],
+      "tally": 0,
+      "supporting": 0,
+      "contrasting": 0,
+      "mentioning": 0,
+      "citingPubs": 1,
+      "abstract": "Mobile devices were key drivers for recent Internet expansion in lower-income countries, democratizing access. Nonetheless, concerns arose regarding their role in the creation of new digital underclass related to the capital-enhancing consequences of Internet use. Among these, e-government engagement allows individuals to reduce the administrative burdens of governmental interactions. Nonetheless, its uptake has been proven to be highly stratified in Latin American countries where most services are not digital-by-default. The article argues that disparities in digital access play a role in this e-government divides. It examines the antecedents and determinants of household computer access and mobile-only Internet use, and e-government engagement in Brazil. Based on “TIC Domicilios 2019” survey, using logistic regressions to predict household access to computers, mobile-only Internet access, and e-government engagement. Mediation analyses of the latter models are conducted, testing the sequential nature of socio-digital inequalities based on the DiSTO framework. Findings show that living in a household with computers reduces the chances of being a mobile-only user and increases the odds of e-government engagement. Mobile-only access reduces e-government engagement. The effects of socioeconomic status and digital inequalities are mediated by household access to computers and mobile-only use. Implications for digital inclusion policies are discussed.",
+      "isOa": false,
+      "retraction_notices": null
+    },
+    {
+      "doi": "10.15446/dyna.v86n209.77902",
+      "title": "Framework for Big Data integration in e-government",
+      "year": 2019,
+      "journal": "dyna",
+      "authors": [
+        "Diana Martínez-Mosquera",
+        "Sergio Luján‐Mora"
+      ],
+      "tally": 2,
+      "supporting": 0,
+      "contrasting": 0,
+      "mentioning": 2,
+      "citingPubs": 5,
+      "abstract": "This article describes researches regarding Big Data integration in e‑government decision‑making, for instance, in areas like solar energy provisioning, environmental protection, agricultural and natural resources exploitation, health and social care, education, housing and transportation management, among others. These studies refer to regions that have integrated Big Data in e‑government, where South America is still in the early adoption stages. Hence, this study proposes three steppingstones for Big Data integration in e‑government decision‑making, production, management and application. The proposed framework aims to be a reference in South America for Big Data adoption in e‑government and thus help to mitigate the technology delay regarding other regions. Finally, a case study with open data obtained from the Instituto Nacional de Estadística y Censos of Ecuador (Ecuadorian Statistics and Census Agency) is presented.",
+      "isOa": true,
+      "retraction_notices": null
+    },
+    {
+      "doi": "10.20897/lectito.201616",
+      "title": "Assessing and explaining local e-government maturity in the Iberoamerican community",
+      "year": 2016,
+      "journal": "journal of information systems engineering &amp; management",
+      "authors": [
+        "Gustavo Gouvêa Maciel",
+        "Hélder Gomes",
+        "Gonçalo Paiva Dias"
+      ],
+      "tally": 3,
+      "supporting": 0,
+      "contrasting": 0,
+      "mentioning": 3,
+      "citingPubs": 8,
+      "abstract": "This paper assesses local e-government maturity in the Iberoamerican community. Sixty Andorran, Argentinian, Brazilian, Chilean, Colombian, Costa Rican, Mexican, Portuguese, Spanish, and Uruguayan cities were considered in this study. A demographic criterion was adopted to define the municipalities observed within those countries and a three-dimensional model was used to evaluate each municipal website. Then, we conclude that local e-government still has a substantial room for improvement in the region and that population density is relevant to explain local e-government maturity, albeit only in its intrinsic Information and Participation dimensions.",
+      "isOa": true,
+      "retraction_notices": null
+    },
+    {
+      "doi": "10.3127/ajis.v27i0.4079",
+      "title": "Clarifying the Role of E-Government Trust in E-Government Success Models:  A Meta-analytic Structural Equation Modeling Approach",
+      "year": 2023,
+      "journal": "australasian journal of information systems",
+      "authors": [
+        "Apeksha Hooda",
+        "Parul Gupta",
+        "Anand Jeyaraj"
+      ],
+      "tally": 12,
+      "supporting": 2,
+      "contrasting": 1,
+      "mentioning": 9,
+      "citingPubs": 11,
+      "abstract": "E-government implementation success is of critical importance for nations. Prior information systems (IS) success models emphasize the effects of information quality, service quality, system quality, and user satisfaction but do not consider e-government trust. This study incorporates e-government trust into the IS success model and empirically tests the model on empirical findings reported in 67 prior studies using meta-analysis methods and structural equation modeling. Our analysis shows that: a) information quality, service quality, system quality, and user satisfaction influence e-government trust, and b) system use mediates the effect of e-government trust on intention to use e-government systems in the future.",
+      "isOa": true,
+      "retraction_notices": null
+    },
+    {
+      "doi": "10.4236/blr.2023.143074",
+      "title": "Public Administration and Innovation: E-Government in the International Perspective",
+      "year": 2023,
+      "journal": "beijing law review",
+      "authors": [
+        "Leandro Sarai",
+        "Maurício Zockun",
+        "Flávio Garcia Cabral"
+      ],
+      "tally": 0,
+      "supporting": 0,
+      "contrasting": 0,
+      "mentioning": 0,
+      "citingPubs": 2,
+      "abstract": "The text seeks to understand the relationship between innovation and Public Administration and, based on this understanding, promote a reflection on Brazil's transition to \"Digital Government\" (e-Government). The questions posed in the research were: Would there be other possibilities for innovation? What factors help and hinder the implementation of Digital Government? What lessons can be learned from this study? Through the hypothetico-deductive and inductive methodology, and from an individual analysis of countries that are ahead of Brazil in the World Bank's GovTech Maturity Index (GTMI), it was possible to confirm the hypothesis that there are other models of Digital Government, as well how to ascertain factors to ensure your implementation success. The research also opens space for further research on digital government.",
+      "isOa": true,
+      "retraction_notices": null
+    }
+  ]
+}

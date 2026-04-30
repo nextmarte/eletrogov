@@ -15,33 +15,77 @@ Replica o modelo logístico do artigo para 10 edições: **2015-2019 + 2021-2025
 
 ```
 analise_egov.qmd        # Documento Quarto principal — renderiza em docs/index.html
-fit_ml.R                # Script standalone que treina modelos ML e salva dados/ml_results.rds
-explora_variaveis.R     # Screening inicial (2025, ~30 candidatas manuais)
-explora_variaveis_full.R# Screening completo de variáveis presentes em todos os 10 anos
-instalar_dependencias.R # Instalação de pacotes R
-_quarto.yml             # Config do Quarto (output-dir: docs)
+_quarto.yml             # Config Quarto (output-dir: docs, bibliography: revisao/refs.bib, csl: revisao/abnt-cadernos-ebape.csl)
+README.md               # Visão geral curta (público externo)
+CLAUDE.md               # Este arquivo (documentação interna detalhada)
+.gitignore
+
+scripts/                # Scripts R standalone (executados sempre da raiz)
+  fit_ml.R                # Treina os 5 modelos da matriz 2x2 + árvore → dados/ml_results.rds
+  fit_i1a.R               # Sub-modelo de habilidades digitais (2022-2025) → dados/i1a_results.rds
+  fit_svyglm.R            # Análise de sensibilidade ponderada (svyglm) → dados/svyglm_results.rds
+  explora_variaveis.R     # Screening rápido em 2025 (~30 candidatas manuais)
+  explora_variaveis_full.R # Screening completo de vars universais (10 anos)
+  instalar_dependencias.R # Setup de pacotes R
+
 dados/
-  tic_ind_{ano}.sav     # Microdados TIC Domicílios por ano
-  ml_results.rds        # Modelos ML treinados (gerado por fit_ml.R)
-  screening_vars.rds    # Resultados do explora_variaveis.R
-  screening_full.rds    # Resultados do screening completo (vars universais)
+  tic_ind_{ano}.sav     # Microdados TIC Domicílios por ano (10 edições)
+  dicionarios/          # Dicionários XLSX por ano
+  ml_results.rds        # Modelos ML treinados (608 MB, gerado por scripts/fit_ml.R)
+  i1a_results.rds       # Sub-modelo I1A (gerado por scripts/fit_i1a.R)
+  svyglm_results.rds    # svyglm (gerado por scripts/fit_svyglm.R)
+  screening_vars.rds    # Resultados de scripts/explora_variaveis.R
+  screening_full.rds    # Resultados de scripts/explora_variaveis_full.R
   artigo_original.pdf   # Artigo Vargas et al. 2021
-docs/index.html         # Render do qmd
+
+revisao/                # Revisão sistemática (insumo do referencial teórico do qmd principal)
+  protocolo.md          # PRISMA-P 2015 adaptado
+  metodologia.qmd       # Documento da metodologia da revisão (renderiza em docs/revisao/metodologia.html)
+  refs.bib              # 64 entradas BibTeX (apontado pelo _quarto.yml)
+  abnt-cadernos-ebape.csl # Estilo ABNT
+  matriz_evidencia.csv  # 62 papers avaliados (eixo, qualidade, central, achado, claim)
+  excerpts/             # Excerpts de full-text dos papers centrais (auditoria anti-alucinação)
+  figs/                 # 7 figuras geradas para metodologia.qmd (PRISMA flow, eixos, top15, etc.)
+  tabs/                 # 3 tabelas exportadas (sumário, queries, centrais)
+  logs/                 # 29 JSONs com hits brutos do scite MCP
+  _arquivado/           # Rascunhos de artigo de revisão derivado (PT/EN); ver _arquivado/README.md
+
+docs/                   # Output Quarto (gerado)
+  index.html            # Render de analise_egov.qmd
+  revisao/metodologia.html
+
+logs/                   # Stdout dos Rscripts e renders Quarto (regeneráveis; ignorado pelo git)
 ```
 
 ## Pipeline de execução
 
-**Treino ML (pesado, ~5 min)**:
+Todos os comandos a partir da raiz do projeto.
+
+**Setup (uma vez)**:
 ```bash
-Rscript fit_ml.R   # gera dados/ml_results.rds
+Rscript scripts/instalar_dependencias.R
 ```
 
-**Render do qmd (rápido, ~40s — só lê o RDS)**:
+**Treino dos modelos (pesado)**:
+```bash
+Rscript scripts/fit_ml.R 2>&1 | tee logs/fit_ml.log         # ~5 min, gera dados/ml_results.rds
+Rscript scripts/fit_i1a.R 2>&1 | tee logs/fit_i1a.log       # gera dados/i1a_results.rds
+Rscript scripts/fit_svyglm.R 2>&1 | tee logs/fit_svyglm.log # gera dados/svyglm_results.rds
+```
+
+**Render do documento principal (~6 min, lê SAVs + RDS)**:
 ```bash
 quarto render analise_egov.qmd
+# Output em docs/index.html
 ```
 
-Convenção: `fit_ml.R` é standalone (não chama `source()` no qmd). Ele carrega os SAV diretamente, treina os **5 modelos da matriz 2×2 + árvore**, e grava em `dados/ml_results.rds`. O chunk `ml-setup` do qmd só lê o RDS; se o arquivo não existe, `stop` com mensagem pedindo pra rodar `fit_ml.R` primeiro.
+**Render da metodologia da revisão (rápido)**:
+```bash
+quarto render revisao/metodologia.qmd
+# Output em docs/revisao/metodologia.html
+```
+
+Convenção: `scripts/fit_ml.R` é standalone (não chama `source()` no qmd). Ele carrega os SAV diretamente, treina os **5 modelos da matriz 2×2 + árvore**, e grava em `dados/ml_results.rds`. O chunk `ml-setup` do qmd só lê o RDS; se o arquivo não existe, `stop` com mensagem pedindo pra rodar `scripts/fit_ml.R` primeiro.
 
 Estrutura do `ml_results.rds` (gerado em 2026-04-22):
 ```
@@ -98,7 +142,7 @@ CV 5-fold, 2021-2025, N=68.309, vars = art + sexo/area/regiao/raca + ano_num:
 RF ganhou +0,003 sobre logística. **Sem variáveis-chave**, ML sozinho não ajudou.
 
 ### Resultados ML v2 (fit_ml_v2.R — matriz 2×2 com top vars universais) ⭐
-CV 5-fold, pooled 2021-2025, vars novas do screening (C8_A/B/D/E, J2_L/J/G/K, C9_C/D, C10_A/C/D, C11_A, C7_A, B1):
+CV 5-fold, pooled 2021-2025, vars novas do screening (16 vars de uso digital — `BUSCA_*`, `CELULAR_*`, `CONTEUDO_*`, `ESTUDO_*`, `INFO_CURSOS`, `COMPARTILHA_CONTEUDO`, `USO_EMAIL`, `TEM_COMPUTADOR`):
 
 | Modelo | N | AUC | Sens | Spec |
 |---|---|---|---|---|
@@ -135,18 +179,20 @@ Essas aparecem no top por sobreposição conceitual com o outcome:
 #### Top variáveis universais LEGÍTIMAS
 | Variável | Descrição | ΔAUC | AUC |
 |---|---|---|---|
-| **C8_B** | Info sobre saúde online | **+0,040** | 0,799 |
-| **C8_A** | Info produtos/serviços | +0,022 | 0,782 |
-| **J2_L** | Celular: buscar informações | +0,021 | 0,781 |
-| **J2_J** | Celular: acessar páginas | +0,021 | 0,780 |
-| **J2_G** | Celular: usar mapas | +0,020 | 0,780 |
-| **J2_K** | Celular: baixar apps | +0,020 | 0,779 |
-| **C9_D** | Ler jornais/notícias | +0,018 | 0,778 |
-| **C10_C** | Info cursos | +0,016 | 0,775 |
-| **C10_A** | Atividades escolares | +0,016 | 0,775 |
-| **C10_D** | Estudar por conta própria | +0,015 | 0,774 |
-| **C11_A** | Compartilhar conteúdo | +0,015 | 0,774 |
-| **C7_A** | Usar e-mail | +0,015 | 0,774 |
+| Nome (novo) | Código TIC | Descrição | ΔAUC | AUC |
+|---|---|---|---|---|
+| **`BUSCA_SAUDE`** | C8_B | Info sobre saúde online | **+0,040** | 0,799 |
+| **`BUSCA_PRODUTOS`** | C8_A | Info produtos/serviços | +0,022 | 0,782 |
+| **`CELULAR_BUSCA`** | J2_L | Celular: buscar informações | +0,021 | 0,781 |
+| **`CELULAR_WEB`** | J2_J | Celular: acessar páginas | +0,021 | 0,780 |
+| **`CELULAR_MAPAS`** | J2_G | Celular: usar mapas | +0,020 | 0,780 |
+| **`CELULAR_APPS`** | J2_K | Celular: baixar apps | +0,020 | 0,779 |
+| **`CONTEUDO_NOTICIAS`** | C9_D | Ler jornais/notícias | +0,018 | 0,778 |
+| **`INFO_CURSOS`** | C10_C | Info cursos | +0,016 | 0,775 |
+| **`ESTUDO_ESCOLAR`** | C10_A | Atividades escolares | +0,016 | 0,775 |
+| **`ESTUDO_AUTONOMO`** | C10_D | Estudar por conta própria | +0,015 | 0,774 |
+| **`COMPARTILHA_CONTEUDO`** | C11_A | Compartilhar conteúdo | +0,015 | 0,774 |
+| **`USO_EMAIL`** | C7_A | Usar e-mail | +0,015 | 0,774 |
 
 Distribuição: 50 vars com ΔAUC > 0,001 / 21 com > 0,01 / 33 com > 0,005.
 
@@ -206,6 +252,46 @@ GLM Expandido generaliza bem: AUC 0,835 em 2025 "cego" vs 0,831 no CV 2021-2025 
 - **✅ Figura de OR** do GLM Expandido (eixo log).
 - **❌ XGBoost removido**: pacote não compilou no ambiente R 4.5.3. Matriz 2×2 + árvore é suficiente para demonstrar "GLM ≈ RF" (estrutura linear no espaço ampliado).
 
+## Concluído em 2026-04-29
+
+### Revisão sistemática + referencial teórico
+- **Revisão sistemática conduzida via scite MCP** em três rodadas (1 exploratória + 2 refinadas) sobre 6 eixos temáticos. Resultado: **62 papers aceitos**, 28 centrais, 64 entradas BibTeX validadas. Detalhes em `revisao/protocolo.md` e `revisao/metodologia.qmd`.
+- **Pivot importante (após dois ajustes de escopo)**: o trabalho é **um artigo só** (extensão empírica do Vargas 2021). A revisão sistemática vira **insumo** para a seção `# Referencial teórico` do `analise_egov.qmd` (37 citações estratégicas em 7 subseções). Rascunhos de um possível artigo de revisão derivado foram movidos para `revisao/_arquivado/` para reuso futuro.
+- **Render do `analise_egov.qmd` validado** com bibliografia integrada: `docs/index.html` (~8 MB), 37 entradas de bibliografia em ABNT, zero citações não resolvidas.
+- **Spot check** em 5 papers centrais (Ebbers 2016, Büchi 2016, Castellacci 2018, van Deursen 2020, Lutz 2019): claim no qmd bate com excerpt direto em `revisao/excerpts/`.
+
+### Skills externas instaladas
+`Imbad0202/academic-research-skills` (CC-BY-NC, 3.9k stars) instalada via symlink em `.claude/skills/`. Inclui Deep Research em modo PRISMA, Academic Paper, Reviewer e Pipeline. Não foi usada como agente direto, mas seus templates PRISMA inspiraram o protocolo em `revisao/protocolo.md`.
+
+### Reorganização do repositório
+- `scripts/`: 6 scripts R movidos da raiz (`fit_ml.R`, `fit_i1a.R`, `fit_svyglm.R`, `explora_variaveis.R`, `explora_variaveis_full.R`, `instalar_dependencias.R`).
+- `logs/`: pasta nova para stdout dos Rscripts (regenerável; `logs/*.log` no `.gitignore`).
+- `README.md`: criado na raiz com visão geral pública.
+- Removidos: `Rplots.pdf` (artefato), `analise_egov.rmarkdown` (duplicado).
+- Caminhos preservados: scripts continuam usando paths relativos à WD (`dados/...`), funcionam sem alteração.
+
+### Renomeação das variáveis do modelo expandido (atender Jorge)
+- Comentário do Jorge: "Apenas mudaria o modelo expandido, renomeando as variáveis para ser mais fácil de interpretar."
+- Criado `scripts/var_labels.R` como dicionário canônico: códigos TIC originais ↔ nomes interpretáveis em UPPERCASE_UNDERSCORE PT-BR (`BUSCA_SAUDE`, `CELULAR_MAPAS`, `ESTUDO_AUTONOMO`, etc.).
+- `fit_ml.R`, `fit_i1a.R`, `fit_svyglm.R` carregam o dicionário via `source()` e aplicam `rename(any_of(vars_extra_rename))` no pool antes do treino. RDS gerados já saem com os nomes interpretáveis.
+- `analise_egov.qmd` ganhou seção `### Glossário das 16 variáveis de uso digital` com tabela auto-gerada (chunk lê `vars_extra_desc` + `vars_extra_codigos_tic` do dicionário).
+- Modelos numericamente idênticos (só rótulos mudam): mesmas folds, mesmo seed, mesmos coefs.
+
+### Artigo IMRAD APA criado (`artigo.qmd`)
+- **Pergunta de pesquisa**: "Em que medida a prática digital cotidiana complementa o perfil sociodemográfico na explicação da adoção de e-gov no Brasil?" (formulação "complementa", não competitiva).
+- **Estrutura**: IMRAD APA (Introdução com derivação do gap em 5 parágrafos, Referencial Teórico em 6 subseções, Métodos com pacotes citados, Resultados em 5 subseções com tabelas/figuras lendo os RDS, Discussão em 6 subseções, Conclusão, Apêndice de código).
+- **Tom**: cumulativo (Vargas 2021, Dodel 2023, Büchi 2016, Ebbers 2016 etc. tratados como trabalhos que pavimentaram o caminho, não como concorrentes).
+- **Coautoria**: Marcus Ramalho + Jorge Junio Moreira Antunes.
+- **Extensão `apaquarto`** instalada (`_extensions/wjschne/apaquarto/`); `revisao/refs_pacotes.bib` gerado via `knitr::write_bib()` para 18 pacotes R citados em Métodos. `_quarto.yml` aponta para ambos os bib (`refs.bib` + `refs_pacotes.bib`).
+- **Render multi-formato OK**: `docs/artigo.html` (112KB, HTML APA), `docs/artigo.pdf` (518KB, Typst APA), `docs/artigo.docx` (129KB).
+- **Word count atual**: ~5,2k palavras de prosa (sem expandir chunks). Alvo 8-12k pode ser atingido com expansão de Resultados/Discussão se Jorge sinalizar.
+- **Status**: v1.0 para revisão de Jorge; não é submission-ready.
+
+### Correções pré-redação (Dodel 2023)
+- Chave bibtex corrigida: `distel2023whydevic` → `dodel2023whydevic` em `revisao/refs.bib` e `analise_egov.qmd:62`.
+- Linha 21 da `matriz_evidencia.csv` promovida a `central=sim`, `qualidade_classe=alta`, score 7. Nome do autor corrigido (Distel → Dodel) e achado/claim preenchidos.
+- Excerpt criado em `revisao/excerpts/10.1177-08944393231176595.md`.
+
 ## Estrutura dos RDS gerados
 ```
 dados/ml_results.rds   (608 MB) — 5 modelos CV + 4 holdout + df_exp/df_orig + meta
@@ -219,11 +305,17 @@ dados/svyglm_results.rds (82 MB) — 4 glm/svyglm + coefs consolidados + AUCs
 2. **Limiar ótimo (Youden's J)** no GLM Expandido — reportar Sens/Spec no ponto de máximo Youden como alternativa ao threshold 0,5.
 3. **Análise de 2021+ focada**: qmd ainda apresenta 2015-2025 como principal. Pensar na estrutura do qmd para o artigo.
 4. **SHAP** com o RF Expandido para explicação por observação (complemento à importância agregada).
-5. **Draft do artigo**: estrutura + busca de literatura (intensidade de uso digital × e-gov).
+5. **Draft do artigo**: ✅ `artigo.qmd` criado em IMRAD APA; HTML/PDF/DOCX renderizados em `docs/`. Aguarda revisão do Jorge.
 
 ### Artigo de continuação
 Título provisório: **"Extensão do modelo Vargas et al. (2021) com variáveis de intensidade de uso digital — análise pooled 2021-2025 TIC Domicílios"**.
 I1A_* entra como seção complementar (validação teórica do eixo "familiaridade digital"), não como eixo principal.
+
+A revisão sistemática alimentando o Referencial Teórico está em `revisao/`:
+- 62 papers aceitos (28 centrais), distribuídos em 6 eixos
+- 64 entradas BibTeX validadas (DOIs verificados em batch)
+- 7 figuras + 3 tabelas + 7 excerpts em `revisao/figs/`, `tabs/`, `excerpts/`
+- Diagrama PRISMA em `revisao/figs/fig_prisma_flow.png`
 
 ## Observações técnicas
 
@@ -236,17 +328,29 @@ I1A_* entra como seção complementar (validação teórica do eixo "familiarida
 ## Comandos úteis
 
 ```bash
-# Treinar ML do zero (~5 min)
-Rscript fit_ml.R
+# Setup uma vez
+Rscript scripts/instalar_dependencias.R
 
-# Renderizar qmd (só lê RDS, ~40s)
+# Treinar ML do zero (~5 min)
+Rscript scripts/fit_ml.R 2>&1 | tee logs/fit_ml.log
+
+# Sub-modelo I1A
+Rscript scripts/fit_i1a.R 2>&1 | tee logs/fit_i1a.log
+
+# svyglm ponderado
+Rscript scripts/fit_svyglm.R 2>&1 | tee logs/fit_svyglm.log
+
+# Renderizar qmd principal (~6 min, lê SAVs + RDS)
 quarto render analise_egov.qmd
 
+# Renderizar metodologia da revisão (rápido)
+quarto render revisao/metodologia.qmd
+
 # Screening univariado rápido em 2025 (~6s)
-Rscript explora_variaveis.R
+Rscript scripts/explora_variaveis.R
 
 # Screening completo (vars universais 10 anos, alguns minutos)
-Rscript explora_variaveis_full.R
+Rscript scripts/explora_variaveis_full.R
 
 # Validar RDS
 Rscript -e 'x <- readRDS("dados/ml_results.rds"); str(x, max.level=1)'

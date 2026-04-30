@@ -1,0 +1,169 @@
+{
+  "total": 362,
+  "count": 9,
+  "query": "\"pandemic\" AND \"digital government services\" AND Brazil",
+  "hits": [
+    {
+      "doi": "10.4102/apsdpr.v12i1.753",
+      "title": "Transformation of digital government services in the public sector in South Africa",
+      "year": 2024,
+      "journal": "africa’s public service delivery and performance review",
+      "authors": [
+        "Amos Shibambu"
+      ],
+      "tally": 0,
+      "supporting": 0,
+      "contrasting": 0,
+      "mentioning": 0,
+      "citingPubs": 1,
+      "abstract": "Background: It is well-documented that the 21st century is providing digital technologies in an alarming rate. Their emergence promotes effectiveness, efficiency, accountability and transparency of public services and internal governance. This study was conducted within the government departments and state-owned agencies of South Africa.Aim: The aim of this study was to investigate the transformation of digital government services in the public sector in South Africa.Methods: This case study used qualitative approach where data were collected through semi-structured interviews from the national government departments and state-owned entities. The target population comprised information technology officers, investigators or analysts and administrative officers. Data collected were thematically analysed preceding the transcription of audio-recordings.Results: Some of the significant results of this study showed that the executives avoid playing their role to drive Information and communications technology (ICT) through Corporate ICT Strategy.Conclusion: Some of the challenges of adopting digital transformation are associated with low digital literacy, poor digital infrastructure, unreliable power supply, among others.Contribution: This study establishes that if the senior managers from ICT section become members of the executive committee, the government can have successful implementation of ICT projects without scepticism. This study also contributes to the awareness of considering digital literacy skills to support digital transformation.",
+      "isOa": true,
+      "retraction_notices": null
+    },
+    {
+      "doi": "10.1002/pa.2940",
+      "title": "Nexus of public organization, transparency, and accountability in Indonesia's digital governance",
+      "year": 2024,
+      "journal": "journal of public affairs",
+      "authors": [
+        "Ulung Pribadi",
+        "Muhammad Iqbal",
+        "Muhammad Amien Ibrahim"
+      ],
+      "tally": null,
+      "supporting": null,
+      "contrasting": null,
+      "mentioning": null,
+      "citingPubs": null,
+      "abstract": "This study examined uniting public organization, transparency, and accountability theories for a holistic understanding of digital government service implementation in Indonesia. This study used a survey data collection method with 424 respondents for employees in four local governments. Questionnaires were generated using a Likert scale. Structural equation modeling‐partial least squares was used to assess the validity and reliability of the data and to test hypotheses and regression models. Following the testing of hypotheses and regression analysis, this study found that variables of employee skills, leadership, regulation, infrastructure, information and communication technology, transparency, and accountability had a positive and significant effect on the variable of digital government service implementation with p‐values of 0.034, 0.025, 0.014, 0.031, 0.009, 0.005, and 0.010, respectively. In contrast, variables of budgeting and bureaucratic structure do not positively and significantly impact the variable of digital government service implementation with p‐values of 0.210 and 0.311, respectively. The influence of the independent variables on the dependent variable was strong (R‐square = 0.834). The limitations and implications of these findings are discussed in the conclusion.",
+      "isOa": false,
+      "retraction_notices": null
+    },
+    {
+      "doi": "10.3390/digital5020020",
+      "title": "Assessing Digital Technology Development in Latin American Countries: Challenges, Drivers, and Future Directions",
+      "year": 2025,
+      "journal": "digital",
+      "authors": [
+        "Diana Pamela Chavarry Galvez",
+        "Svetlana Revinova"
+      ],
+      "tally": null,
+      "supporting": null,
+      "contrasting": null,
+      "mentioning": null,
+      "citingPubs": null,
+      "abstract": "This research analyzes the digital readiness of Latin American countries by assessing the following key factors: digital infrastructure, human capital, internet use, adoption of digital technology by businesses, and digital government services. These factors are critical to the development of digital technology in the region. The analysis identifies countries that are leaders in digital development (Brazil, Mexico, Chile, Colombia, and Argentina), countries with an average level of digital technology development (Peru, Uruguay, Costa Rica, Paraguay, Panama, and the Dominican Republic), and those with slower progress (Bolivia, Ecuador, Venezuela, Guatemala, El Salvador, Honduras, Cuba, and Nicaragua). Based on this assessment, the study proposes and evaluates positive, negative, and neutral scenarios for the future of digital technology in Latin America over the next five years. The study concludes that a neutral scenario is the most likely, suggesting that, while advanced countries will maintain stable growth, lagging countries will experience accelerated, albeit still moderate, digitalization. This has key implications for regional competitiveness and digital inclusion. The study used methods of analysis, synthesis, classification, grouping, statistics, indexing, and scoring. This study uses the most recent data available (2022–2024) to provide an updated and comprehensive assessment of digital transformation in Latin America, reflecting post-pandemic dynamics and emerging digital trends such as AI and fintech growth.",
+      "isOa": true,
+      "retraction_notices": null
+    },
+    {
+      "doi": "10.1787/2f7ccfe6-en",
+      "title": "The COVID-19 pandemic in Spain",
+      "year": 2021,
+      "journal": null,
+      "authors": [],
+      "tally": null,
+      "supporting": null,
+      "contrasting": null,
+      "mentioning": null,
+      "citingPubs": null,
+      "abstract": "The pandemic has accentuated some persistent structural challenges Mitigating the social and economic impact of the pandemic remains a priority Spain has been hit hard by the pandemic The economic recovery is fraught with high risks The crisis has increased financial stability risks Policy support should continue, but adapt to the evolution of the pandemic Containing medium-term fiscal challenges and supporting employment for a sustainable recovery Addressing medium-term fiscal vulnerabilities Boosting employment and job quality Making growth more inclusive and greener Lowering inequalities Making further progress in the fight against corruption Making growth greener References Annex A. Progress on structural reforms Annex B. Spanish Recovery, Transformation and Resilience Plan 2 Enhancing digital diffusion for higher productivity in Spain Digitalisation offers new opportunities and challenges Spanish firms still have significant scope to adopt and use digital technologies Insufficient intangible capital and low skills impede taking full advantage of digitalisation Policy reforms can boost productivity through digital diffusion Ensuring communication infrastructure for all The Spanish telecommunication sector performs well The digital divide between urban and rural areas should be reduced Digital public services are an integral part of the digital transformation Cybersecurity underpins the digital transformation of the society Enhancing capabilities to make full use of digital technologies Intangible capital and innovation to foster digitalisation Adapting skills of workers to digitalisation and changing nature of work Sharpening incentives to take advantage of digital technologies Market regulation should be revamped further to generate competitive pressures Insolvency regimes could be reformed further to encourage risk taking activities Access to capital is key to diffusion of technologies References",
+      "isOa": true,
+      "retraction_notices": null
+    },
+    {
+      "doi": "10.5089/9781513587219.071",
+      "title": "South Asia's Path to Resilient Growth",
+      "year": 2022,
+      "journal": null,
+      "authors": [
+        "Ranil Salgado",
+        "Klaus-Peter Hellwig",
+        "Mercedes García-Escribano"
+      ],
+      "tally": null,
+      "supporting": null,
+      "contrasting": null,
+      "mentioning": null,
+      "citingPubs": null,
+      "abstract": "DISCLAIMER:The views expressed in this book are those of the authors and do not necessarily represent the views of the IMF's Executive Directors, its management, or any of its members. The boundaries, colors, denominations, and any other information shown on the maps do not imply, on the part of the International Monetary Fund, any judgment on the legal status of any territory or any endorsement or acceptance of such boundaries.",
+      "isOa": true,
+      "retraction_notices": null
+    },
+    {
+      "doi": "10.1787/120e170e-en",
+      "title": "Primary Health Care in Brazil",
+      "year": 2021,
+      "journal": null,
+      "authors": [
+        ""
+      ],
+      "tally": 16,
+      "supporting": 1,
+      "contrasting": 0,
+      "mentioning": 15,
+      "citingPubs": 171,
+      "abstract": "Primary health care in Brazil has a well-organised approach which is the result of sustained commitment to providing high quality primary health care for the whole population. The Family Health Strategy, launched in 1994, has been a key pillar of the efforts to reorganise and strengthen primary health care in Brazil. Since its implementation, a growing share of the Brazilian population can benefit from free access to a community-based approach to preventive and primary health care services. An extensive body of academic research has provided evidence of the key contributions of the Family Health Strategy to the reduction of almost 18 deaths per 1 000 birth in infant mortality rate observed between 1990 and 2019 in Brazil. The programme has also been associated with reduction in mortality and hospitalisations for chronic disease. Recent estimations also show that the implementation of the Family Health Strategy was associated with a reduction of 45% of the standardised hospitalisation rates per 10 000 inhabitants between 2001 and 2016, mostly for primary care conditions such as asthma, gastroenteritis, cardiovascular and cerebrovascular diseases. However, as some challenges are overcome, new ones approach, as Brazilian population ages, population risk factors such as obesity are on the rise, and emerging pandemic threats require resilience and adaptability.Many features of the primary health care sector in Brazil deserve to be recognised as examples for OECD countries, including the use of multidisciplinary primary care teams called family health teams, and the extensive use of community health agents, which are frontline public health workers. Brazil has also implemented a set of key reforms to improve access to high quality primary health care over the past decades, including the National Programme for Improving Access and Quality of Primary Health Care (PMAQ) and the More Doctors Programme (MDP).Nevertheless, Brazil still needs to address a number of challenges. Most critically, only 65% of the Brazilian population are covered by family health teams and too many patients bypass primary health care and directly seek care in outpatient specialties and hospitals, notably for conditions that could be more effectively treated at community level. The expansion of primary health care has also been marked by stark disparities across states and municipalities, linked mainly to workforce shortages and imbalances in the distribution of medical doctors. There are also been a rise in the number of elderly patients and an increasing prevalence of chronic non-communicable diseases -including cancer, diabetes and hypertension, which call for effective prevention, early detection and treatment. Lastly, while Brazil has a long history of developing and investing in networks, data, interoperability and skills, progress towards effective use of digital technologies in primary health care has been slow, and fundamentally unequal.The recent reform agenda for the primary health care sector in Brazil -the Previne Brasil programmehas a...",
+      "isOa": true,
+      "retraction_notices": null
+    },
+    {
+      "doi": "10.1017/dap.2022.14",
+      "title": "The digitization of the Brazilian national identity system: A descriptive and qualitative analysis of its information architecture",
+      "year": 2022,
+      "journal": "data &amp; policy",
+      "authors": [
+        "Bruno Ricardo Bioni",
+        "Marina Garrote",
+        "Marina Meira"
+      ],
+      "tally": 0,
+      "supporting": 0,
+      "contrasting": 0,
+      "mentioning": 0,
+      "citingPubs": 1,
+      "abstract": "Abstract\n\t  The present paper, which composes a broader research agenda developed by Data Privacy Brasil Research Association, aims to conduct a descriptive and qualitative study of the Brazilian National Identity System through a data protection and data justice perspective. For this purpose, a desk research and legislation analyses were conducted to answer the following question: is the Brazilian National Civil Identification System (Identificação Civil Nacional or ICN) framework adequate with the Brazilian data protection general legislation and its principles—especially regarding its information architecture? As a result, we found that the current information architecture of the ICN, as well as its current use, may reveal a set of concerns related to data protection and data justice.",
+      "isOa": true,
+      "retraction_notices": null
+    },
+    {
+      "doi": "10.1787/6b1a524c-en",
+      "title": "Making digital transformation work for all in Chile",
+      "year": 2021,
+      "journal": null,
+      "authors": [
+        "Álvaro Pereira",
+        "Isabell Koske",
+        "Patrick Lenain"
+      ],
+      "tally": 2,
+      "supporting": 0,
+      "contrasting": 0,
+      "mentioning": 2,
+      "citingPubs": 1,
+      "abstract": "Working Papers should not be reported as representing the official views of the OECD or of its member countries. The opinions expressed and arguments employed are those of the author(s).",
+      "isOa": true,
+      "retraction_notices": null
+    },
+    {
+      "doi": "10.1787/01181fcb-en",
+      "title": "Percentage of people who forewent health care needs since the start of the pandemic, 2020",
+      "year": 2021,
+      "journal": null,
+      "authors": [
+        "Barbara Baredes",
+        "Conor Das-Doyle",
+        "Santiago González"
+      ],
+      "tally": null,
+      "supporting": null,
+      "contrasting": null,
+      "mentioning": null,
+      "citingPubs": null,
+      "abstract": "This seventh edition of Government at a Glance arrives more than a year into a global health emergency that has turned into an economic and social crisis. Governments have been central to the response to and management of the COVID-19 pandemic. They have implemented measures --often unprecedented and impressive in scale and speed --to support people and businesses and mitigate the impact of the crisis. This publication provides internationally comparable evidence on the public sector's performance prior to the COVID-19 outbreak, as well as a special focus on changes made to government processes to respond to the pandemic. It finds great variation in countries' preparedness for the crisis, as well as in their capacity to adjust public governance processes to address change.This report begins the work of drawing lessons for governments to build resilience and improve the management of future crises.Government at a Glance, published every two years, is a flagship of OECD work on public governance. It presents the most up-to-date internationally comparable data on how public administrations function and perform in OECD countries, accession countries, and other major economies. These data can be used to benchmark governments' performance, track national and international developments over time, and monitor governments' progress in public sector reform.The 2021 edition includes indicators on public finances and public employment, the latter with a special focus on the representation of different gender and age groups in public administrations and the political sphere. Data on government processes include budgeting practices, strategic human resources management, regulatory policy, public procurement, digital government, and responsibilities of centres of government including on public communication. New process indicators for this edition cover public sector integrity, infrastructure governance, and open government. Indicators of government results include trust in public institutions, political efficacy, inequality reduction, and measures of access to, responsiveness, quality of, and citizen satisfaction with education, health and justice sectors.",
+      "isOa": true,
+      "retraction_notices": null
+    }
+  ]
+}

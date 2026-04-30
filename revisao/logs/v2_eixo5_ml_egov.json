@@ -1,0 +1,109 @@
+{
+  "total": 3153,
+  "count": 8,
+  "query": "\"machine learning\" AND \"e-government\" AND adoption",
+  "hits": [
+    {
+      "doi": "10.20944/preprints202202.0359.v1",
+      "title": "E-Government in Europe. A Machine Learning Approach",
+      "year": 2022,
+      "journal": null,
+      "authors": [
+        "Angelo Leogrande",
+        "Nicola Magaletti",
+        "Gabriele Cosoli"
+      ],
+      "tally": null,
+      "abstract": "The following article analyzes the determinants of e-government in 28 European countries between 2016 and 2021. The DESI-Digital Economy and Society Index database was used. The econometric analysis involved the use of the Panel Data with Fixed Effects and Panel Data with Variable Effects methods. T"
+    },
+    {
+      "doi": "10.2139/ssrn.4043942",
+      "title": "e-Government in Europe. A Machine Learning Approach",
+      "year": 2022,
+      "journal": "ssrn electronic journal",
+      "authors": [
+        "Angelo Leogrande",
+        "Nicola Magaletti",
+        "Gabriele Cosoli"
+      ],
+      "tally": 0,
+      "abstract": ""
+    },
+    {
+      "doi": "10.21203/rs.3.rs-1396665/v1",
+      "title": "e-Government in Europe. A Machine Learning Approach",
+      "year": 2022,
+      "journal": null,
+      "authors": [
+        "Angelo Leogrande",
+        "Nicola Magaletti",
+        "Gabriele Cosoli"
+      ],
+      "tally": 3,
+      "abstract": "Abstract\n        The following article analyzes the determinants of e-government in 28 European countries between 2016 and 2021. The DESI-Digital Economy and Society Index database was used. The econometric analysis involved the use of the Panel Data with Fixed Effects and Panel Data with Variable E"
+    },
+    {
+      "doi": "10.58777/ise.v2i1.191",
+      "title": "An Integration of Machine Learning with e-government: Challenges and Future Trends",
+      "year": 2024,
+      "journal": null,
+      "authors": [
+        "Shareef M Shareef"
+      ],
+      "tally": null,
+      "abstract": "The tremendous rise of data and information and the increase in computer processing in e-governments has significantly changed how the government makes decisions relying on advanced technologies.  This number will grow dramatically, and there is a prominent direction that institutions are considerin"
+    },
+    {
+      "doi": "10.4018/ijaiml.2020070106",
+      "title": "Internet of Things in E-Government",
+      "year": 2020,
+      "journal": "international journal of artificial intelligence and machine learning",
+      "authors": [
+        "Panagiota Papadopoulou",
+        "Kostas Kolomvatsos",
+        "Stathes Hadjiefthymiades"
+      ],
+      "tally": 5,
+      "abstract": "E-government can greatly benefit by the use of IoT, enabling the creation of new innovative services or the transformation and enhancement of current ones, which are informed by smart devices and real-time data. The adoption of IoT in e-government encompasses several challenges of technical as well "
+    },
+    {
+      "doi": "10.1108/tg-03-2024-0061",
+      "title": "Does E-government curb corruption? The moderating role of national culture: a machine learning approach",
+      "year": 2024,
+      "journal": "transforming government people process and policy",
+      "authors": [
+        "Senda Belhaj Slimene",
+        "Hela Borgi",
+        "Hakim Ben Othman"
+      ],
+      "tally": null,
+      "abstract": "Purpose\nThe study aims to investigate the relationship between E-government and corruption. It also examines the moderator role of national culture through Hofstede’s dimensions on the association between E-government and corruption.\n\nDesign/methodology/approach\nIn addition to panel regression techn"
+    },
+    {
+      "doi": "10.20944/preprints202404.0539.v1",
+      "title": "Navigating Digital Government Transformation: The Influence of Machine Learning on Rational Decision-Making within E-government",
+      "year": 2024,
+      "journal": null,
+      "authors": [
+        "Ayat Mohammad Salem",
+        "Şerife Zihni Eyüpoğlu",
+        "Mohammad Khaleel Sallam Ma’aitah"
+      ],
+      "tally": null,
+      "abstract": "In the field of business environments, the integration of novel artificial intelligence (AI) techniques has been identified in the literature and theoretical discourse as an essential catalyst for enhancing the decision-making processes. In the contemporary landscape of digital transformation, the a"
+    },
+    {
+      "doi": "10.3390/admsci14030054",
+      "title": "Factors Influencing User Perception and Adoption of E-Government Services",
+      "year": 2024,
+      "journal": "administrative sciences",
+      "authors": [
+        "Galina Ilieva",
+        "Tania Yankova",
+        "Margarita Ruseva"
+      ],
+      "tally": 11,
+      "abstract": "The objective of this study is to investigate and determine factors influencing user perception and acceptance of electronic government services in the context of technological advancements. The research focuses on classifying the main features of e-administrative systems with an emphasis on user sa"
+    }
+  ]
+}

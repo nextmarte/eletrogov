@@ -1,0 +1,14 @@
+metrica,valor
+Total de papers aceitos,61
+Centrais (qualidade alta + alinhamento),28
+Qualidade alta (escore >= 6),34
+Qualidade media (escore 4-5),27
+Total de queries scite executadas,25
+Hits brutos retornados,236
+DOIs únicos apos deduplicação,171
+Janela temporal,1989-2026
+Empíricos,50
+Revisões,5
+Teóricos,6
+Brasil,10
+Europa/UK,10

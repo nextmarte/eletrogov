@@ -1,0 +1,194 @@
+{
+  "total": 27337,
+  "count": 10,
+  "query": "\"machine learning\" AND \"logistic regression\" AND survey AND comparison AND prediction",
+  "hits": [
+    {
+      "doi": "10.58599/ijsmien.2023.1101",
+      "title": "Machine learning framework for Diabetes Retinopathy detection using hybrid logistic regression",
+      "year": 2023,
+      "journal": null,
+      "authors": [
+        "Kiran Kumar Gopathoti",
+        "Naguri Sobha Rani"
+      ],
+      "tally": 0,
+      "supporting": 0,
+      "contrasting": 0,
+      "mentioning": 0,
+      "citingPubs": 1,
+      "abstract": "Diabetes Retinopathy(DR) occurs due to an injury to the retina, ultimately steering towards sightlessness. DR does not provide any early clues or signs and unnoticeably associates a new blood vessel towards the back portion of the eye, resulting in clots of blood in the eye, bleeding of eyes and distorted vision. The conventional methods are failed to produce the maximum classification accuracy. Therefore, this article is focused on implementation of hybrid logistic regression (HLR)-based machine learning model for classification of DR.Initially, histogram equalization is used to enhance the region of DR image. Then, segmentation of microaneurysmsis performed by using image morphological operations. Further, features extracted using gray level co-occurrence matrix (GLCM), which shows the internal relationship of DR disease. Then, selection of features is carried out using the Gaussian Mixture Model (GMM). Finally, HLR model is applied to perform the multi class classification operation. Simulation results shows that the proposed method resulted in superior performance as compared to state of art approaches",
+      "isOa": true,
+      "retraction_notices": null
+    },
+    {
+      "doi": "10.55248/gengpi.5.0524.1237",
+      "title": "Prediction of Liver Disease In Patients Using Logistic Regression of Machine Learning",
+      "year": 2024,
+      "journal": "international journal of research publication and reviews",
+      "authors": [
+        "Harsha Vardhan",
+        "Dr K Ramesh babu",
+        "G. Lokeswar Raju"
+      ],
+      "tally": 0,
+      "supporting": 0,
+      "contrasting": 0,
+      "mentioning": 0,
+      "citingPubs": 1,
+      "abstract": "The existence of people living without liver cancers is one of the basic considerations of human jobs. Subsequently, for better consideration, the discovery of liver sickness at a crude stage is important. For clinical specialists, foreseeing the disease in the beginning phases because of unobtrusive signs is an undeniably challenging undertaking. Many, when it is past the point of no return, the signs become obvious. The ebb and flow work plans to expand the apparent idea of liver infection utilizing AI strategies to settle this pandemic. The vital reason for the current work zeroed in on calculations for the characterization of sound individuals from liver datasets. Jogging on their prosperity factors, this exploration likewise means to contrast the grouping calculations and with give forecast exactness results.Choice Tree, Arbitrary Backwoods, Strategic Relapse, and Backing Vector Machine calculations are utilized to Foresee the sickness,by comparing accuracy rates, the goal of the paper is to predict liver disease and select the best machine-learning algorithms.finally found Logistic regression is best than support Vector Machine in terms of accurary 72%.",
+      "isOa": true,
+      "retraction_notices": null
+    },
+    {
+      "doi": "10.1088/1742-6596/2466/1/012032",
+      "title": "Prediction of Rainfall Analysis Using Logistic Regression and Support Vector Machine",
+      "year": 2023,
+      "journal": "journal of physics conference series",
+      "authors": [
+        "R Praveena",
+        "T. Ravindra Babu",
+        "M Birunda"
+      ],
+      "tally": 3,
+      "supporting": 0,
+      "contrasting": 0,
+      "mentioning": 3,
+      "citingPubs": 8,
+      "abstract": "Abstract\n               Rainfall prediction has a major effect on human civilization and is one of the most difficult, unpredictable activities. Precise and accurate predictions will help to rising human and financial risks pro-actively. This work presents a current supervised learning models of machine learning to focused on the Rainfall Prediction. Rainfall is also a significant issue in the planet because it impacts any single aspects that relies on the human being. Unpredictable and reliable estimation of rainfall is a challenging job today. In this work, gives a maximum outcome and a stronger forecast for rainfall using logistic regression and support Vector Machine (SVM) classifier for better prediction.",
+      "isOa": true,
+      "retraction_notices": null
+    },
+    {
+      "doi": "10.55041/ijsrem25584",
+      "title": "Machine Learning Approaches in Early Lung Cancer Prediction: A Comprehensive Review",
+      "year": 2023,
+      "journal": "interantional journal of scientific research in engineering and management",
+      "authors": [
+        "R.Shanthi Krishna"
+      ],
+      "tally": 0,
+      "supporting": 0,
+      "contrasting": 0,
+      "mentioning": 0,
+      "citingPubs": 1,
+      "abstract": "Diagnosing cancer at an early stage helps the doctors for the successful treatment of the disease. Lung Cancer, a leading cause of cancer-related deaths globally, has emphasized the importance of early detection to enhance patient survival outcomes. This paper offers a comprehensive review of various machine learning algorithms employed in the prediction and early detection of lung cancer. Through a diligent survey of recent literature, we evaluated the effectiveness of techniques ranging from ensemble learning methods to regression and classification algorithms. Several studies exhibited promising results, with some algorithms achieving accuracies upwards of 99%. Particularly, SVM, Logistic Regression and ensemble methods consistently demonstrated high prediction accuracies across multiple datasets. However, there remains substantial potential to expand on these findings, especially in the domain of hybrid model development, real time predictions and seamless clinical integrations. This review underscores the transformative role of ML in Lung Cancer diagnostics and charts a course for future exploration in this critical medical domain. Keywords: Machine Learning, Lung Cancer, Classification Algorithm, SVM, Random Forest, XGBoost",
+      "isOa": true,
+      "retraction_notices": null
+    },
+    {
+      "doi": "10.33330/jurteksi.v10i2.2973",
+      "title": "DETECTION OF CHILDREN'S NUTRITIONAL STATUS USING MACHINE LEARNING WITH LOGISTIC REGRESSION ALGORITHM",
+      "year": 2024,
+      "journal": "jurteksi (jurnal teknologi dan sistem informasi)",
+      "authors": [
+        "Yuliana Yuliana",
+        "Paradise Paradise",
+        "Mudawil Qulub"
+      ],
+      "tally": null,
+      "supporting": null,
+      "contrasting": null,
+      "mentioning": null,
+      "citingPubs": null,
+      "abstract": "Abstract: Children's nutritional issues are an important concern for parents to pay attention to growth and development, especially health and well-being. According to the results of the Ministry of Health's Indonesian Nutrition Status Survey (SSGI), there are 4 nutritional problems for children in Indonesia, namely stunting, wasting, underweight and everweight. In this research, how to predict signs of symptoms of a decline in a child's nutritional status using a machine learning algorithm, a prediction model was designed using logistic regression in Python IDE to predict whether a child is indicated by a decline in nutrition or not. Dataset from Bengkayang Community Health Center data consisting of 657 pediatric patient data. The dataset is divided into 7 features (independent variables) and 1 predictor (dependent variable). Test results show perfect performance with precision, recall, F1-score, accuracy values of 100%. Then the visualization results on the ROC (Receiver Operating Characteristic) curve to depict the TP (True Positive) value on the Y axis against the FP (false Positive) value on the become overfit. It is recommended that in preparing the training dataset, measure the training data and reduce the features, after carrying out feature selection to increase the accuracy of the model.             Keywords: child nutritional status; growth and development logistic regression; machine learning Abstract: Masalah Gizi anak menjadi perhatian penting bagi orangtua untuk memperhatikan tumbuh kembang, terutama kesehatan dan kejahteraan. Menurut hasil survei status Gizi Indonesia (SSGI) Kemenkes memperlihatkan 4 permasalahan gizi anak di Indonesia yaitu stunting, wasting, underweight, dan everweight. Dalam penelitian ini, bagaimana memprediksi tanda gejala penurunan status gizi anak menggunakan  algoritma  machine  learning dirancang model prediksi menggunakan logistic regression pada Python IDE dengan  memprediksi anak  terindikasi  penurunan gizi  atau tidak. Dataset dari data Puskesmas Bengkayang  yang terdiri 657 data pasien anak. Dataset dibagi menjadi 7 feature (variabel independen) dan 1 predictor (variabel dependen). Hasil Pengujian memperlihatkan kinerja yang sempurna dengan nilai presisi, recall,  F1-score, akurasi, sebesar 100%. Kemudian hasil Visualisasi pada kurva ROC (Receiver Operating Characteristic) untuk menggambarkan nilai TP (True Positif) di sumbu Y terhadap nilai FP (false Positif) di sumbu X juga menunjukkan nilai yang sangat tinggi dan sudah mendekati angka 1 ini pertanda bahwa model ini menjadi overfit. Sebaiknya dalam persiapan training dataset diukur dengan data training dan mengurangi feature, setelah melakukan feature Selection untuk meningkatkan akurasi model. Keywords: logistic regression; machine learning; status gizi anak; tumbuh kembang",
+      "isOa": true,
+      "retraction_notices": null
+    },
+    {
+      "doi": "10.33564/ijeast.2023.v08i02.037",
+      "title": "PNEUMONIA AND HEART DISEASE DETECTION USING MACHINE LEARNING",
+      "year": 2023,
+      "journal": null,
+      "authors": [
+        "Prathamesh Jadhav",
+        "Trupti Sonawane",
+        "Aakanksha Jadhav"
+      ],
+      "tally": null,
+      "supporting": null,
+      "contrasting": null,
+      "mentioning": null,
+      "citingPubs": null,
+      "abstract": "The proposed project health care kit involves a heart disease prediction system and Pneumonia detection. Pneumonia is an infection that inflames the air sacs in one of the lungs or both the lungs. The aim is to build an application for pre-detection of pneumonia by using machine learning algorithms to analyze important parameters that lead to the disease which are delivered with consultation of doctors so we are automatically identifying whether possibility of a patient has pneumonia. Various machine learning algorithms are first compared to find the suitable algorithm giving maximum accuracy. If the person shows the possibility to have the disease then, in the second stage where Xrays are required, person to person vision may not be perfect. So, with the help of ensemble learning and CNN classification model we classify the pneumonia infected lungs. Heart disease, often known as cardiovascular disease, is the leading cause of death globally over the past few decades. It may include a variety of disorders that have severe impact on the heart conditions. Heart disease prediction system seeks to use data mining methods on medical data sets to help in heart disease prediction.",
+      "isOa": true,
+      "retraction_notices": null
+    },
+    {
+      "doi": "10.3991/ijoe.v19i16.42071",
+      "title": "Ameliorating Heart Diseases Prediction using Machine Learning Technique for Optimal Solution",
+      "year": 2023,
+      "journal": "international journal of online and biomedical engineering (ijoe)",
+      "authors": [
+        "Nirmalajyothi Narisetty",
+        "Archana Kalidindi",
+        "Meher Vaishnavi Bujaranpally"
+      ],
+      "tally": 3,
+      "supporting": 0,
+      "contrasting": 0,
+      "mentioning": 3,
+      "citingPubs": 3,
+      "abstract": "In the era of lacking physical fitness, folks in society are facing vital health complications which can be due to a variety of reasons such as pollution, work pressure, food, and sleeping patterns, etc. One such critical health issue which can significantly affect the regular physical activity of patients is heart disease, emulating early predictions can protect lives by inculcating proposed work and improved methodology for early heart disease prediction. In this paper, an improved methodology for heart disease prediction is proposed using a logistic regression classifier, by tuning hyperparameter using a grid-based solver with tenfold cross-validation. The dataset used in the work is driven from the UCI Machine learning repository to evaluate the efficacy of the proposed model. Medical researchers or doctors can evaluate the model’s accuracy and gets its performance. The enhanced performance rate of 90.16% has been shown in the experimental results which portrays it outclasses many prevailing models. Using this upgraded model can truly reduce the mortality rate of heart disease patients. In addition to the proposed model to make it user-friendly, a user interface has been designed where symptoms can be given as input and receives prediction as output.",
+      "isOa": true,
+      "retraction_notices": null
+    },
+    {
+      "doi": "10.56726/irjmets35616",
+      "title": "MACHINE LEARNING ALGORITHMS FOR PREDICTION OF HEART DISEASE",
+      "year": 2023,
+      "journal": "international research journal of modernization in engineering technology and science",
+      "authors": [
+        "Chen Rao",
+        "B. Rama",
+        "Padma Priya"
+      ],
+      "tally": null,
+      "supporting": null,
+      "contrasting": null,
+      "mentioning": null,
+      "citingPubs": null,
+      "abstract": "Heart disease, one of the leading causes of death worldwide, is currently the most lethal and life-threatening illness. Early cardiac illness detection will lead to lower mortality rates. One of the hardest problems the medical community has recently encountered is the prediction of heart illness. recent studies indicate, Almost one person each minute passes away from heart disease. We conducted a thorough evaluation of recent studies on heart disease prediction using machine learning (ML) approaches. Some of the classifiers we employ in this project include the decision tree, Gradient boosting, Logistic Regression, SVM, and Random Forest. Also, we discovered a variety of predictive variables, including electrocardiogram (ECG) signals, blood pressure, cholesterol levels, age, and gender. Depending on the model and dataset.",
+      "isOa": true,
+      "retraction_notices": null
+    },
+    {
+      "doi": "10.55248/gengpi.5.0424.0946",
+      "title": "Parkinson’s Disease Detection Using Machine Learning",
+      "year": 2024,
+      "journal": "international journal of research publication and reviews",
+      "authors": [
+        "V Lokesh Raju",
+        "S. Venkata Kiran",
+        "Korada Harika"
+      ],
+      "tally": 0,
+      "supporting": 0,
+      "contrasting": 0,
+      "mentioning": 0,
+      "citingPubs": 1,
+      "abstract": "Millions of people worldwide suffer with Parkinson's disease (PD), a progressive neurological illness. One of the biggest challenges in diagnosing Parkinson's disease (PD) is still early detection, which is why machine learning (ML) techniques are being investigated. Using machine learning (ML) techniques such as logistic regression, support vector machines (SVM), random forests, gradient boosting, K-Nearest Neighbors (KNN), and XGBoost, the goal of this project is to construct a system for detecting Parkinson's illness. These algorithms are trained and assessed to determine which model best separates persons with and without Parkinson's disease. They do this by using a dataset that includes voice-based biomarkers from both affected and healthy subjects. The application of Exploratory Data Analysis (EDA) approaches facilitates feature selection and preprocessing stages that are essential for model creation by providing insights into the distribution, correlations, and underlying patterns of the data.",
+      "isOa": true,
+      "retraction_notices": null
+    },
+    {
+      "doi": "10.36948/ijfmr.2023.v05i05.6459",
+      "title": "Chronic Kidney Disease Prediction Using Machine Learning",
+      "year": 2023,
+      "journal": "international journal for multidisciplinary research",
+      "authors": [
+        "O.Nikhilesh Reddy -",
+        "K SAI GOWTHAM -",
+        "D. V. S. Pavan Karthik"
+      ],
+      "tally": 5,
+      "supporting": 0,
+      "contrasting": 0,
+      "mentioning": 5,
+      "citingPubs": 6,
+      "abstract": "In today's era everyone is trying to be conscious about health although due to workload and busy schedule one gives attention to health when it shows any symptoms of some kind. However, CKD is a disease that either exhibits no symptoms at all or exhibits no signs that are particular to the condition, making it difficult to forecast, identify, and prevent such a disease and this could be led to permanently health damage, but machine learning can be hope in this problem it is best in prediction and analysis. We will employ several machine learning approaches, such as Decision Tree, KNN, Random Forest, SVM, Naive Bayes, using data that contains 24 health related attributes like age, blood pressure, sugar, glucose, taken in 2-month period of 400 patients in which 11 numeric and 14 nominal attributes in which it consists of class label named ‘Class’ which classifies patients having disease and not present. To build a model with maximum accuracy of predicting whether CKD or not and if yes then its Severity.",
+      "isOa": true,
+      "retraction_notices": null
+    }
+  ]
+}
